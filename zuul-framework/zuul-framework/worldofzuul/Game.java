@@ -73,6 +73,7 @@ public class Game
         System.out.println("World of Trash! is a new, incredibly exciting trash-collecting adventure game.");
         System.out.println("Type '" + CommandWord.HELP + "' if you need help, or don't know what to write.");
         System.out.println();
+        System.out.println();
         System.out.println(currentRoom.getLongDescription());
     }
 
