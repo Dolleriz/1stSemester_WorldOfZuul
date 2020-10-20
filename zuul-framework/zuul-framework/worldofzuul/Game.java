@@ -15,17 +15,22 @@ public class Game
 
     private void createRooms()
     {
-        Room outside, garbageArea, entrance, livingRoom, lab, office;
+        Room outside, garbageArea, entrance, livingRoom, kitchen, bedRoom, bathroom, parentsRoom;
       
-        outside = new Room("outside, to the west is your house, filled with trash that needs to be collected. " +
-                "North, is the garbage area.");
-        garbageArea = new Room("Garbage area, in front of you is a set of bins. " +
-                "In your inventory you should have a bunch of garbage, ready to be sorted. Otherwise, get collecting!");
-        entrance = new Room("Entrance. The walls are decorated with dull paintings and generic family photos." +
-                "You are facing the table with photos on them. Outside is to the west and the living room is to the east.");
-        livingRoom = new Room("Living Room. ");
-        lab = new Room("in a computing lab");
-        office = new Room("in the computing admin office");
+        outside = new Room("outside. " +
+                "\nto the east is your house, filled with trash that needs to be collected. " +
+                "\nTo the north is the garbage area.");
+        garbageArea = new Room(" in the garbage area, in front of you is a set of bins. " +
+                "\nIn your inventory you should have a bunch of garbage, ready to be sorted. Otherwise, get collecting!");
+        entrance = new Room("in the entrance. The walls are decorated with dull paintings and generic family photos. " +
+                "\nYou are facing the table with the photos on them. Outside is to the west and the living room is to the east");
+        livingRoom = new Room("in the living Room. Large carpet on the floor, Sofa together with TV in the corner. " +
+                "Walls decorated with family photos. " +
+                "\nTo the north is the kitchen, west is the entrance and east is the parents bedroom");
+        kitchen = new Room("");
+        bedRoom = new Room("");
+        bathroom = new Room("");
+        parentsRoom = new Room("");
         
         outside.setExit("east", entrance);
         outside.setExit("north", garbageArea);
@@ -35,12 +40,15 @@ public class Game
         entrance.setExit("west", outside);
         entrance.setExit("east", livingRoom);
 
-        livingRoom.setExit("east", outside);
+        livingRoom.setExit("east", parentsRoom);
+        livingRoom.setExit("north", kitchen);
+        livingRoom.setExit("west", entrance);
 
-        lab.setExit("north", outside);
-        lab.setExit("east", office);
+        kitchen.setExit("west", bedRoom);
+        kitchen.setExit("east", bathroom);
+        kitchen.setExit("south", livingRoom);
 
-        office.setExit("west", lab);
+        bedRoom.setExit("east", kitchen);
 
         currentRoom = outside;
     }
@@ -93,8 +101,7 @@ public class Game
 
     private void printHelp() 
     {
-        System.out.println("You are lost. There are many places to go, and lots of trash");
-        System.out.println("around the house.");
+        System.out.println("You are lost. There are many places to go, and lots of trash around the house.");
         System.out.println();
         System.out.println("Your ways are:");
         parser.showCommands();
