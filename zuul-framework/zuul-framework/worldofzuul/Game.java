@@ -15,19 +15,23 @@ public class Game
 
     private void createRooms()
     {
-        Room outside, theatre, pub, lab, office;
+        Room outside, garbageArea, entrance, pub, lab, office;
       
-        outside = new Room("outside the main entrance of the university");
-        theatre = new Room("in a lecture theatre");
+        outside = new Room("outside, to the west is your house, filled with trash that needs to be collected." +
+                "North, is the garbage area.");
+        garbageArea = new Room("Garbage area, in front of you is a set of bins. " +
+                "In your inventory you should have a bunch of garbage, ready to be sorted. Otherwise, get collecting!");
+        entrance = new Room("Entrance");
         pub = new Room("in the campus pub");
         lab = new Room("in a computing lab");
         office = new Room("in the computing admin office");
         
-        outside.setExit("east", theatre);
+        outside.setExit("east", entrance);
         outside.setExit("south", lab);
         outside.setExit("west", pub);
+        outside.setExit("north", garbageArea);
 
-        theatre.setExit("west", outside);
+        entrance.setExit("west", outside);
 
         pub.setExit("east", outside);
 
