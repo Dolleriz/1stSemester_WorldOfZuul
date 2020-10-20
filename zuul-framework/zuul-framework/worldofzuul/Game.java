@@ -77,7 +77,7 @@ public class Game
             printHelp();
         }
         else if (commandWord == CommandWord.COLLECT) {
-            
+            collectTrash(command);
         }
         else if (commandWord == CommandWord.GO) {
             goRoom(command);
