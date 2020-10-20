@@ -15,26 +15,27 @@ public class Game
 
     private void createRooms()
     {
-        Room outside, garbageArea, entrance, pub, lab, office;
+        Room outside, garbageArea, entrance, livingRoom, lab, office;
       
         outside = new Room("outside, to the west is your house, filled with trash that needs to be collected." +
                 "North, is the garbage area.");
         garbageArea = new Room("Garbage area, in front of you is a set of bins. " +
                 "In your inventory you should have a bunch of garbage, ready to be sorted. Otherwise, get collecting!");
         entrance = new Room("Entrance. The walls are decorated with dull paintings and generic family photos." +
-                "You are facing the table with tables. Outside is to the west and the living room is to the east.");
-        pub = new Room("in the campus pub");
+                "You are facing the table with photos on them. Outside is to the west and the living room is to the east.");
+        livingRoom = new Room("Living Room. ");
         lab = new Room("in a computing lab");
         office = new Room("in the computing admin office");
         
         outside.setExit("east", entrance);
-        outside.setExit("south", lab);
-        outside.setExit("west", pub);
         outside.setExit("north", garbageArea);
 
-        entrance.setExit("west", outside);
+        garbageArea.setExit("south", outside);
 
-        pub.setExit("east", outside);
+        entrance.setExit("west", outside);
+        entrance.setExit("east", livingRoom);
+
+        livingRoom.setExit("east", outside);
 
         lab.setExit("north", outside);
         lab.setExit("east", office);
