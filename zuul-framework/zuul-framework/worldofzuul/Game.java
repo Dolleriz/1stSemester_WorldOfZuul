@@ -21,7 +21,8 @@ public class Game
                 "North, is the garbage area.");
         garbageArea = new Room("Garbage area, in front of you is a set of bins. " +
                 "In your inventory you should have a bunch of garbage, ready to be sorted. Otherwise, get collecting!");
-        entrance = new Room("Entrance");
+        entrance = new Room("Entrance. The walls are decorated with dull paintings and generic family photos." +
+                "You are facing the table with tables. Outside is to the west and the living room is to the east.");
         pub = new Room("in the campus pub");
         lab = new Room("in a computing lab");
         office = new Room("in the computing admin office");
