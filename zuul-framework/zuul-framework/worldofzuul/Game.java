@@ -15,7 +15,7 @@ public class Game
 
     private void createRooms()
     {
-        Room outside, garbageArea, entrance, livingRoom, kitchen, bedRoom, bathroom, parentsRoom;
+        Room outside, garbageArea, entrance, livingRoom, kitchen, bedRoom, bathRoom, parentsRoom;
       
         outside = new Room("outside. " +
                 "\nto the east is your house, filled with trash that needs to be collected. " +
@@ -27,10 +27,20 @@ public class Game
         livingRoom = new Room("in the living Room. Large carpet on the floor, Sofa together with TV in the corner. " +
                 "Walls decorated with family photos. " +
                 "\nTo the north is the kitchen, west is the entrance and east is the parents bedroom");
-        kitchen = new Room("");
-        bedRoom = new Room("");
-        bathroom = new Room("");
-        parentsRoom = new Room("");
+        kitchen = new Room("in the kitchen." +
+                "\nIn the middle is a very square dinner table, draped with a sorta 60s looking cloth." +
+                "\nPretty much your average kitchen." +
+                "\nSouth is the living room, west is your room and east is the bathroom");
+        bedRoom = new Room("in your room!" +
+                "\nFull of all the cool toys you know and love. There might be some trash nearby..." +
+                "\nTo the east is the kitchen");
+        bathRoom = new Room("in the bathroom." +
+                "\n a rather small bathroom for a family." +
+                "\nTo the west is the kitchen and to south is the parents bedroom");
+        parentsRoom = new Room("your parents bedroom." +
+                "\nTo the side is a double bed and the walls are decorated with tasteless paintings." +
+                "\nEach side of the bed has a nightstand." +
+                "\nTo the north is the bathroom and to the west is the living room");
         
         outside.setExit("east", entrance);
         outside.setExit("north", garbageArea);
@@ -45,10 +55,16 @@ public class Game
         livingRoom.setExit("west", entrance);
 
         kitchen.setExit("west", bedRoom);
-        kitchen.setExit("east", bathroom);
+        kitchen.setExit("east", bathRoom);
         kitchen.setExit("south", livingRoom);
 
         bedRoom.setExit("east", kitchen);
+
+        bathRoom.setExit("west", kitchen);
+        bathRoom.setExit("south", parentsRoom);
+
+        parentsRoom.setExit("west", livingRoom);
+        parentsRoom.setExit("north", bathRoom);
 
         currentRoom = outside;
     }
