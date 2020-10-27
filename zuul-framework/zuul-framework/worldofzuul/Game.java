@@ -23,7 +23,7 @@ public class Game
         garbageArea = new Room(" in the garbage area, in front of you is a set of bins. " +
                 "\nIn your inventory you should have a bunch of garbage, ready to be sorted. Otherwise, get collecting!");
         entrance = new Room("in the entrance. The walls are decorated with dull paintings and generic family photos. " +
-                "\nYou are facing the table with the photos on them. Outside is to the west and the living room is to the east");
+                "\nYou are facing the wall with the photos on them. Outside is to the west and the living room is to the east");
         livingRoom = new Room("in the living Room. Large carpet on the floor, Sofa together with TV in the corner. " +
                 "Walls decorated with family photos. " +
                 "\nTo the north is the kitchen, west is the entrance and east is the parents bedroom");
