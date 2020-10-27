@@ -4,6 +4,7 @@ public class Game
 {
     private Parser parser;
     private Room currentRoom;
+    Inventory inventory = new Inventory();
         
 
     public Game() 
@@ -113,6 +114,12 @@ public class Game
         else if (commandWord == CommandWord.QUIT) {
             wantToQuit = quit(command);
         }
+        else if (commandWord == CommandWord.PICKUP){
+            pickup(command);
+        }
+        else if (commandWord == CommandWord.INVENTORY){
+            printInventory(inventory);
+        }
         return wantToQuit;
     }
 
@@ -152,6 +159,24 @@ public class Game
         }
         else {
             return true;
+        }
+    }
+
+    private void pickup(Command command)
+    {
+        if(!command.hasSecondWord()) {
+            System.out.println("Pickup what?");
+            return;
+        }
+
+
+    }
+
+    private void printInventory(Inventory inventory)
+    {
+        for (int i = 0; i < inventory.inventory.length; i++)
+        {
+            System.out.print(inventory.inventory[i] + " ");
         }
     }
 }
