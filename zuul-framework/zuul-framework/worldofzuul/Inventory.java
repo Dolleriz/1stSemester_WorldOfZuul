@@ -2,7 +2,7 @@ package worldofzuul;
 
 public class Inventory
 {
-    char[] inventory = new char[5];
+    String[] inventory = new String[5];
 
     public Inventory()
     {
@@ -11,6 +11,5 @@ public class Inventory
 
         }
     }
-
-
+    
 }

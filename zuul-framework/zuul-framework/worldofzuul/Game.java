@@ -172,11 +172,19 @@ public class Game
 
     }
 
-    private void printInventory(Inventory inventory)
-    {
-        for (int i = 0; i < inventory.inventory.length; i++)
-        {
-            System.out.print(inventory.inventory[i] + " ");
+    private void printInventory(Inventory inventory) {
+        System.out.println("You can hold a maximum of 5 pieces of trash. " +
+                "\nIn your inventory, you have: " +
+                "\n");
+
+        for (int i = 0; i < inventory.inventory.length; i++) {
+            if (inventory.inventory[i] == null) {
+                System.out.println("Nothing in this slot!");
+
+            } else {
+                System.out.print(inventory.inventory[i] + " ");
+                System.out.println(" ");
+            }
         }
     }
 }
