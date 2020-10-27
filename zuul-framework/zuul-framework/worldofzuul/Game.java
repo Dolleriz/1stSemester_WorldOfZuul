@@ -15,26 +15,56 @@ public class Game
 
     private void createRooms()
     {
-        Room outside, theatre, pub, lab, office;
+        Room outside, garbageArea, entrance, livingRoom, kitchen, bedRoom, bathRoom, parentsRoom;
       
-        outside = new Room("outside the main entrance of the university");
-        theatre = new Room("in a lecture theatre");
-        pub = new Room("in the campus pub");
-        lab = new Room("in a computing lab");
-        office = new Room("in the computing admin office");
+        outside = new Room("outside. " +
+                "\nto the east is your house, filled with trash that needs to be collected. " +
+                "\nTo the north is the garbage area.");
+        garbageArea = new Room(" in the garbage area, in front of you is a set of bins. " +
+                "\nIn your inventory you should have a bunch of garbage, ready to be sorted. Otherwise, get collecting!");
+        entrance = new Room("in the entrance. The walls are decorated with dull paintings and generic family photos. " +
+                "\nYou are facing the wall with the photos on them. Outside is to the west and the living room is to the east");
+        livingRoom = new Room("in the living Room. Large carpet on the floor, Sofa together with TV in the corner. " +
+                "Walls decorated with family photos. " +
+                "\nTo the north is the kitchen, west is the entrance and east is the parents bedroom");
+        kitchen = new Room("in the kitchen." +
+                "\nIn the middle is a very square dinner table, draped with a sorta 60s looking cloth." +
+                "\nPretty much your average kitchen." +
+                "\nSouth is the living room, west is your room and east is the bathroom");
+        bedRoom = new Room("in your room!" +
+                "\nFull of all the cool toys you know and love. There might be some trash nearby..." +
+                "\nTo the east is the kitchen");
+        bathRoom = new Room("in the bathroom." +
+                "\n a rather small bathroom for a family." +
+                "\nTo the west is the kitchen and to south is the parents bedroom");
+        parentsRoom = new Room("your parents bedroom." +
+                "\nTo the side is a double bed and the walls are decorated with tasteless paintings." +
+                "\nEach side of the bed has a nightstand." +
+                "\nTo the north is the bathroom and to the west is the living room");
         
-        outside.setExit("east", theatre);
-        outside.setExit("south", lab);
-        outside.setExit("west", pub);
+        outside.setExit("east", entrance);
+        outside.setExit("north", garbageArea);
 
-        theatre.setExit("west", outside);
+        garbageArea.setExit("south", outside);
 
-        pub.setExit("east", outside);
+        entrance.setExit("west", outside);
+        entrance.setExit("east", livingRoom);
 
-        lab.setExit("north", outside);
-        lab.setExit("east", office);
+        livingRoom.setExit("east", parentsRoom);
+        livingRoom.setExit("north", kitchen);
+        livingRoom.setExit("west", entrance);
 
-        office.setExit("west", lab);
+        kitchen.setExit("west", bedRoom);
+        kitchen.setExit("east", bathRoom);
+        kitchen.setExit("south", livingRoom);
+
+        bedRoom.setExit("east", kitchen);
+
+        bathRoom.setExit("west", kitchen);
+        bathRoom.setExit("south", parentsRoom);
+
+        parentsRoom.setExit("west", livingRoom);
+        parentsRoom.setExit("north", bathRoom);
 
         currentRoom = outside;
     }
@@ -55,9 +85,10 @@ public class Game
     private void printWelcome()
     {
         System.out.println();
-        System.out.println("Welcome to the World of Zuul!");
-        System.out.println("World of Zuul is a new, incredibly boring adventure game.");
-        System.out.println("Type '" + CommandWord.HELP + "' if you need help.");
+        System.out.println("Welcome to the World of Trash!");
+        System.out.println("World of Trash! is a new, incredibly exciting trash-collecting adventure game.");
+        System.out.println("Type '" + CommandWord.HELP + "' if you need help, or don't know what to write.");
+        System.out.println();
         System.out.println();
         System.out.println(currentRoom.getLongDescription());
     }
@@ -87,10 +118,9 @@ public class Game
 
     private void printHelp() 
     {
-        System.out.println("You are lost. You are alone. You wander");
-        System.out.println("around at the university.");
+        System.out.println("You are lost. There are many places to go, and lots of trash around the house.");
         System.out.println();
-        System.out.println("Your command words are:");
+        System.out.println("Your ways are:");
         parser.showCommands();
     }
 
