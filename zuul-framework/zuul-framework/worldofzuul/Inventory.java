@@ -6,10 +6,7 @@ public class Inventory
 
     public Inventory()
     {
-        for (int i = 0; i < inventory.length; i++)
-        {
 
-        }
     }
-    
+
 }
