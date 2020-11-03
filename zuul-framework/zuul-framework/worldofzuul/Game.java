@@ -28,7 +28,20 @@ public class Game
                 "\nThis type of trash consists of foods and other organic substances.");
 
         Paper = new Trashcan("Paper. " +
-                "\nThis type of trash is usually used for pizza packaging, handtowels and other recycleable things")
+                "\nThis type of trash is usually used for pizza packaging, handtowels and other recycleable things.");
+
+        Residual_waste = new Trashcan("Residual waste. " +
+                "\nThis type of trash is all the things that, does not fit into any of the four other categories.");
+
+        Plastic.setTypeOfTrash(1);
+
+        Metal.setTypeOfTrash(2);
+        
+        Organic.setTypeOfTrash(3);
+
+        Paper.setTypeOfTrash(4);
+
+        Residual_waste.setTypeOfTrash(5);
     }
 
     private void createRooms()
