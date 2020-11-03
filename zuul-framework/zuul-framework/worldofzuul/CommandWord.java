@@ -2,7 +2,8 @@ package worldofzuul;
 
 public enum CommandWord
 {
-    GO("gå"), QUIT("quit"), HELP("help"), UNKNOWN("?"), PICKUP("pickup"), INVENTORY("inventory");
+    GO("gå"), QUIT("afslut"), HELP("hjælp"), UNKNOWN("?"),
+    PICKUP("tag"), INVENTORY("rygsæk");
     
     private String commandString;
     
