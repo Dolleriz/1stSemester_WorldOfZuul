@@ -4,7 +4,6 @@ public class Game
 {
     private Parser parser;
     private Room currentRoom;
-        
 
     public Game() 
     {
@@ -36,7 +35,7 @@ public class Game
         Plastic.setTypeOfTrash(1);
 
         Metal.setTypeOfTrash(2);
-        
+
         Organic.setTypeOfTrash(3);
 
         Paper.setTypeOfTrash(4);
@@ -98,6 +97,10 @@ public class Game
         parentsRoom.setExit("north", bathRoom);
 
         currentRoom = outside;
+
+        if (currentRoom == garbageArea) {
+            createTrashCans();
+        }
     }
 
     public void play() 
