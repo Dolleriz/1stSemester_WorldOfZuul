@@ -41,7 +41,7 @@ public class Game
         Room outside, garbageArea, entrance, livingRoom, kitchen, bedRoom, bathRoom, parentsRoom;
       
         outside = new Room("udenfor. " +
-                "\nmod øst er dit hus, proppet med affald der skal sorteres. " +
+                "\nMod øst er dit hus, prop fyldt med affald der skal sorteres. " +
                 "\nMod nord er skraldespandene");
 
         garbageArea = new Room("ved skraldespandene, Foran dig er der et sæt skraldespande." +
@@ -49,30 +49,29 @@ public class Game
                 "\n1. Plastik.\n2. Metal.\n3. Madaffald.\n4. Pap og papir.\n5. Restaffald." +
                 "\nDu burde nu have en masse affald i din taske, som skal sorteres. Ellers, kom i gang!");
 
-        entrance = new Room("i indgangen. Væggene er dekoreret med kedelige malerier og familiefotos." +
-                "\nDu vender mod væggen der har billederne hængende.Udenfor er mod vest og stuen er mod øst.");
+        entrance = new Room("i indgangen. Væggene er dekoreret med kedelige malerier og familiefotos. " +
+                "\nDu vender mod væggen der har billederne hængende.Udenfor er mod vest og stuen er mod øst");
 
         livingRoom = new Room("i stuen. Et stort tæppe dækker gulvet, og i et hjørne ser du et TV og en sofa. " +
-                "væggene er dekoreret med familiefotos. " +
-                "\nMod nord er køkkenet, mod vest er indgangen og mod øst er dine forældresværelse.");
+                "\nVæggene er dekoreret med familiefotos. " +
+                "\nMod nord er køkkenet, mod vest er indgangen og mod øst er dine forældresværelse");
 
         kitchen = new Room("i køkkenet." +
-                "\nIn the middle is a very square dinner table, draped with a sorta 60s looking cloth." +
-                "\nPretty much your average kitchen." +
-                "\nSouth is the living room, west is your room and east is the bathroom");
+                "\nI midten af rummet er et spisebord." +
+                "\nEt helt almindelig og uspecial køkken." +
+                "\nMod syd er stuen, mod vest er dit værelse og mod øst er badeværelset");
 
-        bedRoom = new Room("in your room!" +
-                "\nFull of all the cool toys you know and love. There might be some trash nearby..." +
-                "\nTo the east is the kitchen");
+        bedRoom = new Room("på dit værelse!" +
+                "\nProp fyldt med alt det legetøj, som du elsker. Måske er der noget affald i nærheden..." +
+                "\nMod øst er køkkenet");
 
-        bathRoom = new Room("in the bathroom." +
-                "\n a rather small bathroom for a family." +
-                "\nTo the west is the kitchen and to south is the parents bedroom");
+        bathRoom = new Room("på badeværelset." +
+                "\nEgentlig et ret lille badeværelse for en børnefamilie." +
+                "\nMod vest er køkkenet og mod syd er dine forældresværelse");
 
-        parentsRoom = new Room("your parents bedroom." +
-                "\nTo the side is a double bed and the walls are decorated with tasteless paintings." +
-                "\nEach side of the bed has a nightstand." +
-                "\nTo the north is the bathroom and to the west is the living room");
+        parentsRoom = new Room("i dine forældresværelse." +
+                "\nStor redt seng, hvor hver side af sengen har et natbord." +
+                "\nMod nord er badeværelset og mod vest er stuen");
         
         outside.setExit("øst", entrance);
         outside.setExit("nord", garbageArea);
