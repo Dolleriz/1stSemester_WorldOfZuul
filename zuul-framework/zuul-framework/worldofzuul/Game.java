@@ -101,15 +101,15 @@ public class Game
             Command command = parser.getCommand();
             finished = processCommand(command);
         }
-        System.out.println("Thank you for playing.  Good bye.");
+        System.out.println("Tak for spillet.  Farvel.");
     }
 
     private void printWelcome()
     {
         System.out.println();
-        System.out.println("Welcome to the World of Trash!");
-        System.out.println("World of Trash! is a new, incredibly exciting trash-collecting adventure game.");
-        System.out.println("Type '" + CommandWord.HELP + "' if you need help, or don't know what to write.");
+        System.out.println("Velkommen til En Verden af Affald!");
+        System.out.println("En Verden af Affald! er et nyt spændende affaldsindsamlingsspil.");
+        System.out.println("Skriv '" + CommandWord.HELP + "' hvis du har brug for hjælp, eller ikke ved hvad du kan gøre.");
         System.out.println();
         System.out.println();
         System.out.println(currentRoom.getLongDescription());
@@ -122,7 +122,7 @@ public class Game
         CommandWord commandWord = command.getCommandWord();
 
         if(commandWord == CommandWord.UNKNOWN) {
-            System.out.println("I don't know what you mean...");
+            System.out.println("Jeg forstår ikke hvad du mener...");
             return false;
         }
 
@@ -146,16 +146,16 @@ public class Game
 
     private void printHelp() 
     {
-        System.out.println("You are lost. There are many places to go, and lots of trash around the house.");
+        System.out.println("Du er forvirret. Der er mange steder at gå hen, og mange ting du kan gøre.");
         System.out.println();
-        System.out.println("Your ways are:");
+        System.out.println("Dine muligheder er:");
         parser.showCommands();
     }
 
     private void goRoom(Command command) 
     {
         if(!command.hasSecondWord()) {
-            System.out.println("Go where?");
+            System.out.println("Gå hvorhen?");
             return;
         }
 
@@ -164,7 +164,7 @@ public class Game
         Room nextRoom = currentRoom.getExit(direction);
 
         if (nextRoom == null) {
-            System.out.println("There is no door!");
+            System.out.println("Der er ikke nogen dør!");
         }
         else {
             currentRoom = nextRoom;
@@ -175,7 +175,7 @@ public class Game
     private boolean quit(Command command) 
     {
         if(command.hasSecondWord()) {
-            System.out.println("Quit what?");
+            System.out.println("Afslut hvad?");
             return false;
         }
         else {
@@ -186,7 +186,7 @@ public class Game
     private void pickup(Command command)
     {
         if(!command.hasSecondWord()) {
-            System.out.println("Pickup what?");
+            System.out.println("Tag hvad?");
             return;
         }
 
@@ -194,13 +194,13 @@ public class Game
     }
 
     private void printInventory(Inventory inventory) {
-        System.out.println("You can hold a maximum of 5 pieces of trash. " +
-                "\nIn your inventory, you have: " +
+        System.out.println("Du kan max have 5 stykker affald i dine lommer. " +
+                "\nI dine lommer har du: " +
                 "\n");
 
         for (int i = 0; i < inventory.inventory.length; i++) {
             if (inventory.inventory[i] == null) {
-                System.out.println("Nothing in this slot!");
+                System.out.println("Der er ikke noget i denne lomme!");
 
             } else {
                 System.out.print(inventory.inventory[i] + " ");
