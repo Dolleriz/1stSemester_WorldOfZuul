@@ -4,23 +4,23 @@ import java.util.HashMap;
 
 public enum Trashtype {
 
-    PLASTIC("Plastic. " +
-            "\nIt is made of oil and other organic molecules." +
-            "\nThis type of trash takes a long time to decay, " +
-            "\nmeaning it can lay for a long time in nature, damaging ecosystems and animals."),
+    PLASTIC("Plastik. " +
+            "\nDet er lavet af olie og andre organiske materialer." +
+            "\nDenne type af affald er lang tid om at blive nedbrudt, " +
+            "\nhvilket betyder det vil ligge i naturen i lang tid, hvor det kan skade økosystemer og dyr."),
 
-    METAL_AND_GLASS("Metal and glass. " +
-            "\nThis type of trash is shiny, and hard. " +
-            "\nIt consists of cans, aluminum foil, and is used to preserve foods or drinks."),
+    METAL_AND_GLASS("Metal  og glas. " +
+            "\nDisse typer af affald er skinnende, hårde og skarpe. " +
+            "\nDet består af dåser, sølvpapir samt glas og flasker,  og bliver brugt til at opbevare mad og drikke."),
 
-    ORGANIC("Organic trash. " +
-            "\nThis type of trash consists of foods and other organic substances."),
+    ORGANIC("Madaffald. " +
+            "\n Denne type af affald består af madrester og andet organisk materiale."),
 
-    PAPER("paper. " +
-            "\nThis type of trash is usually used for pizza packaging, hand-towels and other recyclable things."),
+    PAPER("Papir og pap. " +
+            "\nDenne type af affald består normalt af papkasser, aviser, og andre papir ting."),
 
-    RESIDUAL_WASTE("Residual waste. " +
-            "\nThis type of trash is all the things that, does not fit into any of the four other categories.");
+    RESIDUAL_WASTE("Restaffald. " +
+            "\nDenne type af affald er alle ting der ikke passer ind i de fire andre kategorier.");
 
     private String trashString;
 
