@@ -12,6 +12,24 @@ public class Game
         parser = new Parser();
     }
 
+    private void createTrashCans() {
+        Trashcan Plastic, Metal, Organic, Paper, Residual_waste;
+
+        Plastic = new Trashcan("Plastic. " +
+                "\nIt is made of oil and other organic molecules." +
+                "\nThis type of trash takes a long time to decay, " +
+                "\nmeaning it can lay for a long time in nature, damaging ecosystems and animals.");
+
+        Metal = new Trashcan("Metal. " +
+                "\nThis type of trash is shiny, and hard. " +
+                "\nIt consists of cans, aluminum foil, and is used to preserve foods or drinks.");
+
+        Organic = new Trashcan("Organic. " +
+                "\nThis type of trash consists of foods and other organic substances.");
+
+        Paper = new Trashcan("Paper. " +
+                "\nThis type of trash is usually used for pizza packaging, handtowels and other recycleable things")
+    }
 
     private void createRooms()
     {
