@@ -1,7 +1,5 @@
 package worldofzuul;
 
-import java.util.concurrent.ThreadLocalRandom;
-
 public class Game
 {
     private Parser parser;
@@ -17,20 +15,25 @@ public class Game
     }
 
     private void createTrashCans() {
-        Trashcan plastic = new Trashcan(Trashtype.PLASTIC, "Plastic. " +
-                "\nThis Trashcan is for plastics");
+        Trashcan plastic = new Trashcan(Trashtype.PLASTIC, "Plastik. " +
+                "\nDenne Skraldespand er til plastik." +
+                "\nHeri kan der komme f.eks. emballage, plastikposer, fryseposer, madfilm samt andre plastikting.");
 
-        Trashcan metalAndGlass = new Trashcan(Trashtype.METAL_AND_GLASS, "Metal and glass. " +
-                "\nThis Trashcan is for metals.");
+        Trashcan metalAndGlass = new Trashcan(Trashtype.METAL_AND_GLASS, "Metal og glas. " +
+                "\nDenne Skraldespand er til metal og glas." +
+                "\nHeri kan der komme f.eks. Glasflasker, Dåser, Alubakker, låg samt alufilm.");
 
-        Trashcan organic = new Trashcan(Trashtype.ORGANIC, "Organic. " +
-                "\nThis trashcan is for organic trash");
+        Trashcan foodWaste = new Trashcan(Trashtype.FOOD_WASTE, "Madaffald. " +
+                "\nDenne skraldespand er til madaffald." +
+                "\nHeri kan der komme f.eks. Rester, Kaffegrums, frugter, grøntsager samt teblade.");
 
-        Trashcan paper = new Trashcan(Trashtype.PAPER, "Paper and cardboard. " +
-                "\nThis trashcan is for paper and cardboard");
+        Trashcan paper = new Trashcan(Trashtype.PAPER, "Papir og pap. " +
+                "\nDenne skraldespand er til papir og pap." +
+                "\nHeri kan der komme f.eks. Blade, Kuverter, Telefonbøger, Morgenmadspakker, Æggebakker samt paprør");
 
-        Trashcan residualWaste = new Trashcan(Trashtype.RESIDUAL_WASTE, "Residual waste. " +
-                "\nThis trashcan is for trash that does not fit into other trashcans");
+        Trashcan residualWaste = new Trashcan(Trashtype.RESIDUAL_WASTE, "Restaffald. " +
+                "\nDenne skraldespand er til restaffald." +
+                "\nHeri kan der komme f.eks. Kartoner, Pizzabakker, Bleer samt støvsugerposer.");
     }
 
     private void createRooms()

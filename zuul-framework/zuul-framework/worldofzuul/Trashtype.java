@@ -13,7 +13,7 @@ public enum Trashtype {
             "\nThis type of trash is shiny, and hard. " +
             "\nIt consists of cans, aluminum foil, and is used to preserve foods or drinks."),
 
-    ORGANIC("Organic trash. " +
+    FOOD_WASTE("Organic trash. " +
             "\nThis type of trash consists of foods and other organic substances."),
 
     PAPER("paper. " +
