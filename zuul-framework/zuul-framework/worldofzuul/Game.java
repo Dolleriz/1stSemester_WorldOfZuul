@@ -1,48 +1,36 @@
 package worldofzuul;
 
-public class Game 
+import java.util.concurrent.ThreadLocalRandom;
+
+public class Game
 {
     private Parser parser;
     private Room currentRoom;
     Inventory inventory = new Inventory();
-        
+
 
     public Game() 
     {
         createRooms();
+        createTrashCans();
         parser = new Parser();
     }
 
     private void createTrashCans() {
-        Trashcan Plastic, Metal, Organic, Paper, Residual_waste;
+        Trashcan plastic = new Trashcan(Trashtype.PLASTIC, "Plastic. " +
+                "\nThis Trashcan is for plastics");
 
-        Plastic = new Trashcan("Plastic. " +
-                "\nIt is made of oil and other organic molecules." +
-                "\nThis type of trash takes a long time to decay, " +
-                "\nmeaning it can lay for a long time in nature, damaging ecosystems and animals.");
+        Trashcan metalAndGlass = new Trashcan(Trashtype.METAL_AND_GLASS, "Metal and glass. " +
+                "\nThis Trashcan is for metals.");
 
-        Metal = new Trashcan("Metal. " +
-                "\nThis type of trash is shiny, and hard. " +
-                "\nIt consists of cans, aluminum foil, and is used to preserve foods or drinks.");
+        Trashcan organic = new Trashcan(Trashtype.ORGANIC, "Organic. " +
+                "\nThis trashcan is for organic trash");
 
-        Organic = new Trashcan("Organic. " +
-                "\nThis type of trash consists of foods and other organic substances.");
+        Trashcan paper = new Trashcan(Trashtype.PAPER, "Paper and cardboard. " +
+                "\nThis trashcan is for paper and cardboard");
 
-        Paper = new Trashcan("Paper. " +
-                "\nThis type of trash is usually used for pizza packaging, handtowels and other recycleable things.");
-
-        Residual_waste = new Trashcan("Residual waste. " +
-                "\nThis type of trash is all the things that, does not fit into any of the four other categories.");
-
-        Plastic.setTypeOfTrash(1);
-
-        Metal.setTypeOfTrash(2);
-
-        Organic.setTypeOfTrash(3);
-
-        Paper.setTypeOfTrash(4);
-
-        Residual_waste.setTypeOfTrash(5);
+        Trashcan residualWaste = new Trashcan(Trashtype.RESIDUAL_WASTE, "Residual waste. " +
+                "\nThis trashcan is for trash that does not fit into other trashcans");
     }
 
     private void createRooms()
@@ -101,10 +89,6 @@ public class Game
         parentsRoom.setExit("north", bathRoom);
 
         currentRoom = outside;
-
-        if (currentRoom == garbageArea) {
-            createTrashCans();
-        }
     }
 
     public void play() 
