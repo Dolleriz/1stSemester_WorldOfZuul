@@ -21,7 +21,7 @@ public enum Trashtype {
 
     RESIDUAL_WASTE("Residual waste. " +
             "\nThis type of trash is all the things that, does not fit into any of the four other categories.");
-    
+
     private String trashString;
 
     Trashtype(String trashType){
