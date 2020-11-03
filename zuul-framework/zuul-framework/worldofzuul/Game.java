@@ -37,56 +37,63 @@ public class Game
     {
         Room outside, garbageArea, entrance, livingRoom, kitchen, bedRoom, bathRoom, parentsRoom;
       
-        outside = new Room("outside. " +
-                "\nto the east is your house, filled with trash that needs to be collected. " +
-                "\nTo the north is the garbage area.");
-        garbageArea = new Room("in the garbage area, in front of you is a set of bins. " +
-                "\nThey are all labeled with numbers:" +
-                "\n1. Plastic.\n2. Metal.\n3. Organic waste. \n4. Paper and cardboard.\n5. Residual Waste." +
-                "\nIn your inventory you should have a bunch of garbage, ready to be sorted. Otherwise, get collecting!");
-        entrance = new Room("in the entrance. The walls are decorated with dull paintings and generic family photos. " +
-                "\nYou are facing the wall with the photos on them. Outside is to the west and the living room is to the east");
-        livingRoom = new Room("in the living Room. Large carpet on the floor, Sofa together with TV in the corner. " +
-                "Walls decorated with family photos. " +
-                "\nTo the north is the kitchen, west is the entrance and east is the parents bedroom");
-        kitchen = new Room("in the kitchen." +
+        outside = new Room("udenfor. " +
+                "\nmod øst er dit hus, proppet med affald der skal sorteres. " +
+                "\nMod nord er skraldespandene");
+
+        garbageArea = new Room("ved skraldespandene, Foran dig er der et sæt skraldespande." +
+                "\nHver skraldespand har et nummer:" +
+                "\n1. Plastik.\n2. Metal.\n3. Madaffald.\n4. Pap og papir.\n5. Restaffald." +
+                "\nDu burde nu have en masse affald i din taske, som skal sorteres. Ellers, kom i gang!");
+
+        entrance = new Room("i indgangen. Væggene er dekoreret med kedelige malerier og familiefotos." +
+                "\nDu vender mod væggen der har billederne hængende.Udenfor er mod vest og stuen er mod øst.");
+
+        livingRoom = new Room("i stuen. Et stort tæppe dækker gulvet, og i et hjørne ser du et TV og en sofa. " +
+                "væggene er dekoreret med familiefotos. " +
+                "\nMod nord er køkkenet, mod vest er indgangen og mod øst er dine forældresværelse.");
+
+        kitchen = new Room("i køkkenet." +
                 "\nIn the middle is a very square dinner table, draped with a sorta 60s looking cloth." +
                 "\nPretty much your average kitchen." +
                 "\nSouth is the living room, west is your room and east is the bathroom");
+
         bedRoom = new Room("in your room!" +
                 "\nFull of all the cool toys you know and love. There might be some trash nearby..." +
                 "\nTo the east is the kitchen");
+
         bathRoom = new Room("in the bathroom." +
                 "\n a rather small bathroom for a family." +
                 "\nTo the west is the kitchen and to south is the parents bedroom");
+
         parentsRoom = new Room("your parents bedroom." +
                 "\nTo the side is a double bed and the walls are decorated with tasteless paintings." +
                 "\nEach side of the bed has a nightstand." +
                 "\nTo the north is the bathroom and to the west is the living room");
         
-        outside.setExit("east", entrance);
-        outside.setExit("north", garbageArea);
+        outside.setExit("øst", entrance);
+        outside.setExit("nord", garbageArea);
 
-        garbageArea.setExit("south", outside);
+        garbageArea.setExit("syd", outside);
 
-        entrance.setExit("west", outside);
-        entrance.setExit("east", livingRoom);
+        entrance.setExit("vest", outside);
+        entrance.setExit("øst", livingRoom);
 
-        livingRoom.setExit("east", parentsRoom);
-        livingRoom.setExit("north", kitchen);
-        livingRoom.setExit("west", entrance);
+        livingRoom.setExit("øst", parentsRoom);
+        livingRoom.setExit("nord", kitchen);
+        livingRoom.setExit("vest", entrance);
 
-        kitchen.setExit("west", bedRoom);
-        kitchen.setExit("east", bathRoom);
-        kitchen.setExit("south", livingRoom);
+        kitchen.setExit("vest", bedRoom);
+        kitchen.setExit("øst", bathRoom);
+        kitchen.setExit("syd", livingRoom);
 
-        bedRoom.setExit("east", kitchen);
+        bedRoom.setExit("øst", kitchen);
 
-        bathRoom.setExit("west", kitchen);
-        bathRoom.setExit("south", parentsRoom);
+        bathRoom.setExit("vest", kitchen);
+        bathRoom.setExit("syd", parentsRoom);
 
-        parentsRoom.setExit("west", livingRoom);
-        parentsRoom.setExit("north", bathRoom);
+        parentsRoom.setExit("vest", livingRoom);
+        parentsRoom.setExit("nord", bathRoom);
 
         currentRoom = outside;
     }
