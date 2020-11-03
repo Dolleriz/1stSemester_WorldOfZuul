@@ -5,7 +5,7 @@ public class Game
     private Parser parser;
     private Room currentRoom;
     Inventory inventory = new Inventory();
-        
+
 
     public Game() 
     {
@@ -14,64 +14,64 @@ public class Game
     }
 
     private void createTrashCans() {
-        Trashcan Plastic, Metal, Organic, Paper, Residual_waste;
+        Trashcan plastic, metal, organic, paper, residualWaste;
 
-        Plastic = new Trashcan("Plastic. " +
+        plastic = new Trashcan("plastic. " +
                 "\nThis Trashcan is for plastics");
 
-        Metal = new Trashcan("Metal. " +
+        metal = new Trashcan("metal. " +
                 "\nThis Trashcan is for metals.");
 
-        Organic = new Trashcan("Organic. " +
+        organic = new Trashcan("organic. " +
                 "\nThis trashcan is for organic trash");
 
-        Paper = new Trashcan("Paper. " +
+        paper = new Trashcan("paper. " +
                 "\nThis trashcan is for paper and cardboard");
 
-        Residual_waste = new Trashcan("Residual waste. " +
+        residualWaste = new Trashcan("Residual waste. " +
                 "\nThis trashcan is for trash that does not fit into other trashcans");
 
-        Plastic.setTypeOfTrashcan(1);
+        plastic.setTypeOfTrashcan(1);
 
-        Metal.setTypeOfTrashcan(2);
+        metal.setTypeOfTrashcan(2);
 
-        Organic.setTypeOfTrashcan(3);
+        organic.setTypeOfTrashcan(3);
 
-        Paper.setTypeOfTrashcan(4);
+        paper.setTypeOfTrashcan(4);
 
-        Residual_waste.setTypeOfTrashcan(5);
+        residualWaste.setTypeOfTrashcan(5);
     }
 
     private void createTrashtypes() {
-        Trashtype Plastic, Metal, Organic, Paper, Residual_waste;
+        Trashtype plastic, metalAndGlass, organic, paper, residualWaste;
 
-        Plastic = new Trashtype("Plastic. " +
+        plastic = new Trashtype("plastic. " +
                 "\nIt is made of oil and other organic molecules." +
                 "\nThis type of trash takes a long time to decay, " +
                 "\nmeaning it can lay for a long time in nature, damaging ecosystems and animals.");
 
-        Metal = new Trashtype("Metal. " +
+        metalAndGlass = new Trashtype("Metal and glass. " +
                 "\nThis type of trash is shiny, and hard. " +
                 "\nIt consists of cans, aluminum foil, and is used to preserve foods or drinks.");
 
-        Organic = new Trashtype("Organic. " +
+        organic = new Trashtype("organic. " +
                 "\nThis type of trash consists of foods and other organic substances.");
 
-        Paper = new Trashtype("Paper. " +
+        paper = new Trashtype("paper. " +
                 "\nThis type of trash is usually used for pizza packaging, handtowels and other recycleable things.");
 
-        Residual_waste = new Trashtype("Residual waste. " +
+        residualWaste = new Trashtype("Residual waste. " +
                 "\nThis type of trash is all the things that, does not fit into any of the four other categories.");
 
-        Plastic.setTypeOfTrash(1);
+        plastic.setTypeOfTrash(1);
 
-        Metal.setTypeOfTrash(2);
+        metalAndGlass.setTypeOfTrash(2);
 
-        Organic.setTypeOfTrash(3);
+        organic.setTypeOfTrash(3);
 
-        Paper.setTypeOfTrash(4);
+        paper.setTypeOfTrash(4);
 
-        Residual_waste.setTypeOfTrash(5);
+        residualWaste.setTypeOfTrash(5);
     }
 
     private void createRooms()
