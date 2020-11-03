@@ -54,7 +54,7 @@ public class Game
                 "\nTo the north is the garbage area.");
         garbageArea = new Room("in the garbage area, in front of you is a set of bins. " +
                 "\nThey are all labeled with numbers:" +
-                "\n1. Metal.\n2. Plastic.\n3. Paper and cardboard.\n4. Organic Waste.\n5. Residual Waste." +
+                "\n1. Plastic.\n2. Metal.\n3. Organic waste. \n4. Paper and cardboard.\n5. Residual Waste." +
                 "\nIn your inventory you should have a bunch of garbage, ready to be sorted. Otherwise, get collecting!");
         entrance = new Room("in the entrance. The walls are decorated with dull paintings and generic family photos. " +
                 "\nYou are facing the wall with the photos on them. Outside is to the west and the living room is to the east");
