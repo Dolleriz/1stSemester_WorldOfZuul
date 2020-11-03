@@ -1,18 +1,19 @@
 package worldofzuul;
 
-import java.util.HashMap;
+import java.util.ArrayList;
 
 public class Trashcan {
 
+    private Trashtype correctTrashType;
+
     private String description;
-    private HashMap<Integer, Trashcan> typeOfTrashcan;
+    private ArrayList<Trashtype> typeOfTrashcan;
 
-    public Trashcan(String description) {
+    public Trashcan (Trashtype trashType, String description) {
+        this.correctTrashType = trashType;
         this.description = description;
-        typeOfTrashcan = new HashMap<Integer, Trashcan>();
+        typeOfTrashcan = new ArrayList<>();
     }
 
-    public void setTypeOfTrashcan(Integer typeOfTrash) {
-        typeOfTrash.intValue();
-    }
+
 }

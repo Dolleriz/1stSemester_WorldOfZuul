@@ -1,6 +1,8 @@
 package worldofzuul;
 
-public class Game 
+import java.util.concurrent.ThreadLocalRandom;
+
+public class Game
 {
     private Parser parser;
     private Room currentRoom;
@@ -10,68 +12,25 @@ public class Game
     public Game() 
     {
         createRooms();
+        createTrashCans();
         parser = new Parser();
     }
 
     private void createTrashCans() {
-        Trashcan plastic, metal, organic, paper, residualWaste;
-
-        plastic = new Trashcan("plastic. " +
+        Trashcan plastic = new Trashcan(Trashtype.PLASTIC, "Plastic. " +
                 "\nThis Trashcan is for plastics");
 
-        metal = new Trashcan("metal. " +
+        Trashcan metalAndGlass = new Trashcan(Trashtype.METAL_AND_GLASS, "Metal and glass. " +
                 "\nThis Trashcan is for metals.");
 
-        organic = new Trashcan("organic. " +
+        Trashcan organic = new Trashcan(Trashtype.ORGANIC, "Organic. " +
                 "\nThis trashcan is for organic trash");
 
-        paper = new Trashcan("paper. " +
+        Trashcan paper = new Trashcan(Trashtype.PAPER, "Paper and cardboard. " +
                 "\nThis trashcan is for paper and cardboard");
 
-        residualWaste = new Trashcan("Residual waste. " +
+        Trashcan residualWaste = new Trashcan(Trashtype.RESIDUAL_WASTE, "Residual waste. " +
                 "\nThis trashcan is for trash that does not fit into other trashcans");
-
-        plastic.setTypeOfTrashcan(1);
-
-        metal.setTypeOfTrashcan(2);
-
-        organic.setTypeOfTrashcan(3);
-
-        paper.setTypeOfTrashcan(4);
-
-        residualWaste.setTypeOfTrashcan(5);
-    }
-
-    private void createTrashtypes() {
-        Trashtype plastic, metalAndGlass, organic, paper, residualWaste;
-
-        plastic = new Trashtype("plastic. " +
-                "\nIt is made of oil and other organic molecules." +
-                "\nThis type of trash takes a long time to decay, " +
-                "\nmeaning it can lay for a long time in nature, damaging ecosystems and animals.");
-
-        metalAndGlass = new Trashtype("Metal and glass. " +
-                "\nThis type of trash is shiny, and hard. " +
-                "\nIt consists of cans, aluminum foil, and is used to preserve foods or drinks.");
-
-        organic = new Trashtype("organic. " +
-                "\nThis type of trash consists of foods and other organic substances.");
-
-        paper = new Trashtype("paper. " +
-                "\nThis type of trash is usually used for pizza packaging, handtowels and other recycleable things.");
-
-        residualWaste = new Trashtype("Residual waste. " +
-                "\nThis type of trash is all the things that, does not fit into any of the four other categories.");
-
-        plastic.setTypeOfTrash(1);
-
-        metalAndGlass.setTypeOfTrash(2);
-
-        organic.setTypeOfTrash(3);
-
-        paper.setTypeOfTrash(4);
-
-        residualWaste.setTypeOfTrash(5);
     }
 
     private void createRooms()
@@ -130,10 +89,6 @@ public class Game
         parentsRoom.setExit("north", bathRoom);
 
         currentRoom = outside;
-
-        if (currentRoom == garbageArea) {
-            createTrashCans();
-        }
     }
 
     public void play() 
