@@ -17,21 +17,50 @@ public class Game
         Trashcan Plastic, Metal, Organic, Paper, Residual_waste;
 
         Plastic = new Trashcan("Plastic. " +
+                "\nThis Trashcan is for plastics");
+
+        Metal = new Trashcan("Metal. " +
+                "\nThis Trashcan is for metals.");
+
+        Organic = new Trashcan("Organic. " +
+                "\nThis trashcan is for organic trash");
+
+        Paper = new Trashcan("Paper. " +
+                "\nThis trashcan is for paper and cardboard");
+
+        Residual_waste = new Trashcan("Residual waste. " +
+                "\nThis trashcan is for trash that does not fit into other trashcans");
+
+        Plastic.setTypeOfTrashcan(1);
+
+        Metal.setTypeOfTrashcan(2);
+
+        Organic.setTypeOfTrashcan(3);
+
+        Paper.setTypeOfTrashcan(4);
+
+        Residual_waste.setTypeOfTrashcan(5);
+    }
+
+    private void createTrashtypes() {
+        Trashtype Plastic, Metal, Organic, Paper, Residual_waste;
+
+        Plastic = new Trashtype("Plastic. " +
                 "\nIt is made of oil and other organic molecules." +
                 "\nThis type of trash takes a long time to decay, " +
                 "\nmeaning it can lay for a long time in nature, damaging ecosystems and animals.");
 
-        Metal = new Trashcan("Metal. " +
+        Metal = new Trashtype("Metal. " +
                 "\nThis type of trash is shiny, and hard. " +
                 "\nIt consists of cans, aluminum foil, and is used to preserve foods or drinks.");
 
-        Organic = new Trashcan("Organic. " +
+        Organic = new Trashtype("Organic. " +
                 "\nThis type of trash consists of foods and other organic substances.");
 
-        Paper = new Trashcan("Paper. " +
+        Paper = new Trashtype("Paper. " +
                 "\nThis type of trash is usually used for pizza packaging, handtowels and other recycleable things.");
 
-        Residual_waste = new Trashcan("Residual waste. " +
+        Residual_waste = new Trashtype("Residual waste. " +
                 "\nThis type of trash is all the things that, does not fit into any of the four other categories.");
 
         Plastic.setTypeOfTrash(1);
