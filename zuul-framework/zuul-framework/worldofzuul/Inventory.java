@@ -2,7 +2,7 @@ package worldofzuul;
 
 public class Inventory
 {
-    String[] inventory = new String[5];
+    Trash[] inventory = new Trash[5];
 
     public Inventory()
     {

@@ -10,10 +10,9 @@ public class Game
     public Game() 
     {
         createRooms();
-        createTrashCans();
         parser = new Parser();
     }
-
+/*
     private void createTrashCans() {
         Trashcan plastic = new Trashcan(Trashtype.PLASTIC, "Plastik. " +
                 "\nDenne Skraldespand er til plastik." +
@@ -35,7 +34,7 @@ public class Game
                 "\nDenne skraldespand er til restaffald." +
                 "\nHeri kan der komme f.eks. Kartoner, Pizzabakker, Bleer samt støvsugerposer.");
     }
-
+*/
     private void createRooms()
     {
         Room outside, garbageArea, entrance, livingRoom, kitchen, bedRoom, bathRoom, parentsRoom;
@@ -44,10 +43,11 @@ public class Game
                 "\nMod øst er dit hus, prop fyldt med affald der skal sorteres. " +
                 "\nMod nord er skraldespandene");
 
-        garbageArea = new Room("ved skraldespandene, Foran dig er der et sæt skraldespande." +
+        garbageArea = new TrashCanRoom("ved skraldespandene, Foran dig er der et sæt skraldespande." +
                 "\nHver skraldespand har et nummer:" +
                 "\n1. Plastik.\n2. Metal.\n3. Madaffald.\n4. Pap og papir.\n5. Restaffald." +
                 "\nDu burde nu have en masse affald i din taske, som skal sorteres. Ellers, kom i gang!");
+
 
         entrance = new Room("i indgangen. Væggene er dekoreret med kedelige malerier og familiefotos. " +
                 "\nDu vender mod væggen der har billederne hængende.Udenfor er mod vest og stuen er mod øst");

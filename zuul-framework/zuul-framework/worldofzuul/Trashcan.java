@@ -8,6 +8,10 @@ public class Trashcan {
 
     private String description;
 
+    public String getDescription() {
+        return description;
+    }
+
     public Trashcan (Trashtype trashType, String description) {
         this.correctTrashType = trashType;
         this.description = description;
