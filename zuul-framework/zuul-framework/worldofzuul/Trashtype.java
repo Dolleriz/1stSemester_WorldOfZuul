@@ -13,7 +13,7 @@ public enum Trashtype {
             "\nDisse typer af affald er skinnende, hårde og skarpe. " +
             "\nDet består af dåser, sølvpapir samt glas og flasker,  og bliver brugt til at opbevare mad og drikke."),
 
-    ORGANIC("Madaffald. " +
+    FOOD_WASTE("Madaffald. " +
             "\n Denne type af affald består af madrester og andet organisk materiale."),
 
     PAPER("Papir og pap. " +
