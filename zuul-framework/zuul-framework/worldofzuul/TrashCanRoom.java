@@ -1,5 +1,7 @@
 package worldofzuul;
 
+import java.util.HashMap;
+
 public class TrashCanRoom extends Room {
 
     public TrashCanRoom(String description) {
@@ -7,7 +9,7 @@ public class TrashCanRoom extends Room {
         createTrashcans();
     }
 
-    Trashcan trashcans[] = new Trashcan[6];
+    HashMap trashcans = new HashMap<Trashtype, Trashcan>();
 
     public void createTrashcans() {
 
@@ -31,15 +33,10 @@ public class TrashCanRoom extends Room {
                 "\nDenne skraldespand er til restaffald." +
                 "\nHeri kan der komme f.eks. Kartoner, Pizzabakker, Bleer samt støvsugerposer.");
 
-        trashcans[0] = plastic;
-        trashcans[1] = metalAndGlass;
-        trashcans[2] = foodWaste;
-        trashcans[3] = paper;
-        trashcans[4] = residualWaste;
+        trashcans.put(plastic, plastic);
+        trashcans.put(metalAndGlass, metalAndGlass);
+        trashcans.put(foodWaste, foodWaste);
+        trashcans.put(paper, paper);
+        trashcans.put(residualWaste, residualWaste);
     }
 
-    @Override
-    public String toString() {
-        return trashcans.toString();
-    }
-}

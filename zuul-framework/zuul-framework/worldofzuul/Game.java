@@ -39,7 +39,7 @@ public class Game
     {
         Room outside, garbageArea, entrance, livingRoom, kitchen, bedRoom, bathRoom, parentsRoom;
       
-        outside = new Room("udenfor. " +
+        outside = new RegularRoom("udenfor. " +
                 "\nMod øst er dit hus, prop fyldt med affald der skal sorteres. " +
                 "\nMod nord er skraldespandene");
 
@@ -49,27 +49,27 @@ public class Game
                 "\nDu burde nu have en masse affald i din taske, som skal sorteres. Ellers, kom i gang!");
 
 
-        entrance = new Room("i indgangen. Væggene er dekoreret med kedelige malerier og familiefotos. " +
+        entrance = new RegularRoom("i indgangen. Væggene er dekoreret med kedelige malerier og familiefotos. " +
                 "\nDu vender mod væggen der har billederne hængende.Udenfor er mod vest og stuen er mod øst");
 
-        livingRoom = new Room("i stuen. Et stort tæppe dækker gulvet, og i et hjørne ser du et TV og en sofa. " +
+        livingRoom = new RegularRoom("i stuen. Et stort tæppe dækker gulvet, og i et hjørne ser du et TV og en sofa. " +
                 "\nVæggene er dekoreret med familiefotos. " +
                 "\nMod nord er køkkenet, mod vest er indgangen og mod øst er dine forældresværelse");
 
-        kitchen = new Room("i køkkenet." +
+        kitchen = new RegularRoom("i køkkenet." +
                 "\nI midten af rummet er et spisebord." +
                 "\nEt helt almindelig og uspecial køkken." +
                 "\nMod syd er stuen, mod vest er dit værelse og mod øst er badeværelset");
 
-        bedRoom = new Room("på dit værelse!" +
+        bedRoom = new RegularRoom("på dit værelse!" +
                 "\nProp fyldt med alt det legetøj, som du elsker. Måske er der noget affald i nærheden..." +
                 "\nMod øst er køkkenet");
 
-        bathRoom = new Room("på badeværelset." +
+        bathRoom = new RegularRoom("på badeværelset." +
                 "\nEgentlig et ret lille badeværelse for en børnefamilie." +
                 "\nMod vest er køkkenet og mod syd er dine forældresværelse");
 
-        parentsRoom = new Room("i dine forældresværelse." +
+        parentsRoom = new RegularRoom("i dine forældresværelse." +
                 "\nStor redt seng, hvor hver side af sengen har et natbord." +
                 "\nMod nord er badeværelset og mod vest er stuen");
         
