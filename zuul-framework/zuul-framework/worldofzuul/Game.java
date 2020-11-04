@@ -4,7 +4,7 @@ public class Game
 {
     private Parser parser;
     private Room currentRoom;
-    Inventory inventory = new Inventory();
+    Inventory playerInventory = new Inventory();
 
 
     public Game() 
@@ -148,7 +148,7 @@ public class Game
             pickup(command);
         }
         else if (commandWord == CommandWord.INVENTORY){
-            printInventory(inventory);
+            printPlayerInventory(playerInventory);
         }
         return wantToQuit;
     }
@@ -202,17 +202,17 @@ public class Game
 
     }
 
-    private void printInventory(Inventory inventory) {
+    private void printPlayerInventory(Inventory playerInventory) {
         System.out.println("Du kan max have 5 stykker affald i dine lommer. " +
                 "\nI dine lommer har du: " +
                 "\n");
 
-        for (int i = 0; i < inventory.inventory.length; i++) {
-            if (inventory.inventory[i] == null) {
+        for (int i = 0; i < playerInventory.inventory.length; i++) {
+            if (playerInventory.inventory[i] == null) {
                 System.out.println("Der er ikke noget i denne lomme!");
 
             } else {
-                System.out.print(inventory.inventory[i] + " ");
+                System.out.print(playerInventory.inventory[i] + " ");
                 System.out.println(" ");
             }
         }
