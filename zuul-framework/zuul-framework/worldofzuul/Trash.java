@@ -6,7 +6,6 @@ public class Trash {
 
     public Trash(Trashtype type) {
         this.type = type;
-
     }
 
 }

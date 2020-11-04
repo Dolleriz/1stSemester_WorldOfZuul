@@ -4,7 +4,21 @@ public class Game
 {
     private Parser parser;
     private Room currentRoom;
+    private TrashCanRoom garbageArea;
+    private RegularRoom outside, entrance, livingRoom, kitchen, bedRoom, bathRoom, parentsRoom;
+
     Inventory playerInventory = new Inventory();
+
+
+    public Inventory fillUpRoom() {
+
+        Inventory roomInventory = new Inventory();
+
+        for (int i = 0; i < roomInventory.inventory.length; i++) {
+            roomInventory.inventory[i] = new Trash(Trashtype.PLASTIC);
+        }
+        return roomInventory;
+    }
 
 
     public Game() 
@@ -12,33 +26,9 @@ public class Game
         createRooms();
         parser = new Parser();
     }
-/*
-    private void createTrashCans() {
-        Trashcan plastic = new Trashcan(Trashtype.PLASTIC, "Plastik. " +
-                "\nDenne Skraldespand er til plastik." +
-                "\nHeri kan der komme f.eks. emballage, plastikposer, fryseposer, madfilm samt andre plastikting.");
 
-        Trashcan metalAndGlass = new Trashcan(Trashtype.METAL_AND_GLASS, "Metal og glas. " +
-                "\nDenne Skraldespand er til metal og glas." +
-                "\nHeri kan der komme f.eks. Glasflasker, Dåser, Alubakker, låg samt alufilm.");
-
-        Trashcan foodWaste = new Trashcan(Trashtype.FOOD_WASTE, "Madaffald. " +
-                "\nDenne skraldespand er til madaffald." +
-                "\nHeri kan der komme f.eks. Rester, Kaffegrums, frugter, grøntsager samt teblade.");
-
-        Trashcan paper = new Trashcan(Trashtype.PAPER, "Papir og pap. " +
-                "\nDenne skraldespand er til papir og pap." +
-                "\nHeri kan der komme f.eks. Blade, Kuverter, Telefonbøger, Morgenmadspakker, Æggebakker samt paprør");
-
-        Trashcan residualWaste = new Trashcan(Trashtype.RESIDUAL_WASTE, "Restaffald. " +
-                "\nDenne skraldespand er til restaffald." +
-                "\nHeri kan der komme f.eks. Kartoner, Pizzabakker, Bleer samt støvsugerposer.");
-    }
-*/
     private void createRooms()
     {
-        Room outside, garbageArea, entrance, livingRoom, kitchen, bedRoom, bathRoom, parentsRoom;
-      
         outside = new RegularRoom("udenfor. " +
                 "\nMod øst er dit hus, prop fyldt med affald der skal sorteres. " +
                 "\nMod nord er skraldespandene");
@@ -161,7 +151,7 @@ public class Game
         parser.showCommands();
     }
 
-    private void goRoom(Command command) 
+    private void goRoom(Command command)
     {
         if(!command.hasSecondWord()) {
             System.out.println("Gå hvorhen?");
@@ -178,6 +168,12 @@ public class Game
         else {
             currentRoom = nextRoom;
             System.out.println(currentRoom.getLongDescription());
+            if (currentRoom == garbageArea) {
+                garbageArea.showTrashcans();
+            }
+            else {
+                System.out.println(fillUpRoom().toString());
+            }
         }
     }
 
