@@ -39,4 +39,5 @@ public class TrashCanRoom extends Room {
         trashcans.put(paper, paper);
         trashcans.put(residualWaste, residualWaste);
     }
+}
 
