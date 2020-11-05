@@ -6,6 +6,7 @@ public class Game
     private Room currentRoom;
     private TrashCanRoom garbageArea;
     private RegularRoom outside, entrance, livingRoom, kitchen, bedRoom, bathRoom, parentsRoom;
+    private PlayerScore playerScore = new PlayerScore(0);
 
     PlayerInventory playerInventory = new PlayerInventory(5);
 
@@ -140,6 +141,9 @@ public class Game
         else if (commandWord == CommandWord.INVENTORY){
             printPlayerInventory(playerInventory);
         }
+        else if (commandWord == CommandWord.THROWOUT){
+            throwout(command);
+        }
         return wantToQuit;
     }
 
@@ -194,6 +198,7 @@ public class Game
             return false;
         }
         else {
+            System.out.println("Du sluttede med " + playerScore.getPlayerScore() + " point!");
             return true;
         }
     }
@@ -207,11 +212,27 @@ public class Game
         if (currentRoom != garbageArea){
             outside.roomInventory.removeTrashFromInventory();
             playerInventory.addTrashToInventory();
-
-
-
         }
     }
+
+    private void throwout(Command command){
+        if(!command.hasSecondWord()) {
+            System.out.println("Smid hvad ud?");
+            return;
+    }
+        if(currentRoom == garbageArea){
+            playerInventory.removeTrashFromInventory();
+            System.out.println("Du har nu smidt dit skrald ud!");
+            playerScore.increasePlayerScore(1);
+            playerScore.showPlayerScore();
+        }
+        else if (currentRoom != garbageArea){
+            System.out.println("Du er ikke ved skraldespanene");
+        }
+
+        }
+
+
 
     private void printPlayerInventory(PlayerInventory playerInventory) {
         System.out.println("Du kan max have 5 stykker affald i dine lommer. " +

@@ -3,8 +3,11 @@ package worldofzuul;
 public class PlayerScore {
         int playerScore;
 
+    public int getPlayerScore() {
+        return playerScore;
+    }
 
-        public PlayerScore (int score){
+    public PlayerScore (int score){
             playerScore = score;
         }
 
@@ -13,8 +16,8 @@ public class PlayerScore {
             playerScore = playerScore+increasePlayerScore;
         }
 
-    public int getPlayerScore() {
-        return playerScore;
+    public void showPlayerScore() {
+        System.out.println("Du har nu " + playerScore + " point!");
     }
 
     public void decreasePlayerScore(int decreasePlayerScore){
