@@ -1,7 +1,7 @@
 package worldofzuul;
 
 public class RegularRoom extends Room {
-    Inventory roomInventory = new Inventory((int)(Math.random()*10)+5);
+    Inventory roomInventory = new Inventory((int) (Math.random() * 5) + 5);
 
     public RegularRoom(String description) {
 
@@ -9,10 +9,11 @@ public class RegularRoom extends Room {
         roomInventory.addTrashToInventory();
     }
 
-    /*public Inventory fillUpRoom() {
+    public Inventory fillUpRoom() {
         for (int i = 0; i < roomInventory.inventory.length; i++) {
             roomInventory.inventory[i] = new Trash(Trashtype.PLASTIC);
         }
         return roomInventory;
-        */
+
     }
+}

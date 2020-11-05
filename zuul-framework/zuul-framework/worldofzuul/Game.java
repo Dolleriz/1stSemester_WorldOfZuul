@@ -7,7 +7,7 @@ public class Game
     private TrashCanRoom garbageArea;
     private RegularRoom outside, entrance, livingRoom, kitchen, bedRoom, bathRoom, parentsRoom;
 
-    Inventory playerInventory = new Inventory(5);
+    PlayerInventory playerInventory = new PlayerInventory(5);
 
 
     /*public Inventory fillUpRoom() {
@@ -213,7 +213,7 @@ public class Game
         }
     }
 
-    private void printPlayerInventory(Inventory playerInventory) {
+    private void printPlayerInventory(PlayerInventory playerInventory) {
         System.out.println("Du kan max have 5 stykker affald i dine lommer. " +
                 "\nI dine lommer har du: " +
                 "\n");
@@ -223,7 +223,7 @@ public class Game
                 System.out.println("Der er ikke noget i denne lomme!");
 
             } else {
-                System.out.print(playerInventory.inventory[i].toString() + " ");
+                System.out.println(playerInventory);
                 System.out.println(" ");
             }
         }
