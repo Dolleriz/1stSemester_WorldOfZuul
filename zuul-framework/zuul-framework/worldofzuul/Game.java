@@ -223,7 +223,7 @@ public class Game
                 System.out.println("Der er ikke noget i denne lomme!");
 
             } else {
-                System.out.println(playerInventory);
+                System.out.println(playerInventory.inventory);
                 System.out.println(" ");
             }
         }
