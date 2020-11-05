@@ -1,11 +1,25 @@
 package worldofzuul;
 
-public class Inventory
-{
-    Trash[] inventory = new Trash[(int) (Math.random()*5) + 5];
+public class Inventory {
+    Trash[] inventory;
 
-    public Inventory()
-    {
+    public Inventory(int f) {
+        this.inventory = new Trash[f];
+    }
+
+    public void removeTrashFromInventory() {
+        for (int i = 0; i < inventory.length; i++) {
+            if (inventory[i] != null) {
+                inventory[i] = null;
+            }
+
+        }
+    }
+
+    public void addTrashToInventory() {
+        for (int i = 0; i < inventory.length; i++) {
+            inventory[i] = new Trash(Trashtype.PLASTIC);
+        }
 
     }
 
@@ -14,3 +28,5 @@ public class Inventory
         return "Der er: " + inventory.length + " stykker skrald i rummet";
     }
 }
+
+

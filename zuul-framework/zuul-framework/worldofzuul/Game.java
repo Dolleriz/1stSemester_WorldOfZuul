@@ -7,10 +7,10 @@ public class Game
     private TrashCanRoom garbageArea;
     private RegularRoom outside, entrance, livingRoom, kitchen, bedRoom, bathRoom, parentsRoom;
 
-    Inventory playerInventory = new Inventory();
+    Inventory playerInventory = new Inventory(5);
 
 
-    public Inventory fillUpRoom() {
+    /*public Inventory fillUpRoom() {
 
         Inventory roomInventory = new Inventory();
 
@@ -19,7 +19,7 @@ public class Game
         }
         return roomInventory;
     }
-
+*/
 
     public Game() 
     {
@@ -151,9 +151,8 @@ public class Game
         parser.showCommands();
     }
 
-    private void goRoom(Command command)
-    {
-        if(!command.hasSecondWord()) {
+    private void goRoom(Command command) {
+        if (!command.hasSecondWord()) {
             System.out.println("Gå hvorhen?");
             return;
         }
@@ -164,15 +163,26 @@ public class Game
 
         if (nextRoom == null) {
             System.out.println("Der er ikke nogen dør!");
-        }
-        else {
+        } else {
             currentRoom = nextRoom;
             System.out.println(currentRoom.getLongDescription());
-            if (currentRoom == garbageArea) {
+            if
+            (currentRoom == garbageArea) {
                 garbageArea.showTrashcans();
-            }
-            else {
-                System.out.println(fillUpRoom().toString());
+            } else if (currentRoom == outside) {
+                System.out.println(outside.roomInventory.toString());
+            } else if (currentRoom == entrance) {
+                System.out.println(entrance.roomInventory.toString());
+            } else if (currentRoom == livingRoom) {
+                System.out.println(livingRoom.roomInventory.toString());
+            } else if (currentRoom == kitchen) {
+                System.out.println(kitchen.roomInventory.toString());
+            } else if (currentRoom == bedRoom) {
+                System.out.println(bedRoom.roomInventory.toString());
+            } else if (currentRoom == bathRoom) {
+                System.out.println(bathRoom.roomInventory.toString());
+            } else if (currentRoom == parentsRoom) {
+                System.out.println(parentsRoom.roomInventory.toString());
             }
         }
     }
@@ -194,8 +204,13 @@ public class Game
             System.out.println("Tag hvad?");
             return;
         }
+        if (currentRoom != garbageArea){
+            outside.roomInventory.removeTrashFromInventory();
+            playerInventory.addTrashToInventory();
 
 
+
+        }
     }
 
     private void printPlayerInventory(Inventory playerInventory) {
@@ -208,7 +223,7 @@ public class Game
                 System.out.println("Der er ikke noget i denne lomme!");
 
             } else {
-                System.out.print(playerInventory.inventory[i] + " ");
+                System.out.print(playerInventory.inventory[i].toString() + " ");
                 System.out.println(" ");
             }
         }
