@@ -14,6 +14,6 @@ public class PlayerInventory extends Inventory {
 
     @Override
     public String toString() {
-        return Arrays.toString(playerInventory);
+        return Trashtype.PLASTIC.toString();
     }
 }
