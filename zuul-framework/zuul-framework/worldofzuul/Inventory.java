@@ -23,6 +23,16 @@ public class Inventory {
 
     }
 
+    public boolean isInventoryFull() {
+        for (int i = 0; i < inventory.length; i++) {
+            if (inventory[i] == null)
+                return false;
+            else
+                return true;
+        }
+        return isInventoryFull();
+    }
+
     @Override
     public String toString() {
         return "Der er: " + inventory.length + " stykker skrald i rummet";
