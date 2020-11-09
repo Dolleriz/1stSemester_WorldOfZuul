@@ -10,18 +10,6 @@ public class Game
 
     PlayerInventory playerInventory = new PlayerInventory(5);
 
-
-    /*public Inventory fillUpRoom() {
-
-        Inventory roomInventory = new Inventory();
-
-        for (int i = 0; i < roomInventory.inventory.length; i++) {
-            roomInventory.inventory[i] = new Trash(Trashtype.PLASTIC);
-        }
-        return roomInventory;
-    }
-*/
-
     public Game() 
     {
         createRooms();
