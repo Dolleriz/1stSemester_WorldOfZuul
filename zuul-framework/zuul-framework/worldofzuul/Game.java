@@ -209,8 +209,15 @@ public class Game
             System.out.println("Tag hvad?");
             return;
         }
+        if (currentRoom == garbageArea){
+            System.out.println("Der er ikke noget skrald i rummet");
+            return;
+        }
         if (currentRoom != garbageArea){
-            outside.roomInventory.removeTrashFromInventory();
+            if(playerInventory.isInventoryFull()==true){
+                System.out.println("Der kan ikke være mere i tasken");
+            }
+            else
             playerInventory.addTrashToInventory();
         }
     }
@@ -220,16 +227,17 @@ public class Game
             System.out.println("Smid hvad ud?");
             return;
     }
-        if(currentRoom == garbageArea){
-            playerInventory.removeTrashFromInventory();
-            System.out.println("Du har nu smidt dit skrald ud!");
-            playerScore.increasePlayerScore(1);
-            playerScore.showPlayerScore();
+        if(playerInventory.isInventoryFull()==false) {
+            System.out.println("Du har ikke noget i tasken");
         }
-        else if (currentRoom != garbageArea){
-            System.out.println("Du er ikke ved skraldespanene");
-        }
-
+            else if (currentRoom == garbageArea) {
+                playerInventory.removeTrashFromInventory();
+                System.out.println("Du har nu smidt dit skrald ud!");
+                playerScore.increasePlayerScore(1);
+                playerScore.showPlayerScore();
+            } else if (currentRoom != garbageArea) {
+                System.out.println("Du er ikke ved skraldespanene");
+            }
         }
 
 
