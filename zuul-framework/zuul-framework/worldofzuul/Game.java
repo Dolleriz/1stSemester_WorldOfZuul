@@ -226,23 +226,28 @@ public class Game
         }
     }
 
-    private void throwout(Command command){
-        if(!command.hasSecondWord()) {
+    private void throwout(Command command) {
+        if (!command.hasSecondWord()) {
             System.out.println("Smid hvad ud?");
             return;
-    }
-        if(!playerInventory.isInventoryFull()) {
-            System.out.println("Du har ikke noget i tasken");
         }
-            else if (currentRoom == garbageArea) {
+
+        for (int i = 0; i < playerInventory.inventory.length; i++) {
+
+            if (!playerInventory.isInventoryFull()) {
+                System.out.println("Du har ikke noget i tasken");
+            } else if (currentRoom == garbageArea) {
                 playerInventory.removeTrashFromInventory();
                 System.out.println("Du har nu smidt dit skrald ud!");
                 playerScore.increasePlayerScore(1);
                 playerScore.showPlayerScore();
             } else if (currentRoom != garbageArea) {
                 System.out.println("Du er ikke ved skraldespandene");
+            } else if (playerInventory.inventory[i] == null) {
+                break;
             }
         }
+    }
 
 
 
