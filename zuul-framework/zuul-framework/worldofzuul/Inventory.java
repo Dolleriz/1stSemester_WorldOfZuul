@@ -12,7 +12,6 @@ public class Inventory {
             if (inventory[i] != null) {
                 inventory[i] = null;
             }
-
         }
     }
 
@@ -20,7 +19,6 @@ public class Inventory {
         for (int i = 0; i < inventory.length; i++) {
             inventory[i] = new Trash(Trashtype.PLASTIC);
         }
-
     }
 
     public boolean isInventoryFull() {

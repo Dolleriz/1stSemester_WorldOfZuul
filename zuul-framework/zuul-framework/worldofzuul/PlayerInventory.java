@@ -8,10 +8,6 @@ public class PlayerInventory extends Inventory {
         super(f);
     }
 
-    Inventory[] playerInventory;
-
-
-
     @Override
     public String toString() {
         return Trashtype.PLASTIC.toString();
