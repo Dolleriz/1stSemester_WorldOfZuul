@@ -161,20 +161,62 @@ public class Game
             if
             (currentRoom == garbageArea) {
                 garbageArea.showTrashcans();
-            } else if (currentRoom == outside) {
-                System.out.println(outside.roomInventory.toString());
-            } else if (currentRoom == entrance) {
-                System.out.println(entrance.roomInventory.toString());
-            } else if (currentRoom == livingRoom) {
+            }
+            else if (currentRoom == outside) {
+
+                System.out.println("I dette rum ligger der: ");
+
+                for (int i = 0; i < outside.roomInventory.inventory.length; i++) {
+                    System.out.println(outside.roomInventory.inventory[i].getType().toString());
+
+                }
+            }
+            else if (currentRoom == entrance) {
+
+                System.out.println("I dette rum ligger der: ");
+
+                for (int i = 0; i < entrance.roomInventory.inventory.length; i++) {
+                    System.out.println(entrance.roomInventory.inventory[i].getType().toString());
+            }
+            }
+            else if (currentRoom == livingRoom) {
                 System.out.println(livingRoom.roomInventory.toString());
-            } else if (currentRoom == kitchen) {
-                System.out.println(kitchen.roomInventory.toString());
-            } else if (currentRoom == bedRoom) {
-                System.out.println(bedRoom.roomInventory.toString());
-            } else if (currentRoom == bathRoom) {
-                System.out.println(bathRoom.roomInventory.toString());
-            } else if (currentRoom == parentsRoom) {
-                System.out.println(parentsRoom.roomInventory.toString());
+
+                System.out.println("I dette rum ligger der: ");
+
+                for (int i = 0; i < livingRoom.roomInventory.inventory.length; i++) {
+                    System.out.println(livingRoom.roomInventory.inventory[i].getType().toString());
+                }
+            }
+            else if (currentRoom == kitchen) {
+
+                System.out.println("I dette rum ligger der: ");
+
+                for (int i = 0; i < kitchen.roomInventory.inventory.length; i++) {
+                    System.out.println(kitchen.roomInventory.inventory[i].getType().toString());
+                }
+            }
+            else if (currentRoom == bedRoom) {
+
+                System.out.println("I dette rum ligger der: ");
+
+                for (int i = 0; i < bedRoom.roomInventory.inventory.length; i++) {
+                    System.out.println(bedRoom.roomInventory.inventory[i].getType().toString());
+                }
+            }
+            else if (currentRoom == bathRoom) {
+                System.out.println("I dette rum ligger der: ");
+
+                for (int i = 0; i < bathRoom.roomInventory.inventory.length; i++) {
+                    System.out.println(bathRoom.roomInventory.inventory[i].getType().toString());
+                }
+            }
+            else if (currentRoom == parentsRoom) {
+                System.out.println("I dette rum ligger der: ");
+
+                for (int i = 0; i < parentsRoom.roomInventory.inventory.length; i++) {
+                    System.out.println(parentsRoom.roomInventory.inventory[i].getType().toString());
+                }
             }
         }
     }
@@ -197,6 +239,7 @@ public class Game
             System.out.println("Tag hvad?");
             return;
         }
+
         if (currentRoom == garbageArea){
             System.out.println("Der er ikke noget skrald i rummet");
             return;
@@ -210,7 +253,8 @@ public class Game
                 System.out.println("Der kan ikke være mere i tasken");
             }
             else { currentRoom.roomInventory.removeTrashFromInventory();
-            playerInventory.addTrashToInventory(); }
+                String trashTypeString = command.getSecondWord();
+            }
         }
     }
 
@@ -248,7 +292,7 @@ public class Game
                 System.out.println("Der er ikke noget i denne lomme!");
 
             } else {
-                System.out.println(playerInventory.inventory[i].toString());
+                System.out.println(playerInventory.inventory[i].getType().toString());
             }
         }
     }

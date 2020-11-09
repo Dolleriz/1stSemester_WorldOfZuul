@@ -1,10 +1,13 @@
 package worldofzuul;
 
+import java.util.Random;
+
 public class Inventory {
     Trash[] inventory;
 
-    public Inventory(int f) {
-        this.inventory = new Trash[f];
+
+    public Inventory(int size) {
+        this.inventory = new Trash[size];
     }
 
     public void removeTrashFromInventory() {
@@ -15,9 +18,49 @@ public class Inventory {
         }
     }
 
-    public void addTrashToInventory() {
+    public void fillUpRoom() {
+        double trashTypeNumber;
+
         for (int i = 0; i < inventory.length; i++) {
-            inventory[i] = new Trash(Trashtype.PLASTIC);
+            trashTypeNumber = Math.random()*5;
+            if (trashTypeNumber <= 1) {
+                inventory[i] = new Trash(Trashtype.PLASTIC);
+            }
+             else if (trashTypeNumber <= 2) {
+                inventory[i] = new Trash(Trashtype.METAL_AND_GLASS);
+            }
+             else if (trashTypeNumber <= 3) {
+                 inventory[i] = new Trash(Trashtype.FOOD_WASTE);
+            }
+             else if (trashTypeNumber <= 4) {
+                 inventory[i] = new Trash(Trashtype.PAPER);
+            }
+             else if (trashTypeNumber <= 5) {
+                 inventory[i] = new Trash(Trashtype.RESIDUAL_WASTE);
+            }
+        }
+    }
+
+    public void moveTrash(Command command) {
+        String trashTypeString;
+
+        for (int i = 0; i < 1; i++) {
+            trashTypeString = command.getSecondWord();
+            if (trashTypeString == "plastik") {
+                inventory[i] = new Trash(Trashtype.PLASTIC);
+            }
+            else if (trashTypeString == "metal") {
+                inventory[i] = new Trash(Trashtype.METAL_AND_GLASS);
+            }
+            else if (trashTypeString == "mad") {
+                inventory[i] = new Trash(Trashtype.FOOD_WASTE);
+            }
+            else if (trashTypeString == "papir") {
+                inventory[i] = new Trash(Trashtype.PAPER);
+            }
+            else if (trashTypeString == "restaffald") {
+                inventory[i] = new Trash(Trashtype.RESIDUAL_WASTE);
+            }
         }
     }
 

@@ -9,7 +9,7 @@ public class Room
 {
     private String description;
     private HashMap<String, Room> exits;
-    Inventory roomInventory = new Inventory((int) (Math.random() * 5) + 5);
+    Inventory roomInventory = new Inventory( 5 + (int) (Math.random()*5));
 
     public Room(String description) 
     {
