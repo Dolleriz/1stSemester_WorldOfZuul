@@ -227,7 +227,7 @@ public class Game
             playerScore.showPlayerScore();
         }
         else if (currentRoom != garbageArea){
-            System.out.println("Du er ikke ved skraldespanene");
+            System.out.println("Du er ikke ved skraldespandene");
         }
 
         }
