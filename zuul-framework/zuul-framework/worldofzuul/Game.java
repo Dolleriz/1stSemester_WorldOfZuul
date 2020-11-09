@@ -239,6 +239,20 @@ public class Game {
         }
     }
 
+    private void trashDescription(Command command) {
+        if(!command.hasSecondWord()){
+            System.out.println("Nævn også den skraldespand du vil have en uddybelse på!");
+
+        }
+        if (currentRoom != garbageArea) {
+            System.out.println("Du er ikke ved skraldespandede");
+
+        } else if (currentRoom == garbageArea) {
+            if(command.hasSecondWord == Trashtype.PLASTIC){
+
+            }
+        }
+    }
 
     private void printPlayerInventory(PlayerInventory playerInventory) {
         System.out.println("Du kan max have 5 stykker affald i dine lommer. " +
