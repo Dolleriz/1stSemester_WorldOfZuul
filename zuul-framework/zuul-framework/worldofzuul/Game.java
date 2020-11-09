@@ -1,10 +1,26 @@
 package worldofzuul;
 
-public class Game 
+public class Game
 {
     private Parser parser;
     private Room currentRoom;
-        
+    private TrashCanRoom garbageArea;
+    private RegularRoom outside, entrance, livingRoom, kitchen, bedRoom, bathRoom, parentsRoom;
+    private PlayerScore playerScore = new PlayerScore(0);
+
+    PlayerInventory playerInventory = new PlayerInventory(5);
+
+
+    /*public Inventory fillUpRoom() {
+
+        Inventory roomInventory = new Inventory();
+
+        for (int i = 0; i < roomInventory.inventory.length; i++) {
+            roomInventory.inventory[i] = new Trash(Trashtype.PLASTIC);
+        }
+        return roomInventory;
+    }
+*/
 
     public Game() 
     {
@@ -12,59 +28,65 @@ public class Game
         parser = new Parser();
     }
 
-
     private void createRooms()
     {
-        Room outside, garbageArea, entrance, livingRoom, kitchen, bedRoom, bathRoom, parentsRoom;
-      
-        outside = new Room("outside. " +
-                "\nto the east is your house, filled with trash that needs to be collected. " +
-                "\nTo the north is the garbage area.");
-        garbageArea = new Room(" in the garbage area, in front of you is a set of bins. " +
-                "\nIn your inventory you should have a bunch of garbage, ready to be sorted. Otherwise, get collecting!");
-        entrance = new Room("in the entrance. The walls are decorated with dull paintings and generic family photos. " +
-                "\nYou are facing the wall with the photos on them. Outside is to the west and the living room is to the east");
-        livingRoom = new Room("in the living Room. Large carpet on the floor, Sofa together with TV in the corner. " +
-                "Walls decorated with family photos. " +
-                "\nTo the north is the kitchen, west is the entrance and east is the parents bedroom");
-        kitchen = new Room("in the kitchen." +
-                "\nIn the middle is a very square dinner table, draped with a sorta 60s looking cloth." +
-                "\nPretty much your average kitchen." +
-                "\nSouth is the living room, west is your room and east is the bathroom");
-        bedRoom = new Room("in your room!" +
-                "\nFull of all the cool toys you know and love. There might be some trash nearby..." +
-                "\nTo the east is the kitchen");
-        bathRoom = new Room("in the bathroom." +
-                "\n a rather small bathroom for a family." +
-                "\nTo the west is the kitchen and to south is the parents bedroom");
-        parentsRoom = new Room("your parents bedroom." +
-                "\nTo the side is a double bed and the walls are decorated with tasteless paintings." +
-                "\nEach side of the bed has a nightstand." +
-                "\nTo the north is the bathroom and to the west is the living room");
+        outside = new RegularRoom("udenfor. " +
+                "\nMod øst er dit hus, prop fyldt med affald der skal sorteres. " +
+                "\nMod nord er skraldespandene");
+
+        garbageArea = new TrashCanRoom("ved skraldespandene, Foran dig er der et sæt skraldespande." +
+                "\nHver skraldespand har et nummer:" +
+                "\n1. Plastik.\n2. Metal.\n3. Madaffald.\n4. Pap og papir.\n5. Restaffald." +
+                "\nDu burde nu have en masse affald i din taske, som skal sorteres. Ellers, kom i gang!");
+
+
+        entrance = new RegularRoom("i indgangen. Væggene er dekoreret med kedelige malerier og familiefotos. " +
+                "\nDu vender mod væggen der har billederne hængende.Udenfor er mod vest og stuen er mod øst");
+
+        livingRoom = new RegularRoom("i stuen. Et stort tæppe dækker gulvet, og i et hjørne ser du et TV og en sofa. " +
+                "\nVæggene er dekoreret med familiefotos. " +
+                "\nMod nord er køkkenet, mod vest er indgangen og mod øst er dine forældresværelse");
+
+        kitchen = new RegularRoom("i køkkenet." +
+                "\nI midten af rummet er et spisebord." +
+                "\nEt helt almindelig og uspecial køkken." +
+                "\nMod syd er stuen, mod vest er dit værelse og mod øst er badeværelset");
+
+        bedRoom = new RegularRoom("på dit værelse!" +
+                "\nProp fyldt med alt det legetøj, som du elsker. Måske er der noget affald i nærheden..." +
+                "\nMod øst er køkkenet");
+
+        bathRoom = new RegularRoom("på badeværelset." +
+                "\nEgentlig et ret lille badeværelse for en børnefamilie." +
+                "\nMod vest er køkkenet og mod syd er dine forældresværelse");
+
+        parentsRoom = new RegularRoom("i dine forældresværelse." +
+                "\nStor redt seng, hvor hver side af sengen har et natbord." +
+                "\nMod nord er badeværelset og mod vest er stuen");
         
-        outside.setExit("east", entrance);
-        outside.setExit("north", garbageArea);
+        outside.setExit("øst", entrance);
+        outside.setExit("nord", garbageArea);
 
-        garbageArea.setExit("south", outside);
+        garbageArea.setExit("syd", outside);
 
-        entrance.setExit("west", outside);
-        entrance.setExit("east", livingRoom);
+        entrance.setExit("vest", outside);
+        entrance.setExit("øst", livingRoom);
 
-        livingRoom.setExit("east", parentsRoom);
-        livingRoom.setExit("north", kitchen);
-        livingRoom.setExit("west", entrance);
+        livingRoom.setExit("øst", parentsRoom);
+        livingRoom.setExit("nord", kitchen);
+        livingRoom.setExit("vest", entrance);
 
-        kitchen.setExit("west", bedRoom);
-        kitchen.setExit("east", bathRoom);
-        kitchen.setExit("south", livingRoom);
+        kitchen.setExit("vest", bedRoom);
+        kitchen.setExit("øst", bathRoom);
+        kitchen.setExit("syd", livingRoom);
 
-        bedRoom.setExit("east", kitchen);
+        bedRoom.setExit("øst", kitchen);
 
-        bathRoom.setExit("west", kitchen);
-        bathRoom.setExit("south", parentsRoom);
+        bathRoom.setExit("vest", kitchen);
+        bathRoom.setExit("syd", parentsRoom);
 
-        parentsRoom.setExit("west", livingRoom);
-        parentsRoom.setExit("north", bathRoom);
+        parentsRoom.setExit("vest", livingRoom);
+        parentsRoom.setExit("nord", bathRoom);
 
         currentRoom = outside;
     }
@@ -79,15 +101,15 @@ public class Game
             Command command = parser.getCommand();
             finished = processCommand(command);
         }
-        System.out.println("Thank you for playing.  Good bye.");
+        System.out.println("Tak for spillet.  Farvel.");
     }
 
     private void printWelcome()
     {
         System.out.println();
-        System.out.println("Welcome to the World of Trash!");
-        System.out.println("World of Trash! is a new, incredibly exciting trash-collecting adventure game.");
-        System.out.println("Type '" + CommandWord.HELP + "' if you need help, or don't know what to write.");
+        System.out.println("Velkommen til En Verden af Affald!");
+        System.out.println("En Verden af Affald! er et nyt spændende affaldsindsamlingsspil.");
+        System.out.println("Skriv '" + CommandWord.HELP + "' hvis du har brug for hjælp, eller ikke ved hvad du kan gøre.");
         System.out.println();
         System.out.println();
         System.out.println(currentRoom.getLongDescription());
@@ -100,7 +122,7 @@ public class Game
         CommandWord commandWord = command.getCommandWord();
 
         if(commandWord == CommandWord.UNKNOWN) {
-            System.out.println("I don't know what you mean...");
+            System.out.println("Jeg forstår ikke hvad du mener...");
             return false;
         }
 
@@ -113,21 +135,29 @@ public class Game
         else if (commandWord == CommandWord.QUIT) {
             wantToQuit = quit(command);
         }
+        else if (commandWord == CommandWord.PICKUP){
+            pickup(command);
+        }
+        else if (commandWord == CommandWord.INVENTORY){
+            printPlayerInventory(playerInventory);
+        }
+        else if (commandWord == CommandWord.THROWOUT){
+            throwout(command);
+        }
         return wantToQuit;
     }
 
     private void printHelp() 
     {
-        System.out.println("You are lost. There are many places to go, and lots of trash around the house.");
+        System.out.println("Du er forvirret. Der er mange steder at gå hen, og mange ting du kan gøre.");
         System.out.println();
-        System.out.println("Your ways are:");
+        System.out.println("Dine muligheder er:");
         parser.showCommands();
     }
 
-    private void goRoom(Command command) 
-    {
-        if(!command.hasSecondWord()) {
-            System.out.println("Go where?");
+    private void goRoom(Command command) {
+        if (!command.hasSecondWord()) {
+            System.out.println("Gå hvorhen?");
             return;
         }
 
@@ -136,22 +166,87 @@ public class Game
         Room nextRoom = currentRoom.getExit(direction);
 
         if (nextRoom == null) {
-            System.out.println("There is no door!");
-        }
-        else {
+            System.out.println("Der er ikke nogen dør!");
+        } else {
             currentRoom = nextRoom;
             System.out.println(currentRoom.getLongDescription());
+            if
+            (currentRoom == garbageArea) {
+                garbageArea.showTrashcans();
+            } else if (currentRoom == outside) {
+                System.out.println(outside.roomInventory.toString());
+            } else if (currentRoom == entrance) {
+                System.out.println(entrance.roomInventory.toString());
+            } else if (currentRoom == livingRoom) {
+                System.out.println(livingRoom.roomInventory.toString());
+            } else if (currentRoom == kitchen) {
+                System.out.println(kitchen.roomInventory.toString());
+            } else if (currentRoom == bedRoom) {
+                System.out.println(bedRoom.roomInventory.toString());
+            } else if (currentRoom == bathRoom) {
+                System.out.println(bathRoom.roomInventory.toString());
+            } else if (currentRoom == parentsRoom) {
+                System.out.println(parentsRoom.roomInventory.toString());
+            }
         }
     }
 
     private boolean quit(Command command) 
     {
         if(command.hasSecondWord()) {
-            System.out.println("Quit what?");
+            System.out.println("Afslut hvad?");
             return false;
         }
         else {
+            System.out.println("Du sluttede med " + playerScore.getPlayerScore() + " point!");
             return true;
+        }
+    }
+
+    private void pickup(Command command)
+    {
+        if(!command.hasSecondWord()) {
+            System.out.println("Tag hvad?");
+            return;
+        }
+        if (currentRoom != garbageArea){
+            outside.roomInventory.removeTrashFromInventory();
+            playerInventory.addTrashToInventory();
+        }
+    }
+
+    private void throwout(Command command){
+        if(!command.hasSecondWord()) {
+            System.out.println("Smid hvad ud?");
+            return;
+    }
+        if(currentRoom == garbageArea){
+            playerInventory.removeTrashFromInventory();
+            System.out.println("Du har nu smidt dit skrald ud!");
+            playerScore.increasePlayerScore(1);
+            playerScore.showPlayerScore();
+        }
+        else if (currentRoom != garbageArea){
+            System.out.println("Du er ikke ved skraldespanene");
+        }
+
+        }
+
+
+
+    private void printPlayerInventory(PlayerInventory playerInventory) {
+        System.out.println("Du kan max have 5 stykker affald i dine lommer. " +
+                "\nI dine lommer har du: " +
+                "\n");
+
+        for (int i = 0; i < playerInventory.inventory.length; i++) {
+            if (playerInventory.inventory[i] == null) {
+                System.out.println("Der er ikke noget i denne lomme!");
+
+            } else {
+                System.out.println(Trashtype.PLASTIC.toString());
+                System.out.println(" ");
+            }
         }
     }
 }
