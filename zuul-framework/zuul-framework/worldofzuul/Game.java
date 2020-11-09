@@ -1,7 +1,6 @@
 package worldofzuul;
 
-public class Game
-{
+public class Game {
     private Parser parser;
     private Room currentRoom;
     private TrashCanRoom garbageArea;
@@ -10,14 +9,12 @@ public class Game
 
     PlayerInventory playerInventory = new PlayerInventory(5);
 
-    public Game() 
-    {
+    public Game() {
         createRooms();
         parser = new Parser();
     }
 
-    private void createRooms()
-    {
+    private void createRooms() {
         outside = new RegularRoom("udenfor. " +
                 "\nMod øst er dit hus, prop fyldt med affald der skal sorteres. " +
                 "\nMod nord er skraldespandene");
@@ -51,7 +48,7 @@ public class Game
         parentsRoom = new RegularRoom("i dine forældresværelse." +
                 "\nStor redt seng, hvor hver side af sengen har et natbord." +
                 "\nMod nord er badeværelset og mod vest er stuen");
-        
+
         outside.setExit("øst", entrance);
         outside.setExit("nord", garbageArea);
 
@@ -79,21 +76,19 @@ public class Game
         currentRoom = outside;
     }
 
-    public void play() 
-    {            
+    public void play() {
         printWelcome();
 
-                
+
         boolean finished = false;
-        while (! finished) {
+        while (!finished) {
             Command command = parser.getCommand();
             finished = processCommand(command);
         }
         System.out.println("Tak for spillet.  Farvel.");
     }
 
-    private void printWelcome()
-    {
+    private void printWelcome() {
         System.out.println();
         System.out.println("Velkommen til En Verden af Affald!");
         System.out.println("En Verden af Affald! er et nyt spændende affaldsindsamlingsspil.");
@@ -103,40 +98,33 @@ public class Game
         System.out.println(currentRoom.getLongDescription());
     }
 
-    private boolean processCommand(Command command) 
-    {
+    private boolean processCommand(Command command) {
         boolean wantToQuit = false;
 
         CommandWord commandWord = command.getCommandWord();
 
-        if(commandWord == CommandWord.UNKNOWN) {
+        if (commandWord == CommandWord.UNKNOWN) {
             System.out.println("Jeg forstår ikke hvad du mener...");
             return false;
         }
 
         if (commandWord == CommandWord.HELP) {
             printHelp();
-        }
-        else if (commandWord == CommandWord.GO) {
+        } else if (commandWord == CommandWord.GO) {
             goRoom(command);
-        }
-        else if (commandWord == CommandWord.QUIT) {
+        } else if (commandWord == CommandWord.QUIT) {
             wantToQuit = quit(command);
-        }
-        else if (commandWord == CommandWord.PICKUP){
+        } else if (commandWord == CommandWord.PICKUP) {
             pickup(command);
-        }
-        else if (commandWord == CommandWord.INVENTORY){
+        } else if (commandWord == CommandWord.INVENTORY) {
             printPlayerInventory(playerInventory);
-        }
-        else if (commandWord == CommandWord.THROWOUT){
+        } else if (commandWord == CommandWord.THROWOUT) {
             throwout(command);
         }
         return wantToQuit;
     }
 
-    private void printHelp() 
-    {
+    private void printHelp() {
         System.out.println("Du er forvirret. Der er mange steder at gå hen, og mange ting du kan gøre.");
         System.out.println();
         System.out.println("Dine muligheder er:");
@@ -155,107 +143,74 @@ public class Game
 
         if (nextRoom == null) {
             System.out.println("Der er ikke nogen dør!");
-        }
-        else {
+        } else {
             currentRoom = nextRoom;
             System.out.println(currentRoom.getLongDescription());
 
             if (currentRoom == garbageArea) {
                 garbageArea.showTrashcans();
-            }
-            else if (currentRoom == outside) {
+            } else if (currentRoom == outside) {
 
                 System.out.println("I dette rum ligger der: ");
-
-                for (int i = 0; i < outside.roomInventory.inventory.length; i++) {
-                    System.out.println(outside.roomInventory.inventory[i].getType().toString());
-
-                }
-            }
-            else if (currentRoom == entrance) {
+                outside.printRoomInventory();
+            } else if (currentRoom == entrance) {
 
                 System.out.println("I dette rum ligger der: ");
-
-                for (int i = 0; i < entrance.roomInventory.inventory.length; i++) {
-                    System.out.println(entrance.roomInventory.inventory[i].getType().toString());
-            }
-            }
-            else if (currentRoom == livingRoom) {
-                System.out.println(livingRoom.roomInventory.toString());
+                entrance.printRoomInventory();
+            } else if (currentRoom == livingRoom) {
 
                 System.out.println("I dette rum ligger der: ");
-
-                for (int i = 0; i < livingRoom.roomInventory.inventory.length; i++) {
-                    System.out.println(livingRoom.roomInventory.inventory[i].getType().toString());
-                }
-            }
-            else if (currentRoom == kitchen) {
+                livingRoom.printRoomInventory();
+            } else if (currentRoom == kitchen) {
 
                 System.out.println("I dette rum ligger der: ");
-
-                for (int i = 0; i < kitchen.roomInventory.inventory.length; i++) {
-                    System.out.println(kitchen.roomInventory.inventory[i].getType().toString());
-                }
-            }
-            else if (currentRoom == bedRoom) {
+                kitchen.printRoomInventory();
+            } else if (currentRoom == bedRoom) {
 
                 System.out.println("I dette rum ligger der: ");
+                bedRoom.printRoomInventory();
+            } else if (currentRoom == bathRoom) {
 
-                for (int i = 0; i < bedRoom.roomInventory.inventory.length; i++) {
-                    System.out.println(bedRoom.roomInventory.inventory[i].getType().toString());
-                }
-            }
-            else if (currentRoom == bathRoom) {
                 System.out.println("I dette rum ligger der: ");
+                bathRoom.printRoomInventory();
+            } else if (currentRoom == parentsRoom) {
 
-                for (int i = 0; i < bathRoom.roomInventory.inventory.length; i++) {
-                    System.out.println(bathRoom.roomInventory.inventory[i].getType().toString());
-                }
-            }
-            else if (currentRoom == parentsRoom) {
                 System.out.println("I dette rum ligger der: ");
-
-                for (int i = 0; i < parentsRoom.roomInventory.inventory.length; i++) {
-                    System.out.println(parentsRoom.roomInventory.inventory[i].getType().toString());
-                }
+                parentsRoom.printRoomInventory();
             }
         }
     }
 
-    private boolean quit(Command command) 
-    {
-        if(command.hasSecondWord()) {
+    private boolean quit(Command command) {
+        if (command.hasSecondWord()) {
             System.out.println("Afslut hvad?");
             return false;
-        }
-        else {
+        } else {
             System.out.println("Du sluttede med " + playerScore.getPlayerScore() + " point!");
             return true;
         }
     }
 
-    private void pickup(Command command)
-    {
-        if(!command.hasSecondWord()) {
+    private void pickup(Command command) {
+        if (!command.hasSecondWord()) {
             System.out.println("Tag hvad?");
             return;
         }
 
         String trashtype = command.getSecondWord();
 
-        if (currentRoom == garbageArea){
+        if (currentRoom == garbageArea) {
             System.out.println("Der er ikke noget skrald i rummet");
             return;
         }
-        if (!currentRoom.roomInventory.isInventoryFull()){
-        System.out.println("Der er ikke mere skrald i rummet");
-        return;
-    }
-        if (currentRoom != garbageArea){
-            if(playerInventory.isInventoryFull()){
+        if (!currentRoom.roomInventory.isInventoryFull()) {
+            System.out.println("Der er ikke mere skrald i rummet");
+            return;
+        }
+        if (currentRoom != garbageArea) {
+            if (playerInventory.isInventoryFull()) {
                 System.out.println("Der kan ikke være mere i tasken");
-            }
-            else {
+            } else {
                 currentRoom.roomInventory.removeTrashFromInventory();
                 String trashTypeString = command.getSecondWord();
             }
@@ -283,7 +238,6 @@ public class Game
             }
         }
     }
-
 
 
     private void printPlayerInventory(PlayerInventory playerInventory) {
