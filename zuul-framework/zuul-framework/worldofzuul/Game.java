@@ -234,17 +234,16 @@ public class Game
 
         for (int i = 0; i < playerInventory.inventory.length; i++) {
 
-            if (!playerInventory.isInventoryFull()) {
-                System.out.println("Du har ikke noget i tasken");
-            } else if (currentRoom == garbageArea) {
+            if (currentRoom != garbageArea) {
+                System.out.println("Du er ikke ved skraldespandene");
+                break;
+            } else if (!playerInventory.isInventoryFull()) {
+                System.out.println("Du har ikke noget i denne lomme!");
+            } else if (currentRoom == garbageArea || playerInventory.isInventoryFull()) {
                 playerInventory.removeTrashFromInventory();
                 System.out.println("Du har nu smidt dit skrald ud!");
                 playerScore.increasePlayerScore(1);
                 playerScore.showPlayerScore();
-            } else if (currentRoom != garbageArea) {
-                System.out.println("Du er ikke ved skraldespandene");
-            } else if (playerInventory.inventory[i] == null) {
-                break;
             }
         }
     }
