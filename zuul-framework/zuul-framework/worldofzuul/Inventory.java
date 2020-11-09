@@ -35,7 +35,15 @@ public class Inventory {
 
     @Override
     public String toString() {
-        return "Der er: " + inventory.length + " stykker skrald i rummet";
+        int trashInRoom = 0;
+        for (int i = 0; i < inventory.length; i++) {
+
+            if (inventory[i] != null) {
+                trashInRoom++;
+            }
+        }
+
+        return "Der er: " + trashInRoom + " stykker skrald i rummet";
     }
 }
 
