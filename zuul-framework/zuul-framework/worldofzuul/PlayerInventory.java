@@ -10,6 +10,6 @@ public class PlayerInventory extends Inventory {
 
     @Override
     public String toString() {
-        return Trashtype.PLASTIC.toString();
+        return toString();
     }
 }

@@ -248,8 +248,7 @@ public class Game
                 System.out.println("Der er ikke noget i denne lomme!");
 
             } else {
-                System.out.println(Trashtype.PLASTIC.toString());
-                System.out.println(" ");
+                System.out.println(playerInventory.inventory[i].toString());
             }
         }
     }
