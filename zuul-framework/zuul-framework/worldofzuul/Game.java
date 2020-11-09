@@ -213,7 +213,7 @@ public class Game
             System.out.println("Der er ikke noget skrald i rummet");
             return;
         }
-        if (currentRoom.roomInventory.isInventoryFull() == false){
+        if (!currentRoom.roomInventory.isInventoryFull()){
         System.out.println("Der er ikke mere skrald i rummet");
         return;
     }
