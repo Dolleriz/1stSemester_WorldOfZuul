@@ -120,6 +120,8 @@ public class Game {
             printPlayerInventory(playerInventory);
         } else if (commandWord == CommandWord.THROWOUT) {
             throwout(command);
+        } else if (commandWord == commandWord.TRASHDESCRIPTION) {
+            trashDescription(command);
         }
         return wantToQuit;
     }
@@ -239,17 +241,20 @@ public class Game {
         }
     }
 
-    private void trashDescription(Command command) {
+    public void trashDescription(Command command) {
         if(!command.hasSecondWord()){
             System.out.println("Nævn også den skraldespand du vil have en uddybelse på!");
 
         }
+        String direction = command.getSecondWord();
         if (currentRoom != garbageArea) {
             System.out.println("Du er ikke ved skraldespandede");
 
         } else if (currentRoom == garbageArea) {
-            if(command.hasSecondWord == Trashtype.PLASTIC){
-
+            if(command.hasSecondWord()) {
+                System.out.println("Hvilken skraldespand vil du have en beskrivelse på?");
+            } else {
+                TrashCanRoom.showTrashcans();
             }
         }
     }
