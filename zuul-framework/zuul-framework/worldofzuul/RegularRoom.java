@@ -1,8 +1,6 @@
 package worldofzuul;
 
 public class RegularRoom extends Room {
-    Inventory roomInventory = new Inventory((int) (Math.random() * 5) + 5);
-
     public RegularRoom(String description) {
 
         super(description);

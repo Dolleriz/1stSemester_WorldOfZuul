@@ -213,11 +213,15 @@ public class Game
             System.out.println("Der er ikke noget skrald i rummet");
             return;
         }
+        if (currentRoom.roomInventory.isInventoryFull() == false){
+        System.out.println("Der er ikke mere skrald i rummet");
+        return;
+    }
         if (currentRoom != garbageArea){
             if(playerInventory.isInventoryFull()==true){
                 System.out.println("Der kan ikke være mere i tasken");
             }
-            else
+            else currentRoom.roomInventory.removeTrashFromInventory();
             playerInventory.addTrashToInventory();
         }
     }
