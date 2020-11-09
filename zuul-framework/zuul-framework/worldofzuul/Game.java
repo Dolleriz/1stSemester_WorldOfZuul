@@ -218,7 +218,7 @@ public class Game
         return;
     }
         if (currentRoom != garbageArea){
-            if(playerInventory.isInventoryFull()==true){
+            if(playerInventory.isInventoryFull()){
                 System.out.println("Der kan ikke være mere i tasken");
             }
             else currentRoom.roomInventory.removeTrashFromInventory();
