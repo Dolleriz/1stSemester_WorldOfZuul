@@ -231,7 +231,7 @@ public class Game
             System.out.println("Smid hvad ud?");
             return;
     }
-        if(playerInventory.isInventoryFull()==false) {
+        if(!playerInventory.isInventoryFull()) {
             System.out.println("Du har ikke noget i tasken");
         }
             else if (currentRoom == garbageArea) {

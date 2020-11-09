@@ -12,6 +12,5 @@ public class RegularRoom extends Room {
             roomInventory.inventory[i] = new Trash(Trashtype.PLASTIC);
         }
         return roomInventory;
-
     }
 }
