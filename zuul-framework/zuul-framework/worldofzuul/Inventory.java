@@ -12,7 +12,6 @@ public class Inventory {
             if (inventory[i] != null) {
                 inventory[i] = null;
             }
-
         }
     }
 
@@ -20,7 +19,6 @@ public class Inventory {
         for (int i = 0; i < inventory.length; i++) {
             inventory[i] = new Trash(Trashtype.PLASTIC);
         }
-
     }
 
     public boolean isInventoryFull() {
@@ -35,7 +33,15 @@ public class Inventory {
 
     @Override
     public String toString() {
-        return "Der er: " + inventory.length + " stykker skrald i rummet";
+        int trashInRoom = 0;
+        for (int i = 0; i < inventory.length; i++) {
+
+            if (inventory[i] != null) {
+                trashInRoom++;
+            }
+        }
+
+        return "Der er: " + trashInRoom + " stykker skrald i rummet";
     }
 }
 
