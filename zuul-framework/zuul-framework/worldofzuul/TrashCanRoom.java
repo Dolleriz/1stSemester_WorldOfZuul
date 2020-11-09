@@ -7,7 +7,6 @@ public class TrashCanRoom extends Room {
     public TrashCanRoom(String description) {
         super(description);
         createTrashcans();
-        showTrashcans();
     }
 
     /*HashMap trashcans = new HashMap<Trashtype, Trashcan>();*/
