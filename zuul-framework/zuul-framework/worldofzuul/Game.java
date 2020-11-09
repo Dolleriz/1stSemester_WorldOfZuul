@@ -155,11 +155,12 @@ public class Game
 
         if (nextRoom == null) {
             System.out.println("Der er ikke nogen dør!");
-        } else {
+        }
+        else {
             currentRoom = nextRoom;
             System.out.println(currentRoom.getLongDescription());
-            if
-            (currentRoom == garbageArea) {
+
+            if (currentRoom == garbageArea) {
                 garbageArea.showTrashcans();
             }
             else if (currentRoom == outside) {
@@ -240,6 +241,8 @@ public class Game
             return;
         }
 
+        String trashtype = command.getSecondWord();
+
         if (currentRoom == garbageArea){
             System.out.println("Der er ikke noget skrald i rummet");
             return;
@@ -252,7 +255,8 @@ public class Game
             if(playerInventory.isInventoryFull()){
                 System.out.println("Der kan ikke være mere i tasken");
             }
-            else { currentRoom.roomInventory.removeTrashFromInventory();
+            else {
+                currentRoom.roomInventory.removeTrashFromInventory();
                 String trashTypeString = command.getSecondWord();
             }
         }

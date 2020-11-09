@@ -41,7 +41,7 @@ public class Inventory {
         }
     }
 
-    public void moveTrash(Command command) {
+    public void addTrashToPlayer(Command command) {
         String trashTypeString;
 
         for (int i = 0; i < 1; i++) {
