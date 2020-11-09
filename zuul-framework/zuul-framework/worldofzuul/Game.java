@@ -1,5 +1,7 @@
 package worldofzuul;
 
+import java.util.Scanner;
+
 public class Game {
     private Parser parser;
     private Room currentRoom;
@@ -120,6 +122,9 @@ public class Game {
             printPlayerInventory(playerInventory);
         } else if (commandWord == CommandWord.THROWOUT) {
             throwout(command);
+        } else if (commandWord == CommandWord.TRASHDESCRIPTION
+        ) {
+            trashDescription(command);
         }
         return wantToQuit;
     }
@@ -147,9 +152,10 @@ public class Game {
             currentRoom = nextRoom;
             System.out.println(currentRoom.getLongDescription());
 
-            if (currentRoom == garbageArea) {
-                garbageArea.showTrashcans();
-            } else if (currentRoom == outside) {
+            // if (currentRoom == garbageArea) { this way we get the trashcan overview listed in garbageArea.longDescription
+            //   garbageArea.showTrashcans();
+            // } else
+            if (currentRoom == outside) {
 
                 System.out.println("I dette rum ligger der: ");
                 outside.printRoomInventory();
@@ -240,19 +246,27 @@ public class Game {
     }
 
     private void trashDescription(Command command) {
-        if(!command.hasSecondWord()){
-            System.out.println("Nævn også den skraldespand du vil have en uddybelse på!");
 
-        }
         if (currentRoom != garbageArea) {
             System.out.println("Du er ikke ved skraldespandede");
-
-        } else if (currentRoom == garbageArea) {
-            if(command.hasSecondWord == Trashtype.PLASTIC){
-
+        } else {
+            Scanner inputTrash = new Scanner(System.in);
+            System.out.println("Hvilken skraldespand vil du gerne vide mere om?");
+            String trashcanInput = inputTrash.next();
+            if (trashcanInput.equals("plastik")) {
+                garbageArea.showPlastic();
+            } else if (trashcanInput.equalsIgnoreCase("metal")){
+                garbageArea.showMetalAndGlass();
+            } else if (trashcanInput.equalsIgnoreCase("madaffald")){
+                garbageArea.showFoodWaste();
+            }else if (trashcanInput.equalsIgnoreCase("papir")){
+                garbageArea.showPaper();
+            }else if(trashcanInput.equalsIgnoreCase("restaffald")){
+                garbageArea.showResidualWaste();
             }
         }
     }
+
 
     private void printPlayerInventory(PlayerInventory playerInventory) {
         System.out.println("Du kan max have 5 stykker affald i dine lommer. " +
