@@ -234,11 +234,11 @@ public class Game {
             System.out.println("Du er ikke ved skraldespandene");
         }
         else {
-                if (currentRoom == garbageArea && playerInventory.isInventoryFull()) {
-                    playerInventory.removeTrashFromInventory();
-                    System.out.println("Du har nu smidt dit skrald ud!");
-                    playerScore.increasePlayerScore(playerInventory.inventory.length);
-                }
+            if (currentRoom == garbageArea && playerInventory.isInventoryFull()) {
+                playerInventory.removeTrashFromInventory();
+                System.out.println("Du har nu smidt dit skrald ud!");
+                playerScore.increasePlayerScore(playerInventory.inventory.length);
+            }
             playerScore.showPlayerScore();
         }
     }
@@ -246,7 +246,7 @@ public class Game {
     private void trashDescription(Command command) {
 
         if (currentRoom != garbageArea) {
-            System.out.println("Du er ikke ved skraldespandede");
+            System.out.println("Du er ikke ved skraldespandene");
         } else {
             Scanner inputTrash = new Scanner(System.in);
             System.out.println("Hvilken skraldespand vil du gerne vide mere om?");
