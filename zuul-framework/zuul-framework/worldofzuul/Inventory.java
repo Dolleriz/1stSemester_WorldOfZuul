@@ -1,7 +1,5 @@
 package worldofzuul;
 
-import java.util.Random;
-
 public class Inventory {
     Trash[] inventory;
 
@@ -10,8 +8,8 @@ public class Inventory {
         this.inventory = new Trash[size];
     }
 
-    public void removeTrashFromInventory() {
-        for (int i = 0; i < inventory.length; i++) {
+    public void removeTrashFromInventory(int length) {
+        for (int i = 0; i < length; i++) {
             if (inventory[i] != null) {
                 inventory[i] = null;
             }
@@ -74,6 +72,7 @@ public class Inventory {
         return isInventoryFull();
     }
 
+/*  This is not used right now
     @Override
     public String toString() {
         int trashInRoom = 0;
@@ -86,6 +85,7 @@ public class Inventory {
 
         return "Der er: " + trashInRoom + " stykker skrald i rummet";
     }
+    */
 }
 
 

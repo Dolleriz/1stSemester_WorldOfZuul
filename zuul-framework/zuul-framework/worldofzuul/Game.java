@@ -220,7 +220,7 @@ public class Game {
                         playerInventory.inventory[i] = currentRoom.roomInventory.inventory[i];
                     }
                 }
-                currentRoom.roomInventory.removeTrashFromInventory();
+                currentRoom.roomInventory.removeTrashFromInventory(playerInventory.inventory.length);
             }
         }
     }
@@ -235,7 +235,7 @@ public class Game {
         }
         else {
             if (currentRoom == garbageArea && playerInventory.isInventoryFull()) {
-                playerInventory.removeTrashFromInventory();
+                playerInventory.removeTrashFromInventory(playerInventory.inventory.length);
                 System.out.println("Du har nu smidt dit skrald ud!");
                 playerScore.increasePlayerScore(playerInventory.inventory.length);
             }

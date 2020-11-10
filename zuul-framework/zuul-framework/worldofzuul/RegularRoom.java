@@ -18,8 +18,8 @@ public class RegularRoom extends Room {
         if (trashInRoom != 0) {
             for (int i = 0; i < roomInventory.inventory.length; i++) {
                 if (roomInventory.inventory[i] != null) {
+                    System.out.println(roomInventory.inventory[i].getType().toString());
                 }
-                System.out.println(roomInventory.inventory[i].getType().toString());
             }
         } else {
             System.out.println("Der er ikke mere affald");
