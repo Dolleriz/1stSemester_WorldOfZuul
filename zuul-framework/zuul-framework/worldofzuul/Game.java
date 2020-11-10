@@ -203,8 +203,6 @@ public class Game {
             return;
         }
 
-        String trashtype = command.getSecondWord();
-
         if (currentRoom == garbageArea) {
             System.out.println("Der er ikke noget skrald i rummet");
             return;
@@ -217,8 +215,12 @@ public class Game {
             if (playerInventory.isInventoryFull()) {
                 System.out.println("Der kan ikke være mere i tasken");
             } else {
+                for (int i = 0; i < playerInventory.inventory.length; i++) {
+                    if (playerInventory.inventory[i]==null) {
+                        playerInventory.inventory[i] = currentRoom.roomInventory.inventory[i];
+                    }
+                }
                 currentRoom.roomInventory.removeTrashFromInventory();
-                String trashTypeString = command.getSecondWord();
             }
         }
     }
@@ -228,20 +230,16 @@ public class Game {
             System.out.println("Smid hvad ud?");
             return;
         }
-
-        for (int i = 0; i < playerInventory.inventory.length; i++) {
-
-            if (currentRoom != garbageArea) {
-                System.out.println("Du er ikke ved skraldespandene");
-                break;
-            } else if (!playerInventory.isInventoryFull()) {
-                System.out.println("Du har ikke noget i denne lomme!");
-            } else if (currentRoom == garbageArea || playerInventory.isInventoryFull()) {
-                playerInventory.removeTrashFromInventory();
-                System.out.println("Du har nu smidt dit skrald ud!");
-                playerScore.increasePlayerScore(1);
-                playerScore.showPlayerScore();
-            }
+        if (currentRoom != garbageArea) {
+            System.out.println("Du er ikke ved skraldespandene");
+        }
+        else {
+                if (currentRoom == garbageArea && playerInventory.isInventoryFull()) {
+                    playerInventory.removeTrashFromInventory();
+                    System.out.println("Du har nu smidt dit skrald ud!");
+                    playerScore.increasePlayerScore(playerInventory.inventory.length);
+                }
+            playerScore.showPlayerScore();
         }
     }
 
