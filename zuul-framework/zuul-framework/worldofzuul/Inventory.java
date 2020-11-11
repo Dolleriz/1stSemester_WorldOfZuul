@@ -63,13 +63,13 @@ public class Inventory {
     }
 
     public boolean isInventoryFull() {
-        for (int i = 0; i < inventory.length; i++) {
-            if (inventory[i] == null)
-                return false;
-            else
-                return true;
+        while (true) {
+            for (int i = 0; i < inventory.length; i++) {
+                if (inventory[i] != null)
+                    return true;
+            }
+            return false;
         }
-        return isInventoryFull();
     }
 
 /*  This is not used right now
