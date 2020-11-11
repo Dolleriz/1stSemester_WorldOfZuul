@@ -216,7 +216,7 @@ public class Game {
         if (playerInventory.inventory.size() == 5) {
                 System.out.println("Der kan ikke være mere i tasken");
         } else {
-                playerInventory.inventory.add(roomInventoryIndex - 1, currentRoom.roomInventory.inventory.get(roomInventoryIndex - 1));
+                playerInventory.inventory.add(currentRoom.roomInventory.inventory.get(roomInventoryIndex - 1));
                 currentRoom.roomInventory.inventory.remove(roomInventoryIndex - 1);
         }
     }
