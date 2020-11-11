@@ -203,6 +203,8 @@ public class Game {
             return;
         }
 
+        int inventoryIndex = Integer.parseInt(command.getSecondWord());
+
         if (currentRoom == garbageArea) {
             System.out.println("Der er ikke noget skrald i rummet");
             return;
@@ -214,13 +216,20 @@ public class Game {
         if (currentRoom != garbageArea) {
             if (playerInventory.isInventoryFull()) {
                 System.out.println("Der kan ikke være mere i tasken");
+            } else if (currentRoom.roomInventory.inventory[inventoryIndex] == null) {
+                System.out.println("Der er ikke noget affald");
             } else {
-                for (int i = 0; i < playerInventory.inventory.length; i++) {
-                    if (playerInventory.inventory[i]==null) {
-                        playerInventory.inventory[i] = currentRoom.roomInventory.inventory[i];
+                    if (playerInventory.inventory[inventoryIndex -1 ] == null) {
+                        playerInventory.inventory[inventoryIndex -1 ] =
+                                currentRoom.roomInventory.inventory[inventoryIndex - 1];
+                        currentRoom.roomInventory.inventory[inventoryIndex - 1] = null;
                     }
-                }
-                currentRoom.roomInventory.removeTrashFromInventory(playerInventory.inventory.length);
+                    else {
+                        playerInventory.inventory[inventoryIndex + 1] =
+                                currentRoom.roomInventory.inventory[inventoryIndex - 1];
+                        currentRoom.roomInventory.inventory[inventoryIndex] = null;
+                    }
+
             }
         }
     }

@@ -23,6 +23,7 @@ public class Command
 {
     private CommandWord commandWord;
     private String secondWord;
+    private int secondInt;
 
     public Command(CommandWord commandWord, String secondWord)
     {
@@ -38,6 +39,10 @@ public class Command
     public String getSecondWord()
     {
         return secondWord;
+    }
+
+    public int getSecondInt() {
+        return secondInt;
     }
 
     public boolean isUnknown()

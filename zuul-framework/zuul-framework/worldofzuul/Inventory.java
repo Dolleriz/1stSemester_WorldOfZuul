@@ -1,5 +1,7 @@
 package worldofzuul;
 
+
+
 public class Inventory {
     Trash[] inventory;
 
@@ -20,21 +22,17 @@ public class Inventory {
         double trashTypeNumber;
 
         for (int i = 0; i < inventory.length; i++) {
-            trashTypeNumber = Math.random()*5;
+            trashTypeNumber = Math.random() * 5;
             if (trashTypeNumber <= 1) {
                 inventory[i] = new Trash(Trashtype.PLASTIC);
-            }
-             else if (trashTypeNumber <= 2) {
+            } else if (trashTypeNumber <= 2) {
                 inventory[i] = new Trash(Trashtype.METAL_AND_GLASS);
-            }
-             else if (trashTypeNumber <= 3) {
-                 inventory[i] = new Trash(Trashtype.FOOD_WASTE);
-            }
-             else if (trashTypeNumber <= 4) {
-                 inventory[i] = new Trash(Trashtype.PAPER);
-            }
-             else if (trashTypeNumber <= 5) {
-                 inventory[i] = new Trash(Trashtype.RESIDUAL_WASTE);
+            } else if (trashTypeNumber <= 3) {
+                inventory[i] = new Trash(Trashtype.FOOD_WASTE);
+            } else if (trashTypeNumber <= 4) {
+                inventory[i] = new Trash(Trashtype.PAPER);
+            } else if (trashTypeNumber <= 5) {
+                inventory[i] = new Trash(Trashtype.RESIDUAL_WASTE);
             }
         }
     }
@@ -46,31 +44,27 @@ public class Inventory {
             trashTypeString = command.getSecondWord();
             if (trashTypeString == "plastik") {
                 inventory[i] = new Trash(Trashtype.PLASTIC);
-            }
-            else if (trashTypeString == "metal") {
+            } else if (trashTypeString == "metal") {
                 inventory[i] = new Trash(Trashtype.METAL_AND_GLASS);
-            }
-            else if (trashTypeString == "mad") {
+            } else if (trashTypeString == "mad") {
                 inventory[i] = new Trash(Trashtype.FOOD_WASTE);
-            }
-            else if (trashTypeString == "papir") {
+            } else if (trashTypeString == "papir") {
                 inventory[i] = new Trash(Trashtype.PAPER);
-            }
-            else if (trashTypeString == "restaffald") {
+            } else if (trashTypeString == "restaffald") {
                 inventory[i] = new Trash(Trashtype.RESIDUAL_WASTE);
             }
         }
     }
 
     public boolean isInventoryFull() {
-        while (true) {
-            for (int i = 0; i < inventory.length; i++) {
-                if (inventory[i] != null)
-                    return true;
-            }
+        if (inventory[4] == null) {
             return false;
         }
+        else {
+            return true;
+        }
     }
+}
 
 /*  This is not used right now
     @Override
@@ -86,6 +80,3 @@ public class Inventory {
         return "Der er: " + trashInRoom + " stykker skrald i rummet";
     }
     */
-}
-
-
