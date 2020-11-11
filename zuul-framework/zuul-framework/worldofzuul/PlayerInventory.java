@@ -4,8 +4,8 @@ import java.util.Arrays;
 
 public class PlayerInventory extends Inventory {
 
-    public PlayerInventory(int f) {
-        super(f);
+    public PlayerInventory(int size) {
+        super(size);
     }
 
     @Override

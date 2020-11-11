@@ -4,25 +4,40 @@ public class RegularRoom extends Room {
     public RegularRoom(String description) {
 
         super(description);
-        roomInventory.fillUpRoom();
+        fillUpRoom();
+    }
+
+    public void fillUpRoom() {
+
+        if (roomInventory.inventory.size() < 5 + (int) (Math.random()*5)) {
+
+            for (int i = 0; i < (5 + (int) (Math.random()*5)); i++) {
+                double trashTypeNumber;
+
+                trashTypeNumber = Math.random() * 5;
+                if (trashTypeNumber <= 1) {
+                    roomInventory.inventory.add(new Trash(Trashtype.PLASTIC));
+                } else if (trashTypeNumber <= 2) {
+                    roomInventory.inventory.add(new Trash(Trashtype.METAL_AND_GLASS));
+                } else if (trashTypeNumber <= 3) {
+                    roomInventory.inventory.add(new Trash(Trashtype.FOOD_WASTE));
+                } else if (trashTypeNumber <= 4) {
+                    roomInventory.inventory.add(new Trash(Trashtype.PAPER));
+                } else if (trashTypeNumber <= 5) {
+                    roomInventory.inventory.add(new Trash(Trashtype.RESIDUAL_WASTE));
+                }
+            }
+        }
     }
 
     public void printRoomInventory() { //can print the contents of the roomInventory without throwing a nullpointerexception
-        int trashInRoom = 0;
-        for (int i = 0; i < roomInventory.inventory.length; i++) {
-
-            if (roomInventory.inventory[i] != null) {
-                trashInRoom++;
-            }
+        if (roomInventory.inventory.isEmpty()) {
+            System.out.println("Der er ikke noget affald.");
         }
-        if (trashInRoom != 0) {
-            for (int i = 0; i < roomInventory.inventory.length; i++) {
-                if (roomInventory.inventory[i] != null) {
-                    System.out.println(roomInventory.inventory[i].getType().toString());
-                }
+        else {
+            for (Trash trash: roomInventory.inventory) {
+                System.out.println(trash.getType().toString());
             }
-        } else {
-            System.out.println("Der er ikke mere affald");
         }
     }
 }

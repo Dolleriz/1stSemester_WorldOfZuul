@@ -203,38 +203,28 @@ public class Game {
             return;
         }
 
-        int inventoryIndex = Integer.parseInt(command.getSecondWord());
+        int roomInventoryIndex = Integer.parseInt(command.getSecondWord());
 
         if (currentRoom == garbageArea) {
             System.out.println("Der er ikke noget skrald i rummet");
             return;
         }
-        if (!currentRoom.roomInventory.isInventoryFull()) {
+        if (currentRoom.roomInventory.inventory.isEmpty()) {
             System.out.println("Der er ikke mere skrald i rummet");
             return;
         }
-        if (currentRoom != garbageArea) {
-            if (playerInventory.isInventoryFull()) {
+        if (playerInventory.inventory.size() == 5) {
                 System.out.println("Der kan ikke være mere i tasken");
-            } else if (currentRoom.roomInventory.inventory[inventoryIndex] == null) {
-                System.out.println("Der er ikke noget affald");
-            } else {
-                    if (playerInventory.inventory[inventoryIndex -1 ] == null) {
-                        playerInventory.inventory[inventoryIndex -1 ] =
-                                currentRoom.roomInventory.inventory[inventoryIndex - 1];
-                        currentRoom.roomInventory.inventory[inventoryIndex - 1] = null;
-                    }
-                    else {
-                        playerInventory.inventory[inventoryIndex + 1] =
-                                currentRoom.roomInventory.inventory[inventoryIndex - 1];
-                        currentRoom.roomInventory.inventory[inventoryIndex] = null;
-                    }
-
-            }
+        } else {
+                playerInventory.inventory.add(roomInventoryIndex - 1, currentRoom.roomInventory.inventory.get(roomInventoryIndex - 1));
+                currentRoom.roomInventory.inventory.remove(roomInventoryIndex - 1);
         }
     }
 
     private void throwout(Command command) {
+
+        int playerInventoryIndex = Integer.parseInt(command.getSecondWord());
+
         if (!command.hasSecondWord()) {
             System.out.println("Smid hvad ud?");
             return;
@@ -243,10 +233,10 @@ public class Game {
             System.out.println("Du er ikke ved skraldespandene");
         }
         else {
-            if (currentRoom == garbageArea && playerInventory.isInventoryFull()) {
-                playerInventory.removeTrashFromInventory(playerInventory.inventory.length);
+            if (!playerInventory.inventory.isEmpty()) {
+                playerInventory.inventory.remove(playerInventoryIndex - 1);
                 System.out.println("Du har nu smidt dit skrald ud!");
-                playerScore.increasePlayerScore(playerInventory.inventory.length);
+                playerScore.increasePlayerScore(1);
             }
             playerScore.showPlayerScore();
         }
@@ -280,12 +270,12 @@ public class Game {
                 "\nI dine lommer har du: " +
                 "\n");
 
-        for (int i = 0; i < playerInventory.inventory.length; i++) {
-            if (playerInventory.inventory[i] == null) {
+        for (int i = 0; i < playerInventory.inventory.size(); i++) {
+            if (playerInventory.inventory.get(i) == null) {
                 System.out.println("Der er ikke noget i denne lomme!");
 
             } else {
-                System.out.println(playerInventory.inventory[i].getType().toString());
+                System.out.println(playerInventory.inventory.get(i).getType().toString());
             }
         }
     }

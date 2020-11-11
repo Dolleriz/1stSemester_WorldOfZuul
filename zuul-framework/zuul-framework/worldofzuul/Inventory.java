@@ -1,70 +1,39 @@
 package worldofzuul;
 
 
+import java.util.ArrayList;
 
 public class Inventory {
-    Trash[] inventory;
+    ArrayList<Trash> inventory;
 
+    public Inventory(ArrayList<Trash> inventory) {
+        this.inventory = inventory;
+    }
 
     public Inventory(int size) {
-        this.inventory = new Trash[size];
+        this.inventory = new ArrayList<>();
     }
+}
 
-    public void removeTrashFromInventory(int length) {
-        for (int i = 0; i < length; i++) {
-            if (inventory[i] != null) {
-                inventory[i] = null;
-            }
-        }
-    }
-
-    public void fillUpRoom() {
-        double trashTypeNumber;
-
-        for (int i = 0; i < inventory.length; i++) {
-            trashTypeNumber = Math.random() * 5;
-            if (trashTypeNumber <= 1) {
-                inventory[i] = new Trash(Trashtype.PLASTIC);
-            } else if (trashTypeNumber <= 2) {
-                inventory[i] = new Trash(Trashtype.METAL_AND_GLASS);
-            } else if (trashTypeNumber <= 3) {
-                inventory[i] = new Trash(Trashtype.FOOD_WASTE);
-            } else if (trashTypeNumber <= 4) {
-                inventory[i] = new Trash(Trashtype.PAPER);
-            } else if (trashTypeNumber <= 5) {
-                inventory[i] = new Trash(Trashtype.RESIDUAL_WASTE);
-            }
-        }
-    }
-
-    public void addTrashToPlayer(Command command) {
+/*    public void addTrashToPlayer(Command command) { we don't know if we need it
         String trashTypeString;
 
         for (int i = 0; i < 1; i++) {
             trashTypeString = command.getSecondWord();
             if (trashTypeString == "plastik") {
-                inventory[i] = new Trash(Trashtype.PLASTIC);
+                inventory.add(i, new Trash(Trashtype.PLASTIC));
             } else if (trashTypeString == "metal") {
-                inventory[i] = new Trash(Trashtype.METAL_AND_GLASS);
+                inventory.add(i, new Trash(Trashtype.METAL_AND_GLASS));
             } else if (trashTypeString == "mad") {
-                inventory[i] = new Trash(Trashtype.FOOD_WASTE);
+                inventory.add(i, new Trash(Trashtype.FOOD_WASTE));
             } else if (trashTypeString == "papir") {
-                inventory[i] = new Trash(Trashtype.PAPER);
+                inventory.add(i, new Trash(Trashtype.PAPER));
             } else if (trashTypeString == "restaffald") {
-                inventory[i] = new Trash(Trashtype.RESIDUAL_WASTE);
+                inventory.add(i, new Trash(Trashtype.RESIDUAL_WASTE));
             }
         }
-    }
-
-    public boolean isInventoryFull() {
-        if (inventory[4] == null) {
-            return false;
-        }
-        else {
-            return true;
-        }
-    }
-}
+   }
+*/
 
 /*  This is not used right now
     @Override
