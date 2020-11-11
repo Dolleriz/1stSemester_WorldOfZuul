@@ -237,10 +237,13 @@ public class Game {
                 playerInventory.inventory.remove(playerInventoryIndex - 1);
                 System.out.println("Du har nu smidt dit skrald ud!");
                 playerScore.increasePlayerScore(1);
+                printPlayerInventory(playerInventory);
+                System.out.println(" ");
+                }
             }
             playerScore.showPlayerScore();
         }
-    }
+
 
     private void trashDescription(Command command) {
 
