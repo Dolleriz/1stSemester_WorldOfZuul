@@ -6,7 +6,7 @@ public enum Trashtype {
 
     PLASTIC("Plastik."),
 
-    METAL_AND_GLASS("Metal  og glas."),
+    METAL_AND_GLASS("Metal og glas."),
 
     FOOD_WASTE("Madaffald."),
 
