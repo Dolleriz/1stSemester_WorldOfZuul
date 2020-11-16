@@ -6,6 +6,10 @@ public class Trashcan {
 
     private Trashtype correctTrashType;
 
+    public Trashtype getCorrectTrashType() {
+        return correctTrashType;
+    }
+
     private String description;
 
     public String getDescription() {

@@ -222,39 +222,59 @@ public class Game {
     }
 
     private void throwout(Command command) {
-
         String trash = command.getSecondWord();
+        String garbageCan = command.getThirdWord();
+        if (currentRoom != garbageArea) {
+            System.out.println("Du er ikke ved skraldespandene");
+            return;
+        }
+        if (playerInventory.inventory.isEmpty()){
+            System.out.println("Du har ikke noget skrald der kan smides ud");
+            return;
+        }
 
         if (!command.hasSecondWord()) {
             System.out.println("Hvad vil du gerne smide ud?");
+            printPlayerInventory(playerInventory);
             return;
         }
-        if (currentRoom != garbageArea) {
-            System.out.println("Du er ikke ved skraldespandene");
-        } else {
+
+        if (!command.hasThirdWord()) {
+            System.out.println("I hvilken skraldespand skal skraldet smides ud?");
+            garbageArea.printTrashCans();
+            return;
+        }
+
+        if (!trash.equals(garbageCan)){
+            System.out.println("Du har ikke valgt den rigtige skraldespand at sorterer i, prøv igen");
+            return;
+        }
+
+
+        else {
             if (!playerInventory.inventory.isEmpty()) {
-                if (trash.equalsIgnoreCase("plastik")) {
+                if (trash.equalsIgnoreCase("plastik") && garbageCan.equalsIgnoreCase("plastik")) {
                     for (int i = 0; i < playerInventory.inventory.size(); i++) {
                         if (playerInventory.inventory.get(i).getType() == Trashtype.PLASTIC) {
                             playerScore.increasePlayerScore(1);
                             playerInventory.inventory.remove(i);
                         }
                     }
-                } else if (trash.equalsIgnoreCase("metal-og-glas")) {
+                } else if (trash.equalsIgnoreCase("metal-og-glas") && garbageCan.equalsIgnoreCase("metal-og-glas")) {
                     for (int i = 0; i < playerInventory.inventory.size(); i++) {
                         if (playerInventory.inventory.get(i).getType() == Trashtype.METAL_AND_GLASS) {
                             playerScore.increasePlayerScore(1);
                             playerInventory.inventory.remove(i);
                         }
                     }
-                } else if (trash.equalsIgnoreCase("madaffald")) {
+                } else if (trash.equalsIgnoreCase("madaffald") && garbageCan.equalsIgnoreCase("madaffald")) {
                     for (int i = 0; i < playerInventory.inventory.size(); i++) {
                         if (playerInventory.inventory.get(i).getType() == Trashtype.FOOD_WASTE) {
                             playerScore.increasePlayerScore(1);
                             playerInventory.inventory.remove(i);
                         }
                     }
-                } else if (trash.equalsIgnoreCase("papir-og-pap")){
+                } else if (trash.equalsIgnoreCase("papir-og-pap") && garbageCan.equalsIgnoreCase("papir-og-pap")){
                     for (int i = 0; i < playerInventory.inventory.size(); i++) {
                         if (playerInventory.inventory.get(i).getType() == Trashtype.PAPER){
                             playerScore.increasePlayerScore(1);
@@ -262,7 +282,7 @@ public class Game {
                         }
 
                     }
-                } else if (trash.equalsIgnoreCase("restaffald")){
+                } else if (trash.equalsIgnoreCase("restaffald") && garbageCan.equalsIgnoreCase("restaffald")){
                     for (int i = 0; i < playerInventory.inventory.size(); i++) {
                         if (playerInventory.inventory.get(i).getType() == Trashtype.RESIDUAL_WASTE){
                             playerScore.increasePlayerScore(1);
@@ -278,7 +298,6 @@ public class Game {
         }
         playerScore.showPlayerScore();
     }
-
 
     private void trashDescription(Command command) {
 
