@@ -16,4 +16,8 @@ public class Trashcan {
         this.correctTrashType = trashType;
         this.description = description;
     }
+
+    public Trashtype getCorrectTrashType() {
+        return correctTrashType;
+    }
 }

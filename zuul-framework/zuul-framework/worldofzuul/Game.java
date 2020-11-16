@@ -233,42 +233,86 @@ public class Game {
             System.out.println("Du er ikke ved skraldespandene");
         } else {
             if (!playerInventory.inventory.isEmpty()) {
+                Scanner inputTrashcan = new Scanner(System.in); //asks which trashcan to throw out to
+                System.out.println("Hvilken skraldespand vil du gerne smide ud i?");
+                String trashcanInput = inputTrashcan.next();
                 if (trash.equalsIgnoreCase("plastik")) {
-                    for (int i = 0; i < playerInventory.inventory.size(); i++) {
-                        if (playerInventory.inventory.get(i).getType() == Trashtype.PLASTIC) {
-                            playerScore.increasePlayerScore(1);
+                    for (int i = 0; i < playerInventory.inventory.size(); i++) { // runs through every element in playerInventory
+                        if (playerInventory.inventory.get(i).getType() == Trashtype.PLASTIC) { // checks the Trashtype for the element
+                            if (trashcanInput.equalsIgnoreCase(Trashtype.PLASTIC.toString())) { // checks that the chosen trashcan matches the Trashtype of the element
+                                System.out.println("Rigtigt! du har fået 2 point");
+                                playerScore.increasePlayerScore(2);
+                            } else if (trashcanInput.equalsIgnoreCase(Trashtype.RESIDUAL_WASTE.toString())) {
+                                System.out.println("Det kan sorteres lidt bedre. Du har fået 1 point");
+                                playerScore.increasePlayerScore(1);
+                            } else {
+                                System.out.println("Det er ikke den rigtige skraldespand. Du har mistet 1 point");
+                                playerScore.decreasePlayerScore(1);
+                            }
                             playerInventory.inventory.remove(i);
                         }
                     }
                 } else if (trash.equalsIgnoreCase("metal-og-glas")) {
                     for (int i = 0; i < playerInventory.inventory.size(); i++) {
                         if (playerInventory.inventory.get(i).getType() == Trashtype.METAL_AND_GLASS) {
-                            playerScore.increasePlayerScore(1);
+                            if (trashcanInput.equalsIgnoreCase(Trashtype.METAL_AND_GLASS.toString())) {
+                                System.out.println("Rigtigt! du har fået 2 point");
+                                playerScore.increasePlayerScore(2);
+                            } else if (trashcanInput.equalsIgnoreCase(Trashtype.RESIDUAL_WASTE.toString())) {
+                                System.out.println("Det kan sorteres lidt bedre. Du har fået 1 point");
+                                playerScore.increasePlayerScore(1);
+                            } else {
+                                System.out.println("Det er ikke den rigtige skraldespand. Du har mistet 1 point");
+                                playerScore.decreasePlayerScore(1);
+                            }
                             playerInventory.inventory.remove(i);
                         }
                     }
                 } else if (trash.equalsIgnoreCase("madaffald")) {
                     for (int i = 0; i < playerInventory.inventory.size(); i++) {
                         if (playerInventory.inventory.get(i).getType() == Trashtype.FOOD_WASTE) {
-                            playerScore.increasePlayerScore(1);
+                            if (trashcanInput.equalsIgnoreCase(Trashtype.FOOD_WASTE.toString())) {
+                                System.out.println("Rigtigt! du har fået 2 point");
+                                playerScore.increasePlayerScore(2);
+                            } else if (trashcanInput.equalsIgnoreCase(Trashtype.RESIDUAL_WASTE.toString())) {
+                                System.out.println("Det kan sorteres lidt bedre. Du har fået 1 point");
+                                playerScore.increasePlayerScore(1);
+                            } else {
+                                System.out.println("Det er ikke den rigtige skraldespand. Du har mistet 1 point");
+                                playerScore.decreasePlayerScore(1);
+                            }
                             playerInventory.inventory.remove(i);
                         }
                     }
-                } else if (trash.equalsIgnoreCase("papir-og-pap")){
+                } else if (trash.equalsIgnoreCase("papir-og-pap")) {
                     for (int i = 0; i < playerInventory.inventory.size(); i++) {
-                        if (playerInventory.inventory.get(i).getType() == Trashtype.PAPER){
-                            playerScore.increasePlayerScore(1);
+                        if (playerInventory.inventory.get(i).getType() == Trashtype.PAPER) {
+                            if (trashcanInput.equalsIgnoreCase(Trashtype.PAPER.toString())) {
+                                System.out.println("Rigtigt! du har fået 2 point");
+                                playerScore.increasePlayerScore(2);
+                            } else if (trashcanInput.equalsIgnoreCase(Trashtype.RESIDUAL_WASTE.toString())) {
+                                System.out.println("Det kan sorteres lidt bedre. Du har fået 1 point");
+                                playerScore.increasePlayerScore(1);
+                            } else {
+                                System.out.println("Det er ikke den rigtige skraldespand. Du har mistet 1 point");
+                                playerScore.decreasePlayerScore(1);
+                            }
                             playerInventory.inventory.remove(i);
                         }
 
                     }
-                } else if (trash.equalsIgnoreCase("restaffald")){
+                } else if (trash.equalsIgnoreCase("restaffald")) {
                     for (int i = 0; i < playerInventory.inventory.size(); i++) {
-                        if (playerInventory.inventory.get(i).getType() == Trashtype.RESIDUAL_WASTE){
-                            playerScore.increasePlayerScore(1);
+                        if (playerInventory.inventory.get(i).getType() == Trashtype.RESIDUAL_WASTE) {
+                            if (trashcanInput.equalsIgnoreCase(Trashtype.RESIDUAL_WASTE.toString())) {
+                                System.out.println("Rigtigt! du har fået 2 point");
+                                playerScore.increasePlayerScore(2);
+                            } else {
+                                System.out.println("Det er ikke den rigtige skraldespand. Du har mistet 1 point");
+                                playerScore.decreasePlayerScore(1);
+                            }
                             playerInventory.inventory.remove(i);
                         }
-
                     }
                 }
                 System.out.println("Du har nu smidt dit skrald ud!");
