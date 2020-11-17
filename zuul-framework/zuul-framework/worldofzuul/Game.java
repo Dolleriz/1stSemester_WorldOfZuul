@@ -82,7 +82,7 @@ public class Game {
 
     public void play() {
         printWelcome();
-
+        outside.printRoomInventory();
 
         boolean finished = false;
         while (!finished) {
