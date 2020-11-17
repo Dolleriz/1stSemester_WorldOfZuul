@@ -1,4 +1,40 @@
-<?import javafx.scene.layout.GridPane?>
-<GridPane fx:controller="worldofzuul.Controller"
-          xmlns:fx="http://javafx.com/fxml" alignment="center" hgap="10" vgap="10">
-</GridPane>
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Scene?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.stage.Stage?>
+
+<Stage title="root" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+    <scene>
+        <Scene>
+         <AnchorPane>
+            <children>
+               <Pane prefHeight="750.0" prefWidth="750.0">
+                  <children>
+                     <TableView layoutX="488.0" layoutY="14.0" prefHeight="510.0" prefWidth="256.0">
+                       <columns>
+                         <TableColumn prefWidth="254.00003051757812" resizable="false" text="Indhold i taske" />
+                       </columns>
+                     </TableView>
+                     <ImageView fitHeight="511.0" fitWidth="614.0" layoutX="14.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+                        <image>
+                           <Image url="@img/untitled.png" />
+                        </image>
+                     </ImageView>
+                     <ImageView fitHeight="55.0" fitWidth="42.0" layoutX="88.0" layoutY="151.0" pickOnBounds="true" preserveRatio="true">
+                        <image>
+                           <Image url="@img/char/down1.png" />
+                        </image>
+                     </ImageView>
+                  </children>
+               </Pane>
+            </children>
+         </AnchorPane>
+        </Scene>
+    </scene>
+</Stage>
