@@ -9,7 +9,7 @@ public class Room
 {
     private String description;
     private HashMap<String, Room> exits;
-    Inventory roomInventory = new Inventory();
+    Inventory roomInventory = new Inventory(5);
 
     public Room(String description) 
     {

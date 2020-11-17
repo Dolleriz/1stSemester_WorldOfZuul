@@ -257,19 +257,19 @@ public class Game {
         }
 
         else {
-                if (trash.equalsIgnoreCase("plastik")) {
+                if (trash.equalsIgnoreCase(garbageArea.getPlastic().toString())) {
                     sortingTrash("plastik", Trashtype.PLASTIC, 3);
 
-                } else if (trash.equalsIgnoreCase("metal")) {
+                } else if (trash.equalsIgnoreCase(garbageArea.getMetalAndGlass().toString())) {
                     sortingTrash("metal", Trashtype.METAL_AND_GLASS, 1);
 
-                } else if (trash.equalsIgnoreCase("madaffald")) {
+                } else if (trash.equalsIgnoreCase(garbageArea.getFoodWaste().toString())) {
                     sortingTrash("madaffald", Trashtype.FOOD_WASTE, 1);
 
-                } else if (trash.equalsIgnoreCase("papir")){
+                } else if (trash.equalsIgnoreCase(garbageArea.getPaper().toString())){
                     sortingTrash("papir", Trashtype.PAPER, 2);
 
-                } else if (trash.equalsIgnoreCase("restaffald")){
+                } else if (trash.equalsIgnoreCase(garbageArea.getResidualWaste().toString())){
                     sortingTrash("restaffald", Trashtype.RESIDUAL_WASTE, 3);
 
                 }
