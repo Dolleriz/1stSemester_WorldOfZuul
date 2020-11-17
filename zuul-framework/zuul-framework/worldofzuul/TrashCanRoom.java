@@ -66,6 +66,11 @@ public class TrashCanRoom extends Room {
         System.out.println(plastic.getDescription());
     }
 
+    @Override
+    protected void enterRoom() {
+        printTrashcans();
+    }
+
     public void showMetalAndGlass() {
         System.out.println(metalAndGlass.getDescription());
     }

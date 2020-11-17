@@ -9,23 +9,21 @@ public class RegularRoom extends Room {
 
     public void fillUpRoom() {
 
-        if (roomInventory.inventory.size() < 5 + (int) (Math.random()*5)) {
+        for (int i = 0; i < (5 + (int) (Math.random()*5)); i++) {
+            double trashTypeNumber;
 
-            for (int i = 0; i < (5 + (int) (Math.random()*5)); i++) {
-                double trashTypeNumber;
+            trashTypeNumber = Math.random() * 5;
 
-                trashTypeNumber = Math.random() * 5;
-                if (trashTypeNumber <= 1) {
-                    roomInventory.inventory.add(new Trash(Trashtype.PLASTIC));
-                } else if (trashTypeNumber <= 2) {
-                    roomInventory.inventory.add(new Trash(Trashtype.METAL_AND_GLASS));
-                } else if (trashTypeNumber <= 3) {
-                    roomInventory.inventory.add(new Trash(Trashtype.FOOD_WASTE));
-                } else if (trashTypeNumber <= 4) {
-                    roomInventory.inventory.add(new Trash(Trashtype.PAPER));
-                } else if (trashTypeNumber <= 5) {
-                    roomInventory.inventory.add(new Trash(Trashtype.RESIDUAL_WASTE));
-                }
+            if (trashTypeNumber <= 1) {
+                roomInventory.inventory.add(new Trash(Trashtype.PLASTIC));
+            } else if (trashTypeNumber <= 2) {
+                roomInventory.inventory.add(new Trash(Trashtype.METAL_AND_GLASS));
+            } else if (trashTypeNumber <= 3) {
+                roomInventory.inventory.add(new Trash(Trashtype.FOOD_WASTE));
+            } else if (trashTypeNumber <= 4) {
+                roomInventory.inventory.add(new Trash(Trashtype.PAPER));
+            } else if (trashTypeNumber <= 5) {
+                roomInventory.inventory.add(new Trash(Trashtype.RESIDUAL_WASTE));
             }
         }
     }

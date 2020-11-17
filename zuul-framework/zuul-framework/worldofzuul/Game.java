@@ -11,7 +11,7 @@ public class Game {
     private RegularRoom outside, entrance, livingRoom, kitchen, bedRoom, bathRoom, parentsRoom;
     private PlayerScore playerScore = new PlayerScore(0);
 
-    PlayerInventory playerInventory = new PlayerInventory(5);
+    PlayerInventory playerInventory = new PlayerInventory();
 
     public Game() {
         createRooms();

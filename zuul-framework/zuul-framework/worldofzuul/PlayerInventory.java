@@ -4,8 +4,10 @@ import java.util.Arrays;
 
 public class PlayerInventory extends Inventory {
 
-    public PlayerInventory(int size) {
-        super(size);
+    private static final int PLAYER_INVENTORY_MAX = 5;
+
+    public PlayerInventory() {
+        super(PLAYER_INVENTORY_MAX);
     }
 
     @Override

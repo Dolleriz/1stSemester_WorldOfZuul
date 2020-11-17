@@ -6,12 +6,15 @@ import java.util.ArrayList;
 public class Inventory {
     ArrayList<Trash> inventory;
 
-    public Inventory(ArrayList<Trash> inventory) {
-        this.inventory = inventory;
+    private static final int MAX_SIZE = 10;
+
+
+    protected Inventory(int maxSize) {
+        maxSize = MAX_SIZE;
     }
 
-    public Inventory(int size) {
-        this.inventory = new ArrayList<>();
+    public Inventory() {
+        this(MAX_SIZE);
     }
 }
 

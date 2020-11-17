@@ -9,7 +9,7 @@ public class Room
 {
     private String description;
     private HashMap<String, Room> exits;
-    Inventory roomInventory = new Inventory(10);
+    Inventory roomInventory = new Inventory();
 
     public Room(String description) 
     {
@@ -40,6 +40,10 @@ public class Room
             returnString += " " + exit;
         }
         return returnString;
+    }
+
+    protected void enterRoom() {
+        System.out.println(roomInventory.toString());
     }
 
     public Room getExit(String direction) 
