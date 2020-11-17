@@ -221,7 +221,7 @@ public class Game {
         }
     }
 
-    private void throwout(Command command) {
+    private void throwout(Command command) { // TØHØ
 
         String trash = command.getSecondWord();
 
