@@ -52,6 +52,15 @@ public class TrashCanRoom extends Room {
 
     }
 
+    public void printTrashcans () {
+        System.out.println("Hvor vil du gerne smide dette ud?");
+        System.out.println(" ");
+        System.out.println("> Plastik" +
+                "\n> Metal og Glas" +
+                "\n> Madaffald" +
+                "\n> Papir og Pap" +
+                "\n> Restaffald");
+    }
 
     public void showPlastic() {
         System.out.println(plastic.getDescription());

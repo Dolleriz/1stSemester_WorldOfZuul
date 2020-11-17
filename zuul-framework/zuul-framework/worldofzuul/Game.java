@@ -1,5 +1,7 @@
 package worldofzuul;
 
+import org.w3c.dom.ls.LSOutput;
+
 import java.util.Scanner;
 
 public class Game {
@@ -198,86 +200,82 @@ public class Game {
     }
 
     private void pickup(Command command) {
-        if (!command.hasSecondWord()) {
-            System.out.println("Tag hvad?");
-            return;
-        }
 
-        int roomInventoryIndex = Integer.parseInt(command.getSecondWord());
+        try {
 
-        if (currentRoom == garbageArea) {
-            System.out.println("Der er ikke noget skrald i rummet");
-            return;
+            if (currentRoom == garbageArea) {
+                System.out.println("Der er ikke noget skrald i rummet");
+                return;
+            }
+
+            if (!command.hasSecondWord()) {
+                System.out.println("Tag hvad?");
+                return;
+            }
+
+            int roomInventoryIndex = Integer.parseInt(command.getSecondWord());
+
+            if (roomInventoryIndex > currentRoom.roomInventory.inventory.size()) {
+                System.out.println("Der findes ikke noget skrald på denne plads");
+                return;
+            }
+
+            if (currentRoom.roomInventory.inventory.isEmpty()) {
+                System.out.println("Der er ikke mere skrald i rummet");
+                return;
+            }
+            if (playerInventory.inventory.size() == 5) {
+                System.out.println("Der kan ikke være mere i tasken");
+            } else {
+                playerInventory.inventory.add(currentRoom.roomInventory.inventory.get(roomInventoryIndex - 1));
+                currentRoom.roomInventory.inventory.remove(roomInventoryIndex - 1);
+            }
+        } catch (NumberFormatException e) {
+            System.out.println("Dette er ikke et tal, prøv igen.");
         }
-        if (currentRoom.roomInventory.inventory.isEmpty()) {
-            System.out.println("Der er ikke mere skrald i rummet");
-            return;
-        }
-        if (playerInventory.inventory.size() == 5) {
-            System.out.println("Der kan ikke være mere i tasken");
-        } else {
-            playerInventory.inventory.add(currentRoom.roomInventory.inventory.get(roomInventoryIndex - 1));
-            currentRoom.roomInventory.inventory.remove(roomInventoryIndex - 1);
+        catch (IndexOutOfBoundsException ex) {
+            System.out.println("Der findes ikke noget skrald på denne plads, prøv igen.");
         }
     }
 
     private void throwout(Command command) {
 
         String trash = command.getSecondWord();
+        if (currentRoom != garbageArea) {
+            System.out.println("Du er ikke ved skraldespandene");
+            return;
+        }
+
+        if (playerInventory.inventory.isEmpty()) {
+            System.out.println("Du har ikke noget skrald. Gå tilbage og saml noget.");
+            return;
+        }
 
         if (!command.hasSecondWord()) {
             System.out.println("Hvad vil du gerne smide ud?");
-            return;
+            printPlayerInventory(playerInventory);
+
         }
-        if (currentRoom != garbageArea) {
-            System.out.println("Du er ikke ved skraldespandene");
-        } else {
-            if (!playerInventory.inventory.isEmpty()) {
+
+        else {
                 if (trash.equalsIgnoreCase("plastik")) {
-                    for (int i = 0; i < playerInventory.inventory.size(); i++) {
-                        if (playerInventory.inventory.get(i).getType() == Trashtype.PLASTIC) {
-                            playerScore.increasePlayerScore(1);
-                            playerInventory.inventory.remove(i);
-                        }
-                    }
-                } else if (trash.equalsIgnoreCase("metal-og-glas")) {
-                    for (int i = 0; i < playerInventory.inventory.size(); i++) {
-                        if (playerInventory.inventory.get(i).getType() == Trashtype.METAL_AND_GLASS) {
-                            playerScore.increasePlayerScore(1);
-                            playerInventory.inventory.remove(i);
-                        }
-                    }
+                    sortingTrash("plastik", Trashtype.PLASTIC, 3);
+
+                } else if (trash.equalsIgnoreCase("metal")) {
+                    sortingTrash("metal", Trashtype.METAL_AND_GLASS, 1);
+
                 } else if (trash.equalsIgnoreCase("madaffald")) {
-                    for (int i = 0; i < playerInventory.inventory.size(); i++) {
-                        if (playerInventory.inventory.get(i).getType() == Trashtype.FOOD_WASTE) {
-                            playerScore.increasePlayerScore(1);
-                            playerInventory.inventory.remove(i);
-                        }
-                    }
-                } else if (trash.equalsIgnoreCase("papir-og-pap")){
-                    for (int i = 0; i < playerInventory.inventory.size(); i++) {
-                        if (playerInventory.inventory.get(i).getType() == Trashtype.PAPER){
-                            playerScore.increasePlayerScore(1);
-                            playerInventory.inventory.remove(i);
-                        }
+                    sortingTrash("madaffald", Trashtype.FOOD_WASTE, 1);
 
-                    }
+                } else if (trash.equalsIgnoreCase("papir")){
+                    sortingTrash("papir", Trashtype.PAPER, 2);
+
                 } else if (trash.equalsIgnoreCase("restaffald")){
-                    for (int i = 0; i < playerInventory.inventory.size(); i++) {
-                        if (playerInventory.inventory.get(i).getType() == Trashtype.RESIDUAL_WASTE){
-                            playerScore.increasePlayerScore(1);
-                            playerInventory.inventory.remove(i);
-                        }
+                    sortingTrash("restaffald", Trashtype.RESIDUAL_WASTE, 3);
 
-                    }
                 }
-                System.out.println("Du har nu smidt dit skrald ud!");
-                printPlayerInventory(playerInventory);
-                System.out.println(" ");
             }
         }
-        playerScore.showPlayerScore();
-    }
 
 
     private void trashDescription(Command command) {
@@ -304,16 +302,50 @@ public class Game {
 
 
     private void printPlayerInventory(PlayerInventory playerInventory) {
-        System.out.println("Du kan max have 5 stykker affald i dine lommer. " +
-                "\nI dine lommer har du: " +
-                "\n");
+            System.out.println("Du kan max have 5 stykker affald i dine lommer. " +
+                    "\nI dine lommer har du: ");
 
         for (int i = 0; i < playerInventory.inventory.size(); i++) {
             if (playerInventory.inventory.get(i) == null) {
                 System.out.println("Der er ikke noget i denne lomme!");
+                break;
 
             } else {
                 System.out.println(playerInventory.inventory.get(i).getType().toString());
+            }
+        }
+    }
+
+    private void trashThrownOut () {
+        System.out.println("Du har sorteret korrekt, godt arbejde!");
+        printPlayerInventory(playerInventory);
+        System.out.println(" ");
+        playerScore.showPlayerScore();
+    }
+
+    private void sortingTrash (String trashtype, Trashtype trashtypeEnum, int point) {
+
+        Scanner trashcan = new Scanner(System.in);
+
+        for (int i = 0; i < playerInventory.inventory.size(); i++) {
+            if (playerInventory.inventory.get(i).getType() == trashtypeEnum) {
+                try {
+                    garbageArea.printTrashcans();
+                    if (trashcan.nextLine().equalsIgnoreCase(trashtype)) {
+                        playerScore.increasePlayerScore(point);
+                        playerInventory.inventory.remove(i);
+                        trashThrownOut();
+                    } else {
+                        playerScore.decreasePlayerScore(point);
+                        System.out.println("Dette var ikke korrekt.");
+                        playerScore.showPlayerScore();
+                    }
+                } catch (NumberFormatException e) {
+                    System.out.println("Du skal skrive en type, prøv igen.");
+                }
+            }
+            else {
+                System.out.println("Du har ikke denne type affald i tasken, prøv igen.");
             }
         }
     }

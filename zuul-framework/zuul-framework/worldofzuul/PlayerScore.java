@@ -21,7 +21,7 @@ public class PlayerScore {
     }
 
     public void decreasePlayerScore(int decreasePlayerScore){
-            if (playerScore <= 0) {
+            if (playerScore < 0) {
                 playerScore = 0;
             }
             else {
