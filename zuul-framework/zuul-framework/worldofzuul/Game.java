@@ -10,8 +10,7 @@ public class Game {
     private TrashCanRoom garbageArea;
     private RegularRoom outside, entrance, livingRoom, kitchen, bedRoom, bathRoom, parentsRoom;
     private PlayerScore playerScore = new PlayerScore(0);
-
-    PlayerInventory playerInventory = new PlayerInventory();
+    private PlayerInventory playerInventory;
 
     public Game() {
         createRooms();
@@ -295,56 +294,6 @@ public class Game {
                 garbageArea.showPaper();
             } else if (trashcanInput.equalsIgnoreCase("restaffald")) {
                 garbageArea.showResidualWaste();
-            }
-        }
-    }
-
-
-    private void printPlayerInventory(PlayerInventory playerInventory) {
-            System.out.println("Du kan max have 5 stykker affald i dine lommer. " +
-                    "\nI dine lommer har du: ");
-
-        for (int i = 0; i < playerInventory.inventory.size(); i++) {
-            if (playerInventory.inventory.get(i) == null) {
-                System.out.println("Der er ikke noget i denne lomme!");
-                break;
-
-            } else {
-                System.out.println(playerInventory.inventory.get(i).getType().toString());
-            }
-        }
-    }
-
-    private void trashThrownOut () {
-        System.out.println("Du har sorteret korrekt, godt arbejde!");
-        printPlayerInventory(playerInventory);
-        System.out.println(" ");
-        playerScore.showPlayerScore();
-    }
-
-    private void sortingTrash (String trashtype, Trashtype trashtypeEnum, int point) {
-
-        Scanner trashcan = new Scanner(System.in);
-
-        for (int i = 0; i < playerInventory.inventory.size(); i++) {
-            if (playerInventory.inventory.get(i).getType() == trashtypeEnum) {
-                try {
-                    garbageArea.printTrashcans();
-                    if (trashcan.nextLine().equalsIgnoreCase(trashtype)) {
-                        playerScore.increasePlayerScore(point);
-                        playerInventory.inventory.remove(i);
-                        trashThrownOut();
-                    } else {
-                        playerScore.decreasePlayerScore(point);
-                        System.out.println("Dette var ikke korrekt.");
-                        playerScore.showPlayerScore();
-                    }
-                } catch (NumberFormatException e) {
-                    System.out.println("Du skal skrive en type, prøv igen.");
-                }
-            }
-            else {
-                System.out.println("Du har ikke denne type affald i tasken, prøv igen.");
             }
         }
     }
