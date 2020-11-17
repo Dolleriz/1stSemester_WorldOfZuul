@@ -124,8 +124,7 @@ public class Game {
             printPlayerInventory(playerInventory);
         } else if (commandWord == CommandWord.THROWOUT) {
             throwout(command);
-        } else if (commandWord == CommandWord.TRASHDESCRIPTION
-        ) {
+        } else if (commandWord == CommandWord.TRASHDESCRIPTION) {
             trashDescription(command);
         }
         return wantToQuit;
