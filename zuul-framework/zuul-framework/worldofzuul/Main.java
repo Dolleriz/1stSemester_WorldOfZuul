@@ -8,8 +8,11 @@ import javafx.stage.Stage;
 
 public class Main extends Application {
 
+    
+
     @Override
     public void start(Stage stage) throws Exception {
+        //these lines make the game (GUI version) work, pls no change kthxbye
         FXMLLoader loader= new FXMLLoader(getClass().getResource("sample.fxml"));
         Stage root = loader.load();
         root.show();
