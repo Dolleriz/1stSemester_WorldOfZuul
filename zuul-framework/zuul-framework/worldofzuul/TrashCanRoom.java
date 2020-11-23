@@ -1,6 +1,7 @@
 package worldofzuul;
 
 import java.util.HashMap;
+import java.util.Scanner;
 
 public class TrashCanRoom extends Room {
     //HashMap trashcans = new HashMap<String, Trashcan>();
@@ -52,7 +53,7 @@ public class TrashCanRoom extends Room {
 
     }
 
-    public void printTrashcans () {
+    public void printTrashcans() {
         System.out.println("Hvor vil du gerne smide dette ud?");
         System.out.println(" ");
         System.out.println("> Plastik" +
@@ -81,6 +82,24 @@ public class TrashCanRoom extends Room {
     public void showResidualWaste() {
         System.out.println(residualWaste.getDescription());
     }
+
+    public void getTrashCanDescription() {
+        Scanner inputTrash = new Scanner(System.in);
+        System.out.println("Hvilken skraldespand vil du gerne vide mere om?");
+        String trashcanInput = inputTrash.next();
+        if (trashcanInput.equals("plastik")) {
+            showPlastic();
+        } else if (trashcanInput.equalsIgnoreCase("metal-og-glas")) {
+            showMetalAndGlass();
+        } else if (trashcanInput.equalsIgnoreCase("madaffald")) {
+            showFoodWaste();
+        } else if (trashcanInput.equalsIgnoreCase("papir")) {
+            showPaper();
+        } else if (trashcanInput.equalsIgnoreCase("restaffald")) {
+            showResidualWaste();
+        }
+    }
 }
+
 
 

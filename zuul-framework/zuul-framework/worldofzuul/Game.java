@@ -121,7 +121,7 @@ public class Game {
         } else if (commandWord == CommandWord.PICKUP) {
             pickup(command);
         } else if (commandWord == CommandWord.INVENTORY) {
-            printPlayerInventory(playerInventory);
+            playerInventory.printPlayerInventory(playerInventory);
         } else if (commandWord == CommandWord.THROWOUT) {
             throwout(command);
         } else if (commandWord == CommandWord.TRASHDESCRIPTION) {
@@ -252,7 +252,7 @@ public class Game {
 
         if (!command.hasSecondWord()) {
             System.out.println("Hvad vil du gerne smide ud?");
-            printPlayerInventory(playerInventory);
+            playerInventory.printPlayerInventory(playerInventory);
 
         }
 
@@ -282,42 +282,14 @@ public class Game {
         if (currentRoom != garbageArea) {
             System.out.println("Du er ikke ved skraldespandene");
         } else {
-            Scanner inputTrash = new Scanner(System.in);
-            System.out.println("Hvilken skraldespand vil du gerne vide mere om?");
-            String trashcanInput = inputTrash.next();
-            if (trashcanInput.equals("plastik")) {
-                garbageArea.showPlastic();
-            } else if (trashcanInput.equalsIgnoreCase("metal-og-glas")) {
-                garbageArea.showMetalAndGlass();
-            } else if (trashcanInput.equalsIgnoreCase("madaffald")) {
-                garbageArea.showFoodWaste();
-            } else if (trashcanInput.equalsIgnoreCase("papir")) {
-                garbageArea.showPaper();
-            } else if (trashcanInput.equalsIgnoreCase("restaffald")) {
-                garbageArea.showResidualWaste();
-            }
+            garbageArea.getTrashCanDescription();
         }
     }
 
-
-    private void printPlayerInventory(PlayerInventory playerInventory) {
-            System.out.println("Du kan max have 5 stykker affald i dine lommer. " +
-                    "\nI dine lommer har du: ");
-
-        for (int i = 0; i < playerInventory.inventory.size(); i++) {
-            if (playerInventory.inventory.get(i) == null) {
-                System.out.println("Der er ikke noget i denne lomme!");
-                break;
-
-            } else {
-                System.out.println(playerInventory.inventory.get(i).getType().toString());
-            }
-        }
-    }
 
     private void trashThrownOut () {
         System.out.println("Du har sorteret korrekt, godt arbejde!");
-        printPlayerInventory(playerInventory);
+        playerInventory.printPlayerInventory(playerInventory);
         System.out.println(" ");
         playerScore.showPlayerScore();
     }
