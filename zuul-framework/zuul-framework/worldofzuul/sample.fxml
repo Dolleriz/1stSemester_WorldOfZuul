@@ -22,18 +22,16 @@
                          <TableColumn prefWidth="254.00003051757812" resizable="false" text="Indhold i taske" />
                        </columns>
                      </TableView>
-                     <ImageView fitHeight="511.0" fitWidth="614.0" layoutX="14.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
-                        <image>
-                           <Image url="@img/untitled.png" />
-                        </image>
-                     </ImageView>
-                     <ImageView fitHeight="55.0" fitWidth="42.0" layoutX="88.0" layoutY="151.0" pickOnBounds="true" preserveRatio="true">
-                        <image>
-                           <Image url="@img/char/down1.png" />
-                        </image>
-                     </ImageView>
-                     <Button layoutX="14.0" layoutY="233.0" mnemonicParsing="false" text="Button" />
-                     <Button onAction="#changeField" layoutX="436.0" layoutY="233.0" mnemonicParsing="false" text="Button" />
+                     <AnchorPane layoutX="7.0" layoutY="7.0" prefHeight="523.0" prefWidth="475.0">
+                        <children>
+                           <ImageView fitHeight="520.0" fitWidth="475.0" layoutX="3.0" layoutY="1.0" pickOnBounds="true" preserveRatio="true">
+                              <image>
+                                 <Image url="@img/untitled.png" />
+                              </image>
+                           </ImageView>
+                           <Button layoutX="416.0" layoutY="249.0" mnemonicParsing="false" onAction="#changeField" text="Button" />
+                        </children>
+                     </AnchorPane>
                   </children>
                </Pane>
             </children>
