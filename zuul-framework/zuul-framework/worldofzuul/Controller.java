@@ -19,12 +19,15 @@ public class Controller {
     {
 
         Stage appStage;
-        Parent root;
+        Stage root;
+        //Following code allows for a scene change on a fxid button press.
+        //Use the if statement as some sort of template, but do not change the original for the sake of preservation.
+        //I have some sort of an idea how it all work, so hit me up if you have any questions - Johan B.
         if(event.getSource()==btnBeginTargeting)
         {
             appStage=(Stage)btnBeginTargeting.getScene().getWindow();
             root= FXMLLoader.load(getClass().getResource("changescenetest.fxml"));
-            Scene scene=new Scene(root);
+            Scene scene= root.getScene(); //  new Scene(root);
             appStage.setScene(scene);
             appStage.show();
         }
