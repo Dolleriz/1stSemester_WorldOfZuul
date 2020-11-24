@@ -37,7 +37,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="last_opened_file_path" value="$USER_HOME$/Downloads/openjfx-15.0.1_windows-x64_bin-sdk/javafx-sdk-15.0.1/lib" />
-    <property name="project.structure.last.edited" value="Libraries" />
+    <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="configurable.group.editor" />
@@ -46,7 +46,7 @@
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="worldofzuul.Main" />
       <module name="zuul-framework" />
-      <option name="VM_PARAMETERS" value="--module-path &quot;C:\Users\dolle\Downloads\openjfx-15.0.1_windows-x64_bin-sdk\javafx-sdk-15.0.1\lib&quot; --add-modules javafx.controls,javafx.fxml" />
+      <option name="VM_PARAMETERS" value="--module-path &quot;C:\Users\dolle\Downloads\openjfx-15.0.1_windows-x64_bin-sdk\javafx-sdk-15.0.1&quot; --add-modules javafx.controls,javafx.fxml" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="worldofzuul.*" />
@@ -91,14 +91,14 @@
       <screen x="0" y="0" width="1504" height="963" />
     </state>
     <state x="233" y="56" key="#Project_Structure/0.0.1504.963@0.0.1504.963" timestamp="1606211247432" />
-    <state x="208" y="136" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1606216951278">
+    <state x="208" y="136" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1606216680821">
       <screen x="0" y="0" width="1504" height="963" />
     </state>
-    <state x="208" y="136" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1504.963@0.0.1504.963" timestamp="1606216951278" />
-    <state x="533" y="186" key="#com.intellij.ide.macro.MacrosDialog" timestamp="1606216947894">
+    <state x="208" y="136" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1504.963@0.0.1504.963" timestamp="1606216680821" />
+    <state x="533" y="186" key="#com.intellij.ide.macro.MacrosDialog" timestamp="1606216582517">
       <screen x="0" y="0" width="1504" height="963" />
     </state>
-    <state x="533" y="186" key="#com.intellij.ide.macro.MacrosDialog/0.0.1504.963@0.0.1504.963" timestamp="1606216947894" />
+    <state x="533" y="186" key="#com.intellij.ide.macro.MacrosDialog/0.0.1504.963@0.0.1504.963" timestamp="1606216582517" />
     <state x="483" y="228" key="#com.intellij.refactoring.typeMigration.ui.FailedConversionsDialog" timestamp="1606210311650">
       <screen x="0" y="0" width="1504" height="963" />
     </state>
@@ -107,25 +107,9 @@
       <screen x="0" y="0" width="1504" height="963" />
     </state>
     <state x="533" y="236" key="FileChooserDialogImpl/0.0.1504.963@0.0.1504.963" timestamp="1606211279712" />
-    <state width="1461" height="256" key="GridCell.Tab.0.bottom" timestamp="1606217905059">
+    <state x="254" y="112" key="SettingsEditor" timestamp="1606216559389">
       <screen x="0" y="0" width="1504" height="963" />
     </state>
-    <state width="1461" height="256" key="GridCell.Tab.0.bottom/0.0.1504.963@0.0.1504.963" timestamp="1606217905059" />
-    <state width="1461" height="256" key="GridCell.Tab.0.center" timestamp="1606217905058">
-      <screen x="0" y="0" width="1504" height="963" />
-    </state>
-    <state width="1461" height="256" key="GridCell.Tab.0.center/0.0.1504.963@0.0.1504.963" timestamp="1606217905058" />
-    <state width="1461" height="256" key="GridCell.Tab.0.left" timestamp="1606217905058">
-      <screen x="0" y="0" width="1504" height="963" />
-    </state>
-    <state width="1461" height="256" key="GridCell.Tab.0.left/0.0.1504.963@0.0.1504.963" timestamp="1606217905058" />
-    <state width="1461" height="256" key="GridCell.Tab.0.right" timestamp="1606217905059">
-      <screen x="0" y="0" width="1504" height="963" />
-    </state>
-    <state width="1461" height="256" key="GridCell.Tab.0.right/0.0.1504.963@0.0.1504.963" timestamp="1606217905059" />
-    <state x="254" y="112" key="SettingsEditor" timestamp="1606216732717">
-      <screen x="0" y="0" width="1504" height="963" />
-    </state>
-    <state x="254" y="112" key="SettingsEditor/0.0.1504.963@0.0.1504.963" timestamp="1606216732717" />
+    <state x="254" y="112" key="SettingsEditor/0.0.1504.963@0.0.1504.963" timestamp="1606216559389" />
   </component>
 </project>
