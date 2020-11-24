@@ -1,5 +1,9 @@
 package worldofzuul;
 
+import javafx.collections.FXCollections;
+import javafx.scene.control.ComboBox;
+
+import java.util.Observable;
 import java.util.Scanner;
 
 public class Game {
@@ -10,6 +14,9 @@ public class Game {
     private PlayerScore playerScore = new PlayerScore(0);
 
     PlayerInventory playerInventory = new PlayerInventory(5);
+
+    ComboBox<Trash> playerInventory_GUI = new ComboBox<Trash>
+            (FXCollections.observableArrayList(playerInventory.inventory.get(playerInventory.inventory.size())));
 
     public Game() {
         createRooms();
