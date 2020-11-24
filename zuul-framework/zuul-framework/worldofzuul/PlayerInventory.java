@@ -1,6 +1,7 @@
 package worldofzuul;
 
 import java.util.Arrays;
+import java.util.Observable;
 
 public class PlayerInventory extends Inventory {
 
