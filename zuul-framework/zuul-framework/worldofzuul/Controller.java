@@ -22,7 +22,7 @@ public class Controller {
 
         Stage appStage;
         Stage root;
-        //Following code allows for a scene change on a fxid button press.
+        //The following code allows for a scene change on a fxid button press.
         //Use the if statement as some sort of template, but do not change the original for the sake of preservation.
         //I have some sort of an idea how it all work, so hit me up if you have any questions - Johan B.
         if(event.getSource()==btnBeginTargeting)
