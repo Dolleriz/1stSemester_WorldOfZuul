@@ -58,6 +58,42 @@ public class Controller {
             appStage.setScene(scene);
             appStage.show();
         }
+
+        if(event.getSource()==garbageArea)
+        {
+            appStage=(Stage)garbageArea.getScene().getWindow();
+            root= FXMLLoader.load(getClass().getResource("garbageArea.fxml"));
+            Scene scene= root.getScene(); //  new Scene(root);
+            appStage.setScene(scene);
+            appStage.show();
+        }
+
+        if(event.getSource()==outside)
+        {
+            appStage=(Stage)outside.getScene().getWindow();
+            root= FXMLLoader.load(getClass().getResource("outside.fxml"));
+            Scene scene= root.getScene(); //  new Scene(root);
+            appStage.setScene(scene);
+            appStage.show();
+        }
+
+        if(event.getSource()==entrance)
+        {
+            appStage=(Stage)entrance.getScene().getWindow();
+            root= FXMLLoader.load(getClass().getResource("entrance.fxml"));
+            Scene scene= root.getScene(); //  new Scene(root);
+            appStage.setScene(scene);
+            appStage.show();
+        }
+
+        if(event.getSource()==yourRoom)
+        {
+            appStage=(Stage)yourRoom.getScene().getWindow();
+            root= FXMLLoader.load(getClass().getResource("your_room.fxml"));
+            Scene scene= root.getScene(); //  new Scene(root);
+            appStage.setScene(scene);
+            appStage.show();
+        }
     }
 
 }
