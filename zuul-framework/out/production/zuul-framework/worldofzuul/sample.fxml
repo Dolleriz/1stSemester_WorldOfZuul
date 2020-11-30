@@ -29,7 +29,7 @@
                                  <Image url="@img/untitled.png" />
                               </image>
                            </ImageView>
-                           <Button layoutX="416.0" layoutY="249.0" mnemonicParsing="false" fx:id="btnBeginTargeting" onAction="#buttonClicked" text="Button" />
+                           <Button fx:id="kitchen" layoutX="416.0" layoutY="249.0" mnemonicParsing="false" onAction="#buttonClicked" text="Køkken" />
                         </children>
                      </AnchorPane>
                   </children>

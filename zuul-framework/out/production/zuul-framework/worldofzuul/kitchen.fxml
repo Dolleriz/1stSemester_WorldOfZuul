@@ -26,10 +26,10 @@
                         <children>
                            <ImageView fitHeight="520.0" fitWidth="475.0" layoutX="3.0" layoutY="1.0" pickOnBounds="true" preserveRatio="true">
                               <image>
-                                 <Image url="@img/untitled.png" />
+                                 <Image url="@img/TEMP_kitchen.png" />
                               </image>
                            </ImageView>
-                           <Button fx:id="kitchen" layoutX="416.0" layoutY="249.0" mnemonicParsing="false" onAction="#buttonClicked" text="Køkken" />
+                           <Button fx:id="bathroom" layoutX="391.0" layoutY="247.0" mnemonicParsing="false" onAction="#buttonClicked" text="Badeværelset" />
                         </children>
                      </AnchorPane>
                   </children>

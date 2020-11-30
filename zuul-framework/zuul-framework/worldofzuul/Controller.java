@@ -1,20 +1,18 @@
 package worldofzuul;
 
-import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
-import javafx.scene.control.TableView;
 import javafx.stage.Stage;
 
 import java.io.IOException;
 
 public class Controller {
     @FXML
-    public Button btnBeginTargeting;
+    public Button btnBeginTargeting, garbageArea, bathroom, entrance;
+    public Button kitchen, yourRoom, outside, parentsRoom;
 
     @FXML
     public void buttonClicked(ActionEvent event)throws IOException
@@ -28,12 +26,38 @@ public class Controller {
         if(event.getSource()==btnBeginTargeting)
         {
             appStage=(Stage)btnBeginTargeting.getScene().getWindow();
-            root= FXMLLoader.load(getClass().getResource("changescenetest.fxml"));
+            root= FXMLLoader.load(getClass().getResource("sample.fxml"));
             Scene scene= root.getScene(); //  new Scene(root);
             appStage.setScene(scene);
             appStage.show();
         }
 
+        if(event.getSource()==kitchen)
+        {
+            appStage=(Stage)kitchen.getScene().getWindow();
+            root= FXMLLoader.load(getClass().getResource("kitchen.fxml"));
+            Scene scene= root.getScene(); //  new Scene(root);
+            appStage.setScene(scene);
+            appStage.show();
+        }
+
+        if(event.getSource()==bathroom)
+        {
+            appStage=(Stage)bathroom.getScene().getWindow();
+            root= FXMLLoader.load(getClass().getResource("bathroom.fxml"));
+            Scene scene= root.getScene(); //  new Scene(root);
+            appStage.setScene(scene);
+            appStage.show();
+        }
+
+        if(event.getSource()==parentsRoom)
+        {
+            appStage=(Stage)parentsRoom.getScene().getWindow();
+            root= FXMLLoader.load(getClass().getResource("parents_bedroom.fxml"));
+            Scene scene= root.getScene(); //  new Scene(root);
+            appStage.setScene(scene);
+            appStage.show();
+        }
     }
 
 }
