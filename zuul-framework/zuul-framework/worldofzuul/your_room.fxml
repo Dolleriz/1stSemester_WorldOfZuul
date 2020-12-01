@@ -32,6 +32,7 @@
                                     <Button fx:id="kitchen" layoutX="389.0" layoutY="247.0" mnemonicParsing="false" onAction="#buttonClicked" text="Køkkenet" />
                                 </children>
                             </AnchorPane>
+                            <Button fx:id="help" layoutX="488.0" layoutY="530.0" mnemonicParsing="false" onAction="#buttonClicked" prefHeight="61.0" prefWidth="76.0" text="Hjælp" />
                         </children>
                     </Pane>
                 </children>

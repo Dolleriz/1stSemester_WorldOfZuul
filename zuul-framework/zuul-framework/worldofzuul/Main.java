@@ -7,12 +7,14 @@ import javafx.scene.control.Alert;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 
+import java.io.IOException;
+
 public class Main extends Application {
 
     
 
     @Override
-    public void start(Stage stage) throws Exception {
+    public void start(Stage stage) throws IOException {
 
         //these lines make the game (GUI version) work, pls no change kthxbye
         FXMLLoader loader= new FXMLLoader(getClass().getResource("outside.fxml"));
