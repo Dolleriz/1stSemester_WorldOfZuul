@@ -1,18 +1,22 @@
 package worldofzuul;
 
 import javafx.event.ActionEvent;
+import javafx.event.Event;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.TableView;
 import javafx.stage.Stage;
 
+import javax.swing.*;
 import java.io.IOException;
 
 public class Controller {
     @FXML
     public Button btnBeginTargeting, garbageArea, bathroom, entrance;
     public Button kitchen, yourRoom, outside, parentsRoom;
+    public TableView inventory;
 
     @FXML
     public void buttonClicked(ActionEvent event)throws IOException
@@ -96,4 +100,8 @@ public class Controller {
         }
     }
 
+     @FXML
+    public void viewInventory(Event event) throws IOException {
+
+     }
 }
