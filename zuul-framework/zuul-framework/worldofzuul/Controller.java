@@ -5,6 +5,7 @@ import javafx.event.Event;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.TableView;
 import javafx.stage.Stage;
@@ -15,6 +16,7 @@ public class Controller {
     @FXML
     public Button livingRoom, garbageArea, bathroom, entrance;
     public Button kitchen, yourRoom, outside, parentsRoom;
+    public Button help;
     public TableView inventory;
 
     @FXML
@@ -96,6 +98,15 @@ public class Controller {
             Scene scene= root.getScene(); //  new Scene(root);
             appStage.setScene(scene);
             appStage.show();
+        }
+
+        if(event.getSource()==help)
+        {
+            Alert help = new Alert(Alert.AlertType.INFORMATION);
+            help.setTitle("Hjælp");
+            help.setHeaderText(null);
+            help.setContentText("Hjælp bruh.");
+            help.showAndWait();
         }
     }
 

@@ -33,6 +33,7 @@
                                     <Button fx:id="outside" layoutX="14.0" layoutY="247.0" mnemonicParsing="false" onAction="#buttonClicked" text="Udenfor" />
                                 </children>
                             </AnchorPane>
+                            <Button fx:id="help" layoutX="488.0" layoutY="530.0" mnemonicParsing="false" onAction="#buttonClicked" prefHeight="61.0" prefWidth="76.0" text="Hjælp" />
                         </children>
                     </Pane>
                 </children>

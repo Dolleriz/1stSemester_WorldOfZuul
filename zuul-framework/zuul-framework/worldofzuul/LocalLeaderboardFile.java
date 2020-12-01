@@ -4,12 +4,12 @@ import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 
-public class LocalLeaderboardFile{
+public class LocalLeaderboardFile {
 
     public LocalLeaderboardFile(Game game) {
     }
 
-    public void createFile () throws IOException{
+    public void createFile() throws IOException {
         File leaderboardFile = new File("Leaderboard.txt");
 
         try {
@@ -21,16 +21,12 @@ public class LocalLeaderboardFile{
         }
     }
 
-    public void overwriteFile(File leaderboardFile) throws IOException{
+    public void overwriteFile(File leaderboardFile) throws IOException {
         FileWriter leaderboardWriter = null;
 
         leaderboardWriter = new FileWriter("Leaderboard.txt");
 
 
-        if () {
-            leaderboardWriter.write("Highscore: " + );
-
-        }
     }
 }
 

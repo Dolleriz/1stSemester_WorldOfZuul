@@ -34,6 +34,7 @@
                            <Button fx:id="parentsRoom" layoutX="327.0" layoutY="237.0" mnemonicParsing="false" onAction="#buttonClicked" text="Forældres soveværelse" />
                         </children>
                      </AnchorPane>
+                      <Button fx:id="help" layoutX="488.0" layoutY="530.0" mnemonicParsing="false" onAction="#buttonClicked" prefHeight="61.0" prefWidth="76.0" text="Hjælp" />
                   </children>
                </Pane>
             </children>

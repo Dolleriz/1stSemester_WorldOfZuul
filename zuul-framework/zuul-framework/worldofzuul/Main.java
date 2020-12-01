@@ -7,12 +7,14 @@ import javafx.scene.control.Alert;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 
+import java.io.IOException;
+
 public class Main extends Application {
 
     
 
     @Override
-    public void start(Stage stage) throws Exception {
+    public void start(Stage stage) throws IOException {
 
         //these lines make the game (GUI version) work, pls no change kthxbye
         FXMLLoader loader= new FXMLLoader(getClass().getResource("outside.fxml"));
@@ -22,7 +24,7 @@ public class Main extends Application {
         alert.setTitle("En verden af Skrald");
         alert.setHeaderText(null);
         alert.setContentText("Velkommen til En Verden af Affald! \nDette er et nyt spændende affaldsindsamlingsspil." +
-                "\nTryk på hjælp, hvis du ikke hvad hvad du skal!");
+                "\nTryk på hjælp, hvis du ikke ved hvad du skal!");
 
         alert.showAndWait();
         //Scene scene = new Scene(root, 750, 750);
