@@ -29,7 +29,7 @@
                                             <Image url="@img/TEMP_trashroom.png" />
                                         </image>
                                     </ImageView>
-                                    <Button fx:id="bathroom" layoutX="199.0" layoutY="484.0" mnemonicParsing="false" onAction="#buttonClicked" text="Udenfor" />
+                                    <Button fx:id="outside" layoutX="199.0" layoutY="484.0" mnemonicParsing="false" onAction="#buttonClicked" text="Udenfor" />
                                 </children>
                             </AnchorPane>
                         </children>
