@@ -26,7 +26,7 @@
                                 <children>
                                     <ImageView fitHeight="520.0" fitWidth="475.0" layoutX="3.0" layoutY="1.0" pickOnBounds="true" preserveRatio="true">
                                         <image>
-                                            <Image url="@img/TEMP_outside.png" />
+                                            <Image url="@img/TEMP_hallway.png" />
                                         </image>
                                     </ImageView>
                                     <Button fx:id="btnBeginTargeting" layoutX="424.0" layoutY="247.0" mnemonicParsing="false" onAction="#buttonClicked" text="Stue" />

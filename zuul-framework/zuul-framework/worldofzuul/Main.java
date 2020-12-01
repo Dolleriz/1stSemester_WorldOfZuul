@@ -14,7 +14,7 @@ public class Main extends Application {
     public void start(Stage stage) throws Exception {
 
         //these lines make the game (GUI version) work, pls no change kthxbye
-        FXMLLoader loader= new FXMLLoader(getClass().getResource("sample.fxml"));
+        FXMLLoader loader= new FXMLLoader(getClass().getResource("outside.fxml"));
         Stage root = loader.load();
         root.show();
         //Scene scene = new Scene(root, 750, 750);

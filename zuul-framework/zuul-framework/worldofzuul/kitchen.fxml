@@ -29,7 +29,9 @@
                                  <Image url="@img/TEMP_kitchen.png" />
                               </image>
                            </ImageView>
-                           <Button fx:id="bathroom" layoutX="391.0" layoutY="247.0" mnemonicParsing="false" onAction="#buttonClicked" text="Badeværelset" />
+                           <Button fx:id="bathroom" layoutX="376.0" layoutY="247.0" mnemonicParsing="false" onAction="#buttonClicked" text="Badeværelset" />
+                           <Button fx:id="yourRoom" layoutX="14.0" layoutY="249.0" mnemonicParsing="false" onAction="#buttonClicked" text="Dit værelse" />
+                           <Button fx:id="livingRoom" layoutX="215.0" layoutY="483.0" mnemonicParsing="false" onAction="#buttonClicked" text="Stue" />
                         </children>
                      </AnchorPane>
                   </children>

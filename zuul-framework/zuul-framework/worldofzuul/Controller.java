@@ -9,12 +9,11 @@ import javafx.scene.control.Button;
 import javafx.scene.control.TableView;
 import javafx.stage.Stage;
 
-import javax.swing.*;
 import java.io.IOException;
 
 public class Controller {
     @FXML
-    public Button btnBeginTargeting, garbageArea, bathroom, entrance;
+    public Button livingRoom, garbageArea, bathroom, entrance;
     public Button kitchen, yourRoom, outside, parentsRoom;
     public TableView inventory;
 
@@ -27,10 +26,10 @@ public class Controller {
         //The following code allows for a scene change on a fxid button press.
         //Use the if statement as some sort of template, but do not change the original for the sake of preservation.
         //I have some sort of an idea how it all work, so hit me up if you have any questions - Johan B.
-        if(event.getSource()==btnBeginTargeting)
+        if(event.getSource()==livingRoom)
         {
-            appStage=(Stage)btnBeginTargeting.getScene().getWindow();
-            root= FXMLLoader.load(getClass().getResource("sample.fxml"));
+            appStage=(Stage)livingRoom.getScene().getWindow();
+            root= FXMLLoader.load(getClass().getResource("livingRoom.fxml"));
             Scene scene= root.getScene(); //  new Scene(root);
             appStage.setScene(scene);
             appStage.show();
