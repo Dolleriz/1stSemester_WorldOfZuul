@@ -4,7 +4,7 @@ import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 
-public class LocalLeaderboardFile(){
+public class LocalLeaderboardFile{
 
     public LocalLeaderboardFile(Game game) {
     }
