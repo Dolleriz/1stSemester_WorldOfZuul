@@ -22,7 +22,7 @@ public class Main extends Application {
         alert.setTitle("En verden af Skrald");
         alert.setHeaderText(null);
         alert.setContentText("Velkommen til En Verden af Affald! \nDette er et nyt spændende affaldsindsamlingsspil." +
-                "\nTryk på hjælp, hvis du ikke hvad hvad du skal!");
+                "\nTryk på hjælp, hvis du ikke ved hvad du skal!");
 
         alert.showAndWait();
         //Scene scene = new Scene(root, 750, 750);
