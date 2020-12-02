@@ -4,13 +4,16 @@ import javafx.event.ActionEvent;
 import javafx.event.Event;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
 import javafx.scene.Scene;
+import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.TableView;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.util.ArrayList;
 
 public class Controller {
     Game_GUI myGame = new Game_GUI();
@@ -20,6 +23,8 @@ public class Controller {
             kitchen, yourRoom, outside, parentsRoom;
     public Button help;
     public TableView inventory;
+    public Sprites sprites;
+
 
     @FXML
     public void buttonClicked(ActionEvent event)throws IOException
@@ -37,6 +42,7 @@ public class Controller {
             Scene scene= root.getScene(); //  new Scene(root);
             appStage.setScene(scene);
             appStage.show();
+            drawTrash();
         }
 
         if(event.getSource()==kitchen)
@@ -112,8 +118,28 @@ public class Controller {
         }
     }
 
-     @FXML
+    @FXML
     public void viewInventory(Event event) throws IOException {
         
+    }
+    @FXML
+    public void drawTrash() {
+        ArrayList<Sprites> moneybagList = new ArrayList<>();
+
+        Node gc = outside.getGraphic();
+
+        for (int i = 0; i < 15; i++) {
+            Sprites moneybag = new Sprites();
+            moneybag.setImage("worldofzuul/img/Transperent/Icon1.png");
+            double px = 350 * Math.random() + 50;
+            double py = 350 * Math.random() + 50;
+            moneybag.setPosition(px, py);
+            moneybagList.add(moneybag);
+        }
+
+        for (Sprites moneybag : moneybagList) {
+            moneybag.render(gc);
+        }
+
     }
 }
