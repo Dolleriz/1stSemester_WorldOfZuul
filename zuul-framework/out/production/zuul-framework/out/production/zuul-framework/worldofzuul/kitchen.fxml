@@ -17,7 +17,7 @@
             <children>
                <Pane prefHeight="750.0" prefWidth="750.0">
                   <children>
-                     <TableView layoutX="488.0" layoutY="14.0" prefHeight="510.0" prefWidth="256.0">
+                     <TableView fx:id="inventory" layoutX="488.0" layoutY="14.0" prefHeight="510.0" prefWidth="256.0">
                        <columns>
                          <TableColumn prefWidth="254.00003051757812" resizable="false" text="Indhold i taske" />
                        </columns>
@@ -26,12 +26,15 @@
                         <children>
                            <ImageView fitHeight="520.0" fitWidth="475.0" layoutX="3.0" layoutY="1.0" pickOnBounds="true" preserveRatio="true">
                               <image>
-                                 <Image url="@img/untitled.png" />
+                                 <Image url="@img/TEMP_kitchen.png" />
                               </image>
                            </ImageView>
-                           <Button layoutX="416.0" layoutY="249.0" mnemonicParsing="false" fx:id="btnBeginTargeting" onAction="#buttonClicked" text="Button" />
+                           <Button fx:id="bathroom" layoutX="376.0" layoutY="247.0" mnemonicParsing="false" onAction="#buttonClicked" text="Badeværelset" />
+                           <Button fx:id="yourRoom" layoutX="14.0" layoutY="249.0" mnemonicParsing="false" onAction="#buttonClicked" text="Dit værelse" />
+                           <Button fx:id="livingRoom" layoutX="215.0" layoutY="483.0" mnemonicParsing="false" onAction="#buttonClicked" text="Stue" />
                         </children>
                      </AnchorPane>
+                     <Button fx:id="help" layoutX="488.0" layoutY="530.0" mnemonicParsing="false" onAction="#buttonClicked" prefHeight="61.0" prefWidth="76.0" text="Hjælp" />
                   </children>
                </Pane>
             </children>

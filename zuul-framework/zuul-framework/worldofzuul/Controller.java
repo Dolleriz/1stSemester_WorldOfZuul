@@ -6,6 +6,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Scene;
+import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
@@ -24,6 +25,8 @@ public class Controller {
     public Button help;
     public TableView inventory;
     public Sprites sprites;
+    public Canvas trash;
+    public Button scan;
 
 
     @FXML
@@ -32,6 +35,7 @@ public class Controller {
 
         Stage appStage;
         Stage root;
+
         //The following code allows for a scene change on a fxid button press.
         //Use the if statement as some sort of template, but do not change the original for the sake of preservation.
         //I have some sort of an idea how it all work, so hit me up if you have any questions - Johan B.
@@ -42,7 +46,6 @@ public class Controller {
             Scene scene= root.getScene(); //  new Scene(root);
             appStage.setScene(scene);
             appStage.show();
-            drawTrash();
         }
 
         if(event.getSource()==kitchen)
@@ -88,6 +91,7 @@ public class Controller {
             Scene scene= root.getScene(); //  new Scene(root);
             appStage.setScene(scene);
             appStage.show();
+
         }
 
         if(event.getSource()==entrance)
@@ -123,23 +127,25 @@ public class Controller {
         
     }
     @FXML
-    public void drawTrash() {
+    public void drawTrash(Event event) throws IOException {
         ArrayList<Sprites> moneybagList = new ArrayList<>();
+        GraphicsContext gc = trash.getGraphicsContext2D();
 
-        Node gc = outside.getGraphic();
 
-        for (int i = 0; i < 15; i++) {
-            Sprites moneybag = new Sprites();
-            moneybag.setImage("worldofzuul/img/Transperent/Icon1.png");
-            double px = 350 * Math.random() + 50;
-            double py = 350 * Math.random() + 50;
-            moneybag.setPosition(px, py);
-            moneybagList.add(moneybag);
-        }
+            for (int i = 0; i < 15; i++) {
+                Sprites moneybag = new Sprites();
+                moneybag.setImage("worldofzuul/img/Transperent/Icon1.png");
+                double px = 350 * Math.random() + 50;
+                double py = 350 * Math.random() + 50;
+                moneybag.setPosition(px, py);
+                moneybagList.add(moneybag);
+                scan.setDisable(true);
 
-        for (Sprites moneybag : moneybagList) {
-            moneybag.render(gc);
-        }
+            }
+            for (Sprites moneybag : moneybagList) {
+                moneybag.render(gc);
+            }
+
 
     }
 }
