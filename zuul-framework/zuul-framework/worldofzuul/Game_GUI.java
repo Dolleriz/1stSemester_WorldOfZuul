@@ -17,6 +17,7 @@ public class Game_GUI {
     public Game_GUI() {
         createRooms();
         showPlayerInventory();
+        showRoomInventory();
     }
 
     void createRooms() {
@@ -85,6 +86,11 @@ public class Game_GUI {
     public void showPlayerInventory(){
         new TableView<>
                 (FXCollections.observableArrayList(playerInventory.inventory));
+    }
+
+    @FXML
+    public void showRoomInventory() {
+        new TableView<>(FXCollections.observableArrayList(currentRoom.roomInventory));
     }
 
     public void play() {
