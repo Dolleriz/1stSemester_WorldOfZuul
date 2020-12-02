@@ -18,7 +18,7 @@ public class Game {
 
     public Game() {
         createRooms();
-        showPlayerInventory();
+        outside.printRoomInventory();
         parser = new Parser();
     }
 
@@ -82,13 +82,6 @@ public class Game {
         parentsRoom.setExit("nord", bathRoom);
 
         currentRoom = outside;
-    }
-
-    @FXML
-    public TableView<Trash> showPlayerInventory(){
-        TableView<Trash> playerInventory_GUI = new TableView<>
-                (FXCollections.observableArrayList(playerInventory.inventory));
-        return playerInventory_GUI;
     }
 
     public void play() {
@@ -329,5 +322,11 @@ public class Game {
                 System.out.println(playerInventory.inventory.get(i).getType().toString());
             }
         }
+    }
+
+    public static void main(String[] args) {
+        Game cli_Game = new Game();
+
+        cli_Game.play();
     }
 }
