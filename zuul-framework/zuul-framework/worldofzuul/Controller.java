@@ -13,7 +13,7 @@ import javafx.stage.Stage;
 import java.io.IOException;
 
 public class Controller {
-    Game myGame = new Game();
+    Game_GUI myGame = new Game_GUI();
 
     @FXML
     public Button livingRoom, garbageArea, bathroom, entrance,
@@ -107,7 +107,9 @@ public class Controller {
             Alert help = new Alert(Alert.AlertType.INFORMATION);
             help.setTitle("Hjælp");
             help.setHeaderText(null);
-            help.setContentText("Dette spil handler om at du skal samle skrald");
+            help.setContentText("Dette spil handler om at du skal samle skrald og herefter smide det i de rigtige skraldespande." +
+                    "\nKlik dig frem til de forskellige rum ved hjælp af knapperne der er på sidderne af spil vinduet." +
+                    "\nTEMP TEMP TEMP");
             help.showAndWait();
         }
     }

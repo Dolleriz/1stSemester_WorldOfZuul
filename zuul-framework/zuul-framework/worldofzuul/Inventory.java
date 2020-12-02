@@ -12,5 +12,7 @@ public class Inventory {
 
     public Inventory(int size) {
         this.inventory = new ArrayList<>();
+        inventory.add(new Trash(Trashtype.PLASTIC));
+
     }
 }
