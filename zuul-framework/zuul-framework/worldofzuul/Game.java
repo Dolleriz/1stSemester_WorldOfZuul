@@ -14,7 +14,7 @@ public class Game {
     RegularRoom outside, entrance, livingRoom, kitchen, bedRoom, bathRoom, parentsRoom;
     PlayerScore playerScore = new PlayerScore(0);
 
-    PlayerInventory playerInventory = new PlayerInventory(5);
+    Inventory playerInventory = new Inventory(5);
 
     public Game() {
         createRooms();
@@ -316,7 +316,7 @@ public class Game {
     }
 
 
-    void printPlayerInventory(PlayerInventory playerInventory) {
+    void printPlayerInventory(Inventory playerInventory) {
         System.out.println("Du kan max have 5 stykker affald i dine lommer. " +
                 "\nI dine lommer har du: " +
                 "\n");

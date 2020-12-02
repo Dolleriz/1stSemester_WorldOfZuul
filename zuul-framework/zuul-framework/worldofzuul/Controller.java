@@ -16,8 +16,8 @@ public class Controller {
     Game myGame = new Game();
 
     @FXML
-    public Button livingRoom, garbageArea, bathroom, entrance;
-    public Button kitchen, yourRoom, outside, parentsRoom;
+    public Button livingRoom, garbageArea, bathroom, entrance,
+            kitchen, yourRoom, outside, parentsRoom;
     public Button help;
     public TableView inventory;
 
@@ -115,5 +115,5 @@ public class Controller {
      @FXML
     public void viewInventory(Event event) throws IOException {
         
-     }
+    }
 }

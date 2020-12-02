@@ -2,24 +2,21 @@ package worldofzuul;
 
 import javafx.collections.FXCollections;
 import javafx.fxml.FXML;
-import javafx.scene.control.ComboBox;
 import javafx.scene.control.TableView;
 
 import java.util.Scanner;
 
 public class Game_GUI {
-    Parser parser;
+
     Room currentRoom;
     TrashCanRoom garbageArea;
     RegularRoom outside, entrance, livingRoom, kitchen, bedRoom, bathRoom, parentsRoom;
     PlayerScore playerScore = new PlayerScore(0);
-
-    PlayerInventory playerInventory = new PlayerInventory(5);
+    Inventory playerInventory = new Inventory(5);
 
     public Game_GUI() {
         createRooms();
         showPlayerInventory();
-        parser = new Parser();
     }
 
     void createRooms() {
@@ -85,22 +82,13 @@ public class Game_GUI {
     }
 
     @FXML
-    public TableView<Trash> showPlayerInventory(){
-        TableView<Trash> playerInventory_GUI = new TableView<>
+    public void showPlayerInventory(){
+        new TableView<>
                 (FXCollections.observableArrayList(playerInventory.inventory));
-        return playerInventory_GUI;
     }
 
     public void play() {
         printWelcome();
-
-
-        boolean finished = false;
-        while (!finished) {
-            Command command = parser.getCommand();
-            finished = processCommand(command);
-        }
-        System.out.println("Tak for spillet.  Farvel.");
     }
 
     void printWelcome() {
@@ -124,7 +112,7 @@ public class Game_GUI {
         }
 
         if (commandWord == CommandWord.HELP) {
-            printHelp();
+
         } else if (commandWord == CommandWord.GO) {
             goRoom(command);
         } else if (commandWord == CommandWord.QUIT) {
@@ -140,13 +128,6 @@ public class Game_GUI {
             trashDescription(command);
         }
         return wantToQuit;
-    }
-
-    void printHelp() {
-        System.out.println("Du er forvirret. Der er mange steder at gå hen, og mange ting du kan gøre.");
-        System.out.println();
-        System.out.println("Dine muligheder er:");
-        parser.showCommands();
     }
 
     void goRoom(Command command) {
@@ -316,7 +297,7 @@ public class Game_GUI {
     }
 
 
-    void printPlayerInventory(PlayerInventory playerInventory) {
+    void printPlayerInventory(Inventory playerInventory) {
         System.out.println("Du kan max have 5 stykker affald i dine lommer. " +
                 "\nI dine lommer har du: " +
                 "\n");
