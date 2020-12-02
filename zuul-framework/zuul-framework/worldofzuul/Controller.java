@@ -26,6 +26,7 @@ public class Controller {
     public TableView inventory;
     public Sprites sprites;
     public Canvas trash;
+    public Button scan;
 
 
     @FXML
@@ -130,7 +131,7 @@ public class Controller {
         ArrayList<Sprites> moneybagList = new ArrayList<>();
         GraphicsContext gc = trash.getGraphicsContext2D();
 
-        if(event.getSource()==trash) {
+
             for (int i = 0; i < 15; i++) {
                 Sprites moneybag = new Sprites();
                 moneybag.setImage("worldofzuul/img/Transperent/Icon1.png");
@@ -138,11 +139,13 @@ public class Controller {
                 double py = 350 * Math.random() + 50;
                 moneybag.setPosition(px, py);
                 moneybagList.add(moneybag);
+                scan.setDisable(true);
 
             }
             for (Sprites moneybag : moneybagList) {
                 moneybag.render(gc);
             }
-        }
+
+
     }
 }
