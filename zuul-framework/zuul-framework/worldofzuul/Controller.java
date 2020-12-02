@@ -112,6 +112,6 @@ public class Controller {
 
      @FXML
     public void viewInventory(Event event) throws IOException {
-
+        
      }
 }
