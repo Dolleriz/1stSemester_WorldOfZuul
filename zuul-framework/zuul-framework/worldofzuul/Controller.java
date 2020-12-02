@@ -135,8 +135,8 @@ public class Controller {
             for (int i = 0; i < 15; i++) {
                 Sprites moneybag = new Sprites();
                 moneybag.setImage("worldofzuul/img/Transperent/Icon1.png");
-                double px = 350 * Math.random() + 50;
-                double py = 350 * Math.random() + 50;
+                double px = 300 * Math.random() + 50;
+                double py = 400 * Math.random() + 50;
                 moneybag.setPosition(px, py);
                 moneybagList.add(moneybag);
                 scan.setDisable(true);
