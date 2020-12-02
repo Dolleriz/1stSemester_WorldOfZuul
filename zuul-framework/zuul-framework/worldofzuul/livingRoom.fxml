@@ -17,7 +17,7 @@
             <children>
                <Pane prefHeight="750.0" prefWidth="750.0">
                   <children>
-                     <TableView layoutX="488.0" layoutY="14.0" prefHeight="510.0" prefWidth="256.0">
+                     <TableView fx:id="inventory" layoutX="488.0" layoutY="14.0" prefHeight="510.0" prefWidth="256.0">
                        <columns>
                          <TableColumn prefWidth="254.00003051757812" resizable="false" text="Indhold i taske" />
                        </columns>
