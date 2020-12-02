@@ -11,17 +11,12 @@ public class LocalLeaderboardFile {
 
     public void createFile() throws IOException {
         File leaderboardFile = new File("Leaderboard.txt");
-
-        try {
-            if (!leaderboardFile.createNewFile()) {
-                overwriteFile(leaderboardFile);
-            }
-        } catch (IOException e) {
-            e.printStackTrace();
+        if (!leaderboardFile.createNewFile()) {
+            overwriteFile(leaderboardFile);
         }
     }
 
-    public void overwriteFile(File leaderboardFile) throws IOException {
+    public void overwriteFile (File leaderboardFile) throws IOException {
         FileWriter leaderboardWriter = null;
 
         leaderboardWriter = new FileWriter("Leaderboard.txt");
@@ -29,4 +24,3 @@ public class LocalLeaderboardFile {
 
     }
 }
-
