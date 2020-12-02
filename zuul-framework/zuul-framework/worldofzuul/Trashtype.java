@@ -9,24 +9,25 @@ import java.util.HashMap;
 
 public enum Trashtype {
 
-    FOOD_WASTE("Madaffald.", "img\\trash.png"),
+    FOOD_WASTE("Madaffald.", "worldofzuul/img/Transperent/Icon1.png"),
 
-    METAL_AND_GLASS("Metal og glas.", "img\\trash.png"),
+    METAL_AND_GLASS("Metal og glas.", "worldofzuul/img/Transperent/Icon2.png"),
 
-    PAPER("Papir og pap.", "img\\trash.png"),
+    PAPER("Papir og pap.", "worldofzuul/img/Transperent/Icon3.png"),
 
-    PLASTIC("Plastik.", "img\\trash.png"),
+    PLASTIC("Plastik.", "worldofzuul/img/Transperent/Icon4.png"),
 
-    RESIDUAL_WASTE("Restaffald.", "img\\trash.png");
+    RESIDUAL_WASTE("Restaffald.", "worldofzuul/img/Transperent/Icon5.png");
 
     private String trashString;
     Image image;
 
     Trashtype(String trashType, String filePath) {
         this.trashString = trashType;
+
         try{
-        this.image = new Image(new FileInputStream(filePath));}
-        catch (FileNotFoundException e){
+            this.image = new Image(new FileInputStream(filePath));
+        } catch (FileNotFoundException e) {
             System.out.println("File not found");
         }
     }

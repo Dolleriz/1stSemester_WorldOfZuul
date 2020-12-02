@@ -19,11 +19,24 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="fa685b78-871e-41d7-a232-1b029ddc9953" name="Default Changelist" comment="" />
+    <list default="true" id="fa685b78-871e-41d7-a232-1b029ddc9953" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/worldofzuul/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/worldofzuul/Controller.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/worldofzuul/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/worldofzuul/Game.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/worldofzuul/PlayerInventory.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/worldofzuul/Trashtype.java" beforeDir="false" afterPath="$PROJECT_DIR$/worldofzuul/Trashtype.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
@@ -36,8 +49,8 @@
   </component>
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
-    <property name="last_opened_file_path" value="$USER_HOME$/Downloads/openjfx-15.0.1_windows-x64_bin-sdk/javafx-sdk-15.0.1/lib" />
-    <property name="project.structure.last.edited" value="Modules" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="configurable.group.editor" />
@@ -46,7 +59,7 @@
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="worldofzuul.Main" />
       <module name="zuul-framework" />
-      <option name="VM_PARAMETERS" value="--module-path &quot;C:\Users\dolle\Downloads\openjfx-15.0.1_windows-x64_bin-sdk\javafx-sdk-15.0.1&quot; --add-modules javafx.controls,javafx.fxml" />
+      <option name="VM_PARAMETERS" value="--module-path &quot;C:\Users\dolle\Downloads\openjfx-15.0.1_windows-x64_bin-sdk\javafx-sdk-15.0.1\lib&quot; --add-modules javafx.controls,javafx.fxml" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="worldofzuul.*" />
@@ -85,31 +98,5 @@
       </map>
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
-  </component>
-  <component name="WindowStateProjectService">
-    <state x="233" y="56" key="#Project_Structure" timestamp="1606211247432">
-      <screen x="0" y="0" width="1504" height="963" />
-    </state>
-    <state x="233" y="56" key="#Project_Structure/0.0.1504.963@0.0.1504.963" timestamp="1606211247432" />
-    <state x="208" y="136" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1606216680821">
-      <screen x="0" y="0" width="1504" height="963" />
-    </state>
-    <state x="208" y="136" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1504.963@0.0.1504.963" timestamp="1606216680821" />
-    <state x="533" y="186" key="#com.intellij.ide.macro.MacrosDialog" timestamp="1606216582517">
-      <screen x="0" y="0" width="1504" height="963" />
-    </state>
-    <state x="533" y="186" key="#com.intellij.ide.macro.MacrosDialog/0.0.1504.963@0.0.1504.963" timestamp="1606216582517" />
-    <state x="483" y="228" key="#com.intellij.refactoring.typeMigration.ui.FailedConversionsDialog" timestamp="1606210311650">
-      <screen x="0" y="0" width="1504" height="963" />
-    </state>
-    <state x="483" y="228" key="#com.intellij.refactoring.typeMigration.ui.FailedConversionsDialog/0.0.1504.963@0.0.1504.963" timestamp="1606210311650" />
-    <state x="533" y="236" key="FileChooserDialogImpl" timestamp="1606211279712">
-      <screen x="0" y="0" width="1504" height="963" />
-    </state>
-    <state x="533" y="236" key="FileChooserDialogImpl/0.0.1504.963@0.0.1504.963" timestamp="1606211279712" />
-    <state x="254" y="112" key="SettingsEditor" timestamp="1606216559389">
-      <screen x="0" y="0" width="1504" height="963" />
-    </state>
-    <state x="254" y="112" key="SettingsEditor/0.0.1504.963@0.0.1504.963" timestamp="1606216559389" />
   </component>
 </project>
