@@ -33,6 +33,7 @@ public class Main extends Application {
         //stage.show();
     }
     public static void main(String[] args) {
+
         launch(args);
         //Game myGame = new Game();
 

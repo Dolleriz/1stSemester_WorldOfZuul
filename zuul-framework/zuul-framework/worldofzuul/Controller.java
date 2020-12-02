@@ -107,7 +107,7 @@ public class Controller {
             Alert help = new Alert(Alert.AlertType.INFORMATION);
             help.setTitle("Hjælp");
             help.setHeaderText(null);
-            help.setContentText("Hjælp bruh.");
+            help.setContentText("Dette spil handler om at du skal samle skrald");
             help.showAndWait();
         }
     }
