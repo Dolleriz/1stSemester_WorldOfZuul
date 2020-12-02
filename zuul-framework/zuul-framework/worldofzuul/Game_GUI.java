@@ -2,7 +2,6 @@ package worldofzuul;
 
 import javafx.collections.FXCollections;
 import javafx.fxml.FXML;
-import javafx.scene.control.ComboBox;
 import javafx.scene.control.TableView;
 
 import java.util.Scanner;
@@ -85,10 +84,9 @@ public class Game_GUI {
     }
 
     @FXML
-    public TableView<Trash> showPlayerInventory(){
-        TableView<Trash> playerInventory_GUI = new TableView<>
+    public void showPlayerInventory(){
+        new TableView<>
                 (FXCollections.observableArrayList(playerInventory.inventory));
-        return playerInventory_GUI;
     }
 
     public void play() {
