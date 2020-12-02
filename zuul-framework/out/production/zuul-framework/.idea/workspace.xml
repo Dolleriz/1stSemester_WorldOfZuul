@@ -21,6 +21,7 @@
   <component name="ChangeListManager">
     <list default="true" id="fa685b78-871e-41d7-a232-1b029ddc9953" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/worldofzuul/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/worldofzuul/Controller.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/worldofzuul/Game_GUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/worldofzuul/Game_GUI.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
