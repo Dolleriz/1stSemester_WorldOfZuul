@@ -20,17 +20,13 @@ public enum Trashtype {
     RESIDUAL_WASTE("Restaffald.", "worldofzuul/img/Transperent/Icon5.png");
 
     private String trashString;
-    Image image;
+    Sprites sprite;
 
     Trashtype(String trashType, String filePath) {
         this.trashString = trashType;
-
-        try{
-            this.image = new Image(new FileInputStream(filePath));
-        } catch (FileNotFoundException e) {
-            System.out.println("File not found");
-        }
-    }
+        sprite = new Sprites();
+        sprite.setImage(filePath);
+            }
 
     public String toString() {
         return trashString;

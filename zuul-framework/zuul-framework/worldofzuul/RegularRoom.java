@@ -16,15 +16,15 @@ public class RegularRoom extends Room {
 
                 trashTypeNumber = Math.random() * 5;
                 if (trashTypeNumber <= 1) {
-                    roomInventory.inventory.add(new Trash(Trashtype.PLASTIC));
+                    roomInventory.inventory.add(new Trash(Trashtype.PLASTIC,Trashtype.PLASTIC.sprite));
                 } else if (trashTypeNumber <= 2) {
-                    roomInventory.inventory.add(new Trash(Trashtype.METAL_AND_GLASS));
+                    roomInventory.inventory.add(new Trash(Trashtype.METAL_AND_GLASS, Trashtype.METAL_AND_GLASS.sprite));
                 } else if (trashTypeNumber <= 3) {
-                    roomInventory.inventory.add(new Trash(Trashtype.FOOD_WASTE));
+                    roomInventory.inventory.add(new Trash(Trashtype.FOOD_WASTE, Trashtype.FOOD_WASTE.sprite));
                 } else if (trashTypeNumber <= 4) {
-                    roomInventory.inventory.add(new Trash(Trashtype.PAPER));
+                    roomInventory.inventory.add(new Trash(Trashtype.PAPER, Trashtype.PAPER.sprite));
                 } else if (trashTypeNumber <= 5) {
-                    roomInventory.inventory.add(new Trash(Trashtype.RESIDUAL_WASTE));
+                    roomInventory.inventory.add(new Trash(Trashtype.RESIDUAL_WASTE, Trashtype.RESIDUAL_WASTE.sprite));
                 }
             }
         }

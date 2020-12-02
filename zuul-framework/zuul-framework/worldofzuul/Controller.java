@@ -128,23 +128,20 @@ public class Controller {
     }
     @FXML
     public void drawTrash(Event event) throws IOException {
-        ArrayList<Sprites> moneybagList = new ArrayList<>();
+        ArrayList<Sprites> trashInRoom = new ArrayList<>();
         GraphicsContext gc = trash.getGraphicsContext2D();
 
 
-            for (int i = 0; i < 15; i++) {
-                Sprites moneybag = new Sprites();
-                moneybag.setImage("worldofzuul/img/Transperent/Icon1.png");
-                double px = 350 * Math.random() + 50;
-                double py = 350 * Math.random() + 50;
-                moneybag.setPosition(px, py);
-                moneybagList.add(moneybag);
+            for (int i = 0; i < myGame.currentRoom.roomInventory.inventory.size(); i++) {
+                Sprites currentSprite = myGame.currentRoom.roomInventory.inventory.get(i).getSprite();
+                double px = 400 * Math.random() + 50;
+                double py = 450 * Math.random() + 50;
+                currentSprite.setPosition(px, py);
                 scan.setDisable(true);
+                currentSprite.render(gc);
 
             }
-            for (Sprites moneybag : moneybagList) {
-                moneybag.render(gc);
-            }
+
 
 
     }
