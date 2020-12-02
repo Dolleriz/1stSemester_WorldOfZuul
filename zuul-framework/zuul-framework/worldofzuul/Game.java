@@ -8,11 +8,11 @@ import javafx.scene.control.TableView;
 import java.util.Scanner;
 
 public class Game {
-    private Parser parser;
-    private Room currentRoom;
-    private TrashCanRoom garbageArea;
-    private RegularRoom outside, entrance, livingRoom, kitchen, bedRoom, bathRoom, parentsRoom;
-    private PlayerScore playerScore = new PlayerScore(0);
+    Parser parser;
+    Room currentRoom;
+    TrashCanRoom garbageArea;
+    RegularRoom outside, entrance, livingRoom, kitchen, bedRoom, bathRoom, parentsRoom;
+    PlayerScore playerScore = new PlayerScore(0);
 
     PlayerInventory playerInventory = new PlayerInventory(5);
 
@@ -22,7 +22,7 @@ public class Game {
         parser = new Parser();
     }
 
-    private void createRooms() {
+    void createRooms() {
         outside = new RegularRoom("udenfor. " +
                 "\nMod øst er dit hus, prop fyldt med affald der skal sorteres. " +
                 "\nMod nord er skraldespandene");
@@ -103,7 +103,7 @@ public class Game {
         System.out.println("Tak for spillet.  Farvel.");
     }
 
-    private void printWelcome() {
+    void printWelcome() {
         System.out.println();
         System.out.println("Velkommen til En Verden af Affald!");
         System.out.println("En Verden af Affald! er et nyt spændende affaldsindsamlingsspil.");
@@ -113,7 +113,7 @@ public class Game {
         System.out.println(currentRoom.getLongDescription());
     }
 
-    private boolean processCommand(Command command) {
+    boolean processCommand(Command command) {
         boolean wantToQuit = false;
 
         CommandWord commandWord = command.getCommandWord();
@@ -142,14 +142,14 @@ public class Game {
         return wantToQuit;
     }
 
-    private void printHelp() {
+    void printHelp() {
         System.out.println("Du er forvirret. Der er mange steder at gå hen, og mange ting du kan gøre.");
         System.out.println();
         System.out.println("Dine muligheder er:");
         parser.showCommands();
     }
 
-    private void goRoom(Command command) {
+    void goRoom(Command command) {
         if (!command.hasSecondWord()) {
             System.out.println("Gå hvorhen?");
             return;
@@ -200,7 +200,7 @@ public class Game {
         }
     }
 
-    private boolean quit(Command command) {
+    boolean quit(Command command) {
         if (command.hasSecondWord()) {
             System.out.println("Afslut hvad?");
             return false;
@@ -210,7 +210,7 @@ public class Game {
         }
     }
 
-    private void pickup(Command command) {
+    void pickup(Command command) {
         if (!command.hasSecondWord()) {
             System.out.println("Tag hvad?");
             return;
@@ -234,7 +234,7 @@ public class Game {
         }
     }
 
-    private void throwout(Command command) {
+    void throwout(Command command) {
 
         String trash = command.getSecondWord();
 
@@ -293,7 +293,7 @@ public class Game {
     }
 
 
-    private void trashDescription(Command command) {
+    void trashDescription(Command command) {
 
         if (currentRoom != garbageArea) {
             System.out.println("Du er ikke ved skraldespandene");
@@ -316,7 +316,7 @@ public class Game {
     }
 
 
-    private void printPlayerInventory(PlayerInventory playerInventory) {
+    void printPlayerInventory(PlayerInventory playerInventory) {
         System.out.println("Du kan max have 5 stykker affald i dine lommer. " +
                 "\nI dine lommer har du: " +
                 "\n");

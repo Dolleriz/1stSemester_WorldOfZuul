@@ -34,9 +34,9 @@ public class Main extends Application {
     }
     public static void main(String[] args) {
         launch(args);
-        Game myGame = new Game();
+        //Game myGame = new Game();
 
-        myGame.play();
+        //myGame.play();
 
     }
 }

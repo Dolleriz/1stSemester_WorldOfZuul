@@ -11,7 +11,7 @@ public class TrashCanRoom extends Room {
     }
 
 
-    private Trashcan plastic, metalAndGlass, foodWaste, paper, residualWaste;
+    Trashcan plastic, metalAndGlass, foodWaste, paper, residualWaste;
 
     public void createTrashcans() {
 

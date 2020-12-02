@@ -13,6 +13,8 @@ import javafx.stage.Stage;
 import java.io.IOException;
 
 public class Controller {
+    Game myGame = new Game();
+
     @FXML
     public Button livingRoom, garbageArea, bathroom, entrance;
     public Button kitchen, yourRoom, outside, parentsRoom;

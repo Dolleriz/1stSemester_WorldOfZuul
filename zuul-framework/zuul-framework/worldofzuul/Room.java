@@ -32,7 +32,7 @@ public class Room
         return "Du er " + description + ".\n" + getExitString();
     }
 
-    private String getExitString()
+    String getExitString()
     {
         String returnString = "Udgange:";
         Set<String> keys = exits.keySet();
