@@ -68,6 +68,39 @@
       <change afterPath="$PROJECT_DIR$/worldofzuul/img/Background/Icon7.png" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/worldofzuul/img/Background/Icon8.png" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/worldofzuul/img/Background/Icon9.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/worldofzuul/img/PNG/1_game_background/1_game_background.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/worldofzuul/img/PNG/1_game_background/layers/1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/worldofzuul/img/PNG/1_game_background/layers/2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/worldofzuul/img/PNG/1_game_background/layers/3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/worldofzuul/img/PNG/1_game_background/layers/4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/worldofzuul/img/PNG/1_game_background/layers/5.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/worldofzuul/img/PNG/1_game_background/layers/6.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/worldofzuul/img/PNG/1_game_background/layers/7.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/worldofzuul/img/PNG/2_game_background/2_game_background.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/worldofzuul/img/PNG/2_game_background/layers/1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/worldofzuul/img/PNG/2_game_background/layers/2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/worldofzuul/img/PNG/2_game_background/layers/3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/worldofzuul/img/PNG/2_game_background/layers/4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/worldofzuul/img/PNG/2_game_background/layers/5.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/worldofzuul/img/PNG/2_game_background/layers/6.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/worldofzuul/img/PNG/3_game_background/3_game_background.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/worldofzuul/img/PNG/3_game_background/layers/1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/worldofzuul/img/PNG/3_game_background/layers/2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/worldofzuul/img/PNG/3_game_background/layers/3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/worldofzuul/img/PNG/3_game_background/layers/4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/worldofzuul/img/PNG/3_game_background/layers/5.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/worldofzuul/img/PNG/3_game_background/layers/6.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/worldofzuul/img/PNG/3_game_background/layers/7.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/worldofzuul/img/PNG/3_game_background/layers/8.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/worldofzuul/img/PNG/3_game_background/layers/9.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/worldofzuul/img/PNG/4_game_background/4_game_background.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/worldofzuul/img/PNG/4_game_background/layers/1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/worldofzuul/img/PNG/4_game_background/layers/2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/worldofzuul/img/PNG/4_game_background/layers/3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/worldofzuul/img/PNG/4_game_background/layers/4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/worldofzuul/img/PNG/4_game_background/layers/5.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/worldofzuul/img/PNG/4_game_background/layers/6.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/worldofzuul/img/PNG/4_game_background/layers/7.png" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/worldofzuul/img/Transperent/Icon1.png" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/worldofzuul/img/Transperent/Icon10.png" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/worldofzuul/img/Transperent/Icon11.png" afterDir="false" />
@@ -117,9 +150,12 @@
       <change afterPath="$PROJECT_DIR$/worldofzuul/img/Transperent/Icon8.png" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/worldofzuul/img/Transperent/Icon9.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/worldofzuul/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/worldofzuul/Controller.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/worldofzuul/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/worldofzuul/Game.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/worldofzuul/Game_GUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/worldofzuul/Game_GUI.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/worldofzuul/PlayerInventory.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/worldofzuul/Trashtype.java" beforeDir="false" afterPath="$PROJECT_DIR$/worldofzuul/Trashtype.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/worldofzuul/bathroom.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/worldofzuul/bathroom.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

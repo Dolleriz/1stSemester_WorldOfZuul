@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.Scene?>
+<?import javafx.scene.canvas.Canvas?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
@@ -31,6 +32,7 @@
                            </ImageView>
                            <Button fx:id="kitchen" layoutX="14.0" layoutY="247.0" mnemonicParsing="false" onAction="#buttonClicked" text="Køkken" />
                            <Button fx:id="parentsRoom" layoutX="172.0" layoutY="484.0" mnemonicParsing="false" onAction="#buttonClicked" text="Forældres soveværelse" />
+                           <Canvas height="517.0" layoutX="3.0" layoutY="1.0" width="476.0" />
                         </children>
                      </AnchorPane>
                       <Button fx:id="help" layoutX="488.0" layoutY="530.0" mnemonicParsing="false" onAction="#buttonClicked" prefHeight="61.0" prefWidth="76.0" text="Hjælp" />
