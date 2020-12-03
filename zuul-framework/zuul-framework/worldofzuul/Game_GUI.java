@@ -17,7 +17,6 @@ public class Game_GUI {
     public Game_GUI() {
         createRooms();
         showPlayerInventory();
-        showRoomInventory();
     }
 
     void createRooms() {
@@ -83,119 +82,11 @@ public class Game_GUI {
     }
 
     @FXML
-    public void showPlayerInventory(){
+    public void showPlayerInventory() {
         new TableView<>
                 (FXCollections.observableArrayList(playerInventory.inventory));
     }
 
-    @FXML
-    public void showRoomInventory() {
-        new TableView<>(FXCollections.observableArrayList(currentRoom.roomInventory));
-    }
-
-    public void play() {
-        printWelcome();
-    }
-
-    void printWelcome() {
-        System.out.println();
-        System.out.println("Velkommen til En Verden af Affald!");
-        System.out.println("En Verden af Affald! er et nyt spændende affaldsindsamlingsspil.");
-        System.out.println("Skriv '" + CommandWord.HELP + "' hvis du har brug for hjælp, eller ikke ved hvad du kan gøre.");
-        System.out.println();
-        System.out.println();
-        System.out.println(currentRoom.getLongDescription());
-    }
-
-    boolean processCommand(Command command) {
-        boolean wantToQuit = false;
-
-        CommandWord commandWord = command.getCommandWord();
-
-        if (commandWord == CommandWord.UNKNOWN) {
-            System.out.println("Jeg forstår ikke hvad du mener...");
-            return false;
-        }
-
-        if (commandWord == CommandWord.HELP) {
-
-        } else if (commandWord == CommandWord.GO) {
-            goRoom(command);
-        } else if (commandWord == CommandWord.QUIT) {
-            wantToQuit = quit(command);
-        } else if (commandWord == CommandWord.PICKUP) {
-            pickup(command);
-        } else if (commandWord == CommandWord.INVENTORY) {
-            printPlayerInventory(playerInventory);
-        } else if (commandWord == CommandWord.THROWOUT) {
-            throwout(command);
-        } else if (commandWord == CommandWord.TRASHDESCRIPTION
-        ) {
-            trashDescription(command);
-        }
-        return wantToQuit;
-    }
-
-    void goRoom(Command command) {
-        if (!command.hasSecondWord()) {
-            System.out.println("Gå hvorhen?");
-            return;
-        }
-
-        String direction = command.getSecondWord();
-
-        Room nextRoom = currentRoom.getExit(direction);
-
-        if (nextRoom == null) {
-            System.out.println("Der er ikke nogen dør!");
-        } else {
-            currentRoom = nextRoom;
-            System.out.println(currentRoom.getLongDescription());
-
-            // if (currentRoom == garbageArea) { this way we get the trashcan overview listed in garbageArea.longDescription
-            //   garbageArea.showTrashcans();
-            // } else
-            if (currentRoom == outside) {
-
-                System.out.println("I dette rum ligger der: ");
-                outside.printRoomInventory();
-            } else if (currentRoom == entrance) {
-
-                System.out.println("I dette rum ligger der: ");
-                entrance.printRoomInventory();
-            } else if (currentRoom == livingRoom) {
-
-                System.out.println("I dette rum ligger der: ");
-                livingRoom.printRoomInventory();
-            } else if (currentRoom == kitchen) {
-
-                System.out.println("I dette rum ligger der: ");
-                kitchen.printRoomInventory();
-            } else if (currentRoom == bedRoom) {
-
-                System.out.println("I dette rum ligger der: ");
-                bedRoom.printRoomInventory();
-            } else if (currentRoom == bathRoom) {
-
-                System.out.println("I dette rum ligger der: ");
-                bathRoom.printRoomInventory();
-            } else if (currentRoom == parentsRoom) {
-
-                System.out.println("I dette rum ligger der: ");
-                parentsRoom.printRoomInventory();
-            }
-        }
-    }
-
-    boolean quit(Command command) {
-        if (command.hasSecondWord()) {
-            System.out.println("Afslut hvad?");
-            return false;
-        } else {
-            System.out.println("Du sluttede med " + playerScore.getPlayerScore() + " point!");
-            return true;
-        }
-    }
 
     void pickup(Command command) {
         if (!command.hasSecondWord()) {
@@ -254,17 +145,17 @@ public class Game_GUI {
                             playerInventory.inventory.remove(i);
                         }
                     }
-                } else if (trash.equalsIgnoreCase("papir-og-pap")){
+                } else if (trash.equalsIgnoreCase("papir-og-pap")) {
                     for (int i = 0; i < playerInventory.inventory.size(); i++) {
-                        if (playerInventory.inventory.get(i).getType() == Trashtype.PAPER){
+                        if (playerInventory.inventory.get(i).getType() == Trashtype.PAPER) {
                             playerScore.increasePlayerScore(1);
                             playerInventory.inventory.remove(i);
                         }
 
                     }
-                } else if (trash.equalsIgnoreCase("restaffald")){
+                } else if (trash.equalsIgnoreCase("restaffald")) {
                     for (int i = 0; i < playerInventory.inventory.size(); i++) {
-                        if (playerInventory.inventory.get(i).getType() == Trashtype.RESIDUAL_WASTE){
+                        if (playerInventory.inventory.get(i).getType() == Trashtype.RESIDUAL_WASTE) {
                             playerScore.increasePlayerScore(1);
                             playerInventory.inventory.remove(i);
                         }
