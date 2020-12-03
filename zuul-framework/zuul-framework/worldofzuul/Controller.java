@@ -27,7 +27,7 @@ public class Controller {
     public Button help;
     public Sprites sprites;
     public Canvas trash;
-    public ImageView zero, one, two, three, four, five, six;
+    public ImageView zero, one, two, three, four, five, six, seven, eight, nine;
     public Button scan;
     ImageView imageview;
 
@@ -121,19 +121,24 @@ public class Controller {
     }
 
     @FXML
-    public void drawTrash(Event event) {
-        yolo(zero, 0);
-        yolo(one, 1);
-        yolo(two, 2);
-        yolo(three, 3);
-        yolo(four, 4);
-        yolo(five, 5);
-        yolo(six, 6);
-        }
+    public void scanRoom(Event event) throws IOException {
+        drawTrash(zero, 0);
+        drawTrash(one, 1);
+        drawTrash(two, 2);
+        drawTrash(three, 3);
+        drawTrash(four, 4);
+        drawTrash(five, 5);
+        drawTrash(six, 6);
+        drawTrash(seven, 7);
+        drawTrash(eight, 8);
+        drawTrash(nine, 9);
 
-        public void yolo(ImageView a, int i){
-            a.setImage(myGame.currentRoom.roomInventory.inventory.get(i).getSprite().getImage());
+    }
 
-        }
+
+
+    public void drawTrash(ImageView a, int inventoryIndex) {
+        a.setImage(myGame.currentRoom.roomInventory.inventory.get(inventoryIndex).getSprite().getImage());
+    }
     }
 
