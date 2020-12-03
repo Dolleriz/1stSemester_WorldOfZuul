@@ -20,8 +20,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="fa685b78-871e-41d7-a232-1b029ddc9953" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/worldofzuul/bathroom.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/worldofzuul/bathroom.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/worldofzuul/garbageArea.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/worldofzuul/garbageArea.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/worldofzuul/outside.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/worldofzuul/outside.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
