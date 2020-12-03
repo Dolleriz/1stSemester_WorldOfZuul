@@ -6,7 +6,7 @@ import javafx.scene.Node;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.image.Image;
 
-public class Sprites {
+public class Sprites{
         private Image image;
         private double positionX;
         private double positionY;
@@ -88,5 +88,9 @@ public class Sprites {
 
     public double getPositionY() {
         return positionY;
+    }
+
+    public Image getImage() {
+        return image;
     }
 }

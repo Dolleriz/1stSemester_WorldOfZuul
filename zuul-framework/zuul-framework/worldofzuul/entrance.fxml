@@ -33,6 +33,13 @@
                                     <Canvas fx:id="trash" height="524.0" layoutX="-1.0" layoutY="-1.0" width="480.0" />
                                     <Button fx:id="livingRoom" layoutX="424.0" layoutY="247.0" mnemonicParsing="false" onAction="#buttonClicked" text="Stue" />
                                     <Button fx:id="outside" layoutX="14.0" layoutY="247.0" mnemonicParsing="false" onAction="#buttonClicked" text="Udenfor" />
+                           <ImageView fx:id="one" fitHeight="25.0" fitWidth="25.0" layoutX="14.0" layoutY="28.0" pickOnBounds="true" preserveRatio="true" />
+                           <ImageView fx:id="two" fitHeight="25.0" fitWidth="25.0" layoutX="62.0" layoutY="418.0" pickOnBounds="true" preserveRatio="true" />
+                           <ImageView fx:id="three" fitHeight="25.0" fitWidth="25.0" layoutX="216.0" layoutY="293.0" pickOnBounds="true" preserveRatio="true" />
+                           <ImageView fx:id="four" fitHeight="25.0" fitWidth="25.0" layoutX="308.0" layoutY="76.0" pickOnBounds="true" preserveRatio="true" />
+                           <ImageView fx:id="five" fitHeight="25.0" fitWidth="25.0" layoutX="399.0" layoutY="418.0" pickOnBounds="true" preserveRatio="true" />
+                           <ImageView fx:id="six" fitHeight="25.0" fitWidth="25.0" layoutX="132.0" layoutY="476.0" pickOnBounds="true" preserveRatio="true" />
+                           <ImageView fx:id="zero" fitHeight="25.0" fitWidth="25.0" layoutX="145.0" layoutY="15.0" pickOnBounds="true" preserveRatio="true" />
                                 </children>
                             </AnchorPane>
                             <Button fx:id="help" layoutX="488.0" layoutY="530.0" mnemonicParsing="false" onAction="#buttonClicked" prefHeight="61.0" prefWidth="76.0" text="Hjælp" />

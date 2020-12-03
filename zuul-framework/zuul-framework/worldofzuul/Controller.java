@@ -11,6 +11,8 @@ import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.TableView;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -25,7 +27,9 @@ public class Controller {
     public Button help;
     public Sprites sprites;
     public Canvas trash;
+    public ImageView zero, one, two, three, four, five, six;
     public Button scan;
+    ImageView imageview;
 
 
     @FXML
@@ -117,16 +121,19 @@ public class Controller {
     }
 
     @FXML
-    public void drawTrash(Event event) throws IOException {
-        GraphicsContext gc = trash.getGraphicsContext2D();
-        for (int i = 0; i < myGame.currentRoom.roomInventory.inventory.size(); i++) {
-            Sprites currentSprite = myGame.currentRoom.roomInventory.inventory.get(i).getSprite();
-            double px = 440 * Math.random() + 50;
-            double py = 500 * Math.random() + 50;
-            currentSprite.setPosition(px, py);
-            scan.setDisable(true);
-            currentSprite.render(gc);
+    public void drawTrash(Event event) {
+        yolo(zero, 0);
+        yolo(one, 1);
+        yolo(two, 2);
+        yolo(three, 3);
+        yolo(four, 4);
+        yolo(five, 5);
+        yolo(six, 6);
+        }
+
+        public void yolo(ImageView a, int i){
+            a.setImage(myGame.currentRoom.roomInventory.inventory.get(i).getSprite().getImage());
 
         }
     }
-}
+

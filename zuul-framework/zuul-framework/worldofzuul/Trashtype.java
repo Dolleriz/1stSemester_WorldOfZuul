@@ -21,12 +21,18 @@ public enum Trashtype {
 
     private String trashString;
     Sprites sprite;
+    String filepath;
 
     Trashtype(String trashType, String filePath) {
         this.trashString = trashType;
+        this.filepath=filePath;
         sprite = new Sprites();
         sprite.setImage(filePath);
             }
+
+    public String getFilepath() {
+        return filepath;
+    }
 
     public String toString() {
         return trashString;

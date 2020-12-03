@@ -9,7 +9,7 @@ public class RegularRoom extends Room {
 
     public void fillUpRoom() {
 
-        if (roomInventory.inventory.size() < 5 + (int) (Math.random()*5)) {
+        if (roomInventory.inventory.size() < 7) {
 
             for (int i = 0; i < (5 + (int) (Math.random()*5)); i++) {
                 double trashTypeNumber;
