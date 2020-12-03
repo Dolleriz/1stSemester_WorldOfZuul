@@ -23,7 +23,6 @@ public class Controller {
     public Button livingRoom, garbageArea, bathroom, entrance,
             kitchen, yourRoom, outside, parentsRoom;
     public Button help;
-    public TableView inventory;
     public Sprites sprites;
     public Canvas trash;
     public Button scan;
@@ -126,6 +125,7 @@ public class Controller {
     public void viewInventory(Event event) throws IOException {
         
     }
+
     @FXML
     public void drawTrash(Event event) throws IOException {
         ArrayList<Sprites> trashInRoom = new ArrayList<>();
@@ -139,10 +139,7 @@ public class Controller {
                 currentSprite.setPosition(px, py);
                 scan.setDisable(true);
                 currentSprite.render(gc);
-
+                currentSprite
             }
-
-
-
     }
 }
