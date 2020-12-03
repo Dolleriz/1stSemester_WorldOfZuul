@@ -135,7 +135,7 @@ public class Controller {
                 currentSprite.setPosition(px, py);
                 scan.setDisable(true);
                 currentSprite.render(gc);
-                currentSprite
             }
+        }
     }
 }
