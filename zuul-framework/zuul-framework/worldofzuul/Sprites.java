@@ -34,6 +34,7 @@ public class Sprites {
         {
             Image i = new Image(filename,25,25,true,false);
             setImage(i);
+
         }
 
         public void setPosition(double x, double y)
@@ -80,4 +81,12 @@ public class Sprites {
             return " Position: [" + positionX + "," + positionY + "]"
                     + " Velocity: [" + velocityX + "," + velocityY + "]";
         }
+
+    public double getPositionX() {
+        return positionX;
     }
+
+    public double getPositionY() {
+        return positionY;
+    }
+}

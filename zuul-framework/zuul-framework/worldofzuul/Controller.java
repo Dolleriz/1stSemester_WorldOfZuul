@@ -124,18 +124,9 @@ public class Controller {
             double px = 440 * Math.random() + 50;
             double py = 500 * Math.random() + 50;
             currentSprite.setPosition(px, py);
-
             scan.setDisable(true);
             currentSprite.render(gc);
 
-            for (int i = 0; i < myGame.currentRoom.roomInventory.inventory.size(); i++) {
-                Sprites currentSprite = myGame.currentRoom.roomInventory.inventory.get(i).getSprite();
-                double px = 400 * Math.random() + 50;
-                double py = 450 * Math.random() + 50;
-                currentSprite.setPosition(px, py);
-                scan.setDisable(true);
-                currentSprite.render(gc);
-            }
         }
     }
 }
