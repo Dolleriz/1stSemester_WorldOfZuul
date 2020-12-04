@@ -2,6 +2,7 @@ package worldofzuul;
 
 import javafx.event.ActionEvent;
 import javafx.event.Event;
+import javafx.event.EventTarget;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
@@ -16,6 +17,7 @@ import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.lang.annotation.Target;
 import java.util.ArrayList;
 
 public class Controller {
@@ -132,13 +134,53 @@ public class Controller {
         drawTrash(seven, 7);
         drawTrash(eight, 8);
         drawTrash(nine, 9);
-
     }
 
+    @FXML
+    public void pickUp(Event event) {
+        if (myGame.playerInventory.inventory.size() == 5) {
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setTitle("En verden af Skrald");
+            alert.setHeaderText(null);
+            alert.setContentText("Din taske er fuld. Du må tømme tasken før du kan samle mere skrald op.");
+            alert.showAndWait();
+        } else {
 
+            if (event.getTarget().equals(zero)) {
+                myGame.pickup(zero, 0);
+            }
+            if (event.getTarget().equals(one)) {
+                myGame.pickup(one, 1);
+            }
+            if (event.getTarget().equals(two)) {
+                myGame.pickup(two, 2);
+            }
+            if (event.getTarget().equals(three)) {
+                myGame.pickup(three, 3);
+            }
+            if (event.getTarget().equals(four)) {
+                myGame.pickup(four, 4);
+            }
+            if (event.getTarget().equals(five)) {
+                myGame.pickup(five, 5);
+            }
+            if (event.getTarget().equals(six)) {
+                myGame.pickup(six, 6);
+            }
+            if (event.getTarget().equals(seven)) {
+                myGame.pickup(seven, 7);
+            }
+            if (event.getTarget().equals(eight)) {
+                myGame.pickup(eight, 8);
+            }
+            if (event.getTarget().equals(nine)) {
+                myGame.pickup(nine, 9);
+            }
+        }
 
+    }
     public void drawTrash(ImageView a, int inventoryIndex) {
         a.setImage(myGame.currentRoom.roomInventory.inventory.get(inventoryIndex).getSprite().getImage());
     }
-    }
+}
 

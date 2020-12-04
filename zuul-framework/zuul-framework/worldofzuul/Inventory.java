@@ -11,6 +11,6 @@ public class Inventory {
     }
 
     public Inventory(int size) {
-        this.inventory = new ArrayList<>();
+        this.inventory = new ArrayList<>(size);
     }
 }

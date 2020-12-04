@@ -8,7 +8,7 @@ public class RegularRoom extends Room {
     }
 
     public void fillUpRoom() {
-        for (int i = 0; i < 10; i++) {
+        for (int i = 0; i < 11; i++) {
             double trashTypeNumber;
 
             trashTypeNumber = Math.random() * 5;

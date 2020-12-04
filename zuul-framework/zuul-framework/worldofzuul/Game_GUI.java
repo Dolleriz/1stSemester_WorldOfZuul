@@ -2,7 +2,9 @@ package worldofzuul;
 
 import javafx.collections.FXCollections;
 import javafx.fxml.FXML;
+import javafx.scene.control.Alert;
 import javafx.scene.control.TableView;
+import javafx.scene.image.ImageView;
 
 import java.util.Scanner;
 
@@ -88,29 +90,14 @@ public class Game_GUI {
     }
 
 
-    void pickup(Command command) {
-        if (!command.hasSecondWord()) {
-            System.out.println("Tag hvad?");
-            return;
+    void pickup(ImageView a, int inventoryIndex) {
+
+            playerInventory.inventory.add(currentRoom.roomInventory.inventory.get(inventoryIndex));
+            //System.out.println(currentRoom.roomInventory.inventory.get(inventoryIndex));
+            currentRoom.roomInventory.inventory.remove(inventoryIndex);
+            a.setImage(null);
         }
 
-        int roomInventoryIndex = Integer.parseInt(command.getSecondWord());
-
-        if (currentRoom == garbageArea) {
-            System.out.println("Der er ikke noget skrald i rummet");
-            return;
-        }
-        if (currentRoom.roomInventory.inventory.isEmpty()) {
-            System.out.println("Der er ikke mere skrald i rummet");
-            return;
-        }
-        if (playerInventory.inventory.size() == 5) {
-            System.out.println("Der kan ikke være mere i tasken");
-        } else {
-            playerInventory.inventory.add(currentRoom.roomInventory.inventory.get(roomInventoryIndex - 1));
-            currentRoom.roomInventory.inventory.remove(roomInventoryIndex - 1);
-        }
-    }
 
     void throwout(Command command) {
 
