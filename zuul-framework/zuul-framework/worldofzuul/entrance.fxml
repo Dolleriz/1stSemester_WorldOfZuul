@@ -41,7 +41,7 @@
                                             onAction="#buttonClicked" text="Udenfor"/>
 
                                     <ImageView fx:id="zero" fitHeight="25.0" fitWidth="25.0" layoutX="145.0"
-                                               layoutY="15.0" pickOnBounds="true" preserveRatio="true"/>
+                                               layoutY="15.0" pickOnBounds="true" preserveRatio="true" onMouseClicked="#onMouseClicked"/>
                                     <ImageView fx:id="one" fitHeight="25.0" fitWidth="25.0" layoutX="14.0"
                                                layoutY="28.0" pickOnBounds="true" preserveRatio="true"/>
                                     <ImageView fx:id="two" fitHeight="25.0" fitWidth="25.0" layoutX="62.0"

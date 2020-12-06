@@ -30,7 +30,7 @@ public class Sprites{
             height = i.getHeight();
         }
 
-        public void setImage(String filename)
+        public void setImageString(String filename)
         {
             Image i = new Image(filename,25,25,true,false);
             setImage(i);

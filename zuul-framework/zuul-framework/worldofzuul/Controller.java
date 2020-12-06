@@ -13,6 +13,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.TableView;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -139,6 +140,19 @@ public class Controller {
 
     public void drawTrash(ImageView a, int inventoryIndex) {
         a.setImage(myGame.currentRoom.roomInventory.inventory.get(inventoryIndex).getSprite().getImage());
+    }
+
+
+    public void onMouseClicked (MouseEvent event){
+        pickUpTrash(0);
+    }
+
+
+    public void pickUpTrash (int index){
+        myGame.playerInventory.inventory.add(myGame.currentRoom.roomInventory.inventory.get(index));
+        myGame.currentRoom.roomInventory.inventory.get(index).getSprite().setImage(null);
+        myGame.currentRoom.roomInventory.inventory.remove(index);
+
     }
     }
 
