@@ -1,5 +1,7 @@
 package worldofzuul;
 
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.event.Event;
 import javafx.event.EventTarget;
@@ -9,9 +11,7 @@ import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
-import javafx.scene.control.Alert;
-import javafx.scene.control.Button;
-import javafx.scene.control.TableView;
+import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
@@ -31,7 +31,7 @@ public class Controller {
     public Canvas trash;
     public ImageView zero, one, two, three, four, five, six, seven, eight, nine;
     public Button scan;
-    ImageView imageview;
+    public ListView<Trash> playerInventoryGUI;
 
 
     @FXML
@@ -49,6 +49,7 @@ public class Controller {
             Scene scene = root.getScene(); //  new Scene(root);
             appStage.setScene(scene);
             appStage.show();
+            showPlayerInventory();
         }
 
         if (event.getSource() == kitchen) {
@@ -89,6 +90,7 @@ public class Controller {
             Scene scene = root.getScene(); //  new Scene(root);
             appStage.setScene(scene);
             appStage.show();
+            showPlayerInventory();
 
         }
 
@@ -115,6 +117,14 @@ public class Controller {
             help.setContentText("Hjælp bruh.");
             help.showAndWait();
         }
+    }
+
+    @FXML
+    public void showPlayerInventory() {
+        ObservableList<Trash> observablePlayerInventory =
+                (FXCollections.observableArrayList(myGame.playerInventory.inventory));
+        playerInventoryGUI.setItems(observablePlayerInventory);
+        playerInventoryGUI.getItems();
     }
 
     @FXML
@@ -177,8 +187,9 @@ public class Controller {
                 myGame.pickup(nine, 9);
             }
         }
-
+        showPlayerInventory();
     }
+
     public void drawTrash(ImageView a, int inventoryIndex) {
         a.setImage(myGame.currentRoom.roomInventory.inventory.get(inventoryIndex).getSprite().getImage());
         scan.setDisable(true);

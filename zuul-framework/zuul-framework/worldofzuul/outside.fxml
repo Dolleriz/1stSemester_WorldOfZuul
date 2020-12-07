@@ -43,7 +43,7 @@
                      <Separator layoutY="525.0" orientation="VERTICAL" prefHeight="225.0" prefWidth="488.0" />
                               <Button fx:id="garbageArea" layoutX="67.0" layoutY="548.0" mnemonicParsing="false" onAction="#buttonClicked" text="Skraldespandene" />
                               <Button fx:id="entrance" layoutX="173.0" layoutY="625.0" mnemonicParsing="false" onAction="#buttonClicked" text="Indgang" />
-                     <ListView fx:id="trashListView" layoutX="486.0" layoutY="42.0" prefHeight="484.0" prefWidth="260.0" />
+                     <ListView fx:id="playerInventoryGUI" layoutX="486.0" layoutY="42.0" prefHeight="484.0" prefWidth="260.0" />
                      <Label alignment="CENTER" layoutX="487.0" layoutY="7.0" prefHeight="35.0" prefWidth="258.0" text="Taske">
                         <font>
                            <Font size="24.0" />
