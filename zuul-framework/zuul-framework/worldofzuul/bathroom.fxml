@@ -22,17 +22,17 @@
                         <children>
                            <ImageView fitHeight="520.0" fitWidth="520.0" pickOnBounds="true" preserveRatio="true">
                               <image>
-                                 <Image url="@img/Scene/toilet1.png" />
+                                 <Image url="@img/Scene/badeværelse.png" />
                               </image>
                            </ImageView>
-                           <ImageView fx:id="zero" fitHeight="25.0" fitWidth="25.0" layoutX="155.0" layoutY="25.0" onMouseClicked="#pickUp" pickOnBounds="true" preserveRatio="true" />
-                           <ImageView fx:id="one" fitHeight="25.0" fitWidth="25.0" layoutX="24.0" layoutY="38.0" onMouseClicked="#pickUp" pickOnBounds="true" preserveRatio="true" />
-                           <ImageView fx:id="two" fitHeight="25.0" fitWidth="25.0" layoutX="72.0" layoutY="428.0" onMouseClicked="#pickUp" pickOnBounds="true" preserveRatio="true" />
+                           <ImageView fx:id="zero" fitHeight="25.0" fitWidth="25.0" layoutX="372.0" layoutY="220.0" onMouseClicked="#pickUp" pickOnBounds="true" preserveRatio="true" />
+                           <ImageView fx:id="one" fitHeight="25.0" fitWidth="25.0" layoutX="214.0" layoutY="149.0" onMouseClicked="#pickUp" pickOnBounds="true" preserveRatio="true" />
+                           <ImageView fx:id="two" fitHeight="25.0" fitWidth="25.0" layoutX="110.0" layoutY="341.0" onMouseClicked="#pickUp" pickOnBounds="true" preserveRatio="true" />
                            <ImageView fx:id="three" fitHeight="25.0" fitWidth="25.0" layoutX="226.0" layoutY="303.0" onMouseClicked="#pickUp" pickOnBounds="true" preserveRatio="true" />
-                           <ImageView fx:id="four" fitHeight="25.0" fitWidth="25.0" layoutX="397.0" layoutY="63.0" onMouseClicked="#pickUp" pickOnBounds="true" preserveRatio="true" />
-                           <ImageView fx:id="five" fitHeight="25.0" fitWidth="25.0" layoutX="409.0" layoutY="428.0" onMouseClicked="#pickUp" pickOnBounds="true" preserveRatio="true" />
-                           <ImageView fx:id="six" fitHeight="25.0" fitWidth="25.0" layoutX="142.0" layoutY="486.0" onMouseClicked="#pickUp" pickOnBounds="true" preserveRatio="true" />
-                           <ImageView fx:id="seven" fitHeight="25.0" fitWidth="25.0" layoutX="283.0" layoutY="119.0" onMouseClicked="#pickUp" pickOnBounds="true" preserveRatio="true" />
+                           <ImageView fx:id="four" fitHeight="25.0" fitWidth="25.0" layoutX="359.0" layoutY="161.0" onMouseClicked="#pickUp" pickOnBounds="true" preserveRatio="true" />
+                           <ImageView fx:id="five" fitHeight="25.0" fitWidth="25.0" layoutX="411.0" layoutY="403.0" onMouseClicked="#pickUp" pickOnBounds="true" preserveRatio="true" />
+                           <ImageView fx:id="six" fitHeight="25.0" fitWidth="25.0" layoutX="168.0" layoutY="403.0" onMouseClicked="#pickUp" pickOnBounds="true" preserveRatio="true" />
+                           <ImageView fx:id="seven" fitHeight="25.0" fitWidth="25.0" layoutX="346.0" layoutY="65.0" onMouseClicked="#pickUp" pickOnBounds="true" preserveRatio="true" />
                            <ImageView fx:id="eight" fitHeight="25.0" fitWidth="25.0" layoutX="214.0" layoutY="220.0" onMouseClicked="#pickUp" pickOnBounds="true" preserveRatio="true" />
                            <ImageView fx:id="nine" fitHeight="25.0" fitWidth="25.0" layoutX="85.0" layoutY="232.0" onMouseClicked="#pickUp" pickOnBounds="true" preserveRatio="true" />
                         </children>

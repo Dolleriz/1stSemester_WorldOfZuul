@@ -9,15 +9,15 @@ import java.util.HashMap;
 
 public enum Trashtype {
 
-    FOOD_WASTE("Madaffald.", "zuul-framework/zuul-framework/worldofzuul/img/TrashSprites/BittenApple.png"),
+    FOOD_WASTE("Madaffald.", "worldofzuul/img/TrashSprites/BittenApple.png"),
 
-    METAL_AND_GLASS("Metal og glas.", "zuul-framework/zuul-framework/worldofzuul/img/TrashSprites/Can.png"),
+    METAL_AND_GLASS("Metal og glas.", "worldofzuul/img/TrashSprites/Can.png"),
 
-    PAPER("Papir og pap.", "zuul-framework/zuul-framework/worldofzuul/img/TrashSprites/CrumbledPaper.png"),
+    PAPER("Papir og pap.", "worldofzuul/img/TrashSprites/CrumbledPaper.png"),
 
-    PLASTIC("Plastik.", "zuul-framework/zuul-framework/worldofzuul/img/TrashSprites/BottleofWater.png"),
+    PLASTIC("Plastik.", "worldofzuul/img/TrashSprites/BottleofWater.png"),
 
-    RESIDUAL_WASTE("Restaffald.", "zuul-framework/zuul-framework/worldofzuul/img/TrashSprites/TrashBag.png");
+    RESIDUAL_WASTE("Restaffald.", "worldofzuul/img/TrashSprites/TrashBag.png");
 
     private String trashString;
     Sprites sprite;
