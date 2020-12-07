@@ -18,11 +18,11 @@
                 <children>
                     <Pane prefHeight="750.0" prefWidth="750.0">
                         <children>
-                            <AnchorPane layoutX="6.0" layoutY="7.0" prefHeight="520.0" prefWidth="520.0">
+                            <AnchorPane prefHeight="520.0" prefWidth="520.0">
                                 <children>
-                                    <ImageView fitHeight="520.0" fitWidth="520.0" layoutX="-12.0" layoutY="1.0" pickOnBounds="true" preserveRatio="true">
+                                    <ImageView fitHeight="520.0" fitWidth="520.0" pickOnBounds="true" preserveRatio="true">
                                         <image>
-                                            <Image url="@img/TEMP_outside.png" />
+                                            <Image url="@img/outisde.png" />
                                         </image>
                                     </ImageView>
                            <ImageView fx:id="zero" fitHeight="25.0" fitWidth="25.0" layoutX="155.0" layoutY="25.0" onMouseClicked="#pickUp" pickOnBounds="true" preserveRatio="true" />
@@ -49,7 +49,7 @@
                                 </image>
                             </ImageView>
                      
-                     <Label alignment="CENTER" layoutX="581.0" layoutY="14.0" prefHeight="35.0" prefWidth="70.0" text="Taske">
+                     <Label alignment="CENTER" layoutX="607.0" layoutY="14.0" prefHeight="35.0" prefWidth="70.0" text="Taske">
 
                         <font>
                            <Font size="24.0" />
@@ -65,11 +65,11 @@
                            <Font size="24.0" />
                         </font>
                      </Label>
-                     <ImageView fx:id="PI1" fitHeight="50.0" fitWidth="50.0" layoutX="592.0" layoutY="49.0" pickOnBounds="true" preserveRatio="true" />
-                     <ImageView fx:id="PI2" fitHeight="50.0" fitWidth="50.0" layoutX="592.0" layoutY="99.0" pickOnBounds="true" preserveRatio="true" />
-                     <ImageView fx:id="PI3" fitHeight="50.0" fitWidth="50.0" layoutX="592.0" layoutY="149.0" pickOnBounds="true" preserveRatio="true" />
-                     <ImageView fx:id="PI4" fitHeight="50.0" fitWidth="50.0" layoutX="592.0" layoutY="199.0" pickOnBounds="true" preserveRatio="true" />
-                     <ImageView fx:id="PI5" fitHeight="50.0" fitWidth="50.0" layoutX="592.0" layoutY="249.0" pickOnBounds="true" preserveRatio="true" />
+                     <ImageView fx:id="PI1" fitHeight="50.0" fitWidth="50.0" layoutX="617.0" layoutY="49.0" pickOnBounds="true" preserveRatio="true" />
+                     <ImageView fx:id="PI2" fitHeight="50.0" fitWidth="50.0" layoutX="617.0" layoutY="99.0" pickOnBounds="true" preserveRatio="true" />
+                     <ImageView fx:id="PI3" fitHeight="50.0" fitWidth="50.0" layoutX="617.0" layoutY="149.0" pickOnBounds="true" preserveRatio="true" />
+                     <ImageView fx:id="PI4" fitHeight="50.0" fitWidth="50.0" layoutX="617.0" layoutY="199.0" pickOnBounds="true" preserveRatio="true" />
+                     <ImageView fx:id="PI5" fitHeight="50.0" fitWidth="50.0" layoutX="617.0" layoutY="249.0" pickOnBounds="true" preserveRatio="true" />
                         </children>
                     </Pane>
                 </children>

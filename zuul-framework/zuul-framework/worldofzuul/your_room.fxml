@@ -19,7 +19,7 @@
                 <children>
                     <Pane prefHeight="750.0" prefWidth="750.0">
                         <children>
-                            <AnchorPane layoutX="7.0" layoutY="7.0" prefHeight="523.0" prefWidth="475.0">
+                            <AnchorPane prefHeight="520.0" prefWidth="520.0">
                                 <children>
                                     <ImageView fitHeight="520.0" fitWidth="475.0" layoutX="3.0" layoutY="1.0" pickOnBounds="true" preserveRatio="true">
                                         <image>
@@ -43,7 +43,6 @@
                                     <Image url="@img/movement.png" />
                                 </image>
                             </ImageView>
-                            <ListView fx:id="trashListView" layoutX="486.0" layoutY="42.0" prefHeight="484.0" prefWidth="260.0" />
                             <Label alignment="CENTER" layoutX="487.0" layoutY="7.0" prefHeight="35.0" prefWidth="258.0" text="Taske">
                                 <font>
                                     <Font size="24.0" />
@@ -59,6 +58,11 @@
                                     <Font size="24.0" />
                                 </font>
                             </Label>
+                            <ImageView fx:id="PI1" fitHeight="50.0" fitWidth="50.0" layoutX="617.0" layoutY="49.0" pickOnBounds="true" preserveRatio="true" />
+                            <ImageView fx:id="PI2" fitHeight="50.0" fitWidth="50.0" layoutX="617.0" layoutY="99.0" pickOnBounds="true" preserveRatio="true" />
+                            <ImageView fx:id="PI3" fitHeight="50.0" fitWidth="50.0" layoutX="617.0" layoutY="149.0" pickOnBounds="true" preserveRatio="true" />
+                            <ImageView fx:id="PI4" fitHeight="50.0" fitWidth="50.0" layoutX="617.0" layoutY="199.0" pickOnBounds="true" preserveRatio="true" />
+                            <ImageView fx:id="PI5" fitHeight="50.0" fitWidth="50.0" layoutX="617.0" layoutY="249.0" pickOnBounds="true" preserveRatio="true" />
                             <Separator layoutY="525.0" orientation="VERTICAL" prefHeight="225.0" prefWidth="488.0" />
                             <Button fx:id="help" layoutX="488.0" layoutY="530.0" mnemonicParsing="false" onAction="#buttonClicked" prefHeight="61.0" prefWidth="76.0" text="Hjælp" />
                             <Button fx:id="scan" layoutX="578.0" layoutY="530.0" mnemonicParsing="false" onAction="#scanRoom" prefHeight="61.0" prefWidth="76.0" text="Skan rum" />

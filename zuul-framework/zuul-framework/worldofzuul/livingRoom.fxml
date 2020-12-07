@@ -19,9 +19,9 @@
             <children>
                <Pane id="inventory" prefHeight="750.0" prefWidth="750.0">
                   <children>
-                     <AnchorPane layoutX="7.0" layoutY="7.0" prefHeight="523.0" prefWidth="475.0">
+                     <AnchorPane prefHeight="520.0" prefWidth="520.0">
                         <children>
-                           <ImageView fitHeight="520.0" fitWidth="475.0" layoutX="3.0" layoutY="1.0" pickOnBounds="true" preserveRatio="true">
+                           <ImageView fitHeight="520.0" fitWidth="520.0" pickOnBounds="true" preserveRatio="true">
                               <image>
                                  <Image url="@img/TEMP_livingroom.png" />
                               </image>
@@ -40,7 +40,6 @@
                      </AnchorPane>
                       <Button fx:id="help" layoutX="488.0" layoutY="530.0" mnemonicParsing="false" onAction="#buttonClicked" prefHeight="61.0" prefWidth="76.0" text="Hjælp" />
                       <Button fx:id="scan" layoutX="578.0" layoutY="530.0" mnemonicParsing="false" onAction="#scanRoom" prefHeight="61.0" prefWidth="76.0" text="Skan rum" />
-                     <ListView fx:id="inventory" layoutX="486.0" layoutY="42.0" prefHeight="484.0" prefWidth="260.0" />
                      <Separator layoutX="-1.0" layoutY="527.0" orientation="VERTICAL" prefHeight="224.0" prefWidth="487.0" />
                      <Label alignment="CENTER" layoutX="487.0" layoutY="7.0" prefHeight="35.0" prefWidth="258.0" text="Taske" textAlignment="CENTER">
                         <font>
@@ -57,9 +56,6 @@
                            <Image url="@img/movement.png" />
                         </image>
                      </ImageView>
-
-
-
                      <Button fx:id="entrance" layoutX="7.0" layoutY="626.0" mnemonicParsing="false" onAction="#buttonClicked" text="Indgang" />
                      <Button fx:id="parentsRoom" layoutX="166.0" layoutY="605.0" mnemonicParsing="false" onAction="#buttonClicked" prefHeight="79.0" prefWidth="74.0" text="Forældres soveværelse" textAlignment="CENTER" wrapText="true" />
                      <Button fx:id="kitchen" layoutX="88.0" layoutY="548.0" mnemonicParsing="false" onAction="#buttonClicked" text="Køkken" />
@@ -68,6 +64,11 @@
                            <Font size="24.0" />
                         </font>
                      </Label>
+                     <ImageView fx:id="PI1" fitHeight="50.0" fitWidth="50.0" layoutX="592.0" layoutY="49.0" pickOnBounds="true" preserveRatio="true" />
+                     <ImageView fx:id="PI2" fitHeight="50.0" fitWidth="50.0" layoutX="592.0" layoutY="99.0" pickOnBounds="true" preserveRatio="true" />
+                     <ImageView fx:id="PI3" fitHeight="50.0" fitWidth="50.0" layoutX="592.0" layoutY="149.0" pickOnBounds="true" preserveRatio="true" />
+                     <ImageView fx:id="PI4" fitHeight="50.0" fitWidth="50.0" layoutX="592.0" layoutY="199.0" pickOnBounds="true" preserveRatio="true" />
+                     <ImageView fx:id="PI5" fitHeight="50.0" fitWidth="50.0" layoutX="592.0" layoutY="249.0" pickOnBounds="true" preserveRatio="true" />
                   </children>
                </Pane>
             </children>
