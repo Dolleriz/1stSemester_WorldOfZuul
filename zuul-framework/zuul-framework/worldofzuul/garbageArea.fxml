@@ -32,21 +32,27 @@
                      <ListView layoutX="486.0" layoutY="42.0" prefHeight="484.0" prefWidth="260.0" />
                      <Separator layoutY="525.0" orientation="VERTICAL" prefHeight="225.0" prefWidth="488.0" />
                               <Button fx:id="outside" layoutX="89.0" layoutY="711.0" mnemonicParsing="false" onAction="#buttonClicked" text="Udenfor" />
-                     <ImageView fitHeight="130.0" fitWidth="237.0" layoutX="244.0" layoutY="594.0" pickOnBounds="true" preserveRatio="true">
-                        <image>
-                           <Image url="@img/Minimap/Skraldespande%20map.png" />
-                        </image>
-                     </ImageView>
+
                      <Label alignment="CENTER" layoutX="244.0" layoutY="540.0" prefHeight="40.0" prefWidth="240.0" text="Din lokation">
                         <font>
                            <Font size="24.0" />
                         </font>
                      </Label>
+                            <ImageView fitHeight="223.0" fitWidth="237.0" layoutX="244.0" layoutY="594.0" pickOnBounds="true" preserveRatio="true">
+                                <image>
+                                    <Image url="@img/Minimap/Skraldespande map.png" />
+                                </image>
+                            </ImageView>
                      <Label alignment="CENTER" layoutX="487.0" layoutY="7.0" prefHeight="35.0" prefWidth="258.0" text="Taske">
                         <font>
                            <Font size="24.0" />
                         </font>
                      </Label>
+                            <ImageView fitHeight="86.0" fitWidth="96.0" layoutX="79.0" layoutY="595.0" pickOnBounds="true" preserveRatio="true">
+                                <image>
+                                    <Image url="@img/movement.png" />
+                                </image>
+                            </ImageView>
                         </children>
                     </Pane>
                 </children>

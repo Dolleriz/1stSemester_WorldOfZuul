@@ -45,7 +45,7 @@
                      <Button fx:id="parentsRoom" layoutX="52.0" layoutY="711.0" mnemonicParsing="false" onAction="#buttonClicked" text="Forældres soveværelse" />
                      <ImageView fitHeight="223.0" fitWidth="237.0" layoutX="244.0" layoutY="594.0" pickOnBounds="true" preserveRatio="true">
                         <image>
-                           <Image url="@img/Minimap/Badeværelse%20map.png" />
+                           <Image url="@img/Minimap/Badevaerelse map.png" />
                         </image>
                      </ImageView>
                      <Label alignment="CENTER" layoutX="244.0" layoutY="540.0" prefHeight="40.0" prefWidth="240.0" text="Din lokation">
@@ -59,6 +59,11 @@
                            <Font size="24.0" />
                         </font>
                      </Label>
+                     <ImageView fitHeight="86.0" fitWidth="96.0" layoutX="79.0" layoutY="595.0" pickOnBounds="true" preserveRatio="true">
+                        <image>
+                           <Image url="@img/movement.png" />
+                        </image>
+                     </ImageView>
                   </children>
                </Pane>
             </children>
