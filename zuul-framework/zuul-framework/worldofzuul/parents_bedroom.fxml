@@ -26,13 +26,8 @@
                               <Font size="24.0" />
                           </font>
                       </Label>
-                     <AnchorPane layoutX="7.0" layoutY="7.0" prefHeight="523.0" prefWidth="475.0">
+                     <AnchorPane prefHeight="520.0" prefWidth="520.0">
                         <children>
-                           <ImageView fitHeight="520.0" fitWidth="475.0" layoutX="3.0" layoutY="1.0" pickOnBounds="true" preserveRatio="true">
-                              <image>
-                                 <Image url="@img/TEMP_parentsbedroom.png" />
-                              </image>
-                           </ImageView>
                            <ImageView fx:id="zero" fitHeight="25.0" fitWidth="25.0" layoutX="155.0" layoutY="25.0" onMouseClicked="#pickUp" pickOnBounds="true" preserveRatio="true" />
                            <ImageView fx:id="one" fitHeight="25.0" fitWidth="25.0" layoutX="24.0" layoutY="38.0" onMouseClicked="#pickUp" pickOnBounds="true" preserveRatio="true" />
                            <ImageView fx:id="two" fitHeight="25.0" fitWidth="25.0" layoutX="72.0" layoutY="428.0" onMouseClicked="#pickUp" pickOnBounds="true" preserveRatio="true" />

@@ -19,7 +19,7 @@
             <children>
                <Pane prefHeight="750.0" prefWidth="750.0">
                   <children>
-                     <AnchorPane layoutX="7.0" layoutY="7.0" prefHeight="523.0" prefWidth="475.0">
+                     <AnchorPane prefHeight="520.0" prefWidth="520.0">
                         <children>
                            <ImageView fitHeight="520.0" fitWidth="475.0" layoutX="3.0" layoutY="1.0" pickOnBounds="true" preserveRatio="true">
                               <image>
