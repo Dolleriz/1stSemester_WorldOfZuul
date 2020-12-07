@@ -49,7 +49,6 @@ public class Controller {
             Scene scene = root.getScene(); //  new Scene(root);
             appStage.setScene(scene);
             appStage.show();
-            showPlayerInventory();
         }
 
         if (event.getSource() == kitchen) {
@@ -90,7 +89,6 @@ public class Controller {
             Scene scene = root.getScene(); //  new Scene(root);
             appStage.setScene(scene);
             appStage.show();
-            showPlayerInventory();
 
         }
 
@@ -119,17 +117,9 @@ public class Controller {
         }
     }
 
-    @FXML
-    public void showPlayerInventory() {
-        ObservableList<Trash> observablePlayerInventory =
-                (FXCollections.observableArrayList(myGame.playerInventory.inventory));
-        playerInventoryGUI.setItems(observablePlayerInventory);
-        playerInventoryGUI.getItems();
-    }
-
-    @FXML
-    public void viewInventory(Event event) throws IOException {
-
+    public void drawTrash(ImageView a, int inventoryIndex) {
+        a.setImage(myGame.currentRoom.roomInventory.inventory.get(inventoryIndex).getSprite().getImage());
+        scan.setDisable(true);
     }
 
     @FXML
@@ -187,12 +177,6 @@ public class Controller {
                 myGame.pickup(nine, 9);
             }
         }
-        showPlayerInventory();
-    }
-
-    public void drawTrash(ImageView a, int inventoryIndex) {
-        a.setImage(myGame.currentRoom.roomInventory.inventory.get(inventoryIndex).getSprite().getImage());
-        scan.setDisable(true);
     }
 }
 

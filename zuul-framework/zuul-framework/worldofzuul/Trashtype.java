@@ -25,7 +25,7 @@ public enum Trashtype {
 
     Trashtype(String trashType, String filePath) {
         this.trashString = trashType;
-        this.filepath=filePath;
+        this.filepath = filePath;
         sprite = new Sprites();
         sprite.setImage(filePath);
             }

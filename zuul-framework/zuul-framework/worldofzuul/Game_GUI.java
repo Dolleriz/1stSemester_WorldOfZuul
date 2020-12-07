@@ -7,6 +7,7 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.ListCell;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TableView;
+import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 
 import java.util.Scanner;
@@ -18,6 +19,10 @@ public class Game_GUI {
     RegularRoom outside, entrance, livingRoom, kitchen, bedRoom, bathRoom, parentsRoom;
     PlayerScore playerScore = new PlayerScore(0);
     Inventory playerInventory = new Inventory(5);
+
+    @FXML
+    public ImageView PI1, PI2, PI3, PI4, PI5;
+    public ImageView[] playerInventoryArray = {PI1, PI2, PI3, PI4, PI5};
 
     public Game_GUI() {
         createRooms();
@@ -86,12 +91,14 @@ public class Game_GUI {
     }
 
     void pickup(ImageView a, int inventoryIndex) {
-
-            playerInventory.inventory.add(currentRoom.roomInventoryGUI[inventoryIndex]);
-            currentRoom.roomInventoryGUI[inventoryIndex] = null;
-            a.setImage(null);
-            a.setDisable(true);
-        }
+        playerInventory.inventory.add(currentRoom.roomInventoryGUI[inventoryIndex]);
+            for (int i = 0; i < playerInventory.inventory.size(); i++) {
+                playerInventoryArray[i].setImage(currentRoom.roomInventory.inventory.get(i).getSprite().getImage());
+            }
+        currentRoom.roomInventoryGUI[inventoryIndex] = null;
+        a.setImage(null);
+        a.setDisable(true);
+    }
 
 
     void throwout(Command command) {
