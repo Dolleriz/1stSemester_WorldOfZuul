@@ -181,6 +181,7 @@ public class Controller {
     }
     public void drawTrash(ImageView a, int inventoryIndex) {
         a.setImage(myGame.currentRoom.roomInventory.inventory.get(inventoryIndex).getSprite().getImage());
+        scan.setDisable(true);
     }
 }
 
