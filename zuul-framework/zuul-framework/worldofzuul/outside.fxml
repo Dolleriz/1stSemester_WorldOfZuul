@@ -11,6 +11,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.stage.Stage?>
 
+<?import javafx.scene.control.ListView?>
 <Stage title="root" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="worldofzuul.Controller">
     <scene>
         <Scene>
@@ -42,17 +43,16 @@
                      <Separator layoutY="525.0" orientation="VERTICAL" prefHeight="225.0" prefWidth="488.0" />
                               <Button fx:id="garbageArea" layoutX="67.0" layoutY="548.0" mnemonicParsing="false" onAction="#buttonClicked" text="Skraldespandene" />
                               <Button fx:id="entrance" layoutX="173.0" layoutY="625.0" mnemonicParsing="false" onAction="#buttonClicked" text="Indgang" />
-<<<<<<< Updated upstream
+
                             <ImageView fitHeight="86.0" fitWidth="96.0" layoutX="79.0" layoutY="595.0" pickOnBounds="true" preserveRatio="true">
                                 <image>
                                     <Image url="@img/movement.png" />
                                 </image>
                             </ImageView>
                      <ListView fx:id="trashListView" layoutX="486.0" layoutY="42.0" prefHeight="484.0" prefWidth="260.0" />
-                     <Label alignment="CENTER" layoutX="487.0" layoutY="7.0" prefHeight="35.0" prefWidth="258.0" text="Taske">
-=======
+                     
                      <Label alignment="CENTER" layoutX="619.0" layoutY="14.0" prefHeight="35.0" prefWidth="70.0" text="Taske">
->>>>>>> Stashed changes
+
                         <font>
                            <Font size="24.0" />
                         </font>
