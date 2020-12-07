@@ -22,9 +22,8 @@
     <list default="true" id="fa685b78-871e-41d7-a232-1b029ddc9953" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/worldofzuul/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/worldofzuul/Controller.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/worldofzuul/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/worldofzuul/Game.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/worldofzuul/PlayerInventory.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/worldofzuul/Trashtype.java" beforeDir="false" afterPath="$PROJECT_DIR$/worldofzuul/Trashtype.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/worldofzuul/RegularRoom.java" beforeDir="false" afterPath="$PROJECT_DIR$/worldofzuul/RegularRoom.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/worldofzuul/Room.java" beforeDir="false" afterPath="$PROJECT_DIR$/worldofzuul/Room.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -42,12 +41,15 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
   </component>
   <component name="ProjectId" id="1kjMhDTZiux9g2Z1NP74hkoF1Og" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Libraries" />
@@ -98,5 +100,18 @@
       </map>
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="558" y="197" key="#com.intellij.ide.util.MemberChooser" timestamp="1607341294407">
+      <screen x="0" y="0" width="1504" height="963" />
+    </state>
+    <state x="558" y="197" key="#com.intellij.ide.util.MemberChooser/0.0.1504.963@0.0.1504.963" timestamp="1607341294407" />
+    <state x="548" y="229" key="refactoring.ChangeSignatureDialog" timestamp="1607341244654">
+      <screen x="0" y="0" width="1504" height="963" />
+    </state>
+    <state x="548" y="229" key="refactoring.ChangeSignatureDialog/0.0.1504.963@0.0.1504.963" timestamp="1607341244654" />
   </component>
 </project>

@@ -21,7 +21,9 @@
   <component name="ChangeListManager">
     <list default="true" id="fa685b78-871e-41d7-a232-1b029ddc9953" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/worldofzuul/outside.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/worldofzuul/outside.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/worldofzuul/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/worldofzuul/Controller.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/worldofzuul/RegularRoom.java" beforeDir="false" afterPath="$PROJECT_DIR$/worldofzuul/RegularRoom.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/worldofzuul/Room.java" beforeDir="false" afterPath="$PROJECT_DIR$/worldofzuul/Room.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -101,5 +103,15 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="558" y="197" key="#com.intellij.ide.util.MemberChooser" timestamp="1607341294407">
+      <screen x="0" y="0" width="1504" height="963" />
+    </state>
+    <state x="558" y="197" key="#com.intellij.ide.util.MemberChooser/0.0.1504.963@0.0.1504.963" timestamp="1607341294407" />
+    <state x="548" y="229" key="refactoring.ChangeSignatureDialog" timestamp="1607341244654">
+      <screen x="0" y="0" width="1504" height="963" />
+    </state>
+    <state x="548" y="229" key="refactoring.ChangeSignatureDialog/0.0.1504.963@0.0.1504.963" timestamp="1607341244654" />
   </component>
 </project>

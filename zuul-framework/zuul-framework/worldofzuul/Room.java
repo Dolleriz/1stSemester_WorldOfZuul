@@ -10,6 +10,7 @@ public class Room
     private String description;
     private HashMap<String, Room> exits;
     Inventory roomInventory = new Inventory(10);
+    Trash[] roomInventoryGUI = new Trash[10];
 
     public Room(String description) 
     {
