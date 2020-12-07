@@ -21,7 +21,7 @@
                                 <children>
                                     <ImageView fitHeight="520.0" fitWidth="520.0" pickOnBounds="true" preserveRatio="true">
                                         <image>
-                                            <Image url="@img/entrance1.png" />
+                                            <Image url="@img/Scene/entrance1.png" />
                                         </image>
                                     </ImageView>
 

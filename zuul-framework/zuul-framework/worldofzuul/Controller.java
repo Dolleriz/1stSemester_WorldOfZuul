@@ -28,10 +28,9 @@ public class Controller {
             kitchen, yourRoom, outside, parentsRoom;
     public Button help;
     public Sprites sprites;
-    public Canvas trash;
+
     public ImageView zero, one, two, three, four, five, six, seven, eight, nine;
     public Button scan;
-    public ListView<Trash> playerInventoryGUI;
 
 
     @FXML
