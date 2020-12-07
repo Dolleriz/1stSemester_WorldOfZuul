@@ -1,14 +1,16 @@
 package worldofzuul;
 
 public class RegularRoom extends Room {
+
     public RegularRoom(String description) {
 
         super(description);
         fillUpRoom();
+        fillUpRoomGUI();
     }
 
     public void fillUpRoom() {
-        for (int i = 0; i < 11; i++) {
+        for (int i = 0; i < 10; i++) {
             double trashTypeNumber;
 
             trashTypeNumber = Math.random() * 5;
@@ -22,6 +24,25 @@ public class RegularRoom extends Room {
                 roomInventory.inventory.add(new Trash(Trashtype.PAPER, Trashtype.PAPER.sprite));
             } else if (trashTypeNumber <= 5) {
                 roomInventory.inventory.add(new Trash(Trashtype.RESIDUAL_WASTE, Trashtype.RESIDUAL_WASTE.sprite));
+            }
+        }
+    }
+
+    public void fillUpRoomGUI() {
+        for (int i = 0; i < roomInventoryGUI.length; i++) {
+            double trashTypeNumber;
+
+            trashTypeNumber = Math.random() * 5;
+            if (trashTypeNumber <= 1) {
+                roomInventoryGUI[i] = (new Trash(Trashtype.PLASTIC, Trashtype.PLASTIC.sprite));
+            } else if (trashTypeNumber <= 2) {
+                roomInventoryGUI[i] = (new Trash(Trashtype.METAL_AND_GLASS, Trashtype.METAL_AND_GLASS.sprite));
+            } else if (trashTypeNumber <= 3) {
+                roomInventoryGUI[i] = (new Trash(Trashtype.FOOD_WASTE, Trashtype.FOOD_WASTE.sprite));
+            } else if (trashTypeNumber <= 4) {
+                roomInventoryGUI[i] = (new Trash(Trashtype.PAPER, Trashtype.PAPER.sprite));
+            } else if (trashTypeNumber <= 5) {
+                roomInventoryGUI[i] = (new Trash(Trashtype.RESIDUAL_WASTE, Trashtype.RESIDUAL_WASTE.sprite));
             }
         }
     }

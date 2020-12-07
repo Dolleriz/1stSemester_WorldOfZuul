@@ -32,9 +32,20 @@
                            <Button fx:id="bathroom" layoutX="376.0" layoutY="247.0" mnemonicParsing="false" onAction="#buttonClicked" text="Badeværelset" />
                            <Button fx:id="yourRoom" layoutX="14.0" layoutY="249.0" mnemonicParsing="false" onAction="#buttonClicked" text="Dit værelse" />
                            <Button fx:id="livingRoom" layoutX="215.0" layoutY="483.0" mnemonicParsing="false" onAction="#buttonClicked" text="Stue" />
+                           <ImageView fx:id="zero" fitHeight="25.0" fitWidth="25.0" layoutX="155.0" layoutY="25.0" onMouseClicked="#pickUp" pickOnBounds="true" preserveRatio="true" />
+                           <ImageView fx:id="one" fitHeight="25.0" fitWidth="25.0" layoutX="24.0" layoutY="38.0" onMouseClicked="#pickUp" pickOnBounds="true" preserveRatio="true" />
+                           <ImageView fx:id="two" fitHeight="25.0" fitWidth="25.0" layoutX="72.0" layoutY="428.0" onMouseClicked="#pickUp" pickOnBounds="true" preserveRatio="true" />
+                           <ImageView fx:id="three" fitHeight="25.0" fitWidth="25.0" layoutX="226.0" layoutY="303.0" onMouseClicked="#pickUp" pickOnBounds="true" preserveRatio="true" />
+                           <ImageView fx:id="four" fitHeight="25.0" fitWidth="25.0" layoutX="397.0" layoutY="63.0" onMouseClicked="#pickUp" pickOnBounds="true" preserveRatio="true" />
+                           <ImageView fx:id="five" fitHeight="25.0" fitWidth="25.0" layoutX="409.0" layoutY="428.0" onMouseClicked="#pickUp" pickOnBounds="true" preserveRatio="true" />
+                           <ImageView fx:id="six" fitHeight="25.0" fitWidth="25.0" layoutX="142.0" layoutY="486.0" onMouseClicked="#pickUp" pickOnBounds="true" preserveRatio="true" />
+                           <ImageView fx:id="seven" fitHeight="25.0" fitWidth="25.0" layoutX="283.0" layoutY="119.0" onMouseClicked="#pickUp" pickOnBounds="true" preserveRatio="true" />
+                           <ImageView fx:id="eight" fitHeight="25.0" fitWidth="25.0" layoutX="214.0" layoutY="220.0" onMouseClicked="#pickUp" pickOnBounds="true" preserveRatio="true" />
+                           <ImageView fx:id="nine" fitHeight="25.0" fitWidth="25.0" layoutX="85.0" layoutY="232.0" onMouseClicked="#pickUp" pickOnBounds="true" preserveRatio="true" />
                         </children>
                      </AnchorPane>
                      <Button fx:id="help" layoutX="488.0" layoutY="530.0" mnemonicParsing="false" onAction="#buttonClicked" prefHeight="61.0" prefWidth="76.0" text="Hjælp" />
+                      <Button fx:id="scan" layoutX="578.0" layoutY="530.0" mnemonicParsing="false" onAction="#scanRoom" prefHeight="61.0" prefWidth="76.0" text="Skan rum" />
                   </children>
                </Pane>
             </children>
