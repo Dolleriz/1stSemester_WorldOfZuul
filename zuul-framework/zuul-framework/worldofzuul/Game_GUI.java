@@ -93,7 +93,6 @@ public class Game_GUI {
     void pickup(ImageView a, int inventoryIndex) {
 
             playerInventory.inventory.add(currentRoom.roomInventory.inventory.get(inventoryIndex));
-            //System.out.println(currentRoom.roomInventory.inventory.get(inventoryIndex));
             currentRoom.roomInventory.inventory.remove(inventoryIndex);
             a.setImage(null);
         }
