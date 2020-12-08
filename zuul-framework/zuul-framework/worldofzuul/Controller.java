@@ -1,24 +1,14 @@
 package worldofzuul;
 
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.event.Event;
-import javafx.event.EventTarget;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.scene.Node;
 import javafx.scene.Scene;
-import javafx.scene.canvas.Canvas;
-import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.control.*;
-import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
-
 import java.io.IOException;
-import java.lang.annotation.Target;
-import java.util.ArrayList;
 
 public class Controller {
     Game_GUI myGame;
@@ -31,13 +21,13 @@ public class Controller {
     public Button livingRoom, garbageArea, bathroom, entrance,
             kitchen, yourRoom, outside, parentsRoom;
     public Button help;
-    public Sprites sprites;
-
     public ImageView zero, one, two, three, four, five, six, seven, eight, nine;
     public ImageView[] roomInventoryArray = new ImageView[10];
     public Button scan;
     public ImageView PI1, PI2, PI3, PI4, PI5;
     public ImageView[] playerInventoryArray = new ImageView[5];
+    @FXML
+    public Label playerScoreLabel;
 
     @FXML
     public void buttonClicked(ActionEvent event) throws IOException {
@@ -175,6 +165,12 @@ public class Controller {
             }
             showPlayerInventory();
         }
+        updatePlayerScore();
+    }
+
+    @FXML
+    public void updatePlayerScore() {
+        playerScoreLabel.setText("Score: " + myGame.playerScore.getPlayerScore());
     }
 }
 

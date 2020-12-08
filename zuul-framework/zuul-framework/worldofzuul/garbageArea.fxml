@@ -83,6 +83,7 @@
                                     <Image url="@img/movement.png" />
                                 </image>
                             </ImageView>
+                     <Label fx:id="playerScoreLabel" layoutX="522.0" layoutY="640.0" prefHeight="38.0" prefWidth="164.0" text="Score:" />
                         </children>
                     </Pane>
                 </children>

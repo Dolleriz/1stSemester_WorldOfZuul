@@ -20,10 +20,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="fa685b78-871e-41d7-a232-1b029ddc9953" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/lib1.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/worldofzuul/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/worldofzuul/Controller.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/zuul-framework.iml" beforeDir="false" afterPath="$PROJECT_DIR$/zuul-framework.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/worldofzuul/Game_GUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/worldofzuul/Game_GUI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/worldofzuul/bathroom.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/worldofzuul/bathroom.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/worldofzuul/entrance.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/worldofzuul/entrance.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/worldofzuul/garbageArea.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/worldofzuul/garbageArea.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/worldofzuul/kitchen.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/worldofzuul/kitchen.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/worldofzuul/livingRoom.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/worldofzuul/livingRoom.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/worldofzuul/outside.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/worldofzuul/outside.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/worldofzuul/parents_bedroom.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/worldofzuul/parents_bedroom.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -53,7 +59,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../../../../../../../javafx-sdk-11.0.2/lib" />
-    <property name="project.structure.last.edited" value="Libraries" />
+    <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="configurable.group.editor" />
