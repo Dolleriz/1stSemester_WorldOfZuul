@@ -17,6 +17,7 @@ public class Game {
     Inventory playerInventory = new Inventory(5);
 
     public Game() {
+
         createRooms();
         outside.printRoomInventory();
         parser = new Parser();

@@ -3,7 +3,6 @@ package worldofzuul;
 import java.util.HashMap;
 
 public class TrashCanRoom extends Room {
-    //HashMap trashcans = new HashMap<String, Trashcan>();
 
     public TrashCanRoom(String description) {
         super(description);
@@ -43,12 +42,6 @@ public class TrashCanRoom extends Room {
                 "\nDenne skraldespand er til restaffald." +
                 "\nDenne type af affald er alle ting der ikke passer ind i de fire andre kategorier." +
                 "\nHeri kan der komme f.eks. Kartoner, Pizzabakker, Bleer samt støvsugerposer.");
-
-        /*trashcans.put("plastic", plastic);
-        trashcans.put("metalAndGlass", metalAndGlass);
-        trashcans.put("foodWaste", foodWaste);
-        trashcans.put("paper", paper);
-        trashcans.put("residualWaste", residualWaste);*/
 
     }
 
