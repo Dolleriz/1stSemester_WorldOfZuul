@@ -67,6 +67,7 @@
                      <ImageView fx:id="PI3" fitHeight="50.0" fitWidth="50.0" layoutX="610.0" layoutY="169.0" pickOnBounds="true" preserveRatio="true" />
                      <ImageView fx:id="PI4" fitHeight="50.0" fitWidth="50.0" layoutX="610.0" layoutY="229.0" pickOnBounds="true" preserveRatio="true" />
                      <ImageView fx:id="PI5" fitHeight="50.0" fitWidth="50.0" layoutX="610.0" layoutY="289.0" pickOnBounds="true" preserveRatio="true" />
+                     <Label fx:id="playerScoreLabel" layoutX="522.0" layoutY="640.0" prefHeight="38.0" prefWidth="164.0" text="Score:" />
                   </children>
                </Pane>
             </children>
