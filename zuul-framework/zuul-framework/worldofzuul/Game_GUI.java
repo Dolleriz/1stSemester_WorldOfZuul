@@ -22,6 +22,7 @@ public class Game_GUI {
 
     public Game_GUI() {
         createRooms();
+        System.out.println("hej");
     }
 
     void createRooms() {

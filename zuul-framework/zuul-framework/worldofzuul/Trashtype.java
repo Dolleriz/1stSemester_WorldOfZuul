@@ -1,12 +1,5 @@
 package worldofzuul;
 
-import javafx.scene.image.Image;
-
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.IOException;
-import java.util.HashMap;
-
 public enum Trashtype {
 
     FOOD_WASTE("Madaffald.", "worldofzuul/img/TrashSprites/BittenApple.png"),

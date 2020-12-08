@@ -136,6 +136,11 @@ public class Controller {
 
     @FXML
     public void scanRoom(Event event) throws IOException {
+
+        for (int i = 0; i < 10; i++) {
+            drawTrash(zero, i);
+
+        }
         drawTrash(zero, 0);
         drawTrash(one, 1);
         drawTrash(two, 2);
