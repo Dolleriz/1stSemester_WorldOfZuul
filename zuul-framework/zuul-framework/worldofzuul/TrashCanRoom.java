@@ -7,10 +7,31 @@ public class TrashCanRoom extends Room {
     public TrashCanRoom(String description) {
         super(description);
         createTrashcans();
+
     }
 
 
     Trashcan plastic, metalAndGlass, foodWaste, paper, residualWaste;
+
+    public Trashcan getPlastic() {
+        return plastic;
+    }
+
+    public Trashcan getMetalAndGlass() {
+        return metalAndGlass;
+    }
+
+    public Trashcan getFoodWaste() {
+        return foodWaste;
+    }
+
+    public Trashcan getPaper() {
+        return paper;
+    }
+
+    public Trashcan getResidualWaste() {
+        return residualWaste;
+    }
 
     public void createTrashcans() {
 
@@ -44,6 +65,7 @@ public class TrashCanRoom extends Room {
                 "\nHeri kan der komme f.eks. Kartoner, Pizzabakker, Bleer samt støvsugerposer.");
 
     }
+
 
 
     public void showPlastic() {

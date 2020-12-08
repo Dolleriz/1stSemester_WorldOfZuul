@@ -2,11 +2,16 @@ package worldofzuul;
 
 import javafx.event.ActionEvent;
 import javafx.event.Event;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.ClipboardContent;
+import javafx.scene.input.Dragboard;
+import javafx.scene.input.MouseDragEvent;
+import javafx.scene.input.TransferMode;
 import javafx.stage.Stage;
 import java.io.IOException;
 
@@ -177,8 +182,24 @@ public class Controller {
     }
 
     @FXML
-    public void throwout (Event event){
-        if (event.getTarget() == null) {
+    public void throwout(Event eventt) {
+        PI1.setOnDragDetected(event -> {
+            Dragboard db = PI1.startDragAndDrop(TransferMode.MOVE);
+
+            ClipboardContent content = new ClipboardContent();
+            content.putImage(PI1.getImage());
+            db.setContent(content);
+            event.consume();
+        });
+
+        plastic.setOnDragExited(event -> {
+            myGame.playerInventory.inventory.remove(0);
+            showPlayerInventory();
+            System.out.println("yolo");
+            event.consume();
+        });
+/*
+        if (eventt.getTarget() == null) {
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
             alert.setTitle("En verden af Skrald");
             alert.setHeaderText(null);
@@ -186,11 +207,12 @@ public class Controller {
             alert.showAndWait();
         } else {
             for (int i = 0; i < myGame.playerInventory.inventory.size(); i++) {
-                if (event.getTarget().equals(playerInventoryArray[i])) {
+                if (eventt.getTarget().equals(playerInventoryArray[i])) {
                     myGame.playerInventory.inventory.remove(myGame.playerInventory.inventory.get(i));
                     playerInventoryArray[i].setImage(null);
                 }
             }
+
         }
 
         /*for (int i = 0; i < myGame.playerInventory.inventory.size(); i++) {
@@ -208,5 +230,13 @@ public class Controller {
     public void updatePlayerScore() {
         playerScoreLabel.setText("Score: " + myGame.playerScore.getPlayerScore());
     }
+
+    public boolean compareTrash(Trashcan trashcan, Trashtype trash) {
+        if (trashcan.getTrashType() == trash) {
+            return true;
+        } else
+            return false;
+    }
 }
+
 
