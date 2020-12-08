@@ -193,12 +193,15 @@ public class Controller {
             }
         }
 
-        for (int i = 0; i < myGame.playerInventory.inventory.size(); i++) {
+        /*for (int i = 0; i < myGame.playerInventory.inventory.size(); i++) {
             if (event.getTarget().equals(plastic) || event.getSource().equals(Trashtype.PLASTIC)) {
                 myGame.playerInventory.inventory.remove(myGame.playerInventory.inventory.get(i));
-            }
-            showPlayerInventory();
-        }
+                myGame.playerScore.increasePlayerScore(1);
+            } */
+
+        showPlayerInventory();
+        myGame.playerScore.increasePlayerScore(1);
+        updatePlayerScore();
     }
 
     @FXML
