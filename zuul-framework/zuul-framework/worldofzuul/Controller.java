@@ -26,6 +26,7 @@ public class Controller {
     public Controller() {
         myGame = Game_GUI.INSTANCE;
     }
+
     @FXML
     public Button livingRoom, garbageArea, bathroom, entrance,
             kitchen, yourRoom, outside, parentsRoom;
@@ -133,7 +134,7 @@ public class Controller {
     }
 
     @FXML
-    public void scanRoom(Event event) throws IOException, NullPointerException{
+    public void scanRoom(Event event) throws IOException, NullPointerException {
         roomInventoryArray[0] = zero;
         roomInventoryArray[1] = one;
         roomInventoryArray[2] = two;
@@ -163,39 +164,17 @@ public class Controller {
             alert.setContentText("Din taske er fuld. Du må tømme tasken før du kan samle mere skrald op.");
             alert.showAndWait();
         } else {
+            for (int i = 0; i < myGame.currentRoom.roomInventoryGUI.length; i++) {
+                if (event.getTarget().equals(roomInventoryArray[i])) {
+                    myGame.playerInventory.inventory.add(myGame.currentRoom.roomInventoryGUI[i]);
+                    myGame.currentRoom.roomInventoryGUI[i] = null;
+                    roomInventoryArray[i].setImage(null);
+                    roomInventoryArray[i].setDisable(true);
+                }
 
-            if (event.getTarget().equals(zero)) {
-                myGame.pickup(zero, 0);
             }
-            if (event.getTarget().equals(one)) {
-                myGame.pickup(one, 1);
-            }
-            if (event.getTarget().equals(two)) {
-                myGame.pickup(two, 2);
-            }
-            if (event.getTarget().equals(three)) {
-                myGame.pickup(three, 3);
-            }
-            if (event.getTarget().equals(four)) {
-                myGame.pickup(four, 4);
-            }
-            if (event.getTarget().equals(five)) {
-                myGame.pickup(five, 5);
-            }
-            if (event.getTarget().equals(six)) {
-                myGame.pickup(six, 6);
-            }
-            if (event.getTarget().equals(seven)) {
-                myGame.pickup(seven, 7);
-            }
-            if (event.getTarget().equals(eight)) {
-                myGame.pickup(eight, 8);
-            }
-            if (event.getTarget().equals(nine)) {
-                myGame.pickup(nine, 9);
-            }
+            showPlayerInventory();
         }
-        showPlayerInventory();
     }
 }
 

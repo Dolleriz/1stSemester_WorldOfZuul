@@ -88,12 +88,7 @@ public class Game_GUI {
         currentRoom = outside;
     }
 
-    void pickup(ImageView a, int inventoryIndex) {
-        playerInventory.inventory.add(currentRoom.roomInventoryGUI[inventoryIndex]);
-        currentRoom.roomInventoryGUI[inventoryIndex] = null;
-        a.setImage(null);
-        a.setDisable(true);
-    }
+  
 
     void throwout(Command command) {
 

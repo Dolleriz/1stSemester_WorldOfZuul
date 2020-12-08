@@ -20,9 +20,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="fa685b78-871e-41d7-a232-1b029ddc9953" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/lib1.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/worldofzuul/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/worldofzuul/Controller.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/worldofzuul/Game_GUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/worldofzuul/Game_GUI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/zuul-framework.iml" beforeDir="false" afterPath="$PROJECT_DIR$/zuul-framework.iml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -51,7 +52,7 @@
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../../../../../../../javafx-sdk-11.0.2/lib" />
     <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -66,7 +67,7 @@
     <configuration name="Main" type="Application" factoryName="Application">
       <option name="MAIN_CLASS_NAME" value="worldofzuul.Main" />
       <module name="zuul-framework" />
-      <option name="VM_PARAMETERS" value="--module-path &quot;C:\Users\dolle\Downloads\openjfx-15.0.1_windows-x64_bin-sdk\javafx-sdk-15.0.1\lib&quot; --add-modules javafx.controls,javafx.fxml" />
+      <option name="VM_PARAMETERS" value="--module-path &quot;C:\javafx-sdk-11.0.2\lib&quot; --add-modules javafx.controls,javafx.fxml" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -102,36 +103,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-  </component>
-  <component name="WindowStateProjectService">
-    <state x="558" y="197" key="#com.intellij.ide.util.MemberChooser" timestamp="1607343718056">
-      <screen x="0" y="0" width="1504" height="963" />
-    </state>
-    <state x="558" y="197" key="#com.intellij.ide.util.MemberChooser/0.0.1504.963@0.0.1504.963" timestamp="1607343718056" />
-    <state width="1461" height="256" key="GridCell.Tab.0.bottom" timestamp="1607425650099">
-      <screen x="0" y="0" width="1504" height="963" />
-    </state>
-    <state width="1461" height="256" key="GridCell.Tab.0.bottom/0.0.1504.963@0.0.1504.963" timestamp="1607425650099" />
-    <state width="1461" height="256" key="GridCell.Tab.0.center" timestamp="1607425650099">
-      <screen x="0" y="0" width="1504" height="963" />
-    </state>
-    <state width="1461" height="256" key="GridCell.Tab.0.center/0.0.1504.963@0.0.1504.963" timestamp="1607425650099" />
-    <state width="1461" height="256" key="GridCell.Tab.0.left" timestamp="1607425650099">
-      <screen x="0" y="0" width="1504" height="963" />
-    </state>
-    <state width="1461" height="256" key="GridCell.Tab.0.left/0.0.1504.963@0.0.1504.963" timestamp="1607425650099" />
-    <state width="1461" height="256" key="GridCell.Tab.0.right" timestamp="1607425650099">
-      <screen x="0" y="0" width="1504" height="963" />
-    </state>
-    <state width="1461" height="256" key="GridCell.Tab.0.right/0.0.1504.963@0.0.1504.963" timestamp="1607425650099" />
-    <state x="301" y="217" width="902" height="629" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2" timestamp="1607347770820">
-      <screen x="0" y="0" width="1504" height="963" />
-    </state>
-    <state x="301" y="217" width="902" height="629" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2/0.0.1504.963@0.0.1504.963" timestamp="1607347770820" />
-    <state x="548" y="229" key="refactoring.ChangeSignatureDialog" timestamp="1607341244654">
-      <screen x="0" y="0" width="1504" height="963" />
-    </state>
-    <state x="548" y="229" key="refactoring.ChangeSignatureDialog/0.0.1504.963@0.0.1504.963" timestamp="1607341244654" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
