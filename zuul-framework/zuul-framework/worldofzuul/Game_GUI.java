@@ -20,10 +20,6 @@ public class Game_GUI {
     PlayerScore playerScore = new PlayerScore(0);
     Inventory playerInventory = new Inventory(5);
 
-    @FXML
-    public ImageView PI1, PI2, PI3, PI4, PI5;
-    public ImageView[] playerInventoryArray = {PI1, PI2, PI3, PI4, PI5};
-
     public Game_GUI() {
         createRooms();
     }
@@ -92,14 +88,10 @@ public class Game_GUI {
 
     void pickup(ImageView a, int inventoryIndex) {
         playerInventory.inventory.add(currentRoom.roomInventoryGUI[inventoryIndex]);
-            for (int i = 0; i < playerInventory.inventory.size(); i++) {
-                playerInventoryArray[i].setImage(currentRoom.roomInventory.inventory.get(i).getSprite().getImage());
-            }
         currentRoom.roomInventoryGUI[inventoryIndex] = null;
         a.setImage(null);
         a.setDisable(true);
     }
-
 
     void throwout(Command command) {
 
@@ -159,7 +151,6 @@ public class Game_GUI {
         playerScore.showPlayerScore();
     }
 
-
     void trashDescription(Command command) {
 
         if (currentRoom != garbageArea) {
@@ -181,7 +172,6 @@ public class Game_GUI {
             }
         }
     }
-
 
     void printPlayerInventory(Inventory playerInventory) {
         System.out.println("Du kan max have 5 stykker affald i dine lommer. " +

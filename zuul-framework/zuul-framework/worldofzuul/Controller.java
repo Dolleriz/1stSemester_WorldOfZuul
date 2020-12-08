@@ -31,7 +31,8 @@ public class Controller {
 
     public ImageView zero, one, two, three, four, five, six, seven, eight, nine;
     public Button scan;
-
+    public ImageView PI1, PI2, PI3, PI4, PI5;
+    public ImageView[] playerInventoryArray = {PI1, PI2, PI3, PI4, PI5};
 
     @FXML
     public void buttonClicked(ActionEvent event) throws IOException {
@@ -116,6 +117,18 @@ public class Controller {
         }
     }
 
+    @FXML
+    public void showPlayerInventory() {
+        playerInventoryArray[0] = PI1;
+        playerInventoryArray[1] = PI2;
+        playerInventoryArray[2] = PI3;
+        playerInventoryArray[3] = PI4;
+        playerInventoryArray[4] = PI5;
+        for (int i = 0; i < myGame.playerInventory.inventory.size(); i++) {
+            playerInventoryArray[i].setImage(myGame.playerInventory.inventory.get(i).getSprite().getImage());
+        }
+    }
+
     public void drawTrash(ImageView a, int inventoryIndex) {
         a.setImage(myGame.currentRoom.roomInventory.inventory.get(inventoryIndex).getSprite().getImage());
         scan.setDisable(true);
@@ -176,6 +189,7 @@ public class Controller {
                 myGame.pickup(nine, 9);
             }
         }
+        showPlayerInventory();
     }
 }
 
