@@ -6,7 +6,9 @@ public class RegularRoom extends Room {
 
         super(description);
         fillUpRoom();
-        fillUpRoomGUI();
+    }
+
+    public RegularRoom() {
     }
 
     public void fillUpRoom() {
@@ -46,7 +48,6 @@ public class RegularRoom extends Room {
             }
         }
     }
-
 
 
     public void printRoomInventory() { //can print the contents of the roomInventory without throwing a nullpointerexception

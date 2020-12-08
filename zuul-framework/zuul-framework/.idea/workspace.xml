@@ -21,17 +21,10 @@
   <component name="ChangeListManager">
     <list default="true" id="fa685b78-871e-41d7-a232-1b029ddc9953" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/zuul-framework/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/zuul-framework/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/zuul-framework/worldofzuul/garbageArea.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/zuul-framework/worldofzuul/garbageArea.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/worldofzuul/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/worldofzuul/Controller.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/worldofzuul/Game_GUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/worldofzuul/Game_GUI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/worldofzuul/bathroom.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/worldofzuul/bathroom.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/worldofzuul/entrance.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/worldofzuul/entrance.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/worldofzuul/garbageArea.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/worldofzuul/garbageArea.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/worldofzuul/kitchen.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/worldofzuul/kitchen.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/worldofzuul/livingRoom.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/worldofzuul/livingRoom.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/worldofzuul/outside.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/worldofzuul/outside.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/worldofzuul/parents_bedroom.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/worldofzuul/parents_bedroom.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/worldofzuul/RegularRoom.java" beforeDir="false" afterPath="$PROJECT_DIR$/worldofzuul/RegularRoom.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/worldofzuul/Room.java" beforeDir="false" afterPath="$PROJECT_DIR$/worldofzuul/Room.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -75,7 +68,7 @@
     <configuration name="Main" type="Application" factoryName="Application">
       <option name="MAIN_CLASS_NAME" value="worldofzuul.Main" />
       <module name="zuul-framework" />
-      <option name="VM_PARAMETERS" value="--module-path &quot;C:\Users\dolle\Downloads\openjfx-15.0.1_windows-x64_bin-sdk\javafx-sdk-15.0.1\lib&quot; --add-modules javafx.controls,javafx.fxml" />
+      <option name="VM_PARAMETERS" value="--module-path &quot;C:\javafx-sdk-11.0.2\lib&quot; --add-modules javafx.controls,javafx.fxml" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -111,28 +104,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-  </component>
-  <component name="WindowStateProjectService">
-    <state width="1461" height="256" key="GridCell.Tab.0.bottom" timestamp="1607431268300">
-      <screen x="0" y="0" width="1504" height="963" />
-    </state>
-    <state width="1461" height="256" key="GridCell.Tab.0.bottom/0.0.1504.963@0.0.1504.963" timestamp="1607431268300" />
-    <state width="1461" height="256" key="GridCell.Tab.0.center" timestamp="1607431268299">
-      <screen x="0" y="0" width="1504" height="963" />
-    </state>
-    <state width="1461" height="256" key="GridCell.Tab.0.center/0.0.1504.963@0.0.1504.963" timestamp="1607431268299" />
-    <state width="1461" height="256" key="GridCell.Tab.0.left" timestamp="1607431268299">
-      <screen x="0" y="0" width="1504" height="963" />
-    </state>
-    <state width="1461" height="256" key="GridCell.Tab.0.left/0.0.1504.963@0.0.1504.963" timestamp="1607431268299" />
-    <state width="1461" height="256" key="GridCell.Tab.0.right" timestamp="1607431268300">
-      <screen x="0" y="0" width="1504" height="963" />
-    </state>
-    <state width="1461" height="256" key="GridCell.Tab.0.right/0.0.1504.963@0.0.1504.963" timestamp="1607431268300" />
-    <state x="233" y="56" key="SettingsEditor" timestamp="1607428529283">
-      <screen x="0" y="0" width="1504" height="963" />
-    </state>
-    <state x="233" y="56" key="SettingsEditor/0.0.1504.963@0.0.1504.963" timestamp="1607428529283" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
