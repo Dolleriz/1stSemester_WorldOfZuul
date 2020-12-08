@@ -21,9 +21,9 @@
                         <children>
                             <AnchorPane prefHeight="520.0" prefWidth="520.0">
                                 <children>
-                                    <ImageView fitHeight="520.0" fitWidth="475.0" layoutX="3.0" layoutY="1.0" pickOnBounds="true" preserveRatio="true">
+                                    <ImageView fitHeight="520.0" fitWidth="520.0" pickOnBounds="true" preserveRatio="true">
                                         <image>
-                                            <Image url="@img/TEMP_trashroom.png" />
+                                            <Image url="@img/Scene/Temp/TEMP_trashroom.png" />
                                         </image>
                                     </ImageView>
                                 </children>
