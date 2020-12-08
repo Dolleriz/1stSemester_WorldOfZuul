@@ -21,8 +21,11 @@ import java.lang.annotation.Target;
 import java.util.ArrayList;
 
 public class Controller {
-    Game_GUI myGame = new Game_GUI();
+    Game_GUI myGame;
 
+    public Controller() {
+        myGame = Game_GUI.INSTANCE;
+    }
     @FXML
     public Button livingRoom, garbageArea, bathroom, entrance,
             kitchen, yourRoom, outside, parentsRoom;
@@ -30,9 +33,10 @@ public class Controller {
     public Sprites sprites;
 
     public ImageView zero, one, two, three, four, five, six, seven, eight, nine;
+    public ImageView[] roomInventoryArray = new ImageView[10];
     public Button scan;
     public ImageView PI1, PI2, PI3, PI4, PI5;
-    public ImageView[] playerInventoryArray = {PI1, PI2, PI3, PI4, PI5};
+    public ImageView[] playerInventoryArray = new ImageView[5];
 
     @FXML
     public void buttonClicked(ActionEvent event) throws IOException {
@@ -89,7 +93,6 @@ public class Controller {
             Scene scene = root.getScene(); //  new Scene(root);
             appStage.setScene(scene);
             appStage.show();
-
         }
 
         if (event.getSource() == entrance) {
@@ -129,28 +132,31 @@ public class Controller {
         }
     }
 
-    public void drawTrash(ImageView a, int inventoryIndex) {
-        a.setImage(myGame.currentRoom.roomInventoryGUI[inventoryIndex].getSprite().getImage());
-        scan.setDisable(true);
-    }
-
     @FXML
-    public void scanRoom(Event event) throws IOException {
-        drawTrash(zero, 0);
-        drawTrash(one, 1);
-        drawTrash(two, 2);
-        drawTrash(three, 3);
-        drawTrash(four, 4);
-        drawTrash(five, 5);
-        drawTrash(six, 6);
-        drawTrash(seven, 7);
-        drawTrash(eight, 8);
-        drawTrash(nine, 9);
+    public void scanRoom(Event event) throws IOException, NullPointerException{
+        roomInventoryArray[0] = zero;
+        roomInventoryArray[1] = one;
+        roomInventoryArray[2] = two;
+        roomInventoryArray[3] = three;
+        roomInventoryArray[4] = four;
+        roomInventoryArray[5] = five;
+        roomInventoryArray[6] = six;
+        roomInventoryArray[7] = seven;
+        roomInventoryArray[8] = eight;
+        roomInventoryArray[9] = nine;
+
+        for (int i = 0; i < myGame.currentRoom.roomInventoryGUI.length; i++) {
+            if (myGame.currentRoom.roomInventoryGUI[i] != null) {
+                roomInventoryArray[i].setImage(myGame.currentRoom.roomInventoryGUI[i].getSprite().getImage());
+            }
+        }
+        scan.setDisable(true);
+        showPlayerInventory();
     }
 
     @FXML
     public void pickUp(Event event) {
-        if (myGame.playerInventory.inventory.size() == 5) {
+        if (myGame.playerInventory.inventory.size() >= 5) {
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
             alert.setTitle("En verden af Skrald");
             alert.setHeaderText(null);

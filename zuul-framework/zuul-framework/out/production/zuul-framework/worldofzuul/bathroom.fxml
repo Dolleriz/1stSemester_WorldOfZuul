@@ -52,7 +52,7 @@
                            <Font size="24.0" />
                         </font>
                      </Label>
-                     <Label alignment="CENTER" layoutX="487.0" layoutY="7.0" prefHeight="35.0" prefWidth="258.0" text="Taske">
+                     <Label alignment="CENTER" layoutX="585.0" layoutY="10.0" prefHeight="35.0" prefWidth="100.0" text="Taske">
                         <font>
                            <Font size="24.0" />
                         </font>
@@ -62,11 +62,11 @@
                            <Image url="@img/movement.png" />
                         </image>
                      </ImageView>
-                     <ImageView fx:id="PI1" fitHeight="50.0" fitWidth="50.0" layoutX="592.0" layoutY="49.0" pickOnBounds="true" preserveRatio="true" />
-                     <ImageView fx:id="PI2" fitHeight="50.0" fitWidth="50.0" layoutX="592.0" layoutY="99.0" pickOnBounds="true" preserveRatio="true" />
-                     <ImageView fx:id="PI3" fitHeight="50.0" fitWidth="50.0" layoutX="592.0" layoutY="149.0" pickOnBounds="true" preserveRatio="true" />
-                     <ImageView fx:id="PI4" fitHeight="50.0" fitWidth="50.0" layoutX="592.0" layoutY="199.0" pickOnBounds="true" preserveRatio="true" />
-                     <ImageView fx:id="PI5" fitHeight="50.0" fitWidth="50.0" layoutX="592.0" layoutY="249.0" pickOnBounds="true" preserveRatio="true" />
+                     <ImageView fx:id="PI1" fitHeight="50.0" fitWidth="50.0" layoutX="610.0" layoutY="49.0" pickOnBounds="true" preserveRatio="true" />
+                     <ImageView fx:id="PI2" fitHeight="50.0" fitWidth="50.0" layoutX="610.0" layoutY="109.0" pickOnBounds="true" preserveRatio="true" />
+                     <ImageView fx:id="PI3" fitHeight="50.0" fitWidth="50.0" layoutX="610.0" layoutY="169.0" pickOnBounds="true" preserveRatio="true" />
+                     <ImageView fx:id="PI4" fitHeight="50.0" fitWidth="50.0" layoutX="610.0" layoutY="229.0" pickOnBounds="true" preserveRatio="true" />
+                     <ImageView fx:id="PI5" fitHeight="50.0" fitWidth="50.0" layoutX="610.0" layoutY="289.0" pickOnBounds="true" preserveRatio="true" />
                   </children>
                </Pane>
             </children>

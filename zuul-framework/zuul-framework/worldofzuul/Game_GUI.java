@@ -14,6 +14,8 @@ import java.util.Scanner;
 
 public class Game_GUI {
 
+    public static final Game_GUI INSTANCE = new Game_GUI();
+
     Room currentRoom;
     TrashCanRoom garbageArea;
     RegularRoom outside, entrance, livingRoom, kitchen, bedRoom, bathRoom, parentsRoom;
