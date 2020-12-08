@@ -13,6 +13,7 @@ import javafx.scene.input.Dragboard;
 import javafx.scene.input.MouseDragEvent;
 import javafx.scene.input.TransferMode;
 import javafx.stage.Stage;
+
 import java.io.IOException;
 
 public class Controller {
@@ -35,7 +36,7 @@ public class Controller {
 
     public ImageView PI1, PI2, PI3, PI4, PI5;
     public ImageView[] playerInventoryArray = new ImageView[5];
-    @FXML
+
     public Label playerScoreLabel;
 
     @FXML
@@ -53,6 +54,7 @@ public class Controller {
             Scene scene = root.getScene(); //  new Scene(root);
             appStage.setScene(scene);
             appStage.show();
+            myGame.currentRoom = myGame.livingRoom;
         }
 
         if (event.getSource() == kitchen) {
@@ -61,6 +63,7 @@ public class Controller {
             Scene scene = root.getScene(); //  new Scene(root);
             appStage.setScene(scene);
             appStage.show();
+            myGame.currentRoom = myGame.kitchen;
         }
 
         if (event.getSource() == bathroom) {
@@ -69,6 +72,7 @@ public class Controller {
             Scene scene = root.getScene(); //  new Scene(root);
             appStage.setScene(scene);
             appStage.show();
+            myGame.currentRoom = myGame.bathRoom;
         }
 
         if (event.getSource() == parentsRoom) {
@@ -77,6 +81,7 @@ public class Controller {
             Scene scene = root.getScene(); //  new Scene(root);
             appStage.setScene(scene);
             appStage.show();
+            myGame.currentRoom = myGame.parentsRoom;
         }
 
         if (event.getSource() == garbageArea) {
@@ -85,6 +90,7 @@ public class Controller {
             Scene scene = root.getScene(); //  new Scene(root);
             appStage.setScene(scene);
             appStage.show();
+            myGame.currentRoom = myGame.garbageArea;
         }
 
         if (event.getSource() == outside) {
@@ -93,6 +99,7 @@ public class Controller {
             Scene scene = root.getScene(); //  new Scene(root);
             appStage.setScene(scene);
             appStage.show();
+            myGame.currentRoom = myGame.outside;
         }
 
         if (event.getSource() == entrance) {
@@ -101,6 +108,7 @@ public class Controller {
             Scene scene = root.getScene(); //  new Scene(root);
             appStage.setScene(scene);
             appStage.show();
+            myGame.currentRoom = myGame.entrance;
         }
 
         if (event.getSource() == yourRoom) {
@@ -109,6 +117,7 @@ public class Controller {
             Scene scene = root.getScene(); //  new Scene(root);
             appStage.setScene(scene);
             appStage.show();
+            myGame.currentRoom = myGame.bedRoom;
         }
 
         if (event.getSource() == help) {
@@ -149,11 +158,52 @@ public class Controller {
         roomInventoryArray[8] = eight;
         roomInventoryArray[9] = nine;
 
-        for (int i = 0; i < myGame.currentRoom.roomInventoryGUI.length; i++) {
-            if (myGame.currentRoom.roomInventoryGUI[i] != null) {
-                roomInventoryArray[i].setImage(myGame.currentRoom.roomInventoryGUI[i].getSprite().getImage());
+        if (myGame.currentRoom == myGame.outside) {
+            for (int i = 0; i < myGame.outside.roomInventoryGUI.length; i++) {
+                if (myGame.outside.roomInventoryGUI[i] != null) {
+                    roomInventoryArray[i].setImage(myGame.outside.roomInventoryGUI[i].getSprite().getImage());
+                }
+            }
+        } else if (myGame.currentRoom == myGame.bathRoom) {
+            for (int i = 0; i < myGame.bathRoom.roomInventoryGUI.length; i++) {
+                if (myGame.bathRoom.roomInventoryGUI[i] != null) {
+                    roomInventoryArray[i].setImage(myGame.bathRoom.roomInventoryGUI[i].getSprite().getImage());
+                }
+            }
+        } else if (myGame.currentRoom == myGame.bedRoom) {
+            for (int i = 0; i < myGame.bedRoom.roomInventoryGUI.length; i++) {
+                if (myGame.bedRoom.roomInventoryGUI[i] != null) {
+                    roomInventoryArray[i].setImage(myGame.bedRoom.roomInventoryGUI[i].getSprite().getImage());
+                }
+            }
+        } else if (myGame.currentRoom == myGame.livingRoom) {
+            for (int i = 0; i < myGame.livingRoom.roomInventoryGUI.length; i++) {
+                if (myGame.livingRoom.roomInventoryGUI[i] != null) {
+                    roomInventoryArray[i].setImage(myGame.livingRoom.roomInventoryGUI[i].getSprite().getImage());
+                }
+            }
+        } else if (myGame.currentRoom == myGame.parentsRoom) {
+            for (int i = 0; i < myGame.parentsRoom.roomInventoryGUI.length; i++) {
+                if (myGame.parentsRoom.roomInventoryGUI[i] != null) {
+                    roomInventoryArray[i].setImage(myGame.parentsRoom.roomInventoryGUI[i].getSprite().getImage());
+                }
+            }
+        } else if (myGame.currentRoom == myGame.entrance) {
+            for (int i = 0; i < myGame.entrance.roomInventoryGUI.length; i++) {
+                if (myGame.entrance.roomInventoryGUI[i] != null) {
+                    roomInventoryArray[i].setImage(myGame.entrance.roomInventoryGUI[i].getSprite().getImage());
+                }
+            }
+        } else if (myGame.currentRoom == myGame.kitchen) {
+            for (int i = 0; i < myGame.kitchen.roomInventoryGUI.length; i++) {
+                if (myGame.kitchen.roomInventoryGUI[i] != null) {
+                    roomInventoryArray[i].setImage(myGame.kitchen
+                            .roomInventoryGUI[i].getSprite().getImage());
+                }
             }
         }
+
+
         scan.setDisable(true);
         showPlayerInventory();
     }

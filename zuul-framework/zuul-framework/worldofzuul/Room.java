@@ -5,46 +5,42 @@ import java.util.HashMap;
 import java.util.Iterator;
 
 
-public class Room 
-{
+public class Room {
     private String description;
     private HashMap<String, Room> exits;
     Inventory roomInventory = new Inventory(10);
     Trash[] roomInventoryGUI = new Trash[10];
 
-    public Room(String description) 
-    {
+    public Room(String description) {
         this.description = description;
         exits = new HashMap<String, Room>();
     }
 
-    public void setExit(String direction, Room neighbor) 
-    {
+    public Room() {
+    }
+
+    public void setExit(String direction, Room neighbor) {
         exits.put(direction, neighbor);
     }
 
-    public String getShortDescription()
-    {
+    public String getShortDescription() {
         return description;
     }
 
-    public String getLongDescription()
-    {
+    public String getLongDescription() {
         return "Du er " + description + ".\n" + getExitString();
     }
 
-    String getExitString()
-    {
+    String getExitString() {
         String returnString = "Udgange:";
         Set<String> keys = exits.keySet();
-        for(String exit : keys) {
+        for (String exit : keys) {
             returnString += " " + exit;
         }
         return returnString;
     }
 
-    public Room getExit(String direction) 
-    {
+    public Room getExit(String direction) {
         return exits.get(direction);
     }
 }
