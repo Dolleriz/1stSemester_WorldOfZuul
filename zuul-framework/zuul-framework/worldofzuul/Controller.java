@@ -30,7 +30,7 @@ public class Controller {
 
     public ImageView PI1, PI2, PI3, PI4, PI5;
     public ImageView[] playerInventoryArray = new ImageView[5];
-    @FXML
+
     public Label playerScoreLabel;
 
     @FXML
