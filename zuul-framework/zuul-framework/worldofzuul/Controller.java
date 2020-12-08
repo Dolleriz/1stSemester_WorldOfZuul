@@ -31,11 +31,13 @@ public class Controller {
     public Button livingRoom, garbageArea, bathroom, entrance,
             kitchen, yourRoom, outside, parentsRoom;
     public Button help;
-    public Sprites sprites;
+    public Button scan;
+
+    public ImageView plastic, metal, paper, food, residual;
 
     public ImageView zero, one, two, three, four, five, six, seven, eight, nine;
     public ImageView[] roomInventoryArray = new ImageView[10];
-    public Button scan;
+
     public ImageView PI1, PI2, PI3, PI4, PI5;
     public ImageView[] playerInventoryArray = new ImageView[5];
 
@@ -119,6 +121,7 @@ public class Controller {
             help.setContentText("Hjælp bruh.");
             help.showAndWait();
         }
+        showPlayerInventory();
     }
 
     @FXML
@@ -128,6 +131,9 @@ public class Controller {
         playerInventoryArray[2] = PI3;
         playerInventoryArray[3] = PI4;
         playerInventoryArray[4] = PI5;
+        for (int i = 0; i < playerInventoryArray.length; i++) {
+            playerInventoryArray[i].setImage(null);
+        }
         for (int i = 0; i < myGame.playerInventory.inventory.size(); i++) {
             playerInventoryArray[i].setImage(myGame.playerInventory.inventory.get(i).getSprite().getImage());
         }
@@ -172,6 +178,31 @@ public class Controller {
                     roomInventoryArray[i].setDisable(true);
                 }
 
+            }
+            showPlayerInventory();
+        }
+    }
+
+    @FXML
+    public void throwout (Event event){
+        if (event.getTarget() == null) {
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setTitle("En verden af Skrald");
+            alert.setHeaderText(null);
+            alert.setContentText("Denne plads er tom, vælg en anden plads.");
+            alert.showAndWait();
+        } else {
+            for (int i = 0; i < myGame.playerInventory.inventory.size(); i++) {
+                if (event.getTarget().equals(playerInventoryArray[i])) {
+                    myGame.playerInventory.inventory.remove(myGame.playerInventory.inventory.get(i));
+                    playerInventoryArray[i].setImage(null);
+                }
+            }
+        }
+
+        for (int i = 0; i < myGame.playerInventory.inventory.size(); i++) {
+            if (event.getTarget().equals(plastic) || event.getSource().equals(Trashtype.PLASTIC)) {
+                myGame.playerInventory.inventory.remove(myGame.playerInventory.inventory.get(i));
             }
             showPlayerInventory();
         }

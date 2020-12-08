@@ -3,7 +3,6 @@
 <?import javafx.scene.Scene?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.control.ListView?>
 <?import javafx.scene.control.Separator?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
@@ -26,27 +25,27 @@
                                             <Image url="@img/Scene/trashcanRoom.png" />
                                         </image>
                                     </ImageView>
-                           <ImageView fitHeight="118.0" fitWidth="76.0" layoutX="63.0" layoutY="105.0" pickOnBounds="true" preserveRatio="true">
+                           <ImageView fx:id="metal" fitHeight="118.0" fitWidth="76.0" layoutX="63.0" layoutY="105.0" pickOnBounds="true" preserveRatio="true">
                               <image>
                                  <Image url="@img/TrashCans/SkraldespandBlå.png" />
                               </image>
                            </ImageView>
-                           <ImageView fitHeight="117.0" fitWidth="75.0" layoutX="144.0" layoutY="106.0" pickOnBounds="true" preserveRatio="true">
+                           <ImageView fx:id="residual" fitHeight="117.0" fitWidth="75.0" layoutX="144.0" layoutY="106.0" pickOnBounds="true" preserveRatio="true">
                               <image>
                                  <Image url="@img/TrashCans/SkraldespandGrå.png" />
                               </image>
                            </ImageView>
-                           <ImageView fitHeight="123.0" fitWidth="74.0" layoutX="223.0" layoutY="104.0" pickOnBounds="true" preserveRatio="true">
+                           <ImageView fx:id="food" fitHeight="123.0" fitWidth="74.0" layoutX="223.0" layoutY="104.0" pickOnBounds="true" preserveRatio="true">
                               <image>
                                  <Image url="@img/TrashCans/SkraldespandGul.png" />
                               </image>
                            </ImageView>
-                           <ImageView fitHeight="131.0" fitWidth="77.0" layoutX="301.0" layoutY="100.0" pickOnBounds="true" preserveRatio="true">
+                           <ImageView fx:id="paper" fitHeight="131.0" fitWidth="77.0" layoutX="301.0" layoutY="100.0" pickOnBounds="true" preserveRatio="true">
                               <image>
                                  <Image url="@img/TrashCans/skraldespandRød.png" />
                               </image>
                            </ImageView>
-                           <ImageView fitHeight="123.0" fitWidth="80.0" layoutX="387.0" layoutY="99.0" pickOnBounds="true" preserveRatio="true">
+                           <ImageView fx:id="plastic" fitHeight="123.0" fitWidth="75.0" layoutX="387.0" layoutY="102.0" pickOnBounds="true" preserveRatio="true">
                               <image>
                                  <Image url="@img/TrashCans/SkraldespandGrøn.png" />
                               </image>
@@ -54,7 +53,6 @@
                                 </children>
                             </AnchorPane>
                             <Button fx:id="help" layoutX="488.0" layoutY="530.0" mnemonicParsing="false" onAction="#buttonClicked" prefHeight="61.0" prefWidth="76.0" text="Hjælp" />
-                     <ListView layoutX="520.0" layoutY="42.0" prefHeight="478.0" prefWidth="231.0" />
                      <Separator layoutY="525.0" orientation="VERTICAL" prefHeight="225.0" prefWidth="488.0" />
                               <Button fx:id="outside" layoutX="89.0" layoutY="711.0" mnemonicParsing="false" onAction="#buttonClicked" text="Udenfor" />
 
@@ -73,10 +71,10 @@
                                     <Font size="24.0" />
                                 </font>
                             </Label>
-                            <ImageView fx:id="PI1" fitHeight="50.0" fitWidth="50.0" layoutX="610.0" layoutY="49.0" pickOnBounds="true" preserveRatio="true" />
-                            <ImageView fx:id="PI2" fitHeight="50.0" fitWidth="50.0" layoutX="610.0" layoutY="109.0" pickOnBounds="true" preserveRatio="true" />
-                            <ImageView fx:id="PI3" fitHeight="50.0" fitWidth="50.0" layoutX="610.0" layoutY="169.0" pickOnBounds="true" preserveRatio="true" />
-                            <ImageView fx:id="PI4" fitHeight="50.0" fitWidth="50.0" layoutX="610.0" layoutY="229.0" pickOnBounds="true" preserveRatio="true" />
+                            <ImageView fx:id="PI1" fitHeight="50.0" fitWidth="50.0" layoutX="610.0" layoutY="49.0" onMouseClicked="#throwout" pickOnBounds="true" preserveRatio="true" />
+                            <ImageView fx:id="PI2" fitHeight="50.0" fitWidth="50.0" layoutX="610.0" layoutY="109.0" onMouseClicked="#throwout" pickOnBounds="true" preserveRatio="true" />
+                            <ImageView fx:id="PI3" fitHeight="50.0" fitWidth="50.0" layoutX="610.0" layoutY="169.0" onMouseClicked="#throwout" pickOnBounds="true" preserveRatio="true" />
+                            <ImageView fx:id="PI4" fitHeight="50.0" fitWidth="50.0" layoutX="610.0" layoutY="229.0" onMouseClicked="#showPlayerInventory" pickOnBounds="true" preserveRatio="true" />
                             <ImageView fx:id="PI5" fitHeight="50.0" fitWidth="50.0" layoutX="610.0" layoutY="289.0" pickOnBounds="true" preserveRatio="true" />
                             <ImageView fitHeight="86.0" fitWidth="96.0" layoutX="79.0" layoutY="595.0" pickOnBounds="true" preserveRatio="true">
                                 <image>
