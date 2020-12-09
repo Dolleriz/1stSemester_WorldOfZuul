@@ -24,7 +24,8 @@ public class Controller {
     public Button livingRoom, garbageArea, bathroom, entrance,
             kitchen, yourRoom, outside, parentsRoom;
     public Button help;
-    public Button scan, playerInventory;
+    public Button scan;
+    public Button playerInventory;
 
 
 
@@ -221,7 +222,6 @@ public class Controller {
             }
         }
 
-
         scan.setDisable(true);
         //showPlayerInventory();
     }
@@ -242,7 +242,6 @@ public class Controller {
                     roomInventoryArray[i].setImage(null);
                     roomInventoryArray[i].setDisable(true);
                 }
-
             }
             showPlayerInventory();
         }
@@ -260,8 +259,45 @@ public class Controller {
             content.putImage(PI1.getImage());
             db.setContent(content);
         });
-        PI1.setOnMouseDragged((MouseEvent event) -> {
-            event.setDragDetect(true);
+
+        PI2.setOnDragDetected((MouseEvent event) -> {
+            System.out.println("Drag detected");
+
+            Dragboard db = PI2.startDragAndDrop(TransferMode.ANY);
+
+            ClipboardContent content = new ClipboardContent();
+            content.putImage(PI2.getImage());
+            db.setContent(content);
+        });
+
+        PI3.setOnDragDetected((MouseEvent event) -> {
+            System.out.println("Drag detected");
+
+            Dragboard db = PI3.startDragAndDrop(TransferMode.ANY);
+
+            ClipboardContent content = new ClipboardContent();
+            content.putImage(PI3.getImage());
+            db.setContent(content);
+        });
+
+        PI4.setOnDragDetected((MouseEvent event) -> {
+            System.out.println("Drag detected");
+
+            Dragboard db = PI4.startDragAndDrop(TransferMode.ANY);
+
+            ClipboardContent content = new ClipboardContent();
+            content.putImage(PI4.getImage());
+            db.setContent(content);
+        });
+
+        PI5.setOnDragDetected((MouseEvent event) -> {
+            System.out.println("Drag detected");
+
+            Dragboard db = PI5.startDragAndDrop(TransferMode.ANY);
+
+            ClipboardContent content = new ClipboardContent();
+            content.putImage(PI5.getImage());
+            db.setContent(content);
         });
 
         plastic.setOnDragOver(new EventHandler<DragEvent>() {
@@ -274,45 +310,107 @@ public class Controller {
             }
         });
 
+        paper.setOnDragOver(new EventHandler<DragEvent>() {
+            public void handle(DragEvent event) {
+                if (event.getGestureSource() != paper && event.getDragboard().hasImage()) {
+                    event.acceptTransferModes(TransferMode.COPY_OR_MOVE);
+                }
+
+                event.consume();
+            }
+        });
+
+        metal.setOnDragOver(new EventHandler<DragEvent>() {
+            public void handle(DragEvent event) {
+                if (event.getGestureSource() != metal && event.getDragboard().hasImage()) {
+                    event.acceptTransferModes(TransferMode.COPY_OR_MOVE);
+                }
+
+                event.consume();
+            }
+        });
+
+        food.setOnDragOver(new EventHandler<DragEvent>() {
+            public void handle(DragEvent event) {
+                if (event.getGestureSource() != food && event.getDragboard().hasImage()) {
+                    event.acceptTransferModes(TransferMode.COPY_OR_MOVE);
+                }
+
+                event.consume();
+            }
+        });
+
+        residual.setOnDragOver(new EventHandler<DragEvent>() {
+            public void handle(DragEvent event) {
+                if (event.getGestureSource() != residual && event.getDragboard().hasImage()) {
+                    event.acceptTransferModes(TransferMode.COPY_OR_MOVE);
+                }
+
+                event.consume();
+            }
+        });
+
         plastic.setOnDragDropped((DragEvent event) -> {
-            Dragboard db = event.getDragboard();
-            if (db.hasImage()) {
+            if (plastic.getId().equalsIgnoreCase(myGame.playerInventory.inventory.get(0).getType().toString())) {
+                event.setDropCompleted(true);
+                System.out.println("right");
                 myGame.playerInventory.inventory.remove(0);
                 showPlayerInventory();
+                myGame.playerScore.increasePlayerScore(1);
+                updatePlayerScore();
+            } else {
+                event.setDropCompleted(false);
+
+            }
+            event.consume();
+        });
+
+        paper.setOnDragDropped((DragEvent event) -> {
+            Dragboard db = event.getDragboard();
+            if (db.hasImage()) {
                 event.setDropCompleted(true);
+                System.out.println("right");
+            } else {
+                event.setDropCompleted(false);
+
+            }
+            event.consume();
+        });
+
+        metal.setOnDragDropped((DragEvent event) -> {
+            Dragboard db = event.getDragboard();
+            if (db.hasImage()) {
+                event.setDropCompleted(true);
+                System.out.println("right");
+            } else {
+                event.setDropCompleted(false);
+
+            }
+            event.consume();
+        });
+
+        food.setOnDragDropped((DragEvent event) -> {
+            Dragboard db = event.getDragboard();
+            if (db.hasImage()) {
+                event.setDropCompleted(true);
+                System.out.println("right");
             } else {
                 event.setDropCompleted(false);
             }
             event.consume();
         });
-        showPlayerInventory();
-        myGame.playerScore.increasePlayerScore(1);
-        updatePlayerScore();
 
-/*
-        if (eventt.getTarget() == null) {
-            Alert alert = new Alert(Alert.AlertType.INFORMATION);
-            alert.setTitle("En verden af Skrald");
-            alert.setHeaderText(null);
-            alert.setContentText("Denne plads er tom, vælg en anden plads.");
-            alert.showAndWait();
-        } else {
-            for (int i = 0; i < myGame.playerInventory.inventory.size(); i++) {
-                if (eventt.getTarget().equals(playerInventoryArray[i])) {
-                    myGame.playerInventory.inventory.remove(myGame.playerInventory.inventory.get(i));
-                    playerInventoryArray[i].setImage(null);
-                }
+        residual.setOnDragDropped((DragEvent event) -> {
+            Dragboard db = event.getDragboard();
+            if (db.hasImage()) {
+                event.setDropCompleted(true);
+                System.out.println("right");
+            } else {
+                event.setDropCompleted(false);
+
             }
-
-        }
-
-        /*for (int i = 0; i < myGame.playerInventory.inventory.size(); i++) {
-            if (event.getTarget().equals(plastic) || event.getSource().equals(Trashtype.PLASTIC)) {
-                myGame.playerInventory.inventory.remove(myGame.playerInventory.inventory.get(i));
-                myGame.playerScore.increasePlayerScore(1);
-            } */
-
-
+            event.consume();
+        });
     }
 
     @FXML

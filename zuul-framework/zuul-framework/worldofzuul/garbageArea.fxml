@@ -32,22 +32,22 @@
                            </ImageView>
                            <ImageView fx:id="residual" fitHeight="117.0" fitWidth="75.0" layoutX="144.0" layoutY="106.0" pickOnBounds="true" preserveRatio="true">
                               <image>
-                                 <Image url="@img/TrashCans/SkraldespandGrå.png" />
+                                 <Image url="@img/TrashSprites/TrashBag.png" />
                               </image>
                            </ImageView>
                            <ImageView fx:id="food" fitHeight="123.0" fitWidth="74.0" layoutX="223.0" layoutY="104.0" pickOnBounds="true" preserveRatio="true">
                               <image>
-                                 <Image url="@img/TrashCans/SkraldespandGul.png" />
+                                 <Image url="@img/TrashSprites/BittenApple.png" />
                               </image>
                            </ImageView>
                            <ImageView fx:id="paper" fitHeight="131.0" fitWidth="77.0" layoutX="301.0" layoutY="100.0" pickOnBounds="true" preserveRatio="true">
                               <image>
-                                 <Image url="@img/TrashCans/skraldespandRød.png" />
+                                 <Image url="@img/TrashSprites/CrumbledPaper.png" />
                               </image>
                            </ImageView>
                            <ImageView fx:id="plastic" fitHeight="123.0" fitWidth="75.0" layoutX="387.0" layoutY="102.0" onDragExited="#throwout" pickOnBounds="true" preserveRatio="true">
                               <image>
-                                 <Image url="@img/TrashCans/SkraldespandGrøn.png" />
+                                 <Image url="@img/TrashSprites/BottleofWater.png" />
                               </image>
                            </ImageView>
                                 </children>
