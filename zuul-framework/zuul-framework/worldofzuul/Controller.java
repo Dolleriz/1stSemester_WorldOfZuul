@@ -132,8 +132,8 @@ public class Controller {
             help.setContentText("I dette spil skal du rundt i huset og samle skrald og derefter genbruge det korrekt!\n" +
                     "\nKlik på skan for at lede efter skrald i rummet og derefter klik på det skrald du vil samle op!\n" +
                     "\nNår din taske er fuld, skal du derefter gå til skraldespandene. Du bevæger dig med knapperne nederst i venstre hjørne.\n" +
-                    "\nHerefter holder du din musse knap ned på det affald du vil sorter og og trækker det over i den skraldespand du mener er rigtig.\n" +
-                    "\n tryk på krydset når du er færdig med at spille!");
+                    "\nHerefter holder du din museknap ned på det affald du vil sorter og og trækker det over i den skraldespand du mener er rigtig.\n" +
+                    "\nTryk på krydset når du er færdig med at spille!");
             help.showAndWait();
         }
 
