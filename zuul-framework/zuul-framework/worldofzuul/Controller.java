@@ -398,56 +398,12 @@ public class Controller {
             }
             eventResidual.consume();
         });
-
-
-/*
-        if (eventt.getTarget() == null) {
-            Alert alert = new Alert(Alert.AlertType.INFORMATION);
-            alert.setTitle("En verden af Skrald");
-            alert.setHeaderText(null);
-            alert.setContentText("Denne plads er tom, vælg en anden plads.");
-            alert.showAndWait();
-        } else {
-            for (int i = 0; i < myGame.playerInventory.inventory.size(); i++) {
-                if (eventt.getTarget().equals(playerInventoryArray[i])) {
-                    myGame.playerInventory.inventory.remove(myGame.playerInventory.inventory.get(i));
-                    playerInventoryArray[i].setImage(null);
-                }
-            }
-            event.consume();
-        });
-
-        food.setOnDragDropped((DragEvent event) -> {
-            Dragboard db = event.getDragboard();
-            if (db.hasImage()) {
-                event.setDropCompleted(true);
-                System.out.println("right");
-            } else {
-                event.setDropCompleted(false);
-            }
-            event.consume();
-        });
-
-        residual.setOnDragDropped((DragEvent event) -> {
-            Dragboard db = event.getDragboard();
-            if (db.hasImage()) {
-                event.setDropCompleted(true);
-                System.out.println("right");
-            } else {
-                event.setDropCompleted(false);
-
     }
     @FXML
-    public void updatePlayerScore() {
+    public void updatePlayerScore(){
         playerScoreLabel.setText("Score: " + myGame.playerScore.getPlayerScore());
     }
-
-    public boolean compareTrash(Trashcan trashcan, Trashtype trash) {
-        if (trashcan.getTrashType() == trash) {
-            return true;
-        } else
-            return false;
-    }
 }
+
 
 
