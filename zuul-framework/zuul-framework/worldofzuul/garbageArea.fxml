@@ -42,7 +42,7 @@
                            </ImageView>
                            <ImageView fx:id="plastic" fitHeight="131.0" fitWidth="77.0" layoutX="301.0" layoutY="100.0" pickOnBounds="true" preserveRatio="true">
                               <image>
-                                 <Image url="@img/TrashCans/SkraldespandRød.png" />
+                                 <Image url="@img/TrashCans/skraldespandRød.png" />
                               </image>
                            </ImageView>
                            <ImageView fx:id="food" fitHeight="123.0" fitWidth="75.0" layoutX="387.0" layoutY="102.0" onDragExited="#throwout" pickOnBounds="true" preserveRatio="true">

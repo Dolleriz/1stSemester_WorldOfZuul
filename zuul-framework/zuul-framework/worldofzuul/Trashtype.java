@@ -4,7 +4,7 @@ public enum Trashtype {
 
     FOOD_WASTE("food", "worldofzuul/img/TrashSprites/BittenApple.png"),
 
-    METAL_AND_GLASS("Metal", "worldofzuul/img/TrashSprites/Can.png"),
+    METAL_AND_GLASS("metal", "worldofzuul/img/TrashSprites/Can.png"),
 
     PAPER("paper", "worldofzuul/img/TrashSprites/CrumbledPaper.png"),
 
