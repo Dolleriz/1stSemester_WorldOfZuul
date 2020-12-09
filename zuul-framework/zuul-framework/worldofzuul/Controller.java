@@ -27,7 +27,6 @@ public class Controller {
     public Button scan, playerInventory;
 
 
-
     public ImageView plastic, metal, paper, food, residual;
 
     @Override
@@ -146,7 +145,7 @@ public class Controller {
         playerInventoryArray[3] = PI4;
         playerInventoryArray[4] = PI5;
 
-        if(myGame.playerInventory.inventory.isEmpty()) {
+        if (myGame.playerInventory.inventory.isEmpty()) {
             Alert emptyInv = new Alert(Alert.AlertType.ERROR);
             emptyInv.setTitle("Taske");
             emptyInv.setHeaderText(null);
@@ -273,21 +272,97 @@ public class Controller {
                 event.consume();
             }
         });
+        metal.setOnDragOver(new EventHandler<DragEvent>() {
+            public void handle(DragEvent event) {
+                if (event.getGestureSource() != plastic && event.getDragboard().hasImage()) {
+                    event.acceptTransferModes(TransferMode.COPY_OR_MOVE);
+                }
 
-        plastic.setOnDragDropped((DragEvent event) -> {
-            Dragboard db = event.getDragboard();
-            if (db.hasImage()) {
+                event.consume();
+            }
+        });
+        paper.setOnDragOver(new EventHandler<DragEvent>() {
+            public void handle(DragEvent event) {
+                if (event.getGestureSource() != plastic && event.getDragboard().hasImage()) {
+                    event.acceptTransferModes(TransferMode.COPY_OR_MOVE);
+                }
+
+                event.consume();
+            }
+        });
+        food.setOnDragOver(new EventHandler<DragEvent>() {
+            public void handle(DragEvent event) {
+                if (event.getGestureSource() != plastic && event.getDragboard().hasImage()) {
+                    event.acceptTransferModes(TransferMode.COPY_OR_MOVE);
+                }
+
+                event.consume();
+            }
+        });
+        residual.setOnDragOver(new EventHandler<DragEvent>() {
+            public void handle(DragEvent event) {
+                if (event.getGestureSource() != plastic && event.getDragboard().hasImage()) {
+                    event.acceptTransferModes(TransferMode.COPY_OR_MOVE);
+                }
+
+                event.consume();
+            }
+        });
+
+        plastic.setOnDragDropped((DragEvent eventPlastic) -> {
+            if (plastic.getId().equalsIgnoreCase(myGame.playerInventory.inventory.get(0).getType().toString())) {
                 myGame.playerInventory.inventory.remove(0);
                 showPlayerInventory();
-                event.setDropCompleted(true);
-            } else {
-                event.setDropCompleted(false);
+                eventPlastic.setDropCompleted(true);
+                myGame.playerScore.increasePlayerScore(1);
+                updatePlayerScore();
             }
-            event.consume();
+            eventPlastic.consume();
         });
-        showPlayerInventory();
-        myGame.playerScore.increasePlayerScore(1);
-        updatePlayerScore();
+        metal.setOnDragDropped((DragEvent eventMetal) -> {
+            if (metal.getId().equalsIgnoreCase(myGame.playerInventory.inventory.get(0).getType().toString())) {
+                myGame.playerInventory.inventory.remove(0);
+                showPlayerInventory();
+                eventMetal.setDropCompleted(true);
+                myGame.playerScore.increasePlayerScore(1);
+                updatePlayerScore();
+            }
+            eventMetal.consume();
+        });
+        paper.setOnDragDropped((DragEvent eventPaper) -> {
+            if (paper.getId().equalsIgnoreCase(myGame.playerInventory.inventory.get(0).getType().toString())) {
+                myGame.playerInventory.inventory.remove(0);
+                showPlayerInventory();
+                eventPaper.setDropCompleted(true);
+                myGame.playerScore.increasePlayerScore(1);
+                updatePlayerScore();
+            }
+            eventPaper.consume();
+        });
+        food.setOnDragDropped((DragEvent eventFood) -> {
+            if (food.getId().equalsIgnoreCase(myGame.playerInventory.inventory.get(0).getType().toString())) {
+                myGame.playerInventory.inventory.remove(0);
+                showPlayerInventory();
+                eventFood.setDropCompleted(true);
+                myGame.playerScore.increasePlayerScore(1);
+                updatePlayerScore();
+            }
+            eventFood.consume();
+        });
+        residual.setOnDragDropped((DragEvent eventResidual) -> {
+            if (residual.getId().equalsIgnoreCase(myGame.playerInventory.inventory.get(0).getType().toString())) {
+                myGame.playerInventory.inventory.remove(0);
+                showPlayerInventory();
+                eventResidual.setDropCompleted(true);
+                myGame.playerScore.increasePlayerScore(1);
+                updatePlayerScore();
+
+            } else {
+                eventResidual.setDropCompleted(false);
+            }
+            eventResidual.consume();
+        });
+
 
 /*
         if (eventt.getTarget() == null) {
@@ -312,9 +387,7 @@ public class Controller {
                 myGame.playerScore.increasePlayerScore(1);
             } */
 
-
     }
-
     @FXML
     public void updatePlayerScore() {
         playerScoreLabel.setText("Score: " + myGame.playerScore.getPlayerScore());

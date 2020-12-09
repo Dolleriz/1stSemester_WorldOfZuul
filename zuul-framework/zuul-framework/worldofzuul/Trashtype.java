@@ -2,15 +2,15 @@ package worldofzuul;
 
 public enum Trashtype {
 
-    FOOD_WASTE("Madaffald.", "worldofzuul/img/TrashSprites/BittenApple.png"),
+    FOOD_WASTE("food", "worldofzuul/img/TrashSprites/BittenApple.png"),
 
-    METAL_AND_GLASS("Metal og glas.", "worldofzuul/img/TrashSprites/Can.png"),
+    METAL_AND_GLASS("Metal", "worldofzuul/img/TrashSprites/Can.png"),
 
-    PAPER("Papir og pap.", "worldofzuul/img/TrashSprites/CrumbledPaper.png"),
+    PAPER("paper", "worldofzuul/img/TrashSprites/CrumbledPaper.png"),
 
     PLASTIC("Plastic", "worldofzuul/img/TrashSprites/BottleofWater.png"),
 
-    RESIDUAL_WASTE("Restaffald.", "worldofzuul/img/TrashSprites/TrashBag.png");
+    RESIDUAL_WASTE("residual", "worldofzuul/img/TrashSprites/TrashBag.png");
 
     private String trashString;
     Sprites sprite;
