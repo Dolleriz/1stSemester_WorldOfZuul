@@ -26,7 +26,14 @@ public class Controller {
     public Button help;
     public Button scan;
 
+
+
     public ImageView plastic, metal, paper, food, residual;
+
+    @Override
+    public String toString() {
+        return "plastic";
+    }
 
     public ImageView zero, one, two, three, four, five, six, seven, eight, nine;
     public ImageView[] roomInventoryArray = new ImageView[10];

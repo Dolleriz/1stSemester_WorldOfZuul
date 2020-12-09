@@ -8,7 +8,7 @@ public enum Trashtype {
 
     PAPER("Papir og pap.", "worldofzuul/img/TrashSprites/CrumbledPaper.png"),
 
-    PLASTIC("Plastik.", "worldofzuul/img/TrashSprites/BottleofWater.png"),
+    PLASTIC("Plastic", "worldofzuul/img/TrashSprites/BottleofWater.png"),
 
     RESIDUAL_WASTE("Restaffald.", "worldofzuul/img/TrashSprites/TrashBag.png");
 

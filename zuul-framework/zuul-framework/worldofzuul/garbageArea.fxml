@@ -27,7 +27,7 @@
                                     </ImageView>
                            <ImageView fx:id="metal" fitHeight="118.0" fitWidth="76.0" layoutX="63.0" layoutY="105.0" pickOnBounds="true" preserveRatio="true">
                               <image>
-                                 <Image url="@img/TrashCans/SkraldespandBlå.png" />
+                                 <Image url="@img/TrashCans/SkraldespandBrun.png" />
                               </image>
                            </ImageView>
                            <ImageView fx:id="residual" fitHeight="117.0" fitWidth="75.0" layoutX="144.0" layoutY="106.0" pickOnBounds="true" preserveRatio="true">
@@ -45,7 +45,7 @@
                                  <Image url="@img/TrashCans/skraldespandRød.png" />
                               </image>
                            </ImageView>
-                           <ImageView fx:id="plastic" fitHeight="123.0" fitWidth="75.0" layoutX="387.0" layoutY="102.0" pickOnBounds="true" preserveRatio="true" onDragExited="#throwout">
+                           <ImageView fx:id="plastic" fitHeight="123.0" fitWidth="75.0" layoutX="387.0" layoutY="102.0" onDragExited="#throwout" pickOnBounds="true" preserveRatio="true">
                               <image>
                                  <Image url="@img/TrashCans/SkraldespandGrøn.png" />
                               </image>
