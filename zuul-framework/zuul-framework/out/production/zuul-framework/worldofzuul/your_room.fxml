@@ -66,7 +66,8 @@
                             <Button fx:id="help" layoutX="488.0" layoutY="530.0" mnemonicParsing="false" onAction="#buttonClicked" prefHeight="61.0" prefWidth="76.0" text="Hjælp" />
                             <Button fx:id="scan" layoutX="578.0" layoutY="530.0" mnemonicParsing="false" onAction="#scanRoom" prefHeight="61.0" prefWidth="76.0" text="Skan rum" />
                               <Button fx:id="kitchen" layoutX="173.0" layoutY="628.0" mnemonicParsing="false" onAction="#buttonClicked" text="Køkkenet" />
-                     <Label fx:id="playerScoreLabel" layoutX="522.0" layoutY="640.0" prefHeight="38.0" prefWidth="164.0" text="Score:" />
+                            <Label fx:id="playerScoreLabel" layoutX="488.0" layoutY="687.0" prefHeight="38.0" prefWidth="164.0" text="Score:" />
+                            <Button fx:id="playerInventory" layoutX="488.0" layoutY="606.0" mnemonicParsing="false" onAction="#showPlayerInventory" prefHeight="61.0" prefWidth="76.0" text="Vis Taske" />
                         </children>
                     </Pane>
                 </children>

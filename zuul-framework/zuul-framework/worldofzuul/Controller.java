@@ -128,7 +128,6 @@ public class Controller {
                     "\n tryk på krydset når du er færdig med at spille!");
             help.showAndWait();
         }
-        showPlayerInventory();
     }
 
     @FXML
