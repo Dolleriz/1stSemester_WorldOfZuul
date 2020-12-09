@@ -8,10 +8,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.image.ImageView;
-import javafx.scene.input.ClipboardContent;
-import javafx.scene.input.Dragboard;
-import javafx.scene.input.MouseDragEvent;
-import javafx.scene.input.TransferMode;
+import javafx.scene.input.*;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -237,21 +234,44 @@ public class Controller {
 
     @FXML
     public void throwout(Event eventt) {
-        PI1.setOnDragDetected(event -> {
-            Dragboard db = PI1.startDragAndDrop(TransferMode.MOVE);
+        PI1.setOnDragDetected((MouseEvent event) -> {
+            System.out.println("Drag detected");
+
+            Dragboard db = PI1.startDragAndDrop(TransferMode.ANY);
 
             ClipboardContent content = new ClipboardContent();
             content.putImage(PI1.getImage());
             db.setContent(content);
-            event.consume();
+        });
+        PI1.setOnMouseDragged((MouseEvent event) -> {
+            event.setDragDetect(true);
         });
 
-        plastic.setOnDragExited(event -> {
-            myGame.playerInventory.inventory.remove(0);
-            showPlayerInventory();
-            System.out.println("yolo");
+        plastic.setOnDragOver(new EventHandler<DragEvent>() {
+            public void handle(DragEvent event) {
+                if (event.getGestureSource() != plastic && event.getDragboard().hasImage()) {
+                    event.acceptTransferModes(TransferMode.COPY_OR_MOVE);
+                }
+
+                event.consume();
+            }
+        });
+
+        plastic.setOnDragDropped((DragEvent event) -> {
+            Dragboard db = event.getDragboard();
+            if (db.hasImage()) {
+                myGame.playerInventory.inventory.remove(0);
+                showPlayerInventory();
+                event.setDropCompleted(true);
+            } else {
+                event.setDropCompleted(false);
+            }
             event.consume();
         });
+        showPlayerInventory();
+        myGame.playerScore.increasePlayerScore(1);
+        updatePlayerScore();
+
 /*
         if (eventt.getTarget() == null) {
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
@@ -275,9 +295,7 @@ public class Controller {
                 myGame.playerScore.increasePlayerScore(1);
             } */
 
-        showPlayerInventory();
-        myGame.playerScore.increasePlayerScore(1);
-        updatePlayerScore();
+
     }
 
     @FXML
