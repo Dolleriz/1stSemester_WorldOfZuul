@@ -24,7 +24,7 @@ public class Controller {
     public Button livingRoom, garbageArea, bathroom, entrance,
             kitchen, yourRoom, outside, parentsRoom;
     public Button help;
-    public Button scan;
+    public Button scan, playerInventory;
 
 
 
@@ -135,7 +135,7 @@ public class Controller {
                     "\n tryk på krydset når du er færdig med at spille!");
             help.showAndWait();
         }
-        showPlayerInventory();
+
     }
 
     @FXML
@@ -145,12 +145,22 @@ public class Controller {
         playerInventoryArray[2] = PI3;
         playerInventoryArray[3] = PI4;
         playerInventoryArray[4] = PI5;
+
+        if(myGame.playerInventory.inventory.isEmpty()) {
+            Alert emptyInv = new Alert(Alert.AlertType.ERROR);
+            emptyInv.setTitle("Taske");
+            emptyInv.setHeaderText(null);
+            emptyInv.setContentText("Din taske er tom!");
+            emptyInv.showAndWait();
+        }
+
         for (int i = 0; i < playerInventoryArray.length; i++) {
             playerInventoryArray[i].setImage(null);
         }
         for (int i = 0; i < myGame.playerInventory.inventory.size(); i++) {
             playerInventoryArray[i].setImage(myGame.playerInventory.inventory.get(i).getSprite().getImage());
         }
+
     }
 
     @FXML
@@ -213,7 +223,7 @@ public class Controller {
 
 
         scan.setDisable(true);
-        showPlayerInventory();
+        //showPlayerInventory();
     }
 
     @FXML

@@ -69,7 +69,8 @@
                             <ImageView fx:id="PI3" fitHeight="50.0" fitWidth="50.0" layoutX="610.0" layoutY="169.0" pickOnBounds="true" preserveRatio="true" />
                             <ImageView fx:id="PI4" fitHeight="50.0" fitWidth="50.0" layoutX="610.0" layoutY="229.0" pickOnBounds="true" preserveRatio="true" />
                             <ImageView fx:id="PI5" fitHeight="50.0" fitWidth="50.0" layoutX="610.0" layoutY="289.0" pickOnBounds="true" preserveRatio="true" />
-                     <Label fx:id="playerScoreLabel" layoutX="512.0" layoutY="630.0" prefHeight="38.0" prefWidth="164.0" text="Score:" />
+                            <Label fx:id="playerScoreLabel" layoutX="488.0" layoutY="687.0" prefHeight="38.0" prefWidth="164.0" text="Score:" />
+                            <Button fx:id="playerInventory" layoutX="488.0" layoutY="606.0" mnemonicParsing="false" onAction="#showPlayerInventory" prefHeight="61.0" prefWidth="76.0" text="Vis Taske" />
                         </children>
                     </Pane>
                 </children>
