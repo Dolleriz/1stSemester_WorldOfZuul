@@ -246,9 +246,11 @@ public class Controller {
     public void throwout(Event eventt) {
 
         final int inventoryIndex = findSource(eventt);
-        int trashcanIndex = findTarget(eventt);
+
         System.out.println(inventoryIndex);
+
         playerInventoryArray[inventoryIndex].setOnDragDetected((MouseEvent event) -> {
+            event.setDragDetect(true);
             System.out.println("Drag detected");
 
             Dragboard db = playerInventoryArray[inventoryIndex].startDragAndDrop(TransferMode.ANY);
@@ -258,6 +260,7 @@ public class Controller {
             db.setContent(content);
         });
 
+int trashcanIndex = findTarget(eventt);
         trashCanArray[trashcanIndex].setOnDragOver(new EventHandler<DragEvent>() {
             public void handle(DragEvent event) {
                 if (event.getGestureSource() != trashCanArray[trashcanIndex] && event.getDragboard().hasImage()) {
@@ -269,17 +272,16 @@ public class Controller {
 
         trashCanArray[trashcanIndex].setOnDragDropped((DragEvent event) -> {
             Dragboard db = event.getDragboard();
-            if (db.hasImage()) {
-                if (trashCanArray[trashcanIndex].getId().equalsIgnoreCase(myGame.playerInventory.inventory.get(inventoryIndex).getType().toString())) {
-                    myGame.playerInventory.inventory.remove(inventoryIndex);
-                    myGame.playerScore.increasePlayerScore(1);
-                    System.out.println("yolo");
-                } else {
-                    myGame.playerInventory.inventory.remove(inventoryIndex);
-                    myGame.playerScore.decreasePlayerScore(1);
-                    System.out.println("nej");
-                }
+            if (trashCanArray[trashcanIndex].getId().equalsIgnoreCase(myGame.playerInventory.inventory.get(inventoryIndex).getType().toString())) {
+                myGame.playerInventory.inventory.remove(inventoryIndex);
+                myGame.playerScore.increasePlayerScore(1);
+                System.out.println("yolo");
+            } else {
+                myGame.playerInventory.inventory.remove(inventoryIndex);
+                myGame.playerScore.decreasePlayerScore(1);
+                System.out.println("nej");
             }
+
             event.setDropCompleted(true);
             updatePlayerScore();
             showPlayerInventory();
