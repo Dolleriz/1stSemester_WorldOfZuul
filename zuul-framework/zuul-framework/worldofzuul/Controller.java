@@ -129,6 +129,7 @@ public class Controller {
                     "\nNår din taske er fuld, skal du derefter gå til skraldespandene. Du bevæger dig med knapperne nederst i venstre hjørne.\n" +
                     "\nHerefter holder du din museknap ned på det affald du vil sorter og og trækker det over i den skraldespand du mener er rigtig.\n" +
                     "\nTryk på krydset når du er færdig med at spille!");
+            help.setResizable(true);
             help.showAndWait();
         }
 
@@ -155,6 +156,7 @@ public class Controller {
                     "\n'Bottledwater Water Bottle' Lavet af StarShopping, brugt under Pixabay licens." +
                     "\n" +
                     "\n'Bag Trash Waste' Lavet af kinska, brugt under Pixabay licens.");
+            copyright.setResizable(true);
             copyright.showAndWait();
         }
 
