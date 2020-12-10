@@ -25,29 +25,29 @@
                                             <Image url="@img/Scene/trashcanRoom.png" />
                                         </image>
                                     </ImageView>
-                           <ImageView fx:id="metal" fitHeight="118.0" fitWidth="76.0" layoutX="63.0" layoutY="105.0" pickOnBounds="true" preserveRatio="true">
+                           <ImageView fx:id="paper" fitHeight="118.0" fitWidth="76.0" layoutX="63.0" layoutY="105.0" pickOnBounds="true" preserveRatio="true">
                               <image>
                                  <Image url="@img/TrashCans/SkraldespandBrun.png" />
                               </image>
                            </ImageView>
-                           <ImageView fx:id="residual" fitHeight="117.0" fitWidth="75.0" layoutX="144.0" layoutY="106.0" pickOnBounds="true" preserveRatio="true">
+                           <ImageView fx:id="metal" fitHeight="117.0" fitWidth="75.0" layoutX="144.0" layoutY="106.0" pickOnBounds="true" preserveRatio="true">
                               <image>
-                                 <Image url="@img/TrashSprites/TrashBag.png" />
+                                 <Image url="@img/TrashCans/SkraldespandGrå.png" />
                               </image>
                            </ImageView>
-                           <ImageView fx:id="food" fitHeight="123.0" fitWidth="74.0" layoutX="223.0" layoutY="104.0" pickOnBounds="true" preserveRatio="true">
+                           <ImageView fx:id="residual" fitHeight="123.0" fitWidth="74.0" layoutX="223.0" layoutY="104.0" pickOnBounds="true" preserveRatio="true">
                               <image>
-                                 <Image url="@img/TrashSprites/BittenApple.png" />
+                                 <Image url="@img/TrashCans/SkraldespandGul.png" />
                               </image>
                            </ImageView>
-                           <ImageView fx:id="paper" fitHeight="131.0" fitWidth="77.0" layoutX="301.0" layoutY="100.0" pickOnBounds="true" preserveRatio="true">
+                           <ImageView fx:id="plastic" fitHeight="131.0" fitWidth="77.0" layoutX="301.0" layoutY="100.0" pickOnBounds="true" preserveRatio="true">
                               <image>
-                                 <Image url="@img/TrashSprites/CrumbledPaper.png" />
+                                 <Image url="@img/TrashCans/SkraldespandRød.png" />
                               </image>
                            </ImageView>
-                           <ImageView fx:id="plastic" fitHeight="123.0" fitWidth="75.0" layoutX="387.0" layoutY="102.0" onDragExited="#throwout" pickOnBounds="true" preserveRatio="true">
+                           <ImageView fx:id="food" fitHeight="123.0" fitWidth="75.0" layoutX="387.0" layoutY="102.0" onDragExited="#throwout" pickOnBounds="true" preserveRatio="true">
                               <image>
-                                 <Image url="@img/TrashSprites/BottleofWater.png" />
+                                 <Image url="@img/TrashCans/SkraldespandGrøn.png" />
                               </image>
                            </ImageView>
                                 </children>
@@ -82,7 +82,7 @@
                                 </image>
                             </ImageView>
                             <Label fx:id="playerScoreLabel" layoutX="488.0" layoutY="687.0" prefHeight="38.0" prefWidth="164.0" text="Score:" />
-                            <Button fx:id="playerInventory" layoutX="488.0" layoutY="606.0" mnemonicParsing="false" onAction="#showPlayerInventory" prefHeight="61.0" prefWidth="76.0" text="Vis Taske" />
+                            <Button fx:id="playerInventory" layoutX="488.0" layoutY="606.0" mnemonicParsing="false" onAction="#showPlayerInventoryButton" prefHeight="61.0" prefWidth="76.0" text="Vis Taske" />
                         </children>
                     </Pane>
                 </children>
