@@ -260,7 +260,7 @@ public class Controller {
             db.setContent(content);
         });
 
-int trashcanIndex = findTarget(eventt);
+        int trashcanIndex = findTarget(eventt);
         trashCanArray[trashcanIndex].setOnDragOver(new EventHandler<DragEvent>() {
             public void handle(DragEvent event) {
                 if (event.getGestureSource() != trashCanArray[trashcanIndex] && event.getDragboard().hasImage()) {
