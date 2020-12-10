@@ -27,13 +27,8 @@ public class Controller {
     public Button scan;
     public Button playerInventory;
 
-
     public ImageView plastic, metal, paper, food, residual;
-
-    @Override
-    public String toString() {
-        return "plastic";
-    }
+    public ImageView[] trashCanArray = new ImageView[5];
 
     public ImageView zero, one, two, three, four, five, six, seven, eight, nine;
     public ImageView[] roomInventoryArray = new ImageView[10];
@@ -250,8 +245,9 @@ public class Controller {
     @FXML
     public void throwout(Event eventt) {
 
-        int inventoryIndex = findSource(eventt);
-
+        final int inventoryIndex = findSource(eventt);
+        int trashcanIndex = findTarget(eventt);
+        System.out.println(inventoryIndex);
         playerInventoryArray[inventoryIndex].setOnDragDetected((MouseEvent event) -> {
             System.out.println("Drag detected");
 
@@ -262,119 +258,69 @@ public class Controller {
             db.setContent(content);
         });
 
-        plastic.setOnDragOver(new EventHandler<DragEvent>() {
+        trashCanArray[trashcanIndex].setOnDragOver(new EventHandler<DragEvent>() {
             public void handle(DragEvent event) {
-                if (event.getGestureSource() != plastic && event.getDragboard().hasImage()) {
+                if (event.getGestureSource() != trashCanArray[trashcanIndex] && event.getDragboard().hasImage()) {
                     event.acceptTransferModes(TransferMode.COPY_OR_MOVE);
                 }
-
-                event.consume();
-            }
-        });
-        metal.setOnDragOver(new EventHandler<DragEvent>() {
-            public void handle(DragEvent event) {
-                if (event.getGestureSource() != metal && event.getDragboard().hasImage()) {
-                    event.acceptTransferModes(TransferMode.COPY_OR_MOVE);
-                }
-
-                event.consume();
-            }
-        });
-        paper.setOnDragOver(new EventHandler<DragEvent>() {
-            public void handle(DragEvent event) {
-                if (event.getGestureSource() != paper && event.getDragboard().hasImage()) {
-                    event.acceptTransferModes(TransferMode.COPY_OR_MOVE);
-                }
-
-                event.consume();
-            }
-        });
-        food.setOnDragOver(new EventHandler<DragEvent>() {
-            public void handle(DragEvent event) {
-                if (event.getGestureSource() != food && event.getDragboard().hasImage()) {
-                    event.acceptTransferModes(TransferMode.COPY_OR_MOVE);
-                }
-
-                event.consume();
-            }
-        });
-        residual.setOnDragOver(new EventHandler<DragEvent>() {
-            public void handle(DragEvent event) {
-                if (event.getGestureSource() != residual && event.getDragboard().hasImage()) {
-                    event.acceptTransferModes(TransferMode.COPY_OR_MOVE);
-                }
-
                 event.consume();
             }
         });
 
-        plastic.setOnDragDropped((DragEvent eventPlastic) -> {
-            if (plastic.getId().equalsIgnoreCase(myGame.playerInventory.inventory.get(inventoryIndex).getType().toString())) {
-                myGame.playerInventory.inventory.remove(inventoryIndex);
-                showPlayerInventory();
-                eventPlastic.setDropCompleted(true);
-                myGame.playerScore.increasePlayerScore(1);
-                updatePlayerScore();
+        trashCanArray[trashcanIndex].setOnDragDropped((DragEvent event) -> {
+            Dragboard db = event.getDragboard();
+            if (db.hasImage()) {
+                if (trashCanArray[trashcanIndex].getId().equalsIgnoreCase(myGame.playerInventory.inventory.get(inventoryIndex).getType().toString())) {
+                    myGame.playerInventory.inventory.remove(inventoryIndex);
+                    myGame.playerScore.increasePlayerScore(1);
+                    System.out.println("yolo");
+                } else {
+                    myGame.playerInventory.inventory.remove(inventoryIndex);
+                    myGame.playerScore.decreasePlayerScore(1);
+                    System.out.println("nej");
+                }
             }
-            eventPlastic.consume();
+            event.setDropCompleted(true);
+            updatePlayerScore();
+            showPlayerInventory();
+            event.consume();
         });
-        metal.setOnDragDropped((DragEvent eventMetal) -> {
-            if (metal.getId().equalsIgnoreCase(myGame.playerInventory.inventory.get(inventoryIndex).getType().toString())) {
-                myGame.playerInventory.inventory.remove(inventoryIndex);
-                showPlayerInventory();
-                eventMetal.setDropCompleted(true);
-                myGame.playerScore.increasePlayerScore(1);
-                updatePlayerScore();
-            }
-            eventMetal.consume();
-        });
-        paper.setOnDragDropped((DragEvent eventPaper) -> {
-            if (paper.getId().equalsIgnoreCase(myGame.playerInventory.inventory.get(inventoryIndex).getType().toString())) {
-                myGame.playerInventory.inventory.remove(inventoryIndex);
-                showPlayerInventory();
-                eventPaper.setDropCompleted(true);
-                myGame.playerScore.increasePlayerScore(1);
-                updatePlayerScore();
-            }
-            eventPaper.consume();
-        });
-        food.setOnDragDropped((DragEvent eventFood) -> {
-            if (food.getId().equalsIgnoreCase(myGame.playerInventory.inventory.get(inventoryIndex).getType().toString())) {
-                myGame.playerInventory.inventory.remove(inventoryIndex);
-                showPlayerInventory();
-                eventFood.setDropCompleted(true);
-                myGame.playerScore.increasePlayerScore(1);
-                updatePlayerScore();
-            }
-            eventFood.consume();
-        });
-        residual.setOnDragDropped((DragEvent eventResidual) -> {
-            if (residual.getId().equalsIgnoreCase(myGame.playerInventory.inventory.get(inventoryIndex).getType().toString())) {
-                myGame.playerInventory.inventory.remove(inventoryIndex);
-                showPlayerInventory();
-                eventResidual.setDropCompleted(true);
-                myGame.playerScore.increasePlayerScore(1);
-                updatePlayerScore();
 
-            } else {
-                eventResidual.setDropCompleted(false);
-            }
-            eventResidual.consume();
-        });
     }
+
     @FXML
-    public void updatePlayerScore(){
+    public void updatePlayerScore() {
         playerScoreLabel.setText("Score: " + myGame.playerScore.getPlayerScore());
     }
 
     public int findSource(Event event) {
         int inventoryIndex = 0;
-        for (int i = 0; i < myGame.playerInventory.inventory.size(); i++) {
-            if (event.getSource().equals(playerInventoryArray[i])) {
+        playerInventoryArray[0] = PI1;
+        playerInventoryArray[1] = PI2;
+        playerInventoryArray[2] = PI3;
+        playerInventoryArray[3] = PI4;
+        playerInventoryArray[4] = PI5;
+        for (int i = 0; i < playerInventoryArray.length; i++) {
+            if (event.getTarget().equals(playerInventoryArray[i])) {
                 inventoryIndex = i;
             }
         }
         return inventoryIndex;
+    }
+
+    public int findTarget(Event event) {
+        int trashcanIndex = 0;
+        trashCanArray[0] = paper;
+        trashCanArray[1] = metal;
+        trashCanArray[2] = residual;
+        trashCanArray[3] = plastic;
+        trashCanArray[4] = food;
+        for (int i = 0; i < trashCanArray.length; i++) {
+            if (event.getTarget().equals(trashCanArray[i])) {
+                trashcanIndex = i;
+            }
+        }
+        return trashcanIndex;
     }
 }
 

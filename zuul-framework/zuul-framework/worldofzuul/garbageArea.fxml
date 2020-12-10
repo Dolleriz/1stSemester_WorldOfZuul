@@ -25,22 +25,22 @@
                                             <Image url="@img/Scene/trashcanRoom.png" />
                                         </image>
                                     </ImageView>
-                           <ImageView fx:id="paper" fitHeight="118.0" fitWidth="76.0" layoutX="63.0" layoutY="105.0" pickOnBounds="true" preserveRatio="true">
+                           <ImageView fx:id="paper" fitHeight="118.0" fitWidth="76.0" layoutX="63.0" layoutY="105.0" onDragExited="#throwout" pickOnBounds="true" preserveRatio="true">
                               <image>
                                  <Image url="@img/TrashCans/SkraldespandBrun.png" />
                               </image>
                            </ImageView>
-                           <ImageView fx:id="metal" fitHeight="117.0" fitWidth="75.0" layoutX="144.0" layoutY="106.0" pickOnBounds="true" preserveRatio="true">
+                           <ImageView fx:id="metal" fitHeight="117.0" fitWidth="75.0" layoutX="144.0" layoutY="106.0" onDragExited="#throwout" pickOnBounds="true" preserveRatio="true">
                               <image>
                                  <Image url="@img/TrashCans/SkraldespandGrå.png" />
                               </image>
                            </ImageView>
-                           <ImageView fx:id="residual" fitHeight="123.0" fitWidth="74.0" layoutX="223.0" layoutY="104.0" pickOnBounds="true" preserveRatio="true">
+                           <ImageView fx:id="residual" fitHeight="123.0" fitWidth="74.0" layoutX="223.0" layoutY="104.0" onDragExited="#throwout" pickOnBounds="true" preserveRatio="true">
                               <image>
                                  <Image url="@img/TrashCans/SkraldespandGul.png" />
                               </image>
                            </ImageView>
-                           <ImageView fx:id="plastic" fitHeight="131.0" fitWidth="77.0" layoutX="301.0" layoutY="100.0" pickOnBounds="true" preserveRatio="true">
+                           <ImageView fx:id="plastic" fitHeight="131.0" fitWidth="77.0" layoutX="301.0" layoutY="100.0" onDragExited="#throwout" pickOnBounds="true" preserveRatio="true">
                               <image>
                                  <Image url="@img/TrashCans/skraldespandRød.png" />
                               </image>
@@ -72,10 +72,10 @@
                                 </font>
                             </Label>
                             <ImageView fx:id="PI1" fitHeight="50.0" fitWidth="50.0" layoutX="610.0" layoutY="49.0" onMouseDragged="#throwout" pickOnBounds="true" preserveRatio="true" />
-                            <ImageView fx:id="PI2" fitHeight="50.0" fitWidth="50.0" layoutX="610.0" layoutY="109.0" onMouseClicked="#throwout" pickOnBounds="true" preserveRatio="true" />
-                            <ImageView fx:id="PI3" fitHeight="50.0" fitWidth="50.0" layoutX="610.0" layoutY="169.0" onMouseClicked="#throwout" pickOnBounds="true" preserveRatio="true" />
-                            <ImageView fx:id="PI4" fitHeight="50.0" fitWidth="50.0" layoutX="610.0" layoutY="229.0" onMouseClicked="#showPlayerInventory" pickOnBounds="true" preserveRatio="true" />
-                            <ImageView fx:id="PI5" fitHeight="50.0" fitWidth="50.0" layoutX="610.0" layoutY="289.0" pickOnBounds="true" preserveRatio="true" />
+                            <ImageView fx:id="PI2" fitHeight="50.0" fitWidth="50.0" layoutX="610.0" layoutY="109.0" onMouseDragged="#throwout" pickOnBounds="true" preserveRatio="true" />
+                            <ImageView fx:id="PI3" fitHeight="50.0" fitWidth="50.0" layoutX="610.0" layoutY="169.0" onMouseDragged="#throwout" pickOnBounds="true" preserveRatio="true" />
+                            <ImageView fx:id="PI4" fitHeight="50.0" fitWidth="50.0" layoutX="610.0" layoutY="229.0" onMouseDragged="#throwout" pickOnBounds="true" preserveRatio="true" />
+                            <ImageView fx:id="PI5" fitHeight="50.0" fitWidth="50.0" layoutX="610.0" layoutY="289.0" onMouseDragged="#throwout" pickOnBounds="true" preserveRatio="true" />
                             <ImageView fitHeight="86.0" fitWidth="96.0" layoutX="79.0" layoutY="595.0" pickOnBounds="true" preserveRatio="true">
                                 <image>
                                     <Image url="@img/movement.png" />
