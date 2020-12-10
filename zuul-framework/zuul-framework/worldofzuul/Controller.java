@@ -347,55 +347,67 @@ public class Controller {
 
         plastic.setOnDragDropped((DragEvent eventPlastic) -> {
             if (plastic.getId().equalsIgnoreCase(myGame.playerInventory.inventory.get(0).getType().toString())) {
-                myGame.playerInventory.inventory.remove(0);
-                showPlayerInventory();
-                eventPlastic.setDropCompleted(true);
                 myGame.playerScore.increasePlayerScore(1);
-                updatePlayerScore();
             }
+            else {
+                myGame.playerScore.decreasePlayerScore(1);
+            }
+            updatePlayerScore();
+            myGame.playerInventory.inventory.remove(0);
+            eventPlastic.setDropCompleted(true);
+            showPlayerInventory();
             eventPlastic.consume();
         });
         metal.setOnDragDropped((DragEvent eventMetal) -> {
             if (metal.getId().equalsIgnoreCase(myGame.playerInventory.inventory.get(0).getType().toString())) {
-                myGame.playerInventory.inventory.remove(0);
-                showPlayerInventory();
-                eventMetal.setDropCompleted(true);
                 myGame.playerScore.increasePlayerScore(1);
-                updatePlayerScore();
             }
+            else {
+                myGame.playerScore.decreasePlayerScore(1);
+            }
+            updatePlayerScore();
+            myGame.playerInventory.inventory.remove(0);
+            eventMetal.setDropCompleted(true);
+            showPlayerInventory();
             eventMetal.consume();
         });
         paper.setOnDragDropped((DragEvent eventPaper) -> {
             if (paper.getId().equalsIgnoreCase(myGame.playerInventory.inventory.get(0).getType().toString())) {
-                myGame.playerInventory.inventory.remove(0);
-                showPlayerInventory();
-                eventPaper.setDropCompleted(true);
                 myGame.playerScore.increasePlayerScore(1);
-                updatePlayerScore();
             }
+            else {
+                myGame.playerScore.decreasePlayerScore(1);
+            }
+            updatePlayerScore();
+            myGame.playerInventory.inventory.remove(0);
+            eventPaper.setDropCompleted(true);
+            showPlayerInventory();
             eventPaper.consume();
         });
         food.setOnDragDropped((DragEvent eventFood) -> {
             if (food.getId().equalsIgnoreCase(myGame.playerInventory.inventory.get(0).getType().toString())) {
-                myGame.playerInventory.inventory.remove(0);
-                showPlayerInventory();
-                eventFood.setDropCompleted(true);
                 myGame.playerScore.increasePlayerScore(1);
-                updatePlayerScore();
             }
+            else {
+                myGame.playerScore.decreasePlayerScore(1);
+            }
+            updatePlayerScore();
+            myGame.playerInventory.inventory.remove(0);
+            eventFood.setDropCompleted(true);
+            showPlayerInventory();
             eventFood.consume();
         });
         residual.setOnDragDropped((DragEvent eventResidual) -> {
             if (residual.getId().equalsIgnoreCase(myGame.playerInventory.inventory.get(0).getType().toString())) {
-                myGame.playerInventory.inventory.remove(0);
-                showPlayerInventory();
-                eventResidual.setDropCompleted(true);
                 myGame.playerScore.increasePlayerScore(1);
-                updatePlayerScore();
-
-            } else {
-                eventResidual.setDropCompleted(false);
             }
+            else {
+                myGame.playerScore.decreasePlayerScore(1);
+            }
+            updatePlayerScore();
+            myGame.playerInventory.inventory.remove(0);
+            eventResidual.setDropCompleted(true);
+            showPlayerInventory();
             eventResidual.consume();
         });
     }
