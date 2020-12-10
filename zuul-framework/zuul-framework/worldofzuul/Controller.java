@@ -31,11 +31,6 @@ public class Controller {
 
     public ImageView plastic, metal, paper, food, residual;
 
-    @Override
-    public String toString() {
-        return "plastic";
-    }
-
     public ImageView zero, one, two, three, four, five, six, seven, eight, nine;
     public ImageView[] roomInventoryArray = new ImageView[10];
 
@@ -287,46 +282,6 @@ public class Controller {
 
             ClipboardContent content = new ClipboardContent();
             content.putImage(PI1.getImage());
-            db.setContent(content);
-        });
-
-        PI2.setOnDragDetected((MouseEvent event) -> {
-            System.out.println("Drag detected");
-
-            Dragboard db = PI2.startDragAndDrop(TransferMode.ANY);
-
-            ClipboardContent content = new ClipboardContent();
-            content.putImage(PI2.getImage());
-            db.setContent(content);
-        });
-
-        PI3.setOnDragDetected((MouseEvent event) -> {
-            System.out.println("Drag detected");
-
-            Dragboard db = PI3.startDragAndDrop(TransferMode.ANY);
-
-            ClipboardContent content = new ClipboardContent();
-            content.putImage(PI3.getImage());
-            db.setContent(content);
-        });
-
-        PI4.setOnDragDetected((MouseEvent event) -> {
-            System.out.println("Drag detected");
-
-            Dragboard db = PI4.startDragAndDrop(TransferMode.ANY);
-
-            ClipboardContent content = new ClipboardContent();
-            content.putImage(PI4.getImage());
-            db.setContent(content);
-        });
-
-        PI5.setOnDragDetected((MouseEvent event) -> {
-            System.out.println("Drag detected");
-
-            Dragboard db = PI5.startDragAndDrop(TransferMode.ANY);
-
-            ClipboardContent content = new ClipboardContent();
-            content.putImage(PI5.getImage());
             db.setContent(content);
         });
 
