@@ -137,8 +137,8 @@ public class Controller {
             Alert copyright = new Alert(Alert.AlertType.INFORMATION);
             copyright.setTitle("Om");
             copyright.setHeaderText(null);
-            copyright.setContentText("'World of Zuul' Remixed og brugt under 1. år semesterprojekt for SE/ST 2020" +
-                    "\nLavet af: Mikkel Dolleris, Mikkel Norman, Johan Brockstedt, Sandra Malling-Larsen og Thomas Christensen"+
+            copyright.setContentText("'World of Zuul' Remixed og brugt under 1. år semesterprojekt for SE/ST 2020." +
+                    "\nLavet af: Mikkel Dolleris, Mikkel Norman, Johan Brockstedt, Sandra Malling-Larsen og Thomas Christensen."+
                     "\n" +
                     "\n" +
                     "\n'Nerdy Guy' Lavet af Silveira Neto, brugt under CC BY-SA 2.5 licens." +
