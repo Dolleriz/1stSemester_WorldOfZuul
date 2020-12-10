@@ -9,6 +9,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.*;
+import javafx.scene.layout.Region;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -23,13 +24,13 @@ public class Controller {
     @FXML
     public Button livingRoom, garbageArea, bathroom, entrance,
             kitchen, yourRoom, outside, parentsRoom;
-    public Button help;
+    public Button help, helpGarbage;
     public Button scan;
     public Button playerInventory;
     public Button copyright;
 
-
     public ImageView plastic, metal, paper, food, residual;
+    public ImageView[] trashCanArray = new ImageView[5];
 
     public ImageView zero, one, two, three, four, five, six, seven, eight, nine;
     public ImageView[] roomInventoryArray = new ImageView[10];
@@ -127,9 +128,18 @@ public class Controller {
             help.setContentText("I dette spil skal du rundt i huset og samle skrald og derefter genbruge det korrekt!\n" +
                     "\nKlik på skan for at lede efter skrald i rummet og derefter klik på det skrald du vil samle op!\n" +
                     "\nNår din taske er fuld, skal du derefter gå til skraldespandene. Du bevæger dig med knapperne nederst i venstre hjørne.\n" +
-                    "\nHerefter holder du din museknap ned på det affald du vil sorter og og trækker det over i den skraldespand du mener er rigtig.\n" +
                     "\nTryk på krydset når du er færdig med at spille!");
-            help.setResizable(true);
+           // help.setResizable(true);
+            help.getDialogPane().setMinHeight(Region.USE_PREF_SIZE);
+            help.showAndWait();
+        }
+        if (event.getSource() == helpGarbage) {
+            Alert help = new Alert(Alert.AlertType.INFORMATION);
+            help.setTitle("Hjælp");
+            help.setHeaderText(null);
+            help.setContentText("Tryk på Vis Taske for at se det affald du har samlet op.\n" +
+                    "\nTryk med musen på det øverste affald i din taske, og  slip musen over \n" +
+                    "den skraldespand du gerne vil smide affaldet ud i.\n");
             help.showAndWait();
         }
 
@@ -250,7 +260,6 @@ public class Controller {
         }
 
         scan.setDisable(true);
-        //showPlayerInventory();
     }
 
     @FXML
@@ -278,8 +287,6 @@ public class Controller {
     @FXML
     public void throwout(Event eventt) {
         PI1.setOnDragDetected((MouseEvent event) -> {
-            System.out.println("Drag detected");
-
             Dragboard db = PI1.startDragAndDrop(TransferMode.ANY);
 
             ClipboardContent content = new ClipboardContent();
@@ -287,117 +294,52 @@ public class Controller {
             db.setContent(content);
         });
 
-        plastic.setOnDragOver(new EventHandler<DragEvent>() {
+        int trashcanIndex = findTarget(eventt);
+        trashCanArray[trashcanIndex].setOnDragOver(new EventHandler<DragEvent>() {
             public void handle(DragEvent event) {
-                if (event.getGestureSource() != plastic && event.getDragboard().hasImage()) {
+                if (event.getGestureSource() != trashCanArray[trashcanIndex] && event.getDragboard().hasImage()) {
                     event.acceptTransferModes(TransferMode.COPY_OR_MOVE);
                 }
-
-                event.consume();
-            }
-        });
-        metal.setOnDragOver(new EventHandler<DragEvent>() {
-            public void handle(DragEvent event) {
-                if (event.getGestureSource() != plastic && event.getDragboard().hasImage()) {
-                    event.acceptTransferModes(TransferMode.COPY_OR_MOVE);
-                }
-
-                event.consume();
-            }
-        });
-        paper.setOnDragOver(new EventHandler<DragEvent>() {
-            public void handle(DragEvent event) {
-                if (event.getGestureSource() != plastic && event.getDragboard().hasImage()) {
-                    event.acceptTransferModes(TransferMode.COPY_OR_MOVE);
-                }
-
-                event.consume();
-            }
-        });
-        food.setOnDragOver(new EventHandler<DragEvent>() {
-            public void handle(DragEvent event) {
-                if (event.getGestureSource() != plastic && event.getDragboard().hasImage()) {
-                    event.acceptTransferModes(TransferMode.COPY_OR_MOVE);
-                }
-
-                event.consume();
-            }
-        });
-        residual.setOnDragOver(new EventHandler<DragEvent>() {
-            public void handle(DragEvent event) {
-                if (event.getGestureSource() != plastic && event.getDragboard().hasImage()) {
-                    event.acceptTransferModes(TransferMode.COPY_OR_MOVE);
-                }
-
                 event.consume();
             }
         });
 
-        plastic.setOnDragDropped((DragEvent eventPlastic) -> {
-            if (plastic.getId().equalsIgnoreCase(myGame.playerInventory.inventory.get(0).getType().toString())) {
+        trashCanArray[trashcanIndex].setOnDragDropped((DragEvent event) -> {
+            Dragboard db = event.getDragboard();
+            if (trashCanArray[trashcanIndex].getId().equalsIgnoreCase(myGame.playerInventory.inventory.get(0).getType().toString())) {
+                myGame.playerInventory.inventory.remove(0);
                 myGame.playerScore.increasePlayerScore(1);
+
             } else {
+                myGame.playerInventory.inventory.remove(0);
                 myGame.playerScore.decreasePlayerScore(1);
+
             }
+            event.setDropCompleted(true);
             updatePlayerScore();
-            myGame.playerInventory.inventory.remove(0);
-            eventPlastic.setDropCompleted(true);
             showPlayerInventory();
-            eventPlastic.consume();
-        });
-        metal.setOnDragDropped((DragEvent eventMetal) -> {
-            if (metal.getId().equalsIgnoreCase(myGame.playerInventory.inventory.get(0).getType().toString())) {
-                myGame.playerScore.increasePlayerScore(1);
-            } else {
-                myGame.playerScore.decreasePlayerScore(1);
-            }
-            updatePlayerScore();
-            myGame.playerInventory.inventory.remove(0);
-            eventMetal.setDropCompleted(true);
-            showPlayerInventory();
-            eventMetal.consume();
-        });
-        paper.setOnDragDropped((DragEvent eventPaper) -> {
-            if (paper.getId().equalsIgnoreCase(myGame.playerInventory.inventory.get(0).getType().toString())) {
-                myGame.playerScore.increasePlayerScore(1);
-            } else {
-                myGame.playerScore.decreasePlayerScore(1);
-            }
-            updatePlayerScore();
-            myGame.playerInventory.inventory.remove(0);
-            eventPaper.setDropCompleted(true);
-            showPlayerInventory();
-            eventPaper.consume();
-        });
-        food.setOnDragDropped((DragEvent eventFood) -> {
-            if (food.getId().equalsIgnoreCase(myGame.playerInventory.inventory.get(0).getType().toString())) {
-                myGame.playerScore.increasePlayerScore(1);
-            } else {
-                myGame.playerScore.decreasePlayerScore(1);
-            }
-            updatePlayerScore();
-            myGame.playerInventory.inventory.remove(0);
-            eventFood.setDropCompleted(true);
-            showPlayerInventory();
-            eventFood.consume();
-        });
-        residual.setOnDragDropped((DragEvent eventResidual) -> {
-            if (residual.getId().equalsIgnoreCase(myGame.playerInventory.inventory.get(0).getType().toString())) {
-                myGame.playerScore.increasePlayerScore(1);
-            } else {
-                myGame.playerScore.decreasePlayerScore(1);
-            }
-            updatePlayerScore();
-            myGame.playerInventory.inventory.remove(0);
-            eventResidual.setDropCompleted(true);
-            showPlayerInventory();
-            eventResidual.consume();
+            event.consume();
         });
     }
 
     @FXML
     public void updatePlayerScore() {
         playerScoreLabel.setText("Score: " + myGame.playerScore.getPlayerScore());
+    }
+
+    public int findTarget(Event event) {
+        int trashcanIndex = 0;
+        trashCanArray[0] = paper;
+        trashCanArray[1] = metal;
+        trashCanArray[2] = residual;
+        trashCanArray[3] = plastic;
+        trashCanArray[4] = food;
+        for (int i = 0; i < trashCanArray.length; i++) {
+            if (event.getTarget().equals(trashCanArray[i])) {
+                trashcanIndex = i;
+            }
+        }
+        return trashcanIndex;
     }
 }
 /*

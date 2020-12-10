@@ -25,34 +25,34 @@
                                             <Image url="@img/Scene/trashcanRoom.png" />
                                         </image>
                                     </ImageView>
-                           <ImageView fx:id="paper" fitHeight="118.0" fitWidth="76.0" layoutX="63.0" layoutY="105.0" pickOnBounds="true" preserveRatio="true">
+                           <ImageView fx:id="paper" fitHeight="118.0" fitWidth="76.0" layoutX="63.0" layoutY="105.0" onDragOver="#throwout" onDragDropped="#throwout" pickOnBounds="true" preserveRatio="true">
                               <image>
                                  <Image url="@img/TrashCans/SkraldespandBrun.png" />
                               </image>
                            </ImageView>
-                           <ImageView fx:id="metal" fitHeight="117.0" fitWidth="75.0" layoutX="144.0" layoutY="106.0" pickOnBounds="true" preserveRatio="true">
+                           <ImageView fx:id="metal" fitHeight="117.0" fitWidth="75.0" layoutX="144.0" layoutY="106.0" onDragOver="#throwout" onDragDropped="#throwout" pickOnBounds="true" preserveRatio="true">
                               <image>
                                  <Image url="@img/TrashCans/SkraldespandGrå.png" />
                               </image>
                            </ImageView>
-                           <ImageView fx:id="residual" fitHeight="123.0" fitWidth="74.0" layoutX="223.0" layoutY="104.0" pickOnBounds="true" preserveRatio="true">
+                           <ImageView fx:id="residual" fitHeight="123.0" fitWidth="74.0" layoutX="223.0" layoutY="104.0" onDragOver="#throwout" onDragDropped="#throwout" pickOnBounds="true" preserveRatio="true">
                               <image>
                                  <Image url="@img/TrashCans/SkraldespandGul.png" />
                               </image>
                            </ImageView>
-                           <ImageView fx:id="plastic" fitHeight="131.0" fitWidth="77.0" layoutX="301.0" layoutY="100.0" pickOnBounds="true" preserveRatio="true">
+                           <ImageView fx:id="plastic" fitHeight="131.0" fitWidth="77.0" layoutX="301.0" layoutY="100.0" onDragOver="#throwout" onDragDropped="#throwout" pickOnBounds="true" preserveRatio="true">
                               <image>
-                                 <Image url="@img/TrashCans/SkraldespandRød.png" />
+                                 <Image url="@img/TrashCans/skraldespandRød.png" />
                               </image>
                            </ImageView>
-                           <ImageView fx:id="food" fitHeight="123.0" fitWidth="75.0" layoutX="387.0" layoutY="102.0" onDragExited="#throwout" pickOnBounds="true" preserveRatio="true">
+                           <ImageView fx:id="food" fitHeight="123.0" fitWidth="75.0" layoutX="387.0" layoutY="102.0" onDragOver="#throwout" onDragDropped="#throwout" pickOnBounds="true" preserveRatio="true">
                               <image>
                                  <Image url="@img/TrashCans/SkraldespandGrøn.png" />
                               </image>
                            </ImageView>
                                 </children>
                             </AnchorPane>
-                            <Button fx:id="help" layoutX="520.0" layoutY="517.0" mnemonicParsing="false" onAction="#buttonClicked" prefHeight="46.0" prefWidth="225.0" text="Hjælp" />
+                            <Button fx:id="helpGarbage" layoutX="520.0" layoutY="517.0" mnemonicParsing="false" onAction="#buttonClicked" prefHeight="46.0" prefWidth="225.0" text="Hjælp" />
                             <Button disable="true" layoutX="520.0" layoutY="627.0" mnemonicParsing="false" prefHeight="46.0" prefWidth="225.0" text="Skan rum" />
                      <Separator layoutY="525.0" orientation="VERTICAL" prefHeight="225.0" prefWidth="488.0" />
                               <Button fx:id="outside" layoutX="89.0" layoutY="711.0" mnemonicParsing="false" onAction="#buttonClicked" text="Udenfor" />
