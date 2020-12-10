@@ -133,12 +133,12 @@ public class Controller {
             help.showAndWait();
         }
 
-        if(event.getSource() == copyright) {
+        if (event.getSource() == copyright) {
             Alert copyright = new Alert(Alert.AlertType.INFORMATION);
             copyright.setTitle("Om");
             copyright.setHeaderText(null);
             copyright.setContentText("'World of Zuul' Remixed og brugt under 1. år semesterprojekt for SE/ST 2020." +
-                    "\nLavet af: Mikkel Dolleris, Mikkel Norman, Johan Brockstedt, Sandra Malling-Larsen og Thomas Christensen."+
+                    "\nLavet af: Mikkel Dolleris, Mikkel Norman, Johan Brockstedt, Sandra Malling-Larsen og Thomas Christensen." +
                     "\n" +
                     "\n" +
                     "\n'Nerdy Guy' Lavet af Silveira Neto, brugt under CC BY-SA 2.5 licens." +
@@ -393,14 +393,14 @@ public class Controller {
             showPlayerInventory();
             eventResidual.consume();
         });
-        finishedGame();
     }
 
     @FXML
     public void updatePlayerScore() {
         playerScoreLabel.setText("Score: " + myGame.playerScore.getPlayerScore());
     }
-
+}
+/*
     @FXML
     public void finishedGame() {
         if (myGame.bathRoom.roomInventory.inventory.isEmpty() &&
@@ -419,6 +419,6 @@ public class Controller {
         }
     }
 }
-
+*/
 
 
