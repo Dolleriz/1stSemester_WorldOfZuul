@@ -139,13 +139,8 @@ public class Controller {
     }
 
     @FXML
-    public void showPlayerInventory() {
-        playerInventoryArray[0] = PI1;
-        playerInventoryArray[1] = PI2;
-        playerInventoryArray[2] = PI3;
-        playerInventoryArray[3] = PI4;
-        playerInventoryArray[4] = PI5;
-
+    public void showPlayerInventoryButton(){
+        showPlayerInventory();
         if (myGame.playerInventory.inventory.isEmpty()) {
             Alert emptyInv = new Alert(Alert.AlertType.ERROR);
             emptyInv.setTitle("Taske");
@@ -153,6 +148,15 @@ public class Controller {
             emptyInv.setContentText("Din taske er tom!");
             emptyInv.showAndWait();
         }
+    }
+
+    @FXML
+    public void showPlayerInventory() {
+        playerInventoryArray[0] = PI1;
+        playerInventoryArray[1] = PI2;
+        playerInventoryArray[2] = PI3;
+        playerInventoryArray[3] = PI4;
+        playerInventoryArray[4] = PI5;
 
         for (int i = 0; i < playerInventoryArray.length; i++) {
             playerInventoryArray[i].setImage(null);
