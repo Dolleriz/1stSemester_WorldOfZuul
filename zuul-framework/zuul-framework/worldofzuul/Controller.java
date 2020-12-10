@@ -134,7 +134,7 @@ public class Controller {
     }
 
     @FXML
-    public void showPlayerInventoryButton(){
+    public void showPlayerInventoryButton() {
         showPlayerInventory();
         if (myGame.playerInventory.inventory.isEmpty()) {
             Alert emptyInv = new Alert(Alert.AlertType.ERROR);
@@ -307,8 +307,7 @@ public class Controller {
         plastic.setOnDragDropped((DragEvent eventPlastic) -> {
             if (plastic.getId().equalsIgnoreCase(myGame.playerInventory.inventory.get(0).getType().toString())) {
                 myGame.playerScore.increasePlayerScore(1);
-            }
-            else {
+            } else {
                 myGame.playerScore.decreasePlayerScore(1);
             }
             updatePlayerScore();
@@ -320,8 +319,7 @@ public class Controller {
         metal.setOnDragDropped((DragEvent eventMetal) -> {
             if (metal.getId().equalsIgnoreCase(myGame.playerInventory.inventory.get(0).getType().toString())) {
                 myGame.playerScore.increasePlayerScore(1);
-            }
-            else {
+            } else {
                 myGame.playerScore.decreasePlayerScore(1);
             }
             updatePlayerScore();
@@ -333,8 +331,7 @@ public class Controller {
         paper.setOnDragDropped((DragEvent eventPaper) -> {
             if (paper.getId().equalsIgnoreCase(myGame.playerInventory.inventory.get(0).getType().toString())) {
                 myGame.playerScore.increasePlayerScore(1);
-            }
-            else {
+            } else {
                 myGame.playerScore.decreasePlayerScore(1);
             }
             updatePlayerScore();
@@ -346,8 +343,7 @@ public class Controller {
         food.setOnDragDropped((DragEvent eventFood) -> {
             if (food.getId().equalsIgnoreCase(myGame.playerInventory.inventory.get(0).getType().toString())) {
                 myGame.playerScore.increasePlayerScore(1);
-            }
-            else {
+            } else {
                 myGame.playerScore.decreasePlayerScore(1);
             }
             updatePlayerScore();
@@ -359,8 +355,7 @@ public class Controller {
         residual.setOnDragDropped((DragEvent eventResidual) -> {
             if (residual.getId().equalsIgnoreCase(myGame.playerInventory.inventory.get(0).getType().toString())) {
                 myGame.playerScore.increasePlayerScore(1);
-            }
-            else {
+            } else {
                 myGame.playerScore.decreasePlayerScore(1);
             }
             updatePlayerScore();
@@ -369,10 +364,30 @@ public class Controller {
             showPlayerInventory();
             eventResidual.consume();
         });
+        finishedGame();
     }
+
     @FXML
-    public void updatePlayerScore(){
+    public void updatePlayerScore() {
         playerScoreLabel.setText("Score: " + myGame.playerScore.getPlayerScore());
+    }
+
+    @FXML
+    public void finishedGame() {
+        if (myGame.bathRoom.roomInventory.inventory.isEmpty() &&
+                myGame.bedRoom.roomInventory.inventory.isEmpty() &&
+                myGame.entrance.roomInventory.inventory.isEmpty() &&
+                myGame.kitchen.roomInventory.inventory.isEmpty() &&
+                myGame.livingRoom.roomInventory.inventory.isEmpty() &&
+                myGame.outside.roomInventory.inventory.isEmpty() &&
+                myGame.parentsRoom.roomInventory.inventory.isEmpty()) {
+            Alert emptyInv = new Alert(Alert.AlertType.ERROR);
+            emptyInv.setTitle("endGame");
+            emptyInv.setHeaderText(null);
+            emptyInv.setContentText("Du har nu gennemføret spillet!" +
+                    "\n Du sluttede med " + myGame.playerScore + " antal point!");
+            emptyInv.showAndWait();
+        }
     }
 }
 
