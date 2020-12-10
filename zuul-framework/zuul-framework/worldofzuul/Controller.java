@@ -26,6 +26,7 @@ public class Controller {
     public Button help;
     public Button scan;
     public Button playerInventory;
+    public Button copyright;
 
 
     public ImageView plastic, metal, paper, food, residual;
@@ -129,6 +130,32 @@ public class Controller {
                     "\nHerefter holder du din museknap ned på det affald du vil sorter og og trækker det over i den skraldespand du mener er rigtig.\n" +
                     "\nTryk på krydset når du er færdig med at spille!");
             help.showAndWait();
+        }
+
+        if(event.getSource() == copyright) {
+            Alert copyright = new Alert(Alert.AlertType.INFORMATION);
+            copyright.setTitle("Om");
+            copyright.setHeaderText(null);
+            copyright.setContentText("'World of Zuul' Remixed og brugt under 1. år semesterprojekt for SE/ST 2020" +
+                    "\nLavet af: Mikkel Dolleris, Mikkel Norman, Johan Brockstedt, Sandra Malling-Larsen og Thomas Christensen"+
+                    "\n" +
+                    "\n" +
+                    "\n'Nerdy Guy' Lavet af Silveira Neto, brugt under CC BY-SA 2.5 licens." +
+                    "\n" +
+                    "\n'[16x16] Small Indoor Tileset' Lavet af Tilation, https://tilation.itch.io/" +
+                    "\n" +
+                    "\n'Grass Tile Set 16x16' Lavet af Bonsaiheldin,, brugt under CC BY-SA 3.0 licens; https://opengameart.org/content/grass-tileset-16x16" +
+                    "\n" +
+                    "\n'Recycle Bin Green Can Open Lid' lavet af Clker-Free-Vector-Images, brugt og remixed under Pixabay licens." +
+                    "\n" +
+                    "\n'Soda Pop Can' Lavet af Clker-Free-Vector-Images, brugt under Pixabay licens." +
+                    "\n" +
+                    "\n'Bitten Apple Healthy Eat' Lavet af janjf903, brugt under Pixabay licens." +
+                    "\n" +
+                    "\n'Bottledwater Water Bottle' Lavet af StarShopping, brugt under Pixabay licens." +
+                    "\n" +
+                    "\n'Bag Trash Waste' Lavet af kinska, brugt under Pixabay licens.");
+            copyright.showAndWait();
         }
 
     }

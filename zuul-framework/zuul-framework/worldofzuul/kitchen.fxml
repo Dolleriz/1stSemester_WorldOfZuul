@@ -37,8 +37,8 @@
                            <ImageView fx:id="nine" fitHeight="25.0" fitWidth="25.0" layoutX="85.0" layoutY="232.0" onMouseClicked="#pickUp" pickOnBounds="true" preserveRatio="true" />
                         </children>
                      </AnchorPane>
-                     <Button fx:id="help" layoutX="488.0" layoutY="530.0" mnemonicParsing="false" onAction="#buttonClicked" prefHeight="61.0" prefWidth="76.0" text="Hjælp" />
-                      <Button fx:id="scan" layoutX="578.0" layoutY="530.0" mnemonicParsing="false" onAction="#scanRoom" prefHeight="61.0" prefWidth="76.0" text="Skan rum" />
+                      <Button fx:id="help" layoutX="520.0" layoutY="517.0" mnemonicParsing="false" onAction="#buttonClicked" prefHeight="46.0" prefWidth="225.0" text="Hjælp" />
+                      <Button fx:id="scan" layoutX="520.0" layoutY="627.0" mnemonicParsing="false" onAction="#scanRoom" prefHeight="46.0" prefWidth="225.0" text="Skan rum" />
                       <ImageView fitHeight="86.0" fitWidth="96.0" layoutX="79.0" layoutY="595.0" pickOnBounds="true" preserveRatio="true">
                           <image>
                               <Image url="@img/movement.png" />
@@ -68,8 +68,9 @@
                      <Button fx:id="livingRoom" layoutX="100.0" layoutY="694.0" mnemonicParsing="false" onAction="#buttonClicked" text="Stue" />
                      <Button fx:id="bathroom" layoutX="171.0" layoutY="607.0" mnemonicParsing="false" onAction="#buttonClicked" prefHeight="63.0" prefWidth="66.0" text="Badeværelset" textAlignment="CENTER" wrapText="true" />
                      <Button fx:id="yourRoom" layoutX="7.0" layoutY="615.0" mnemonicParsing="false" onAction="#buttonClicked" prefHeight="46.0" prefWidth="68.0" text="Dit værelse" textAlignment="CENTER" wrapText="true" />
-                      <Label fx:id="playerScoreLabel" layoutX="488.0" layoutY="687.0" prefHeight="38.0" prefWidth="164.0" text="Score:" />
-                      <Button fx:id="playerInventory" layoutX="488.0" layoutY="606.0" mnemonicParsing="false" onAction="#showPlayerInventoryButton" prefHeight="61.0" prefWidth="76.0" text="Vis Taske" />
+                      <Label fx:id="playerScoreLabel" layoutX="250.0" layoutY="706.0" prefHeight="38.0" prefWidth="164.0" text="Score:" />
+                      <Button fx:id="playerInventory" layoutX="520.0" layoutY="571.0" mnemonicParsing="false" onAction="#showPlayerInventoryButton" prefHeight="46.0" prefWidth="225.0" text="Vis Taske" />
+                      <Button fx:id="copyright" layoutX="520.0" layoutY="683.0" mnemonicParsing="false" onAction="#buttonClicked" prefHeight="46.0" prefWidth="225.0" text="Om" />
                   </children>
                </Pane>
             </children>
