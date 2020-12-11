@@ -226,6 +226,14 @@ public class Controller {
         roomInventoryArray[8] = eight;
         roomInventoryArray[9] = nine;
 
+        if (emptyRoom(myGame.currentRoom.roomInventoryGUI)) {
+            Alert emptyInv = new Alert(Alert.AlertType.INFORMATION);
+            emptyInv.setTitle("Rum");
+            emptyInv.setHeaderText(null);
+            emptyInv.setContentText("Der er ikke mere affald i rummet");
+            emptyInv.showAndWait();
+        }
+
         if (myGame.currentRoom == myGame.outside) {
             for (int i = 0; i < myGame.outside.roomInventoryGUI.length; i++) {
                 if (myGame.outside.roomInventoryGUI[i] != null) {
