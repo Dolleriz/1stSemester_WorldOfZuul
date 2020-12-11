@@ -21,6 +21,8 @@ public class Controller {
 
     public Controller() {
         myGame = Game_GUI.INSTANCE;
+
+
     }
 
     @FXML
@@ -132,6 +134,7 @@ public class Controller {
                     "\nKlik på skan for at lede efter skrald i rummet og derefter klik på det skrald du vil samle op!\n" +
                     "\nNår din taske er fuld, skal du derefter gå til skraldespandene. Du bevæger dig med knapperne nederst i venstre hjørne.\n" +
                     "\nTryk på krydset når du er færdig med at spille!");
+            // help.setResizable(true);
             help.getDialogPane().setMinHeight(Region.USE_PREF_SIZE);
             help.showAndWait();
         }
@@ -335,9 +338,17 @@ public class Controller {
             event.setDropCompleted(true);
             updatePlayerScore();
             showPlayerInventory();
-
+            if (finishedGame()) {
+                Alert emptyInv = new Alert(Alert.AlertType.INFORMATION);
+                emptyInv.setTitle("endGame");
+                emptyInv.setHeaderText(null);
+                emptyInv.setContentText("Du har nu gennemføret spillet!" +
+                        "\n Du sluttede med " + myGame.playerScore.getPlayerScore() + " antal point!");
+                emptyInv.showAndWait();
+            }
             event.consume();
         });
+
     }
 
     @FXML
@@ -362,6 +373,34 @@ public class Controller {
             }
         }
         return trashcanIndex;
+    }
+
+
+    public boolean emptyRoom(Trash[] roomInventory) {
+        boolean empty = true;
+        for (int i = 0; i < roomInventory.length; i++) {
+            if (roomInventory[i] != null) {
+                empty = false;
+                break;
+            }
+        }
+        return empty;
+    }
+
+
+    @FXML
+    public boolean finishedGame() {
+        if (emptyRoom(myGame.bathRoom.roomInventoryGUI) &&
+                emptyRoom(myGame.bedRoom.roomInventoryGUI) &&
+                emptyRoom(myGame.entrance.roomInventoryGUI) &&
+                emptyRoom(myGame.kitchen.roomInventoryGUI) &&
+                emptyRoom(myGame.livingRoom.roomInventoryGUI) &&
+                emptyRoom(myGame.outside.roomInventoryGUI) &&
+                emptyRoom(myGame.parentsRoom.roomInventoryGUI) &&
+                myGame.playerInventory.inventory.isEmpty()) {
+            return true;
+        }
+        return false;
     }
 }
 
