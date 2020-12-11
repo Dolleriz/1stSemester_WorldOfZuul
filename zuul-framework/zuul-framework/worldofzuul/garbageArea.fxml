@@ -62,6 +62,16 @@
                            <Font size="24.0" />
                         </font>
                      </Label>
+                            <ImageView fitHeight="311.0" fitWidth="207.0" layoutX="529.0" layoutY="206.0" pickOnBounds="true" preserveRatio="true">
+                                <image>
+                                    <Image url="@img/bag2.png" />
+                                </image>
+                            </ImageView>
+                            <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="535.0" layoutY="67.0" pickOnBounds="true" preserveRatio="true">
+                                <image>
+                                    <Image url="@img/bag.png" />
+                                </image>
+                            </ImageView>
                             <ImageView fitHeight="223.0" fitWidth="237.0" layoutX="244.0" layoutY="594.0" pickOnBounds="true" preserveRatio="true">
                                 <image>
                                     <Image url="@img/Minimap/Skraldespande map.png" />
@@ -72,11 +82,11 @@
                                     <Font size="24.0" />
                                 </font>
                             </Label>
-                            <ImageView fx:id="PI1" fitHeight="50.0" fitWidth="50.0" layoutX="610.0" layoutY="49.0" onMouseDragged="#throwout" pickOnBounds="true" preserveRatio="true" />
-                            <ImageView fx:id="PI2" fitHeight="50.0" fitWidth="50.0" layoutX="610.0" layoutY="109.0" pickOnBounds="true" preserveRatio="true" />
-                            <ImageView fx:id="PI3" fitHeight="50.0" fitWidth="50.0" layoutX="610.0" layoutY="169.0"  pickOnBounds="true" preserveRatio="true" />
-                            <ImageView fx:id="PI4" fitHeight="50.0" fitWidth="50.0" layoutX="610.0" layoutY="229.0" pickOnBounds="true" preserveRatio="true" />
-                            <ImageView fx:id="PI5" fitHeight="50.0" fitWidth="50.0" layoutX="610.0" layoutY="289.0" pickOnBounds="true" preserveRatio="true" />
+                            <ImageView fx:id="PI1" fitHeight="50.0" fitWidth="50.0" layoutX="610.0" layoutY="108.0" onMouseDragged="#throwout" pickOnBounds="true" preserveRatio="true" />
+                            <ImageView fx:id="PI2" blendMode="OVERLAY" fitHeight="50.0" fitWidth="50.0" layoutX="608.0" layoutY="219.0" onMouseDragged="#throwout" pickOnBounds="true" preserveRatio="true" />
+                            <ImageView fx:id="PI3" blendMode="OVERLAY" fitHeight="50.0" fitWidth="50.0" layoutX="610.0" layoutY="269.0" onMouseDragged="#throwout" pickOnBounds="true" preserveRatio="true" />
+                            <ImageView fx:id="PI4" blendMode="OVERLAY" fitHeight="50.0" fitWidth="50.0" layoutX="608.0" layoutY="339.0" onMouseDragged="#throwout" pickOnBounds="true" preserveRatio="true" />
+                            <ImageView fx:id="PI5" blendMode="OVERLAY" fitHeight="50.0" fitWidth="50.0" layoutX="610.0" layoutY="406.0" onMouseDragged="#throwout" pickOnBounds="true" preserveRatio="true" />
                             <ImageView fitHeight="86.0" fitWidth="96.0" layoutX="79.0" layoutY="595.0" pickOnBounds="true" preserveRatio="true">
                                 <image>
                                     <Image url="@img/movement.png" />
