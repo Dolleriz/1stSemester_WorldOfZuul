@@ -141,8 +141,8 @@ public class Controller {
             help.setTitle("Hjælp");
             help.setHeaderText(null);
             help.setContentText("Tryk på Vis Taske for at se det affald du har samlet op.\n" +
-                    "\nTryk med musen på det øverste affald i din taske, og  slip musen over \n" +
-                    "den skraldespand du gerne vil smide affaldet ud i.\n");
+                    "\nTryk med musen på det øverste affald i din taske, og slip " +
+                    "\nmusen over den skraldespand du gerne vil smide affaldet ud i.\n");
             help.getDialogPane().setMinHeight(Region.USE_PREF_SIZE);
             help.showAndWait();
         }
