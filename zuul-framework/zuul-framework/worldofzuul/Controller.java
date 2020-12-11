@@ -21,9 +21,6 @@ public class Controller {
 
     public Controller() {
         myGame = Game_GUI.INSTANCE;
-
-
-
     }
 
     @FXML
@@ -345,7 +342,7 @@ public class Controller {
                 emptyInv.setTitle("endGame");
                 emptyInv.setHeaderText(null);
                 emptyInv.setContentText("Du har nu gennemføret spillet!" +
-                        "\n Du sluttede med " + myGame.playerScore.getPlayerScore() + " antal point!");
+                        "\n Du sluttede med " + myGame.playerScore.getPlayerScore() + " point!");
                 emptyInv.showAndWait();
             }
             event.consume();
