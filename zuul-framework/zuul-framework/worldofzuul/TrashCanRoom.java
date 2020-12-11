@@ -1,7 +1,5 @@
 package worldofzuul;
 
-import java.util.HashMap;
-
 public class TrashCanRoom extends Room {
 
     public TrashCanRoom(String description) {

@@ -24,22 +24,22 @@ public class Game_GUI {
         outside.fillUpRoomGUI();
 
         entrance = new RegularRoom();
-       // entrance.fillUpRoomGUI();
+        entrance.fillUpRoomGUI();
 
         livingRoom = new RegularRoom();
-        //livingRoom.fillUpRoomGUI();
+        livingRoom.fillUpRoomGUI();
 
         kitchen = new RegularRoom();
-      //  kitchen.fillUpRoomGUI();
+        kitchen.fillUpRoomGUI();
 
         bedRoom = new RegularRoom();
-       // bedRoom.fillUpRoomGUI();
+        bedRoom.fillUpRoomGUI();
 
         bathRoom = new RegularRoom();
-       // bathRoom.fillUpRoomGUI();
+        bathRoom.fillUpRoomGUI();
 
         parentsRoom = new RegularRoom();
-      //  parentsRoom.fillUpRoomGUI();
+        parentsRoom.fillUpRoomGUI();
 
         garbageArea = new TrashCanRoom("ved skraldespandene, Foran dig er der et sæt skraldespande." +
                 "\nHver skraldespand har et nummer:" +

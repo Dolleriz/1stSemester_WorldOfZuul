@@ -1,7 +1,5 @@
 package worldofzuul;
 
-import java.util.ArrayList;
-
 public class Trashcan {
 
     private Trashtype correctTrashType;
