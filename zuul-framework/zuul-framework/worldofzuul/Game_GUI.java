@@ -15,7 +15,7 @@ public class Game_GUI {
     public Game_GUI() {
         createRooms();
     }
-    //Creates our rooms and fills it with trash
+    //Creates our rooms and fills them with trash
     void createRooms() {
         outside = new RegularRoom();
         outside.fillUpRoomGUI();

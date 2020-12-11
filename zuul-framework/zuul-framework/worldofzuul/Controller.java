@@ -15,12 +15,13 @@ import javafx.stage.Stage;
 import java.io.IOException;
 
 
-//This code is want runs in our JavaFX/GUI version. Makes everthing clickable and stuff #Cheers.
+//This code is want runs in our JavaFX/GUI version. Makes everything clickable and stuff #Cheers.
 public class Controller {
     Game_GUI myGame;
 
     public Controller() {
         myGame = Game_GUI.INSTANCE;
+
 
 
     }
@@ -338,6 +339,7 @@ public class Controller {
             event.setDropCompleted(true);
             updatePlayerScore();
             showPlayerInventory();
+            //Creates a pop-up if there's no trash left in the game
             if (finishedGame()) {
                 Alert emptyInv = new Alert(Alert.AlertType.INFORMATION);
                 emptyInv.setTitle("endGame");
@@ -387,7 +389,7 @@ public class Controller {
         return empty;
     }
 
-
+    //Code that checks if there's any trash left in the game
     @FXML
     public boolean finishedGame() {
         if (emptyRoom(myGame.bathRoom.roomInventoryGUI) &&
