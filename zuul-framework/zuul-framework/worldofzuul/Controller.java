@@ -214,14 +214,14 @@ public class Controller {
     //We made the decision the make the button instead of looking for a new JavaFX fix due to time restraints
     //We made a fix roomInventory of 10 indexes. This made us able to use if/else statements to show sprites depending
     //On which room we are in.
-    public void scanRoom(Event event) throws IOException, NullPointerException {
+    public void scanRoom(Event event){
         roomInventoryArray[0] = zero;
         roomInventoryArray[1] = one;
         roomInventoryArray[2] = two;
         roomInventoryArray[3] = three;
         roomInventoryArray[4] = four;
         roomInventoryArray[5] = five;
-        roomInventoryArray[6] = six;
+        roomInventoryArray[6] = six;    
         roomInventoryArray[7] = seven;
         roomInventoryArray[8] = eight;
         roomInventoryArray[9] = nine;
