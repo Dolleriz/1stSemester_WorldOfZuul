@@ -76,9 +76,9 @@
                      </ImageView>
                             <ImageView fx:id="PI1" fitHeight="50.0" fitWidth="50.0" layoutX="610.0" layoutY="100.0" pickOnBounds="true" preserveRatio="true" />
                             <ImageView fx:id="PI2" blendMode="OVERLAY" fitHeight="50.0" fitWidth="50.0" layoutX="608.0" layoutY="210.0" pickOnBounds="true" preserveRatio="true" />
-                            <ImageView fx:id="PI3" fitHeight="50.0" fitWidth="50.0" layoutX="610.0" layoutY="288.0" pickOnBounds="true" preserveRatio="true" />
-                            <ImageView fx:id="PI4" fitHeight="50.0" fitWidth="50.0" layoutX="608.0" layoutY="350.0" pickOnBounds="true" preserveRatio="true" />
-                            <ImageView fx:id="PI5" fitHeight="50.0" fitWidth="50.0" layoutX="610.0" layoutY="422.0" pickOnBounds="true" preserveRatio="true" />
+                            <ImageView fx:id="PI3" blendMode="OVERLAY" fitHeight="50.0" fitWidth="50.0" layoutX="610.0" layoutY="288.0" pickOnBounds="true" preserveRatio="true" />
+                            <ImageView fx:id="PI4" blendMode="OVERLAY" fitHeight="50.0" fitWidth="50.0" layoutX="608.0" layoutY="350.0" pickOnBounds="true" preserveRatio="true" />
+                            <ImageView fx:id="PI5" blendMode="OVERLAY" fitHeight="50.0" fitWidth="50.0" layoutX="610.0" layoutY="422.0" pickOnBounds="true" preserveRatio="true" />
                             <Label fx:id="playerScoreLabel" layoutX="250.0" layoutY="706.0" prefHeight="38.0" prefWidth="164.0" text="Score:" />
                             <Button fx:id="playerInventory" layoutX="520.0" layoutY="571.0" mnemonicParsing="false" onAction="#showPlayerInventoryButton" prefHeight="46.0" prefWidth="225.0" text="Vis Taske" />
                      <Button fx:id="copyright" layoutX="520.0" layoutY="683.0" mnemonicParsing="false" onAction="#buttonClicked" prefHeight="46.0" prefWidth="225.0" text="Om" />
