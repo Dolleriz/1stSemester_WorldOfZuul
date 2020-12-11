@@ -7,6 +7,9 @@ import javafx.scene.control.TableView;
 
 import java.util.Scanner;
 
+
+//We decided to keep our CLI version of our game code and copied it to change the code for our GUI version.
+//This is our CLI game code.
 public class Game {
     Parser parser;
     Room currentRoom;
@@ -14,7 +17,7 @@ public class Game {
     RegularRoom outside, entrance, livingRoom, kitchen, bedRoom, bathRoom, parentsRoom;
     PlayerScore playerScore = new PlayerScore(0);
 
-    Inventory playerInventory = new Inventory(5);
+    Inventory playerInventory = new Inventory();
 
     public Game() {
 
@@ -22,7 +25,7 @@ public class Game {
         outside.printRoomInventory();
         parser = new Parser();
     }
-
+//Creates our rooms with a description and also uses World of Zuul default code to set our exits to said rooms.
     void createRooms() {
         outside = new RegularRoom("udenfor. " +
                 "\nMod øst er dit hus, prop fyldt med affald der skal sorteres. " +
@@ -203,7 +206,7 @@ public class Game {
             return true;
         }
     }
-
+//Depending on which room we're in we remove our chosen index from the roomInventory and adds it to our playerInventory.
     void pickup(Command command) {
         if (!command.hasSecondWord()) {
             System.out.println("Tag hvad?");
@@ -227,7 +230,8 @@ public class Game {
             currentRoom.roomInventory.inventory.remove(roomInventoryIndex - 1);
         }
     }
-
+//CLI sorting code which compares the type of our trash to a String which resembles our trashcan.
+//If they're equal you get a point and it removes the item from the playerInventory.
     void throwout(Command command) {
 
         String trash = command.getSecondWord();
@@ -286,7 +290,7 @@ public class Game {
         playerScore.showPlayerScore();
     }
 
-
+//Gets the description of our trashCan using a commandWord
     void trashDescription(Command command) {
 
         if (currentRoom != garbageArea) {
@@ -309,7 +313,7 @@ public class Game {
         }
     }
 
-
+//Prints playerInventory.
     void printPlayerInventory(Inventory playerInventory) {
         System.out.println("Du kan max have 5 stykker affald i dine lommer. " +
                 "\nI dine lommer har du: " +

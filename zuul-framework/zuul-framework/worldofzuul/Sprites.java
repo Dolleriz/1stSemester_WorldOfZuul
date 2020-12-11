@@ -1,11 +1,11 @@
 package worldofzuul;
 
 
-import javafx.geometry.Rectangle2D;
-import javafx.scene.Node;
-import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.image.Image;
 
+//We made alot of changes to this class. We argued about deleting it, however kept it for easier readability.
+//Our first idea was to have a moveable sprite using keyboardInputs, but moved from that idea due to complexity.
+//So now it just sets an image and makes us able to change the size and getters and setters.
 public class Sprites{
         private Image image;
 

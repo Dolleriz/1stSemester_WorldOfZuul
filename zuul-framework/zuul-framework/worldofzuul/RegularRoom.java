@@ -30,6 +30,8 @@ public class RegularRoom extends Room {
         }
     }
 
+    //We decided to break up our code into a CLI version and a GUI version. Which is why there is almost similar
+    //or duplicate code
     public void fillUpRoomGUI() {
         for (int i = 0; i < roomInventoryGUI.length; i++) {
             double trashTypeNumber;
@@ -49,7 +51,7 @@ public class RegularRoom extends Room {
         }
     }
 
-
+    //Prints a string of our roominventory.
     public void printRoomInventory() { //can print the contents of the roomInventory without throwing a nullpointerexception
         if (roomInventory.inventory.isEmpty()) {
             System.out.println("Der er ikke noget affald.");

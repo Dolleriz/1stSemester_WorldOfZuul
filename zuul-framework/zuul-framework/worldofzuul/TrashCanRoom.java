@@ -1,13 +1,16 @@
 package worldofzuul;
 
-import java.util.HashMap;
 
+//Most code in here is for the CLI version as we used solely imageViews in our GUI version.
 public class TrashCanRoom extends Room {
-
     public TrashCanRoom(String description) {
         super(description);
         createTrashcans();
 
+    }
+
+    public TrashCanRoom(){
+        createTrashcans();
     }
 
 

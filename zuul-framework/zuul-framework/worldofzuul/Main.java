@@ -1,10 +1,8 @@
 package worldofzuul;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
+
 import javafx.scene.control.Alert;
-import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -16,7 +14,8 @@ public class Main extends Application {
     @Override
     public void start(Stage stage) throws IOException {
 
-        //these lines make the game (GUI version) work, pls no change kthxbye
+        //these lines make the game (GUI version) work, it loads the first stage which is our outside room
+        //furthermore it introduces the game and it's name.
         FXMLLoader loader= new FXMLLoader(getClass().getResource("outside.fxml"));
         Stage root = loader.load();
         root.show();
@@ -27,10 +26,6 @@ public class Main extends Application {
                 "\nTryk på hjælp, hvis du ikke ved hvad du skal!");
 
         alert.showAndWait();
-        //Scene scene = new Scene(root, 750, 750);
-        //stage.setTitle("World of Trash");
-        //stage.setScene(scene);
-        //stage.show();
     }
 
     public static void main(String[] args) {

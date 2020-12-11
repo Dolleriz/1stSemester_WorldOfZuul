@@ -2,13 +2,15 @@ package worldofzuul;
 
 import java.util.Set;
 import java.util.HashMap;
-import java.util.Iterator;
 
 
 public class Room {
     private String description;
     private HashMap<String, Room> exits;
-    Inventory roomInventory = new Inventory(10);
+    //In our CLI version a flexible and dynamic roomInventory made our code easier.
+    //In GUI version it made it easier with imageViews to make a default array.
+    //We wanted our array elements to be fixed and solve our indexOutOfBounds exception.
+    Inventory roomInventory = new Inventory();
     Trash[] roomInventoryGUI = new Trash[10];
 
     public Room(String description) {

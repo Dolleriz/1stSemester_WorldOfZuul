@@ -1,5 +1,8 @@
 package worldofzuul;
 
+
+//We added code here mostly for the CLI version to access command words to get functionality for sorting, pickUp
+//help, inventory etc.
 public enum CommandWord
 {
     GO("gå"), QUIT("afslut"), HELP("hjælp"), UNKNOWN("?"),

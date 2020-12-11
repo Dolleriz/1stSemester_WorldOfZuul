@@ -1,5 +1,7 @@
 package worldofzuul;
 
+//Used to define and distinguish our trashTypes. We didnt get to add more versions of each trashType
+//But it's a needed class for categorization.
 public enum Trashtype {
 
     FOOD_WASTE("food", "worldofzuul/img/TrashSprites/BittenApple.png"),

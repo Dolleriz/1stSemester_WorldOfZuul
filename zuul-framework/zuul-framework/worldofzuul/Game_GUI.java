@@ -1,10 +1,7 @@
 package worldofzuul;
 
-import javafx.event.EventHandler;
-import javafx.fxml.FXML;
-import javafx.scene.image.ImageView;
-import javafx.scene.input.*;
 
+//GUI version of our game code
 public class Game_GUI {
 
     public static final Game_GUI INSTANCE = new Game_GUI();
@@ -13,12 +10,12 @@ public class Game_GUI {
     TrashCanRoom garbageArea;
     RegularRoom outside, entrance, livingRoom, kitchen, bedRoom, bathRoom, parentsRoom;
     PlayerScore playerScore = new PlayerScore(0);
-    Inventory playerInventory = new Inventory(5);
+    Inventory playerInventory = new Inventory();
 
     public Game_GUI() {
         createRooms();
     }
-
+    //Creates our rooms and fills it with trash
     void createRooms() {
         outside = new RegularRoom();
         outside.fillUpRoomGUI();
@@ -41,10 +38,7 @@ public class Game_GUI {
         parentsRoom = new RegularRoom();
         parentsRoom.fillUpRoomGUI();
 
-        garbageArea = new TrashCanRoom("ved skraldespandene, Foran dig er der et sæt skraldespande." +
-                "\nHver skraldespand har et nummer:" +
-                "\n1. Plastik.\n2. Metal og glas.\n3. Madaffald.\n4. Papir og pap.\n5. Restaffald." +
-                "\nDu burde nu have en masse affald i din taske, som skal sorteres. Ellers, kom i gang!");
+        garbageArea = new TrashCanRoom();
 
         currentRoom = outside;
     }

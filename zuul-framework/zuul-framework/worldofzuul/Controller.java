@@ -14,6 +14,8 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
+
+//This code is want runs in our JavaFX/GUI version. Makes everthing clickable and stuff #Cheers.
 public class Controller {
     Game_GUI myGame;
 
@@ -41,6 +43,7 @@ public class Controller {
     public Label playerScoreLabel;
 
     @FXML
+    //Handles what happens when you click the different buttons on the GUI. eg. changing rooms, help button etc.
     public void buttonClicked(ActionEvent event) throws IOException {
 
         Stage appStage;
@@ -173,6 +176,8 @@ public class Controller {
     }
 
     @FXML
+    //Uses our showinventory button to assign it to the button since we wanted an alert on the button but
+    // not with the specific code
     public void showPlayerInventoryButton() {
         showPlayerInventory();
         if (myGame.playerInventory.inventory.isEmpty()) {
@@ -185,6 +190,8 @@ public class Controller {
     }
 
     @FXML
+    //Code behind our showInventory. It shows our inventory by using our playerInventoryArray which uses ImageViews
+    //We had to assign a sprite Image to the actual playerInventory to show the image in said imageViews.
     public void showPlayerInventory() {
         playerInventoryArray[0] = PI1;
         playerInventoryArray[1] = PI2;
@@ -202,6 +209,10 @@ public class Controller {
     }
 
     @FXML
+    //We made a scanRoom button because we change scenes and stages with every button click
+    //We made the decision the make the button instead of looking for a new JavaFX fix due to time restraints
+    //We made a fix roomInventory of 10 indexes. This made us able to use if/else statements to show sprites depending
+    //On which room we are in.
     public void scanRoom(Event event) throws IOException, NullPointerException {
         roomInventoryArray[0] = zero;
         roomInventoryArray[1] = one;
@@ -263,6 +274,8 @@ public class Controller {
     }
 
     @FXML
+    //Essentially compares the target which we click upon to our roomInventory index and adds it to our playerInventory
+    //And also removed is and the sprite from our roomInventory and disables said imageView.
     public void pickUp(Event event) {
         if (myGame.playerInventory.inventory.size() >= 5) {
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
@@ -285,6 +298,11 @@ public class Controller {
     }
 
     @FXML
+    //The sorting system in our Garbage Area.
+    //We drag events to compare 2 strings. The type of the trash in our playerInventory and the string of a trashcan
+    //If these correlate then we give 1 point and also updates the playerInventory and playerScore
+    //If they don't correlate then -1 point.
+    //Most of the code is dragDetection and allowing the data to be transfered/accepted.
     public void throwout(Event eventt) {
         PI1.setOnDragDetected((MouseEvent event) -> {
             Dragboard db = PI1.startDragAndDrop(TransferMode.ANY);
@@ -305,7 +323,6 @@ public class Controller {
         });
 
         trashCanArray[trashcanIndex].setOnDragDropped((DragEvent event) -> {
-            Dragboard db = event.getDragboard();
             if (trashCanArray[trashcanIndex].getId().equalsIgnoreCase(myGame.playerInventory.inventory.get(0).getType().toString())) {
                 myGame.playerInventory.inventory.remove(0);
                 myGame.playerScore.increasePlayerScore(1);
@@ -324,10 +341,14 @@ public class Controller {
     }
 
     @FXML
+    //Updates our playerScore
     public void updatePlayerScore() {
         playerScoreLabel.setText("Score: " + myGame.playerScore.getPlayerScore());
     }
 
+    //Finds the target of our drag Event. Essentially uses an array of our trashcans
+    //Uses fori loop to return the correct trashCan
+    //Makes us able to compare our trashType to our trashCan.
     public int findTarget(Event event) {
         int trashcanIndex = 0;
         trashCanArray[0] = paper;
