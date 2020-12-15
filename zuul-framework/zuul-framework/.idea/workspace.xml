@@ -21,29 +21,6 @@
   <component name="ChangeListManager">
     <list default="true" id="fa685b78-871e-41d7-a232-1b029ddc9953" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/zuul-framework/.idea/libraries/lib.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/zuul-framework/.idea/libraries/lib.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/zuul-framework/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/zuul-framework/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/zuul-framework/worldofzuul/bathroom.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/zuul-framework/worldofzuul/bathroom.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/zuul-framework/worldofzuul/entrance.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/zuul-framework/worldofzuul/entrance.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/zuul-framework/worldofzuul/garbageArea.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/zuul-framework/worldofzuul/garbageArea.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/zuul-framework/worldofzuul/img/Minimap/Badevaerelse map.png" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/zuul-framework/worldofzuul/img/Minimap/Badevaerelse map.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/zuul-framework/worldofzuul/img/Minimap/Dit værelse map.png" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/zuul-framework/worldofzuul/img/Minimap/Dit værelse map.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/zuul-framework/worldofzuul/img/Minimap/Forældres soveværelse map.png" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/zuul-framework/worldofzuul/img/Minimap/Forældres soveværelse map.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/zuul-framework/worldofzuul/img/Minimap/Indgang map.png" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/zuul-framework/worldofzuul/img/Minimap/Indgang map.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/zuul-framework/worldofzuul/img/Minimap/Køkken map.png" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/zuul-framework/worldofzuul/img/Minimap/Køkken map.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/zuul-framework/worldofzuul/img/Minimap/Skraldespande map.png" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/zuul-framework/worldofzuul/img/Minimap/Skraldespande map.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/zuul-framework/worldofzuul/img/Minimap/Stue map.png" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/zuul-framework/worldofzuul/img/Minimap/Stue map.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/zuul-framework/worldofzuul/img/Minimap/Udenfor map.png" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/zuul-framework/worldofzuul/img/Minimap/Udenfor map.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/zuul-framework/worldofzuul/img/TrashCans/SkraldespandGrå.png" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/zuul-framework/worldofzuul/img/TrashCans/SkraldespandGrå.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/zuul-framework/worldofzuul/img/TrashCans/SkraldespandGrøn.png" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/zuul-framework/worldofzuul/img/TrashCans/SkraldespandGrøn.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/zuul-framework/worldofzuul/img/TrashCans/SkraldespandGul.png" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/zuul-framework/worldofzuul/img/TrashCans/SkraldespandGul.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/zuul-framework/worldofzuul/img/TrashCans/skraldespandRød.png" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/zuul-framework/worldofzuul/img/TrashCans/skraldespandRød.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/zuul-framework/worldofzuul/kitchen.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/zuul-framework/worldofzuul/kitchen.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/zuul-framework/worldofzuul/livingRoom.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/zuul-framework/worldofzuul/livingRoom.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/zuul-framework/worldofzuul/outside.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/zuul-framework/worldofzuul/outside.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/zuul-framework/worldofzuul/parents_bedroom.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/zuul-framework/worldofzuul/parents_bedroom.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/zuul-framework/worldofzuul/your_room.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/zuul-framework/worldofzuul/your_room.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/worldofzuul/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/worldofzuul/Controller.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

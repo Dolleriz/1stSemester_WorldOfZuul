@@ -1,0 +1,23 @@
+@startuml
+class worldofzuul.TrashCanRoom {
+~ Trashcan plastic
+~ Trashcan metalAndGlass
+~ Trashcan foodWaste
+~ Trashcan paper
+~ Trashcan residualWaste
++ Trashcan getPlastic()
++ Trashcan getMetalAndGlass()
++ Trashcan getFoodWaste()
++ Trashcan getPaper()
++ Trashcan getResidualWaste()
++ void createTrashcans()
++ void showPlastic()
++ void showMetalAndGlass()
++ void showFoodWaste()
++ void showPaper()
++ void showResidualWaste()
+}
+
+
+worldofzuul.Room <|-- worldofzuul.TrashCanRoom
+@enduml

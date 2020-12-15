@@ -1,0 +1,10 @@
+@startuml
+class worldofzuul.Command {
+- CommandWord commandWord
+- String secondWord
++ CommandWord getCommandWord()
++ String getSecondWord()
++ boolean isUnknown()
++ boolean hasSecondWord()
+}
+@enduml

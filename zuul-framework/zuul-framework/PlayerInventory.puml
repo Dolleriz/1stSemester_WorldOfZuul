@@ -1,0 +1,12 @@
+@startuml
+class worldofzuul.PlayerInventory {
+~ PlayerInventory playerInventory
+- {static} int PLAYER_INVENTORY_MAX
++ {static} int getPlayerInventoryMax()
+- void printPlayerInventory()
++ String toString()
+}
+
+
+worldofzuul.Inventory <|-- worldofzuul.PlayerInventory
+@enduml

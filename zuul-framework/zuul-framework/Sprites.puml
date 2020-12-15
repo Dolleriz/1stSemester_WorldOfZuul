@@ -1,0 +1,8 @@
+@startuml
+class worldofzuul.Sprites {
+- Image image
++ void setImage(Image)
++ void setImage(String)
++ Image getImage()
+}
+@enduml

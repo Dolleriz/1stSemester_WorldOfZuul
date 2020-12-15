@@ -1,0 +1,11 @@
+@startuml
+class worldofzuul.Game_GUI {
++ {static} Game_GUI INSTANCE
+~ Room currentRoom
+~ TrashCanRoom garbageArea
+~ RegularRoom outside
+~ PlayerScore playerScore
+~ Inventory playerInventory
+~ void createRooms()
+}
+@enduml
