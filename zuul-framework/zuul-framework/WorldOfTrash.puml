@@ -46,6 +46,7 @@ worldofzuul.Game_GUI --> worldofzuul.Room
 worldofzuul.Game_GUI --> worldofzuul.TrashCanRoom
 worldofzuul.Game_GUI --> worldofzuul.RegularRoom
 worldofzuul.Game_GUI --> worldofzuul.Inventory
+worldofzuul.Game_GUI --> worldofzuul.PlayerScore
 
 class worldofzuul.Game {
 ~ Parser parser
@@ -177,7 +178,7 @@ class worldofzuul.Trash {
 + Trashtype getType()
 + Sprites getSprite()
 }
-worldofzuul.Trash --> worldofzuul.TrashType
+worldofzuul.Trash --> worldofzuul.Trashtype
 worldofzuul.Trash --> worldofzuul.Sprites
 
 class worldofzuul.Trashcan {
@@ -186,7 +187,7 @@ class worldofzuul.Trashcan {
 + String getDescription()
 + Trashtype getTrashType()
 }
-worldofzuul.Trashcan --> worldofzuul.TrashType
+worldofzuul.Trashcan --> worldofzuul.Trashtype
 
 enum worldofzuul.Trashtype {
 - String trashString
@@ -205,5 +206,5 @@ FOOD_WASTE ("food", "worldofzuul/img/TrashSprites/BittenApple.png"),
 
     RESIDUAL_WASTE ("residual", "worldofzuul/img/TrashSprites/TrashBag.png");
 }
-worldofzuul.Trashtype --> worldofzuul.Sprites
+worldofzuul.Trashtype -> worldofzuul.Sprites
 @enduml
