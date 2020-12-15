@@ -198,13 +198,13 @@ enum worldofzuul.Trashtype {
 -- trashString--
 FOOD_WASTE ("food", "worldofzuul/img/TrashSprites/BittenApple.png"),
 
-    METAL_AND_GLASS ("Metal", "worldofzuul/img/TrashSprites/Can.png"),
+METAL_AND_GLASS ("Metal", "worldofzuul/img/TrashSprites/Can.png"),
 
-    PAPER ("paper", "worldofzuul/img/TrashSprites/CrumbledPaper.png"),
+PAPER ("paper", "worldofzuul/img/TrashSprites/CrumbledPaper.png"),
 
-    PLASTIC ("plastic", "worldofzuul/img/TrashSprites/BottleofWater.png"),
+PLASTIC ("plastic", "worldofzuul/img/TrashSprites/BottleofWater.png"),
 
-    RESIDUAL_WASTE ("residual", "worldofzuul/img/TrashSprites/TrashBag.png");
+RESIDUAL_WASTE ("residual", "worldofzuul/img/TrashSprites/TrashBag.png");
 }
 worldofzuul.Trashtype -> worldofzuul.Sprites
 
