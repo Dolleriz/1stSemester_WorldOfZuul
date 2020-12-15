@@ -207,4 +207,11 @@ FOOD_WASTE ("food", "worldofzuul/img/TrashSprites/BittenApple.png"),
     RESIDUAL_WASTE ("residual", "worldofzuul/img/TrashSprites/TrashBag.png");
 }
 worldofzuul.Trashtype -> worldofzuul.Sprites
+
+class worldofzuul.Sprites {
+- Image image
++ void setImage(Image)
++ void setImage(String)
++ Image getImage()
+}
 @enduml
