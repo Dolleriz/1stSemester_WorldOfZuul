@@ -1,2 +1,2 @@
 # SemesterProjekt-MoneyBankz
-earn izi moni brooo
+https://github.com/Dolleriz/SemesterProjekt-MoneyBankz.wiki.git
