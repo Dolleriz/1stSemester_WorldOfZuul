@@ -1,0 +1,12 @@
+@startuml
+enum worldofzuul.Trashtype {
+- String trashString
++ String toString
+--trashString--
+PLASTIC("Plastik."),
+METAL_AND_GLASS("Metal og glas."),
+FOOD_WASTE("Madaffald."),
+PAPER("Papir og pap."),
+RESIDUAL_WASTE("Restaffald.")
+}
+@enduml

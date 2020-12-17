@@ -1,0 +1,14 @@
+@startuml
+class worldofzuul.TrashCanRoom {
+- Trashcan plastic
++ void createTrashcans()
++ void printTrashcans()
++ void showPlastic()
++ void showMetalAndGlass()
++ void showFoodWaste()
++ void showPaper()
++ void showResidualWaste()
++ void getTrashCanDescription()
+}
+worldofzuul.Room <|-- worldofzuul.TrashCanRoom
+@enduml

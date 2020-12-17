@@ -1,0 +1,6 @@
+@startuml
+class worldofzuul.Main {
++ {static} void main(String[])
+~ mygame.play()
+}
+@enduml

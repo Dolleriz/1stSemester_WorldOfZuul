@@ -1,0 +1,7 @@
+@startuml
+class worldofzuul.PlayerInventory {
++ String toString()
++ void printPlayerInventory(PlayerInventory)
+}
+worldofzuul.Inventory <|-- worldofzuul.PlayerInventory
+@enduml
