@@ -1,0 +1,22 @@
+@startuml
+class worldofzuul.Game {
+- Parser parser
+- Room currentRoom
+- TrashCanRoom garbageArea
+- RegularRoom outside
+- PlayerScore playerScore
+~ PlayerInventory playerInventory
+- void createRooms()
++ void play()
+- void printWelcome()
+- boolean processCommand(Command)
+- void printHelp()
+- void goRoom(Command)
+- boolean quit(Command)
+- void pickup(Command)
+- void throwout(Command)
+- void trashDescription(Command)
+- void trashThrownOut()
+- void sortingTrash(String,Trashtype,int)
+}
+@enduml

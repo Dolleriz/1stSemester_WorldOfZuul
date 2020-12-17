@@ -1,0 +1,8 @@
+@startuml
+class worldofzuul.CommandWords {
+- HashMap<String,CommandWord> validCommands
++ CommandWord getCommandWord(String)
++ boolean isCommand(String)
++ void showAll()
+}
+@enduml

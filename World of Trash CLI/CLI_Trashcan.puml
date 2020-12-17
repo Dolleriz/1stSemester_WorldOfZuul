@@ -1,0 +1,7 @@
+@startuml
+class worldofzuul.Trashcan {
+- Trashtype correctTrashType
+- String description
++ String getDescription()
+}
+@enduml
