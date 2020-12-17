@@ -1,0 +1,10 @@
+@startuml
+enum worldufzuul.CommandWord {
+- String commandString
++ String toString
+-- commandStrings --
+GO("gå"), QUIT("afslut"), HELP("hjælp"), UNKNOWN("?"),
+    PICKUP("tag"), INVENTORY("taske"), TRASHCAN("skraldespand "),
+    THROWOUT("smid"), TRASHDESCRIPTION("beskriv");
+}
+@enduml

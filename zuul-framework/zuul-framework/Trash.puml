@@ -1,0 +1,8 @@
+@startuml
+class worldofzuul.Trash {
+- Trashtype type
+~ Sprites sprite
++ Trashtype getType()
++ Sprites getSprite()
+}
+@enduml

@@ -1,0 +1,8 @@
+@startuml
+class worldofzuul.Parser {
+- CommandWords commands
+- Scanner reader
++ Command getCommand()
++ void showCommands()
+}
+@enduml

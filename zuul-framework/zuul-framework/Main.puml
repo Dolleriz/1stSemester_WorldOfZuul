@@ -1,0 +1,9 @@
+@startuml
+class worldofzuul.Main {
++ void start(Stage)
++ {static} void main(String[])
+}
+
+
+javafx.application.Application <|-- worldofzuul.Main
+@enduml

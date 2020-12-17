@@ -1,0 +1,29 @@
+@startuml
+class worldofzuul.Controller {
+~ Game_GUI myGame
++ Button livingRoom
++ Button help
++ Button scan
++ Button playerInventory
++ Button copyright
++ ImageView plastic
++ ImageView[] trashCanArray
++ ImageView zero
++ ImageView[] roomInventoryArray
++ ImageView PI1
++ ImageView[] playerInventoryArray
++ Label playerScoreLabel
++ void buttonClicked(ActionEvent)
++ void showPlayerInventoryButton()
++ void showPlayerInventory()
++ void scanRoom(Event)
++ void pickUp(Event)
++ void throwout(Event)
++ void updatePlayerScore()
++ int findTarget(Event)
++ boolean emptyRoom(Trash[])
++ boolean finishedGame()
+}
+
+
+@enduml

@@ -1,0 +1,13 @@
+@startuml
+class worldofzuul.Room {
+- String description
+- HashMap<String,Room> exits
+~ Inventory roomInventory
+~ Trash[] roomInventoryGUI
++ void setExit(String,Room)
++ String getShortDescription()
++ String getLongDescription()
+~ String getExitString()
++ Room getExit(String)
+}
+@enduml

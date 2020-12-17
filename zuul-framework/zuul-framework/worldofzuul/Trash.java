@@ -1,17 +1,25 @@
 package worldofzuul;
 
+//Our trash class that makes us able to set a sprite and a type
+//Is used to distinguish the trash in both our GUI and CLI version.
 public class Trash {
     private Trashtype type;
+    Sprites sprite;
 
 
+    public Trash(Trashtype type, Sprites sprite) {
+        this.type = type;
+        this.sprite = sprite;
+    }
     public Trash(Trashtype type) {
         this.type = type;
-        /* WE might implement this for functions in recognizing the type of trash
-        Trashtype plastic = Trashtype.PLASTIC;
-        Trashtype metalAndGlass = Trashtype.METAL_AND_GLASS;
-        Trashtype foodWaste = Trashtype.FOOD_WASTE;
-        Trashtype paper = Trashtype.PAPER;
-        Trashtype residualWaste = Trashtype.RESIDUAL_WASTE;
-        */
+    }
+
+    public Trashtype getType() {
+        return type;
+    }
+
+    public Sprites getSprite() {
+        return sprite;
     }
 }

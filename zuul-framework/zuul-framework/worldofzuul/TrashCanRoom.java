@@ -1,17 +1,40 @@
 package worldofzuul;
 
-import java.util.HashMap;
 
+//Most code in here is for the CLI version as we used solely imageViews in our GUI version.
 public class TrashCanRoom extends Room {
-
     public TrashCanRoom(String description) {
         super(description);
         createTrashcans();
+
     }
 
-    /*HashMap trashcans = new HashMap<Trashtype, Trashcan>();*/
+    public TrashCanRoom(){
+        createTrashcans();
+    }
 
-    private Trashcan plastic, metalAndGlass, foodWaste, paper, residualWaste;
+
+    Trashcan plastic, metalAndGlass, foodWaste, paper, residualWaste;
+
+    public Trashcan getPlastic() {
+        return plastic;
+    }
+
+    public Trashcan getMetalAndGlass() {
+        return metalAndGlass;
+    }
+
+    public Trashcan getFoodWaste() {
+        return foodWaste;
+    }
+
+    public Trashcan getPaper() {
+        return paper;
+    }
+
+    public Trashcan getResidualWaste() {
+        return residualWaste;
+    }
 
     public void createTrashcans() {
 
@@ -43,21 +66,30 @@ public class TrashCanRoom extends Room {
                 "\nDenne skraldespand er til restaffald." +
                 "\nDenne type af affald er alle ting der ikke passer ind i de fire andre kategorier." +
                 "\nHeri kan der komme f.eks. Kartoner, Pizzabakker, Bleer samt støvsugerposer.");
-        /*
-        trashcans.put(plastic, plastic);
-        trashcans.put(metalAndGlass, metalAndGlass);
-        trashcans.put(foodWaste, foodWaste);
-        trashcans.put(paper, paper);
-        trashcans.put(residualWaste, residualWaste);
-        */
+
     }
 
-    public void showTrashcans() {
+
+
+    public void showPlastic() {
         System.out.println(plastic.getDescription());
+    }
+
+    public void showMetalAndGlass() {
         System.out.println(metalAndGlass.getDescription());
+    }
+
+    public void showFoodWaste() {
         System.out.println(foodWaste.getDescription());
+    }
+
+    public void showPaper() {
         System.out.println(paper.getDescription());
+    }
+
+    public void showResidualWaste() {
         System.out.println(residualWaste.getDescription());
     }
 }
+
 

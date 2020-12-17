@@ -1,0 +1,10 @@
+@startuml
+class worldofzuul.RegularRoom {
++ void fillUpRoom()
++ void fillUpRoomGUI()
++ void printRoomInventory()
+}
+
+
+worldofzuul.Room <|-- worldofzuul.RegularRoom
+@enduml

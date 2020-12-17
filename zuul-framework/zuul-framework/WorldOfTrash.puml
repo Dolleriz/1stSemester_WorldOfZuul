@@ -1,0 +1,217 @@
+@startuml
+
+class worldofzuul.Main {
++ void start(Stage)
++ {static} void main(String[])
+}
+javafx.application.Application <|-- worldofzuul.Main
+
+class worldofzuul.Controller {
+~ Game_GUI myGame
++ Button livingRoom
++ Button help
++ Button scan
++ Button playerInventory
++ Button copyright
++ ImageView plastic
++ ImageView[] trashCanArray
++ ImageView zero
++ ImageView[] roomInventoryArray
++ ImageView PI1
++ ImageView[] playerInventoryArray
++ Label playerScoreLabel
++ void buttonClicked(ActionEvent)
++ void showPlayerInventoryButton()
++ void showPlayerInventory()
++ void scanRoom(Event)
++ void pickUp(Event)
++ void throwout(Event)
++ void updatePlayerScore()
++ int findTarget(Event)
++ boolean emptyRoom(Trash[])
++ boolean finishedGame()
+}
+worldofzuul.Controller -> worldofzuul.Game_GUI
+
+class worldofzuul.Game_GUI {
++ {static} Game_GUI INSTANCE
+~ Room currentRoom
+~ TrashCanRoom garbageArea
+~ RegularRoom outside
+~ PlayerScore playerScore
+~ Inventory playerInventory
+~ void createRooms()
+}
+worldofzuul.Game_GUI --> worldofzuul.Room
+worldofzuul.Game_GUI --> worldofzuul.TrashCanRoom
+worldofzuul.Game_GUI --> worldofzuul.RegularRoom
+worldofzuul.Game_GUI --> worldofzuul.Inventory
+worldofzuul.Game_GUI --> worldofzuul.PlayerScore
+
+class worldofzuul.Game {
+~ Parser parser
+~ Room currentRoom
+~ TrashCanRoom garbageArea
+~ RegularRoom outside
+~ PlayerScore playerScore
+~ Inventory playerInventory
+~ void createRooms()
++ void play()
+~ void printWelcome()
+~ boolean processCommand(Command)
+~ void printHelp()
+~ void goRoom(Command)
+~ boolean quit(Command)
+~ void pickup(Command)
+~ void throwout(Command)
+~ void trashDescription(Command)
+~ void printPlayerInventory(Inventory)
++ {static} void main(String[])
+}
+worldofzuul.Game --> worldofzuul.Parser
+worldofzuul.Game --> worldofzuul.Room
+worldofzuul.Game --> worldofzuul.TrashCanRoom
+worldofzuul.Game --> worldofzuul.RegularRoom
+worldofzuul.Game --> worldofzuul.PlayerScore
+worldofzuul.Game --> worldofzuul.Inventory
+
+class worldofzuul.Parser {
+- CommandWords commands
+- Scanner reader
++ Command getCommand()
++ void showCommands()
+}
+worldofzuul.Parser --> worldofzuul.Command
+worldofzuul.Parser --> worldofzuul.CommandWords
+
+class worldofzuul.Command {
+- CommandWord commandWord
+- String secondWord
++ CommandWord getCommandWord()
++ String getSecondWord()
++ boolean isUnknown()
++ boolean hasSecondWord()
+}
+worldofzuul.Command --> worldofzuul.CommandWord
+
+enum worldofzuul.CommandWord {
+- String commandString
++ String toString
+-- commandString --
+GO ("gå"), QUIT ("afslut"), HELP ("hjælp"), UNKNOWN ("?"),
+    PICKUP ("tag"), INVENTORY ("taske"), TRASHCAN ("skraldespand "),
+    THROWOUT ("smid"), TRASHDESCRIPTION ("beskriv");
+}
+
+class worldofzuul.CommandWords {
+- HashMap<String,CommandWord> validCommands
++ CommandWord getCommandWord(String)
++ boolean isCommand(String)
++ void showAll()
+}
+worldofzuul.CommandWords --> worldofzuul.CommandWord
+
+class worldofzuul.Room {
+- String description
+- HashMap<String,Room> exits
+~ Inventory roomInventory
+~ Trash[] roomInventoryGUI
++ void setExit(String,Room)
++ String getShortDescription()
++ String getLongDescription()
+~ String getExitString()
++ Room getExit(String)
+}
+worldofzuul.Room <|-- worldofzuul.TrashCanRoom
+worldofzuul.Room <|-- worldofzuul.RegularRoom
+worldofzuul.Room --> worldofzuul.Inventory
+worldofzuul.Room --> worldofzuul.Trash
+
+class worldofzuul.RegularRoom {
++ void fillUpRoom()
++ void fillUpRoomGUI()
++ void printRoomInventory()
+}
+
+class worldofzuul.TrashCanRoom {
+~ Trashcan plastic, metalAndGlass,
+  foodWaste, paper, residualWaste
++ Trashcan getPlastic()
++ Trashcan getMetalAndGlass()
++ Trashcan getFoodWaste()
++ Trashcan getPaper()
++ Trashcan getResidualWaste()
++ void createTrashcans()
++ void showPlastic()
++ void showMetalAndGlass()
++ void showFoodWaste()
++ void showPaper()
++ void showResidualWaste()
+}
+worldofzuul.TrashCanRoom --> worldofzuul.Trashcan
+
+class worldofzuul.PlayerScore {
+~ int playerScore
++ int getPlayerScore()
++ void increasePlayerScore(int)
++ void showPlayerScore()
++ void decreasePlayerScore(int)
+}
+
+class worldofzuul.Inventory {
+~ ArrayList<Trash> inventory
+}
+worldofzuul.Inventory --> worldofzuul.Trash
+
+class worldofzuul.PlayerInventory {
+~ PlayerInventory playerInventory
+- {static} int PLAYER_INVENTORY_MAX
++ {static} int getPlayerInventoryMax()
+- void printPlayerInventory()
++ String toString()
+}
+worldofzuul.Inventory <|-- worldofzuul.PlayerInventory
+
+class worldofzuul.Trash {
+- Trashtype type
+~ Sprites sprite
++ Trashtype getType()
++ Sprites getSprite()
+}
+worldofzuul.Trash --> worldofzuul.Trashtype
+worldofzuul.Trash --> worldofzuul.Sprites
+
+class worldofzuul.Trashcan {
+- Trashtype correctTrashType
+- String description
++ String getDescription()
++ Trashtype getTrashType()
+}
+worldofzuul.Trashcan --> worldofzuul.Trashtype
+
+enum worldofzuul.Trashtype {
+- String trashString
++ Sprites sprite
++ String filepath
++ String getFilepath()
++ String toString()
+-- trashString--
+FOOD_WASTE ("food", "worldofzuul/img/TrashSprites/BittenApple.png"),
+
+METAL_AND_GLASS ("Metal", "worldofzuul/img/TrashSprites/Can.png"),
+
+PAPER ("paper", "worldofzuul/img/TrashSprites/CrumbledPaper.png"),
+
+PLASTIC ("plastic", "worldofzuul/img/TrashSprites/BottleofWater.png"),
+
+RESIDUAL_WASTE ("residual", "worldofzuul/img/TrashSprites/TrashBag.png");
+}
+worldofzuul.Trashtype -> worldofzuul.Sprites
+
+class worldofzuul.Sprites {
+- Image image
++ void setImage(Image)
++ void setImage(String)
++ Image getImage()
+}
+@enduml

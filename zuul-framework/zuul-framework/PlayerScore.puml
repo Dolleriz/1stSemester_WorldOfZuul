@@ -1,0 +1,9 @@
+@startuml
+class worldofzuul.PlayerScore {
+~ int playerScore
++ int getPlayerScore()
++ void increasePlayerScore(int)
++ void showPlayerScore()
++ void decreasePlayerScore(int)
+}
+@enduml
